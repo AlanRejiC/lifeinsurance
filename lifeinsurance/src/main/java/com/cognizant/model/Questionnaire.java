@@ -1,5 +1,10 @@
 package com.cognizant.model;
 
+/**
+ * 
+ * @author Priyanka Nath
+ *
+ */
 public class Questionnaire {
 	private int id;
 	private int userId;

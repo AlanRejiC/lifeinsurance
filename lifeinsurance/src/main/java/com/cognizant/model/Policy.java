@@ -1,4 +1,9 @@
 package com.cognizant.model;
+/**
+ * 
+ * @author Priyanka Nath
+ *
+ */
 
 public class Policy {
 	private int policyNumber;
