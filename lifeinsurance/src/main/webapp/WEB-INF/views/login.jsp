@@ -13,20 +13,25 @@
 <body>
 	<div align="center">
 		<h1>User Login Form</h1>
-		<form:form action="login.jsp" method="post" modelAttribute="">
-			<table >
+		<form:form action="/getLoginPage" method="post" modelAttribute="user">
+			<table>
 				<tr>
-					<td>Enter User ID:</td>
-					<td><input type="text" name="userId" /></td>
+					<td>Enter User ID</td>
+					<td><form:input path="userId" name="userId" /></td>
+					<td><form:errors path="userId"></form:errors></td>
 				</tr>
 				<tr>
-					<td>Enter Password:</td>
-					<td><input type="password" name="password" /></td>
+					<td>Enter Password</td>
+					<td><form:input path="password" 
+							name="password" /></td>
+					<td><form:errors path="password"></form:errors></td>
 				</tr>
 			</table>
-            <br>
-            <input type="submit" value="Submit"/><br>
-             <footer><a href="admin.jsp">Admin Page</a></footer>
+			<br>
+			<input type="submit" value="Submit" />
+			<footer>
+				<a href="admin.jsp">Admin Page</a>
+			</footer>
 		</form:form>
 	</div>
 </body>
