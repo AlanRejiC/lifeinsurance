@@ -16,11 +16,11 @@
 		<form:form action="login.jsp" method="post" modelAttribute="">
 			<table >
 				<tr>
-					<td>Enter User ID</td>
+					<td>Enter User ID:</td>
 					<td><input type="text" name="userId" /></td>
 				</tr>
 				<tr>
-					<td>Enter Password</td>
+					<td>Enter Password:</td>
 					<td><input type="password" name="password" /></td>
 				</tr>
 			</table>
