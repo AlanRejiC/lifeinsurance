@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="lifeinsurance"/>
+<aop-project name="HRMNS"/>
+<aop-project name="TMS"/>
+<aop-project name="sessionTest1-1"/>
+<aop-project name="sample"/>
+<aop-project name="GoGoParcelService"/>
+<aop-project name="HelpServices"/>
+<aop-project name="demo-1"/>
+<aop-project name="projectName"/>
+<aop-project name="demo"/>
+<aop-project name="sessionTest1"/>
+<aop-project name="BodyMassIndex"/>
+<aop-project name="AgeCalculator"/>
+<aop-project name="ProductBillingApplication"/>
+</aop-reference-model>

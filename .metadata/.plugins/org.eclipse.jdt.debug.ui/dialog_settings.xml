@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth0" value="112"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth1" value="505"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth2" value="118"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.sortColumn" value="1"/>
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=SpringAopDemo/src\/main\/java&amp;lt;com.cts.SpringAopDemo{App.java[App&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Parameterized/D:\/eclipse-jee-2020-09-R-win32-x86_64\/eclipse\/plugins\/org.junit_4.13.0.v20200204-1500.jar&amp;lt;org.junit.runner(JUnitCore.class[JUnitCore&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=truyum-spring/C:\/Users\/UnniKutty\/.m2\/repository\/junit\/junit\/4.11\/junit-4.11.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/test=/true=/=/maven.groupId=/junit=/=/maven.artifactId=/junit=/=/maven.version=/4.11=/=/maven.scope=/test=/&amp;lt;org.junit.runner(JUnitCore.class[JUnitCore&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=AgeCalculator/C:\/Users\/UnniKutty\/.m2\/repository\/org\/apache\/tomcat\/embed\/tomcat-embed-core\/9.0.36\/tomcat-embed-core-9.0.36.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.apache.tomcat.embed=/=/maven.artifactId=/tomcat-embed-core=/=/maven.version=/9.0.36=/=/maven.scope=/compile=/&amp;lt;org.apache.catalina.startup(Tomcat$SimpleRealm.class[SimpleRealm&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=sessionTest1-1/C:\/Users\/UnniKutty\/.m2\/repository\/org\/apache\/tomcat\/embed\/tomcat-embed-core\/9.0.39\/tomcat-embed-core-9.0.39.jar&amp;lt;org.apache.catalina.startup(Tomcat.class[Tomcat&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=sessionTest1-1/C:\/Users\/UnniKutty\/.m2\/repository\/net\/bytebuddy\/byte-buddy-agent\/1.10.18\/byte-buddy-agent-1.10.18.jar&amp;lt;net.bytebuddy.agent(Attacher.class[Attacher&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=AgeCalculator/C:\/Users\/UnniKutty\/.m2\/repository\/org\/beanshell\/bsh\/2.0b4\/bsh-2.0b4.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/test=/true=/=/maven.groupId=/org.beanshell=/=/maven.artifactId=/bsh=/=/maven.version=/2.0b4=/=/maven.scope=/test=/&amp;lt;bsh.util(AWTConsole.class[AWTConsole&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=TMS/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&amp;lt;com{TmsApplication.java[TmsApplication&lt;/infoNode&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="471"/>
+			<item key="DIALOG_WIDTH" value="346"/>
+			<item key="DIALOG_X_ORIGIN" value="620"/>
+			<item key="DIALOG_Y_ORIGIN" value="43"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-21|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
+	</section>
+</section>

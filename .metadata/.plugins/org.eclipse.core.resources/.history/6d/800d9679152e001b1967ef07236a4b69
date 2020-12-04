@@ -1,0 +1,11 @@
+package com.cognizant.truyum.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.cognizant.truyum.model.MenuItem;
+
+public class MenuItemController {
+	@Autowired
+	private MenuItemService
+
+}

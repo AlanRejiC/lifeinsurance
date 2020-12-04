@@ -1,0 +1,15 @@
+package com.cognizant.truyum.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.cognizant.truyum.service.MenuItemService;
+
+public class MenuItemController {
+	@Autowired
+	private MenuItemService menuItemService;
+	private static final Logger LOGGER = LoggerFactory.getLogger(MenuItemController.class);
+
+
+}

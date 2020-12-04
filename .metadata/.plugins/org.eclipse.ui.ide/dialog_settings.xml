@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\UnniKutty\eclipse-workspace\truyum-spring sandra"/>
+			<item value="C:\Users\UnniKutty\Downloads\corejava\corejava"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\UnniKutty\Desktop\TMS"/>
+			<item value="C:\Users\UnniKutty\Downloads\taxproblem"/>
+			<item value="C:\Users\UnniKutty\eclipse-workspace\lifeinsurance"/>
+			<item value="C:\Users\UnniKutty\eclipse-workspace\lifeinsurance-master"/>
+			<item value="C:\Users\UnniKutty\Desktop\lifeinsurance-master"/>
+			<item value="C:\Users\UnniKutty\Downloads\agile-master"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Body Mass Index"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Book A Movie Ticket - JUnit Test"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Project Allocation Refactoring"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Age Calculator"/>
+			<item value="C:\Users\UnniKutty\Desktop\test\template"/>
+			<item value="C:\Users\UnniKutty\eclipse-workspace\truyum-spring"/>
+			<item value="C:\Users\UnniKutty\eclipse-workspace\springdemo"/>
+			<item value="C:\Users\UnniKutty\eclipse-workspace\877734"/>
+			<item value="C:\Users\UnniKutty\eclipse-workspace"/>
+			<item value="C:\Users\UnniKutty\eclipse-workspace\truyum-spring sandra"/>
+			<item value="C:\Users\UnniKutty\Downloads\truyum-spring sandra"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Hands On - LMS Refactoring"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Verify Call - JUnit using Mockito"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Product Login Test suite"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Parameterized"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Testing Using Assertion"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Electricity Bill"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\EBill"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Billing Software Application"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\GoGoParcelService"/>
+			<item value="C:\Users\UnniKutty\Downloads\GoGoParcelService"/>
+			<item value="C:\Users\UnniKutty\Downloads\AOPTest2"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\SpringAopDemo"/>
+			<item value="C:\Users\UnniKutty\Downloads\PassportService"/>
+			<item value="C:\Users\UnniKutty\Downloads\EBanking"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\EBanking"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Autowiring"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\EngineAnalysis"/>
+			<item value="C:\Users\UnniKutty\Downloads\EngineAnalysis"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Constructor Injection"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\EZEE Transport"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Customer-Address Inner Bean"/>
+			<item value="D:\eclipse-jee-2020-09-R-win32-x86_64\eclipse\Tekstac\Customer-Address-Scope"/>
+			<item value="C:\Users\UnniKutty\Desktop\Customer-Address-Scope"/>
+			<item value="C:\Users\UnniKutty\Desktop\EEZEETransport"/>
+			<item value="C:\Users\UnniKutty\Desktop\Customer-Address Inner Bean"/>
+			<item value="C:\Users\UnniKutty\Desktop\CurrencyConverter-Collections"/>
+		</list>
+	</section>
+	<section name="CleanDialogSettings">
+		<item key="TOGGLE_SELECTED" value="true"/>
+		<item key="DIALOG_WIDTH" value="828"/>
+		<item key="DIALOG_HEIGHT" value="482"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="534"/>
+		<item key="DIALOG_Y_ORIGIN" value="209"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ResourceNavigator">
+		<item key="ResourceViewer.STORE_SORT_TYPE" value="1"/>
+		<item key="ResourceWorkingSetFilter.STORE_WORKING_SET" value="Aggregate for window 1602146307308"/>
+	</section>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.springsource.ide.eclipse.commons.gettingstarted.wizard.boot.NewSpringBootWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.springframework.ide.eclipse.beans.ui.wizards.category"/>
+			<item value="org.springsource.ide.eclipse.boot.wizards.category"/>
+		</list>
+	</section>
+</section>

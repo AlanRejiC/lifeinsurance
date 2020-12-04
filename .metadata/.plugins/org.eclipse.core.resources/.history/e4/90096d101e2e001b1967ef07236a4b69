@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+  <html >
+    <head>
+      <meta>
+      <title>Menu Item List Admin</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="javascript" href="script.js">
+    </head>
+    <body>
+
+     <header>
+       <div id="head">
+           <div id="col1">
+             <img src="images/truyum.png.png" height="33px" width="128px" >
+             <a href="menu-item-list-admin.html" id="col2" >Menu</a>
+           </div>
+       </div>
+     </header>
+
+       <div id="body">
+          <div id="title">
+            <h2>Menu Items</h2>
+          </div>
+              <table>
+                <thead>
+                  <td id="name">Name</td>
+                  <td id="price">Price</td>
+                  <td id="active">Active</td>
+                  <td id="dol">Date of Launch</td>
+                  <td id="category">Category</td>
+                  <td id="del">Free Delivery</td>
+                  <td id="action">Action</td>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="name">Sandwitch</td>
+                    <td id="price">Rs.99.00</td>
+                    <td id="active">Yes</td>
+                    <td id="dol">15/03/2017</td>
+                    <td id="category">Main Course</td>
+                    <td id="del">Yes</td>
+                    <td id="action"><a href="edit-menu-item.html" onclick="sandwitch()">Edit</a></td>
+                  </tr>
+                  <tr>
+                    <td id="name">Burger</td>
+                    <td id="price">Rs.125.00</td>
+                    <td id="active">Yes</td>
+                    <td id="dol">23/12/2017</td>
+                    <td id="category">Main Course</td>
+                    <td id="del">No</td>
+                    <td id="action"><a href="edit-menu-item.html" onclick="burger()">Edit</a></td>
+                  </tr>
+                  <tr>
+                    <td id="name">Pizza</td>
+                    <td id="price">Rs.149.00</td>
+                    <td id="active">Yes</td>
+                    <td id="dol">21/08/2017</td>
+                    <td id="category">Main Course</td>
+                    <td id="del">No</td>
+                    <td id="action"><a href="edit-menu-item.html" onclick="pizza()">Edit</a></td>
+                  </tr>
+                  <tr>
+                    <td id="name">French Fries</td>
+                    <td id="price">Rs.57.00</td>
+                    <td id="active">No</td>
+                    <td id="dol">02/07/2017</td>
+                    <td id="category">Starters</td>
+                    <td id="del">Yes</td>
+                    <td id="action"><a href="edit-menu-item.html" onclick="fries()">Edit</a></td>
+                  </tr>
+                  <tr>
+                    <td id="name">Choclate Brownie</td>
+                    <td id="price">Rs.32.00</td>
+                    <td id="active">Yes</td>
+                    <td id="dol">02/11/2022</td>
+                    <td id="category">Dessert</td>
+                    <td id="del">Yes</td>
+                    <td id="action"><a href="edit-menu-item.html" onclick="brownie()">Edit</a></td>
+                  </tr>
+                </tbody>
+              </table>
+
+        </div>
+      <footer>
+        <div class="copyright">
+          Copyright &copy; 2019
+        </div>
+      </footer>
+
+    </body>
+  </html>
