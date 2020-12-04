@@ -31,7 +31,15 @@ public class UserService {
 		userRepo.save(user);
 	}
 	
-	
+	public boolean userValidation(User user) {
+	    boolean isValid=false;
+	   User temp= findUser(user.getUserId());
+	   if(temp.getPassword().equals(user.getPassword())) {
+	       isValid=true;
+	   }
+        return isValid;
+
+        }
 	
 	
 }

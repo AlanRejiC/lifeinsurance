@@ -4,6 +4,9 @@ import java.time.LocalDate;
 
 import javax.persistence.*;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 @Entity
 @Table(name="user")
 public class User {
@@ -16,6 +19,7 @@ public class User {
 	private String lastName;
 	@Column(name="gender")
 	private String gender;
+	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name="dob")
 	private LocalDate dob;
 	@Column(name="contact")

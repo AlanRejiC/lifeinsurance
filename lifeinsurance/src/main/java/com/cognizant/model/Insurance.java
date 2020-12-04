@@ -1,23 +1,47 @@
 package com.cognizant.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
+import javax.persistence.*;
+@Entity
+@Table(name="insurance_table")
 public class Insurance {
+	@Id
+	@Column(name="cust_name")
 	private String custName;
+	@Column(name="cust_gender")
 	private String custGender;
+	@Column(name="cust_dob")
 	private Date custDob;
+	@Column(name="cust_relationship")
 	private String custRelationship;
-	private String custResidence;
+	@Column(name="cust_residence_date")
+	private LocalDate custResidenceDate;
+	@Column(name="cust_village")
 	private String custVillage;
+	@Column(name="cust_block")
 	private String custBlock;
+	@Column(name="cust_district")
 	private String custDistrict;
+	@Column(name="cust_pin")
 	private int custPin;
+	@Column(name="cust_occupation")
 	private String custOccupation;
+	@Column(name="cust_industry")
+	private String custIndustry;
+	@Column(name="cust_salary")
 	private float custSalary;
+	@Column(name="diagnosis_date")
 	private Date diagnosisDate;
+	@Column(name="disease_code")
 	private int diseaseCode;
+	@Column(name="policy_name")
 	private String policyName;
+	@Column(name="mature_date")
 	private Date matureDate;
+
+	
 
 	public String getCustName() {
 		return custName;
@@ -51,12 +75,12 @@ public class Insurance {
 		this.custRelationship = custRelationship;
 	}
 
-	public String getCustResidence() {
-		return custResidence;
+	public LocalDate getCustResidenceDate() {
+		return custResidenceDate;
 	}
 
-	public void setCustResidence(String custResidence) {
-		this.custResidence = custResidence;
+	public void setCustResidenceDate(LocalDate custResidenceDate) {
+		this.custResidenceDate = custResidenceDate;
 	}
 
 	public String getCustVillage() {
@@ -97,6 +121,14 @@ public class Insurance {
 
 	public void setCustOccupation(String custOccupation) {
 		this.custOccupation = custOccupation;
+	}
+
+	public String getCustIndustry() {
+		return custIndustry;
+	}
+
+	public void setCustIndustry(String custIndustry) {
+		this.custIndustry = custIndustry;
 	}
 
 	public float getCustSalary() {
@@ -151,7 +183,7 @@ public class Insurance {
 		result = prime * result + ((custOccupation == null) ? 0 : custOccupation.hashCode());
 		result = prime * result + custPin;
 		result = prime * result + ((custRelationship == null) ? 0 : custRelationship.hashCode());
-		result = prime * result + ((custResidence == null) ? 0 : custResidence.hashCode());
+		result = prime * result + ((custResidenceDate == null) ? 0 : custResidenceDate.hashCode());
 		result = prime * result + Float.floatToIntBits(custSalary);
 		result = prime * result + ((custVillage == null) ? 0 : custVillage.hashCode());
 		result = prime * result + ((diagnosisDate == null) ? 0 : diagnosisDate.hashCode());
@@ -207,10 +239,10 @@ public class Insurance {
 				return false;
 		} else if (!custRelationship.equals(other.custRelationship))
 			return false;
-		if (custResidence == null) {
-			if (other.custResidence != null)
+		if (custResidenceDate == null) {
+			if (other.custResidenceDate != null)
 				return false;
-		} else if (!custResidence.equals(other.custResidence))
+		} else if (!custResidenceDate.equals(other.custResidenceDate))
 			return false;
 		if (Float.floatToIntBits(custSalary) != Float.floatToIntBits(other.custSalary))
 			return false;
@@ -242,11 +274,13 @@ public class Insurance {
 	@Override
 	public String toString() {
 		return "Insurance [custName=" + custName + ", custGender=" + custGender + ", custDob=" + custDob
-				+ ", custRelationship=" + custRelationship + ", custResidence=" + custResidence + ", custVillage="
-				+ custVillage + ", custBlock=" + custBlock + ", custDistrict=" + custDistrict + ", custPin=" + custPin
-				+ ", custOccupation=" + custOccupation + ", custSalary=" + custSalary + ", diagnosisDate="
-				+ diagnosisDate + ", diseaseCode=" + diseaseCode + ", policyName=" + policyName + ", matureDate="
-				+ matureDate + "]";
+				+ ", custRelationship=" + custRelationship + ", custResidenceDate=" + custResidenceDate
+				+ ", custVillage=" + custVillage + ", custBlock=" + custBlock + ", custDistrict=" + custDistrict
+				+ ", custPin=" + custPin + ", custOccupation=" + custOccupation + ", custIndustry=" + custIndustry
+				+ ", custSalary=" + custSalary + ", diagnosisDate=" + diagnosisDate + ", diseaseCode=" + diseaseCode
+				+ ", policyName=" + policyName + ", matureDate=" + matureDate + "]";
 	}
+
+	
 
 }

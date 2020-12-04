@@ -6,6 +6,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+<style>
+<%@ include file="/WEB-INF/styles/style.css"%>
+
+</style>
+
 <head>
 <meta charset="ISO-8859-1">
 <title>New User Registration Page</title>
@@ -27,7 +32,7 @@
 				</tr>
 				<tr>
 					<td>DoB</td>
-					<td><form:input path="dob"  name="dob" /></td>
+					<td><form:input path="dob" type="text" name="dob" /></td>
 					<td><form:errors path="dob" /></td>
 				</tr>
 				<tr>
@@ -64,7 +69,7 @@
 			<input type="submit" value="Submit" style="background-color: green" />
 
 		</form:form>
-
+		
 	</div>
 </body>
 </html>

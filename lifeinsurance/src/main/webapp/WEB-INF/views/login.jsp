@@ -6,6 +6,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+<style>
+<%@ include file="/WEB-INF/styles/style.css"%>
+
+</style>
+
 <head>
 <meta charset="ISO-8859-1">
 <title>User Login Page</title>
@@ -29,6 +34,7 @@
 			</table>
 			<br>
 			<input type="submit" value="Submit" />
+			<h2>${invalid}</h2>
 			<footer>
 				<a href="admin.jsp">Admin Page</a>
 			</footer>
