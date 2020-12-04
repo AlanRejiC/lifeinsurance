@@ -16,12 +16,12 @@
 		<form:form action="/getLoginPage" method="post" modelAttribute="user">
 			<table>
 				<tr>
-					<td>Enter User ID</td>
+					<td>Enter User ID:</td>
 					<td><form:input path="userId" name="userId" /></td>
 					<td><form:errors path="userId"></form:errors></td>
 				</tr>
 				<tr>
-					<td>Enter Password</td>
+					<td>Enter Password:</td>
 					<td><form:input path="password" 
 							name="password" /></td>
 					<td><form:errors path="password"></form:errors></td>
