@@ -13,7 +13,7 @@
 <body>
 	<div align="center">
 		<h1>User Login Form</h1>
-		<form:form action="login.jsp" method="post" modelAttribute="">
+		<form:form action="/getLoginPage" method="post" modelAttribute="">
 			<table >
 				<tr>
 					<td>Enter User ID</td>
