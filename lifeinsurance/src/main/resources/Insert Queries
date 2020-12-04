@@ -1,0 +1,7 @@
+
+
+1 User table
+
+insert into user values(10001,"Alan","Reji","Male","1998-01-24","9747583333","12345","12345","ark.dbz@gmail.com","How are you","fine","What was your first pet","Dog","What is your Moms Name","Preethi","customer");
+insert into user values(10000,"Manjunath","U","Male","1998-01-24","9747583333","12345","12345","1234@gmail.com","How are you","fine","What was your first pet","Dog","What is your Moms Name","Momo","admin");
+

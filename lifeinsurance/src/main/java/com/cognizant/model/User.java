@@ -2,27 +2,55 @@ package com.cognizant.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="user")
 public class User {
-	
-	private String userId;
+	@Id
+	@Column(name="user_id")
+	private int userId;
+	@Column(name="first_name")
 	private String firstName;
+	@Column(name="last_name")
 	private String lastName;
+	@Column(name="gender")
 	private String gender;
+	@Column(name="dob")
 	private LocalDate dob;
+	@Column(name="contact")
 	private String contact;
+	@Column(name="password")
 	private String password;
+	@Column(name="confirm_password")
+	private String confirmpassword;
+	@Column(name="email")
 	private String email;
+	@Column(name="security_1")
 	private String security1;
+	@Column(name="ans_1")
 	private String ans1;
+	@Column(name="security_2")
 	private String security2;
+	@Column(name="ans_2")
 	private String ans2;
+	@Column(name="security_3")
 	private String security3;
+	@Column(name="ans_3")
 	private String ans3;
+	@Column(name="role")
+	private String role;
 	
-	public String getUserId() {
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 	public String getFirstName() {
@@ -104,14 +132,14 @@ public class User {
 		this.ans3 = ans3;
 	}
 	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
+		result = prime * result + userId;
 		return result;
 	}
-	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -121,10 +149,7 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (userId == null) {
-			if (other.userId != null)
-				return false;
-		} else if (!userId.equals(other.userId))
+		if (userId != other.userId)
 			return false;
 		return true;
 	}
@@ -134,8 +159,16 @@ public class User {
 		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
 				+ ", dob=" + dob + ", contact=" + contact + ", password=" + password + ", email=" + email
 				+ ", security1=" + security1 + ", ans1=" + ans1 + ", security2=" + security2 + ", ans2=" + ans2
-				+ ", security3=" + security3 + ", ans3=" + ans3 + "]";
+				+ ", security3=" + security3 + ", ans3=" + ans3 + ", role=" + role + "]";
 	}
+	public String getConfirmpassword() {
+		return confirmpassword;
+	}
+	public void setConfirmpassword(String confirmpassword) {
+		this.confirmpassword = confirmpassword;
+	}
+	
+	
 	
 	
 }
