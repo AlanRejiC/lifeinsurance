@@ -3,17 +3,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+
+<style>
+<%@ include file="/WEB-INF/styles/style.css"%>
+
+</style>
+
+
+
 
 <title>home page</title>
 </head>
 <body>
-<header>
+<header class="header">
 <center><h1>Life Insurance Management private Limited</h1></center>
   
 
 </header>
+<div id="navigation_bar">
 <ul>
   <li><a  href="">Renewal</a></li>
   <li><a href="">Claim</a></li>
@@ -22,6 +32,7 @@
   <li><a href="/getLoginPage">Sign In</a></li>
   <li><a href="/getSignUpPage">Sign Up</a></li>
 </ul>
+</div>
 <h4>Types of Life Insurance</h4><br><br>
 <p>What Is Life Insurance?
 Life insurance is a contract between an insurer and a policyholder. A life insurance policy guarantees the insurer pays a sum of money to named beneficiaries when the insured policyholder dies, in exchange for the premiums paid by the policyholder during their lifetime.<br><br>
@@ -35,7 +46,7 @@ KEY TAKEAWAYS
 5)Term life insurance policies expire after a certain number of years. Permanent life insurance policies remain active until the insured dies, stops paying premiums, or surrenders the policy.<br>
 6)A life insurance policy is only as good as the financial strength of the company that issues it. State guaranty funds may pay claims if the issuer can’t.</p>
 
-<footer>
+<footer class="footer">
   <p>Life Insurance copyrights 2020<br>
   Locations <br> Connect with us <br></p>
 </footer>

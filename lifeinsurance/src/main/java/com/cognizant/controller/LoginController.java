@@ -1,5 +1,8 @@
 package com.cognizant.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cognizant.model.User;
 import com.cognizant.service.UserService;
+import com.cognizant.validate.LoginValidator;
 
 
 @Controller
@@ -21,6 +25,9 @@ public class LoginController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private LoginValidator loginValidator;
 
 	@RequestMapping(value = "/getHomePage", method = RequestMethod.GET)
 	public String homePage() {
@@ -34,6 +41,9 @@ public class LoginController {
 
 	@RequestMapping(value = "/getSignUpPage", method = RequestMethod.POST)
 	public String getSuccess1(@Valid @ModelAttribute("user") User user, BindingResult result) {
+		loginValidator.validate(user,result);
+		
+		
 		if (result.hasErrors()) {
 			return "userRegistration";
 		} else {
@@ -53,5 +63,14 @@ public class LoginController {
 		} else {
 			return "success";
 		}
+	}
+	
+	@ModelAttribute("genderList")
+	public List<String> listGender() {
+	List<String> list = new ArrayList<String>();
+	list.add("Male");
+	list.add("Female");
+	list.add("Other");
+	return list;
 	}
 }
