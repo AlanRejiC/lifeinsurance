@@ -28,7 +28,7 @@ import com.cognizant.validate.PaymentValidator;
 public class InsuranceController {
 
 	@Autowired
-	PaymentService paymentService;
+	private PaymentService paymentService;
 	
 	@Autowired
     private InsuranceValidator insuranceValidator;
@@ -83,11 +83,11 @@ public class InsuranceController {
 		return list;
 	}
 
-	/*@RequestMapping(value = "/getInsurancePage", method = RequestMethod.GET)
+	@RequestMapping(value = "/getInsurancePage", method = RequestMethod.GET)
 	public String getInsurancePage(@ModelAttribute("insurance") Insurance insurance) {
 		System.out.println("\n\n\n\n\nInside Get Insurance\n\n\n\n\n\n");
 		return "form";
-	}*/
+	}
 
 	@RequestMapping(value = "/getInsurancePage", method = RequestMethod.POST)
     public String getPaymentPage(@Valid @ModelAttribute("insurance") Insurance insurance, BindingResult result,
