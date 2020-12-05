@@ -14,22 +14,27 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.cognizant.model.Insurance;
+import com.cognizant.model.Payment;
 import com.cognizant.model.User;
+import com.cognizant.service.PaymentService;
 import com.cognizant.service.UserService;
 import com.cognizant.validate.RegistrationValidator;
-
 
 @Controller
 @ComponentScan("com.service")
 public class LoginController {
-	
+
 	@Autowired
 	private UserService userService;
 
 	@Autowired
 	private RegistrationValidator registrationValidator;
 
-	
+	@Autowired
+	private PaymentService paymentService;
+	float balance = 0;
+
 	@RequestMapping(value = "/getHomePage", method = RequestMethod.GET)
 	public String homePage() {
 		return "homepage";
@@ -43,54 +48,109 @@ public class LoginController {
 
 	@RequestMapping(value = "/getSignUpPage", method = RequestMethod.POST)
 	public String getSuccess1(@ModelAttribute("user") @Valid User user, BindingResult result) {
-		registrationValidator.validate(user,result);
-		
-		//System.out.println("hello");
+		registrationValidator.validate(user, result);
+
+		// System.out.println("hello");
 		if (result.hasErrors()) {
 			System.out.println(result.getAllErrors());
-			
-			//System.out.println("middle");
+
+			// System.out.println("middle");
 			return "userRegistration";
-		} 
+		}
 		user.setRole("customer"); // Setting the role to customer
 		user.setAns1(" "); // These functionalities are a part of a later User Story
 		user.setAns2(" ");
 		user.setAns3(" ");
 		user.setSecurity1(" ");
 		user.setSecurity2(" ");
-		user.setSecurity3(" ");		
+		user.setSecurity3(" ");
 		System.out.println(user);
 		userService.saveUser(user);
 		return "success";
 	}
+
 	@RequestMapping(value = "/getLoginPage", method = RequestMethod.GET)
-	public String getLoginPage(@ModelAttribute("user") User user,ModelMap map) {
-		/*if(user.getUserId()!=0)
-		{
-			map.addAttribute("invalid","Invalid username or password");
-		}*/
+	public String getLoginPage(@ModelAttribute("user") User user, ModelMap map) {
+		/*
+		 * if(user.getUserId()!=0) {
+		 * map.addAttribute("invalid","Invalid username or password"); }
+		 */
 		System.out.println(user);
 		return "login";
 	}
-	
+
 	@RequestMapping(value = "/getLoginPage", method = RequestMethod.POST)
-    public String getSuccess2(@Valid @ModelAttribute("user") User user, BindingResult result,ModelMap map) {
-        //userService.userValidation(user);
-		//System.out.println(user);
-            if (result.hasErrors() || !userService.userValidation(user)) {
-            	map.addAttribute("invalid","Invalid username or password");
-                    return "login";
-            } else {
-                    return "success";
-            }
-    }
-	
+	public String getSuccess2(@Valid @ModelAttribute("user") User user, BindingResult result, ModelMap map) {
+		// userService.userValidation(user);
+		// System.out.println(user);
+
+		if (result.hasErrors() || !userService.userValidation(user)) {
+			map.addAttribute("invalid", "Invalid username or password");
+			return "login";
+		} else {
+			return "success";
+		}
+	}
+
 	@ModelAttribute("genderList")
 	public List<String> listGender() {
-	List<String> list = new ArrayList<String>();
-	list.add("Male");
-	list.add("Female");
-	list.add("Other");
-	return list;
+		List<String> list = new ArrayList<String>();
+		list.add("Male");
+		list.add("Female");
+		list.add("Other");
+		return list;
+	}
+
+	@RequestMapping(value = "/getPaymentPage", method = RequestMethod.GET)
+	public String getPayment(@ModelAttribute("payment") Payment payment) {
+
+		return "payment";
+	}
+
+	@RequestMapping(value = "/getPaymentPage", method = RequestMethod.POST)
+	public String getSuccessPayment(@Valid @ModelAttribute("payment") Payment payment, BindingResult result,
+			ModelMap map) {
+		// balance =paymentService.calculateBalance(payment);
+		// map.addAttribute("balance", balance);
+		if (result.hasErrors()) {
+			return "payment";
+		} else {
+			return "balancedetails";
+		}
+
+	}
+
+	@ModelAttribute("cardList")
+	public List<String> listCardType() {
+		List<String> list = new ArrayList<String>();
+		list.add("Credit Card");
+		list.add("Debit Card");
+		return list;
+	}
+
+	@RequestMapping(value = "/getInsurancePage", method = RequestMethod.GET)
+	public String getInsurancePage(@ModelAttribute("insurance") Insurance insurance) {
+
+		return "form";
+	}
+
+	@RequestMapping(value = "/getInsurancePage", method = RequestMethod.POST)
+	public String getPaymentPage(@Valid @ModelAttribute("insurance") Insurance insurance, BindingResult result,
+			ModelMap map) {
+
+		if (result.hasErrors()) {
+			return "form";
+		} else {
+			return "payment";
+		}
+
+	}
+
+	@ModelAttribute("relationshipList")
+	public List<String> listRelationship() {
+		List<String> list = new ArrayList<String>();
+		list.add("Married");
+		list.add("UnMarried");
+		return list;
 	}
 }
