@@ -109,56 +109,5 @@ public class LoginController {
 		return list;
 	}
 
-	@RequestMapping(value = "/getPaymentPage", method = RequestMethod.GET)
-	public String getPayment(@ModelAttribute("payment") Payment payment) {
-
-		return "payment";
-	}
-
-	@RequestMapping(value = "/getPaymentPage", method = RequestMethod.POST)
-	public String getSuccessPayment(@Valid @ModelAttribute("payment") Payment payment, BindingResult result,
-			ModelMap map) {
-		// balance =paymentService.calculateBalance(payment);
-		// map.addAttribute("balance", balance);
-		if (result.hasErrors()) {
-			return "payment";
-		} else {
-			return "balancedetails";
-		}
-
-	}
-
-	@ModelAttribute("cardList")
-	public List<String> listCardType() {
-		List<String> list = new ArrayList<String>();
-		list.add("Credit Card");
-		list.add("Debit Card");
-		return list;
-	}
-
-	@RequestMapping(value = "/getInsurancePage", method = RequestMethod.GET)
-	public String getInsurancePage(@ModelAttribute("insurance") Insurance insurance) {
-
-		return "form";
-	}
-
-	@RequestMapping(value = "/getInsurancePage", method = RequestMethod.POST)
-	public String getPaymentPage(@Valid @ModelAttribute("insurance") Insurance insurance, BindingResult result,
-			ModelMap map) {
-
-		if (result.hasErrors()) {
-			return "form";
-		} else {
-			return "payment";
-		}
-
-	}
-
-	@ModelAttribute("relationshipList")
-	public List<String> listRelationship() {
-		List<String> list = new ArrayList<String>();
-		list.add("Married");
-		list.add("UnMarried");
-		return list;
-	}
 }
+	
