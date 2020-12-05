@@ -1,15 +1,25 @@
 package com.cognizant.model;
+
+import javax.persistence.*;
+
 /**
  * 
  * @author Priyanka Nath
  *
  */
-
+@Entity
+@Table(name="policy_table")
 public class Policy {
+	@Id
+	@Column(name="policy_number")
 	private int policyNumber;
+	@Column(name="policy_name")
 	private String policyName;
+	@Column(name="policy_description")
 	private String policyDescription;
+	@Column(name="net_amount_per_year")
 	private float netAmountPerYear;
+	@Column(name="policy_term")
 	private int policyTerm;
 
 	public int getPolicyNumber() {
