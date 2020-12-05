@@ -1,6 +1,5 @@
 package com.cognizant.validate;
 
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,12 +32,12 @@ public class RegistrationValidator implements Validator{
 		ValidationUtils.rejectIfEmpty(errors, "password","", "Password cannot be blank");
 		ValidationUtils.rejectIfEmpty(errors, "confirmpassword","", "Password cannot be blank");
 		ValidationUtils.rejectIfEmpty(errors, "email","", "Email cannot be blank");
-		//ValidationUtils.rejectIfEmpty(errors, "security1","", "Please select a security question");
-		//ValidationUtils.rejectIfEmpty(errors, "ans1","", "This field cannot be blank");
-		//ValidationUtils.rejectIfEmpty(errors, "security2","", "Please select a security question");
-		//ValidationUtils.rejectIfEmpty(errors, "ans2","", "UserName cannot be blank");
-		//ValidationUtils.rejectIfEmpty(errors, "security3","", "Please select a security question");
-		//ValidationUtils.rejectIfEmpty(errors, "ans3","", "This field cannot be blank");
+//		ValidationUtils.rejectIfEmpty(errors, "security1","", "Please select a security question");
+//		ValidationUtils.rejectIfEmpty(errors, "ans1","", "This field cannot be blank");
+//		ValidationUtils.rejectIfEmpty(errors, "security2","", "Please select a security question");
+//		ValidationUtils.rejectIfEmpty(errors, "ans2","", "UserName cannot be blank");
+//		ValidationUtils.rejectIfEmpty(errors, "security3","", "Please select a security question");
+//		ValidationUtils.rejectIfEmpty(errors, "ans3","", "This field cannot be blank");
 		String userid=""+user.getUserId();
 		if(!userid.matches("[0-9]{8}")){
 			errors.rejectValue("userId", "","UserId should be a 8 digit number");
@@ -50,12 +49,11 @@ public class RegistrationValidator implements Validator{
 		}
 		boolean status1=true;
 		boolean status2=true;
-		String regex = "\"^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,20}$\"";
+		String regex = "^(?=.*[0-9])" + "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[@#$%^&+=])" + "(?=\\S+$).{8,20}$";
 		Pattern p = Pattern.compile(regex);
 		Matcher m1 = p.matcher(user.getPassword());
 		Matcher m2 = p.matcher(user.getConfirmpassword());
-		/*if (m1.matches() == false) 
-		{
+		if (m1.matches() == false) {
 			errors.rejectValue("password", "",
 					" Check whether \r\n" + "It contains at least 8 characters and at most 20 characters.\r\n"
 							+ "It contains at least one digit.\r\n"
@@ -65,8 +63,7 @@ public class RegistrationValidator implements Validator{
 							+ "It doesn't contain any white space.");
 			status1=false;
 		}
-		if (m2.matches() == false)
-		{
+		if (m2.matches() == false) {
 			errors.rejectValue("password", "",
 					" Check whether \r\n" + "It contains at least 8 characters and at most 20 characters.\r\n"
 							+ "It contains at least one digit.\r\n"
@@ -75,7 +72,7 @@ public class RegistrationValidator implements Validator{
 							+ "It contains at least one special character which includes !@#$%&*()-+=^.\r\n"
 							+ "It doesn't contain any white space.");
 			status2=false;
-		}*/
+		}
 		if(status1 && status2){
 		    if(!(user.getConfirmpassword().equals(user.getPassword()))){
 			errors.rejectValue("confirmpassword","", "Password and Confirm Password should be same");
@@ -87,4 +84,5 @@ public class RegistrationValidator implements Validator{
 
 	}
 	
+
 }

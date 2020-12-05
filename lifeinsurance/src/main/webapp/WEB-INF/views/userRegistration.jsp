@@ -15,24 +15,25 @@
 <meta charset="ISO-8859-1">
 <title>New User Registration Page</title>
 </head>
-<body style="background-color: lavender">
+<body>
 	<div align="center">
 		<h1>User Registration Form</h1>
+		<h2>Personal Details</h2>
 		<form:form action="/getSignUpPage" method="POST" name="userRegister" modelAttribute="user">
-			<table style="width: 80%">
+			<table>
 				<tr>
 					<td>First Name</td>
-					<td><form:input path="firstName"  name="firstName" /></td>
+					<td><form:input path="firstName"  name="firstName" placeholder='First Name' /></td>
 					<td><form:errors path="firstName" /></td>
 				</tr>
 				<tr>
 					<td>Last Name</td>
-					<td><form:input path="lastName" name="lastName" /></td>
+					<td><form:input path="lastName" name="lastName" placeholder="Last Name" /></td>
 					<td><form:errors path="lastName" /></td>
 				</tr>
 				<tr>
 					<td>DoB</td>
-					<td><form:input path="dob" type="text" name="dob" /></td>
+					<td><form:input path="dob" type="text" name="dob" placeholder="yyyy-mm-dd" /></td>
 					<td><form:errors path="dob" /></td>
 				</tr>
 				<tr>
@@ -42,32 +43,33 @@
 				</tr>
 				<tr>
 					<td>Contact</td>
-					<td><form:input path="contact" type="text" name="contact" /></td>
+					<td><form:input path="contact" type="text" name="contact" placeholder="Contact"/></td>
 					<td><form:errors path="contact" /></td>
 				</tr>
 				<tr>
 					<td>Email</td>
-					<td><form:input path="email"  name="email" /></td>
+					<td><form:input path="email"  name="email" placeholder="ID@Domain"/></td>
 					<td><form:errors path="email" /></td>
 				</tr>
 				<tr>
 					<td>User ID</td>
-					<td><form:input path="userId"  name="userId" /></td>
+					<td><form:input path="userId"  name="userId" placeholder="User ID"/></td>
 					<td><form:errors path="userId" /></td>
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><form:input path="password"  name="password" /></td>
+					<td><form:input path="password" type="password" name="password" placeholder="Password"/></td>
 					<td><form:errors path="password" /></td>
 				</tr>
 				<tr>
 					<td>Confirm Password</td>
-					<td><form:input path="confirmpassword"  name="confirmpassword" /></td>
+					<td><form:input path="confirmpassword" type="password" name="confirmpassword" placceholder="Confirm Password" /></td>
 					<td><form:errors path="confirmpassword" /></td>
 				</tr>
 			</table>
+			<div>
 			<input type="submit" value="Submit" style="background-color: green" />
-
+			</div>
 		</form:form>
 		
 	</div>

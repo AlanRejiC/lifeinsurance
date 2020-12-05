@@ -10,12 +10,18 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 import com.cognizant.model.Insurance;
 import com.cognizant.model.Payment;
+
+import com.cognizant.model.Claim;
+
 import com.cognizant.model.User;
 import com.cognizant.service.PaymentService;
 import com.cognizant.service.UserService;
@@ -80,6 +86,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/getLoginPage", method = RequestMethod.POST)
+
 	public String getSuccess2(@Valid @ModelAttribute("user") User user, BindingResult result, ModelMap map) {
 		// userService.userValidation(user);
 		// System.out.println(user);
@@ -91,6 +98,7 @@ public class LoginController {
 			return "success";
 		}
 	}
+
 
 	@ModelAttribute("genderList")
 	public List<String> listGender() {

@@ -31,6 +31,7 @@
   <li><a href="">Term Premium calculator</a></li>
   <li><a href="/getLoginPage">Sign In</a></li>
   <li><a href="/getSignUpPage">Sign Up</a></li>
+  <li><a href="/getClaimPage">Apply for Insurance</a></li>
 </ul>
 </div>
 <h4>Types of Life Insurance</h4><br><br>
