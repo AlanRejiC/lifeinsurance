@@ -10,10 +10,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.cognizant.model.Claim;
 import com.cognizant.model.User;
 import com.cognizant.service.UserService;
 import com.cognizant.validate.RegistrationValidator;
@@ -84,7 +87,15 @@ public class LoginController {
                     return "success";
             }
     }
-	
+	@GetMapping(value="/getClaimPage")
+	public String getClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
+		return "claim";
+	}
+	@PostMapping(value="/getClaimPage")
+	public String postClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
+		map.addAttribute("success", "Insurance Claim was successfull");
+		return "claim";
+	}
 	@ModelAttribute("genderList")
 	public List<String> listGender() {
 	List<String> list = new ArrayList<String>();
