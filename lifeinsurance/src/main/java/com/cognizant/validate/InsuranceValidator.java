@@ -19,6 +19,7 @@ public class InsuranceValidator implements Validator {
 	@Override
 	public void validate(Object target, Errors errors) {
 		// TODO Auto-generated method stub
+		Insurance insurance =(Insurance) target;
 		ValidationUtils.rejectIfEmpty(errors, "custName","", "Name should not be blank");
 		ValidationUtils.rejectIfEmpty(errors, "custGender","", "Gender should not be blank");
 		ValidationUtils.rejectIfEmpty(errors, "custDob","", "Date of Birth cannot be blank");
