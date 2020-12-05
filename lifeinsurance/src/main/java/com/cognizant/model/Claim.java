@@ -8,11 +8,12 @@ public class Claim {
 	private LocalDate incurredDate;
 	private LocalDate reportedDate;
 	private LocalDate datePaid;
+	private LocalDate admitDate;
+	private LocalDate releaseDate;
 	private boolean status;
 	private double totalCharge;
 	private double preCharge;
 	private double postCharge;
-	
 	public String getClaimNumber() {
 		return claimNumber;
 	}
@@ -36,6 +37,18 @@ public class Claim {
 	}
 	public void setDatePaid(LocalDate datePaid) {
 		this.datePaid = datePaid;
+	}
+	public LocalDate getAdmitDate() {
+		return admitDate;
+	}
+	public void setAdmitDate(LocalDate admitDate) {
+		this.admitDate = admitDate;
+	}
+	public LocalDate getReleaseDate() {
+		return releaseDate;
+	}
+	public void setReleaseDate(LocalDate releaseDate) {
+		this.releaseDate = releaseDate;
 	}
 	public boolean isStatus() {
 		return status;
@@ -61,7 +74,6 @@ public class Claim {
 	public void setPostCharge(double postCharge) {
 		this.postCharge = postCharge;
 	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -69,7 +81,6 @@ public class Claim {
 		result = prime * result + ((claimNumber == null) ? 0 : claimNumber.hashCode());
 		return result;
 	}
-	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -89,9 +100,12 @@ public class Claim {
 	@Override
 	public String toString() {
 		return "Claim [claimNumber=" + claimNumber + ", incurredDate=" + incurredDate + ", reportedDate=" + reportedDate
-				+ ", datePaid=" + datePaid + ", status=" + status + ", totalCharge=" + totalCharge + ", preCharge="
-				+ preCharge + ", postCharge=" + postCharge + "]";
+				+ ", datePaid=" + datePaid + ", admitDate=" + admitDate + ", releaseDate=" + releaseDate + ", status="
+				+ status + ", totalCharge=" + totalCharge + ", preCharge=" + preCharge + ", postCharge=" + postCharge
+				+ "]";
 	}
+	
+	
 	
 	
 	
