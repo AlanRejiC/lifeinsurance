@@ -27,8 +27,10 @@
     </head>
     
     <body>
+    <form action="/getHomePage">
     <center>
-        <h1><i>Life Insurance</i></h1>
+        <h1><i>Your Available Balance is ${balance}</i></h1>
+        <h2>Please upload any documents if any</h2>
         <table>
             <tr>
             <td><label for="img">Choose image</label></td>
@@ -38,7 +40,7 @@
                 <td><img id="output" width="200" height="100" /></td></tr>
             <tr>
             <td><input type="button" id="button1" value="Upload" onclick="add_element_to_array();"></td>
-                <td><input type="button" id="button2" value="Proceed" onclick="display_array();"></td></tr>
+                <td><input type="submit" id="button2" value="Return to Home Page" onclick="/getHomePage"></td></tr>
             
             </table>
             
@@ -62,6 +64,6 @@
                 }
 
             </script>
-        
+        </form>
     </body>
 </html>

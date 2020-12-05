@@ -4,16 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Welcome Page</title>
+<title>Insert title here</title>
 </head>
 <body>
 <center>
 <h1>
-Your details are submitted successfully!
+<a href="/getPaymentPage">Click to proceed to payment Gateway</a>
 </h1>
-<h2>
-<a href="/getHomePage">Go to Home Page</a>
-</h2>
 </center>
 </body>
 </html>

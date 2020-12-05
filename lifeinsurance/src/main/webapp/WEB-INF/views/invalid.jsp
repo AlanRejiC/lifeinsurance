@@ -4,16 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Welcome Page</title>
+<title>Insert title here</title>
 </head>
 <body>
-<center>
-<h1>
-Your details are submitted successfully!
-</h1>
-<h2>
-<a href="/getHomePage">Go to Home Page</a>
-</h2>
-</center>
+<center><h2>You have entered Invalid Account Number</h2>
+<h2><a href="/getHomePage">Return to Home Page</a></h2></center>
 </body>
 </html>

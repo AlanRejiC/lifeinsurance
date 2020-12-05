@@ -45,6 +45,11 @@
 					<td><form:input path="pin" name="pin" /></td>
 					<td><form:errors path="pin" /></td>
 				</tr>
+				<tr>
+				<td>
+				<form:errors path="availableBalance"/>
+				</td>
+				<tr>
 			</table>
 			<input type="submit" value="Confirm to Pay" />
 		</form:form>

@@ -18,7 +18,7 @@ import com.cognizant.repository.PaymentRepo;
 public class PaymentService {
 
 	@Autowired
-	PaymentRepo paymentRepo;
+	private PaymentRepo paymentRepo;
 	
 	public Payment findCardNumber(int cardNo) {
 		return paymentRepo.getOne(cardNo);
@@ -35,6 +35,8 @@ public class PaymentService {
 	public boolean cardNumberValidation(Payment payment) {
 		boolean isValid = false;
 		Payment temp = findCardNumber(payment.getCardNo());
+		if(temp==null)
+			return false;
 		if (temp.getCardNo() == payment.getCardNo())
 			isValid = true;
 		return isValid;
@@ -43,6 +45,8 @@ public class PaymentService {
 	public boolean cardCvvValidation(Payment payment) {
 		boolean isValid = false;
 		Payment temp = findCardNumber(payment.getCardNo());
+		if(temp==null)
+			return false;
 		if (temp.getCvv() == (payment.getCvv()))
 			isValid = true;
 		return isValid;
@@ -51,6 +55,8 @@ public class PaymentService {
 	public boolean cardPinValidation(Payment payment) {
 		boolean isValid = false;
 		Payment temp = findCardNumber(payment.getCardNo());
+		if(temp==null)
+			return false;
 		if (temp.getPin() == payment.getPin())
 			isValid = true;
 		return isValid;
@@ -60,7 +66,8 @@ public class PaymentService {
 		
 		Policy policy = new Policy();
 		double balance = 0.0;
-		balance = payment.getAvailableBalance() - policy.getNetAmountPerYear();
+		double availBalance=paymentRepo.getOne((payment.getCardNo())).getAvailableBalance();
+		balance = availBalance - 1000;//policy.getNetAmountPerYear();
 		return balance;
 
 	}

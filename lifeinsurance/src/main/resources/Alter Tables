@@ -1,0 +1,7 @@
+alter tables 
+
+ alter table insurance_table add column cust_state varchar(30) not null;
+ alter table claim add column admit_date date not null;
+ alter table claim add column release_date date not null;
+ alter table payment add column pin INT NOT null;
+ 

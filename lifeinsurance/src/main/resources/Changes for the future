@@ -1,0 +1,11 @@
+Changes to be made for the future
+
+1 LoginController should be changes and register jsp to accomodate the security questions
+
+2 Payment Service has to include the net amount per year from paymentRepo - after creating paymentRepo
+
+3 Check the regex for password
+
+4 Style the jsps
+
+5 Direct the register and login page to homepage

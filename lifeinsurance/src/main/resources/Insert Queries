@@ -5,3 +5,12 @@
 insert into user values(10001,"Alan","Reji","Male","1998-01-24","9747583333","12345","12345","ark.dbz@gmail.com","How are you","fine","What was your first pet","Dog","What is your Moms Name","Preethi","customer");
 insert into user values(10000,"Manjunath","U","Male","1998-01-24","9747583333","12345","12345","1234@gmail.com","How are you","fine","What was your first pet","Dog","What is your Moms Name","Momo","admin");
 
+2 Policy Table
+
+insert into policy_table values(12345,"Child Policy","Secure your Child's future with our turn around benificial Child Policy",3,"1000");
+
+3 Payment
+
+insert into payment values(100002,"Alan",342,"2020-10-20","visa",100000,1234);
+
+
