@@ -26,12 +26,12 @@
 <div id="navigation_bar">
 <ul>
   <li><a  href="">Renewal</a></li>
-  <li><a href="">Claim</a></li>
+  <li><a href="/getClaimPage">Claim</a></li>
   <li><a href="">Become an Agent</a></li>
   <li><a href="">Term Premium calculator</a></li>
   <li><a href="/getLoginPage">Sign In</a></li>
   <li><a href="/getSignUpPage">Sign Up</a></li>
-  <li><a href="/getClaimPage">Apply for Insurance</a></li>
+  <li><a href="/getInsurancePage">Apply for Insurance</a></li>
 </ul>
 </div>
 <h4>Types of Life Insurance</h4><br><br>

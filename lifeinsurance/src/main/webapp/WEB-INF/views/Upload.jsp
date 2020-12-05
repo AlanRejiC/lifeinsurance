@@ -7,78 +7,61 @@
 <%@ page import = "org.apache.commons.fileupload.servlet.*" %>
 <%@ page import = "org.apache.commons.io.output.*" %>
 
-<%
-   File file ;
-   int maxFileSize = 5000 * 1024;
-   int maxMemSize = 5000 * 1024;
-   ServletContext context = pageContext.getServletContext();
-   String filePath = context.getInitParameter("file-upload");
-
-   // Verify the content type
-   String contentType = request.getContentType();
-   
-   if ((contentType.indexOf("multipart/form-data") >= 0)) {
-      DiskFileItemFactory factory = new DiskFileItemFactory();
-      // maximum size that will be stored in memory
-      factory.setSizeThreshold(maxMemSize);
-      
-      // Location to save data that is larger than maxMemSize.
-      factory.setRepository(new File("c:\\temp"));
-
-      // Create a new file upload handler
-      ServletFileUpload upload = new ServletFileUpload(factory);
-      
-      // maximum file size to be uploaded.
-      upload.setSizeMax( maxFileSize );
-      
-      try { 
-         // Parse the request to get file items.
-         List fileItems = upload.parseRequest(request);
-
-         // Process the uploaded file items
-         Iterator i = fileItems.iterator();
-
-         out.println("<html>");
-         out.println("<head>");
-         out.println("<title>JSP File upload</title>");  
-         out.println("</head>");
-         out.println("<body>");
-         
-         while ( i.hasNext () ) {
-            FileItem fi = (FileItem)i.next();
-            if ( !fi.isFormField () ) {
-               // Get the uploaded file parameters
-               String fieldName = fi.getFieldName();
-               String fileName = fi.getName();
-               boolean isInMemory = fi.isInMemory();
-               long sizeInBytes = fi.getSize();
+<html>
+    <head>
+    <style>
+        input,select{
+            color: #FFFFFF; 
+            font-family: Verdana; 
+            font-weight: bold; 
+            font-size: 24px; 
+            background-color:black;
+            margin: 5%;
+        }
+        body{
+            background-image: url(https://youthincmag.com/wp-content/uploads/2020/05/image2.jpg) ;
+            background-size: cover;
+            margin: 5%;
+        }
+        </style>
+    </head>
+    
+    <body>
+    <center>
+        <h1><i>Life Insurance</i></h1>
+        <table>
+            <tr>
+            <td><label for="img">Choose image</label></td>
+            <td><input type="file" id="img" name="img" accept="image/* " onchange="loadFile(event)"></td>
+               </tr>
+            <tr> <td>Uploaded Image  </td>
+                <td><img id="output" width="200" height="100" /></td></tr>
+            <tr>
+            <td><input type="button" id="button1" value="Upload" onclick="add_element_to_array();"></td>
+                <td><input type="button" id="button2" value="Proceed" onclick="display_array();"></td></tr>
             
-               // Write the file
-               if( fileName.lastIndexOf("\\") >= 0 ) {
-                  file = new File( filePath + 
-                  fileName.substring( fileName.lastIndexOf("\\"))) ;
-               } else {
-                  file = new File( filePath + 
-                  fileName.substring(fileName.lastIndexOf("\\")+1)) ;
-               }
-               fi.write( file ) ;
-               out.println("Uploaded Filename: " + filePath + 
-               fileName + "<br>");
-            }
-         }
-         out.println("</body>");
-         out.println("</html>");
-      } catch(Exception ex) {
-         System.out.println(ex);
-      }
-   } else {
-      out.println("<html>");
-      out.println("<head>");
-      out.println("<title>Servlet upload</title>");  
-      out.println("</head>");
-      out.println("<body>");
-      out.println("<p>No file uploaded</p>"); 
-      out.println("</body>");
-      out.println("</html>");
-   }
-%>
+            </table>
+            
+        <h2><div id="Result"></div></h2>
+        </center>
+            <script>
+                    var loadFile = function(event) {
+                        var image = document.getElementById('output');
+                        image.src = URL.createObjectURL(event.target.files[0]);
+                    };
+                var x = 0;
+                var array = Array();
+
+                function add_element_to_array()
+                {
+                     //array[x] = document.getElementById("artid").value;
+                    // alert("Element: " + array[x] + " Added at index " + x);
+                    document.getElementById("Result").innerHTML="File Uploaded Successfully";
+                     //x++;
+                     //document.getElementById("artid").value = "";
+                }
+
+            </script>
+        
+    </body>
+</html>

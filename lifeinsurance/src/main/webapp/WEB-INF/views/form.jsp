@@ -14,7 +14,7 @@
 <body>
 	<div align="center">
 		<form:form modelAttribute="insurance" method="POST"
-			action="/getPaymentPage">
+			action="getInsurancePage">
 			<center><h1>Insurance Application Form</h1></center>
 			<table>
 			<tr>
