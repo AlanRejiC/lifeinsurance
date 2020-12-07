@@ -12,6 +12,9 @@
 <title>Insurance Form page</title>
 </head>
 <body>
+<header class="header">
+<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
+</header>
 	<div align="center">
 		<form:form modelAttribute="insurance" method="POST" action="/getInsurancePage">
 			<center><h1>Insurance Application Form</h1></center>
@@ -139,5 +142,11 @@
 			<input type="submit" value="Payment"/>
 		</form:form>
 	</div>
+	<footer class="footer">
+		<p>
+			Life Insurance copyrights 2020<br> Locations <br> Connect
+			with us <br>
+		</p>
+	</footer>
 </body>
 </html>

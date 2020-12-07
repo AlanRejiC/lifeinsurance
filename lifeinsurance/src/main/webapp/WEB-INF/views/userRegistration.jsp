@@ -17,9 +17,7 @@
 </head>
 <body>
 	<header class="header">
-<center><h1>Life Insurance Management private Limited</h1></center>
-  
-
+<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
 </header>
 	<div align="center">
 	<h2>New User Registration</h2>

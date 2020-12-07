@@ -14,13 +14,16 @@
 <meta charset="ISO-8859-1">
 <title>Insurance Claim Submission</title>
 </head>
-<body style="background-color: lavender">
+<body>
+<header class="header">
+<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
+</header>
 	
 	<div align="center">
 		<h1>Insurance Claim Submission Form</h1>
 		<form:form action="/getClaimPage" method="POST" name="userRegister"
 			modelAttribute="claim">
-			<table style="width: 80%">
+			<table>
 				<tr>
 					<td>Old claim number</td>
 					<td><form:input path="claimNumber" type="text"
@@ -139,8 +142,14 @@
 			<h2><div>${success}</div></h2>
 		</form:form>
 <center>
-<h2><a href="/getHomePage">Go to Home Page</a></h2>
+<h4><a href="/getHomePage">Go to Home Page</a></h4>
 </center>
 	</div>
+	<footer class="footer">
+		<p>
+			Life Insurance copyrights 2020<br> Locations <br> Connect
+			with us <br>
+		</p>
+	</footer>
 </body>
 </html>
