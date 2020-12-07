@@ -13,18 +13,17 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>User Login Page</title>
+<title>Admin Login Page</title>
 </head>
 <body>
 <header class="header">
-<center><h1>User Login Page</h1></center>
+<center><h1>Admin Login Page</h1></center>
 </header>
 	<div align="center">
-		<form:form action="/getLoginPage" method="post" modelAttribute="user">
+		<form:form action="/getAdminLoginPage" method="post" modelAttribute="user">
 			<table>
-			
 				<tr>
-					<td>Enter User ID:</td>
+					<td>Enter Admin ID:</td>
 					<td><form:input path="userId" name="userId" /></td>
 					<td><form:errors path="userId"></form:errors></td>
 				</tr>
@@ -38,9 +37,7 @@
 			<br>
 			<input type="submit" value="Submit" />
 			<h3>${invalid}</h3>
-			<footer>
-				<a href="/getAdminLoginPage">Click here for Admin login Page</a>
-			</footer>
+			<h3>${invalidRole}</h3>
 		</form:form>
 	</div>
 </body>
