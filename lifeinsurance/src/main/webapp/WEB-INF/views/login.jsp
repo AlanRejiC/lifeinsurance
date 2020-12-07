@@ -8,7 +8,6 @@
 <html>
 <style>
 <%@ include file="/WEB-INF/styles/style.css"%>
-
 </style>
 
 <head>
@@ -17,9 +16,10 @@
 </head>
 <body>
 <header class="header">
-<center><h1>User Login Page</h1></center>
+	<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
 </header>
 	<div align="center">
+		<center><h2>User Login Page</h2></center>
 		<form:form action="/getLoginPage" method="post" modelAttribute="user">
 			<table>
 			
@@ -36,12 +36,14 @@
 				</tr>
 			</table>
 			<br>
-			<input type="submit" value="Submit" />
+			<input type="submit" value="Submit" id="submitbutton"/>
 			<h3>${invalid}</h3>
-			<footer>
-				<a href="/getAdminLoginPage">Click here for Admin login Page</a>
-			</footer>
+				<h3><a id="adminlink" href="/getAdminLoginPage" >Click here for Admin login</a></h3>
 		</form:form>
 	</div>
 </body>
+<footer class="footer">
+  <p>Life Insurance copyrights 2020<br>
+  Locations <br> Connect with us <br></p>
+</footer>
 </html>

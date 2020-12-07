@@ -67,3 +67,17 @@
 	position: relative;
 	color: #FFFFFF;
 }
+
+#submitbutton {
+	background-color:#00802b;
+}
+
+#adminlink, #userlink {
+	color: #4d0000;
+}
+#premiumlink {
+	color:#008000;
+}
+#policylink {
+	color:#ff8000;
+}
