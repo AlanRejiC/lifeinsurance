@@ -13,8 +13,7 @@
 </head>
 <body>
 	<div align="center">
-		<form:form modelAttribute="insurance" method="POST"
-			action="getInsurancePage">
+		<form:form modelAttribute="insurance" method="POST" action="/getInsurancePage">
 			<center><h1>Insurance Application Form</h1></center>
 			<table>
 			<tr>
@@ -34,7 +33,7 @@
 					</tr>
 					<tr>
 						<td>Date of Birth</td>
-						<td><form:input path="custDob" type="text" name="custDob" /></td>
+						<td><form:input path="custDob" type="text" name="custDob" placeholder="yyyy-MM-dd"/></td>
 						<td><form:errors path="custDob" /></td>
 					</tr>
 					<tr>
@@ -49,7 +48,7 @@
 					<tr>
 						<td>Residence Date</td>
 						<td><form:input path="custResidenceDate" type="text"
-								name="custResidenceDate" /></td>
+								name="custResidenceDate" placeholder="yyyy-MM-dd"/></td>
 						<td><form:errors path="custResidenceDate"></form:errors></td>
 					</tr>
 					<tr>
@@ -109,7 +108,7 @@
 					<tr>
 						<td>Diagnosis Date</td>
 						<td><form:input path="diagnosisDate" type="text"
-								name="diagnosisDate" /></td>
+								name="diagnosisDate" placeholder="yyyy-MM-dd"/></td>
 						<td><form:errors path="diagnosisDate" /></td>
 					</tr>
 					<tr>
@@ -130,7 +129,7 @@
 					<tr>
 						<td>Policy Mature Date</td>
 						<td><form:input path="matureDate" type="text"
-								name="matureDate" /></td>
+								name="matureDate" placeholder="yyyy-MM-dd"/></td>
 						<td><form:errors path="matureDate" /></td>
 					</tr>
 				</table>
