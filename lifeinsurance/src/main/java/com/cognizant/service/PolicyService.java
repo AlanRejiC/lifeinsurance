@@ -31,6 +31,10 @@ public class PolicyService {
 	public void savePolicy(Policy policy) {
 		policyRepo.save(policy);
 	}
+	
+	public void deletePolicy(Policy policy) {
+		policyRepo.delete(policy);
+	}
 
 	public boolean policyNameValiadtion(Policy policy) {
 		boolean isValid = false;
