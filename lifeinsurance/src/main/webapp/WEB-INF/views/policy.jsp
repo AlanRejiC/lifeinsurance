@@ -42,7 +42,7 @@
             	<td>${item.tot_deductable}</td>
             	<td>${item.totCoInsurance}</td>
             	<td>${item.interestRate}</td>
-            	<td><a href="/policyEdit?policyNumber=${item.policyNumber}">Edit/Delete</a></td>
+            	<td><a href="/policyEdit?policyName=${item.policyName}">Edit/Delete</a></td>
             	</tr>
             	</c:forEach>
             	
