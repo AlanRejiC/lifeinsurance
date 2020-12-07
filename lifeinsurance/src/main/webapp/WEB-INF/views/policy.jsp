@@ -15,7 +15,7 @@
            <br>
            <br>
            <br>
-           <h1>Menu Items</h1>
+           <h1>Policies</h1>
            <br>
            <br>
            <br>
@@ -33,15 +33,16 @@
                	   <td><label for="edit"><b>Action</b></label></td>
                </tr>
                
-            	<c:forEach var="item" items="${menuItemList}">
+            	<c:forEach var="item" items="${policyList}">
             	<tr>
-            	<td>${item.name}</td>
-            	<td>${item.price}</td>
-            	<td>${item.active}</td>
-            	<td>${item.dateOfLaunch}</td>
-            	<td>${item.category}</td>
-            	<td>${item.freeDelivery}</td>
-            	<td><a href="/show-edit-menu-item?menuItemId=${item.id}">Edit</a></td>
+            	<td>${item.policyNumber}</td>
+            	<td>${item.policyName}</td>
+            	<td>${item.policyDescription}</td>
+            	<td>${item.netAmountPerYear}</td>
+            	<td>${item.tot_deductable}</td>
+            	<td>${item.totCoInsurance}</td>
+            	<td>${item.interestRate}</td>
+            	<td><a href="/policyEdit?policyNumber=${item.policyNumber}">Edit/Delete</a></td>
             	</tr>
             	</c:forEach>
             	
