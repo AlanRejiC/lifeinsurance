@@ -8,46 +8,50 @@
 <!DOCTYPE HTML>
     <html>
        <head>
-            <style>
-			<%@ include file="style.css" %>
-			</style>
        </head>
        <body>
            <div class="header">
 
            </div>
+           <center>
             <br>
             <br>
             <br>
             <br>
             <br>
             <br>
-            <h1>Edit Menu Item</h1>
-            <table>
-            <form:form modelAttribute="policy" method="GET" action="/policySave">
+            <h1>Edit Policy</h1>
+            <form:form modelAttribute="policy" method="GET" action="/getPolicySave">
+				<table>
                 <tr>
                 <td><label for="policyNumber"><b>Policy Number</b></label></td>
-                   <td></td>
                    <td><label for="policyName"><b>Policy Name</b></label></td>
                    <td><label for="policyDescription"><b>Description</b></label></td>
+                   <td><label for="policyTerm"><b>Policy Term</b></label></td>
                    <td><label for="netAmountPerYear"><b>Net Amount Per Year</b></label></td>
-                   <td><label for="tot_deductable"><b>Total Deductible</b></label></td>
+                   <td><label for="totDeductible"><b>Total Deductible</b></label></td>
                    <td><label for="totCoInsurance"><b>Total Co-Insurance</b></label></td>
-               	   <td><label for="interestRate"><b>Interest Rate</b></label>
+               	   <td><label for="interestRate"><b>Interest Rate</b></label><td>
                     </tr>
-                    <tr>
-                    <form:input path="policyNumber" type="text" value="${item.policyNumber}" />
-                    <form:input path="policyName" type="text" value="${item.policyName}" />
-                    <form:input path="policyDescription" type="text" value="${item.policyDescription}" />
-                    <form:input path="netAmountPerYear" type="text" value="${item.netAmountPerYear}" />
-                    <form:input path="tot_deductable" type="text" value="${item.tot_deductable}" />
-                    <form:input path="totCoInsurance" type="text" value="${item.totCoInsurance}" />
-                     <form:input path="interestRate" type="text" value="${item.interestRate}" />
-					</tr>                  
-                    <input type="submit" value="Save">
-                    </form:form>
-                    <center><td><input type="Delete" id="button2" value="Return to Home Page" onclick="/policyDelete"></td></tr></center>
-                </table>
 
+                    <tr>
+                    <td><form:input path="policyNumber" type="text" value="${item.policyNumber}" /></td>
+                    <td><form:input path="policyName" type="text" value="${item.policyName}" /></td>
+                    <td><form:input path="policyDescription" type="text" value="${item.policyDescription}" /></td>
+                    <td><form:input path="policyTerm" type="text" value="${item.policyTerm}" /></td>
+                    <td><form:input path="netAmountPerYear" type="text" value="${item.netAmountPerYear}" /></td>
+                    <td><form:input path="totDeductible" type="text" value="${item.totDeductible}" /></td>
+                    <td><form:input path="totCoInsurance" type="text" value="${item.totCoInsurance}" /></td>
+                     <td><form:input path="interestRate" type="text" value="${item.interestRate}" /></td>
+					</tr>    
+					<tr>    
+					<td/>
+					<td/>
+					<td/>          
+                    <td><input type="submit" value="Save"></td>
+                    </tr>
+                    </form:form>
+                </table>
+</center>
         </body>
     </html>

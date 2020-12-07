@@ -23,7 +23,7 @@ public class PolicyController {
 
 	@GetMapping(value = "/getPolicyPage")
 	public String getPolicyPage(@ModelAttribute("policy") Policy policy, ModelMap map) {
-		map.addAttribute("policy",policyService.getAll());
+		map.addAttribute("policyList",policyService.getAll());
 		return "policy";
 	}
 	
@@ -48,13 +48,23 @@ public class PolicyController {
 	
 	//delete
 	@GetMapping(value = "/getPolicyDelete")
-	public String showPolicyDelete(@ModelAttribute("policy") Policy policy, ModelMap map) {
-		policyService.deletePolicy(policy);
+	public String showPolicyDelete(@RequestParam String policyName,@ModelAttribute("policy") Policy policy, ModelMap map) {
+		System.out.println(policy);
+		System.out.println("hee");
+		try {
+		Policy policy1 = policyService.findPolicyName(policyName);
+		policyService.deletePolicy(policy1);
+		return "policyDelete" ;
+		}
+		catch(Exception e)
+		{
+			return "invalidDelete";
+		}
 		/*@SuppressWarnings("unused")
 		List<Policy> pList = new ArrayList<>();
 		pList=policyService.getAll();
 		map.addAttribute(policy);*/
-		return "policyDelete" ;
+		
 		
 	}
 	
