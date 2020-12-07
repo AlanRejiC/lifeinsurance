@@ -18,7 +18,7 @@ public class Claim {
 
 	@Id
 	@Column(name = "claim_number")
-	private String claimNumber;
+	private int claimNumber;
 	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name = "incurred_date")
 	private LocalDate incurredDate;
@@ -35,13 +35,16 @@ public class Claim {
 	@Column(name = "release_date")
 	private LocalDate releaseDate;
 	@Column(name = "status")
-	private boolean status;
+	private String status;
 	@Column(name = "total_charge")
 	private double totalCharge;
 	@Column(name = "pre_charge")
 	private double preCharge;
 	@Column(name = "post_charge")
 	private double postCharge;
+	@Column(name="cust_name")
+	private String custName;
+	
 
 	public String getClaimNumber() {
 		return claimNumber;
