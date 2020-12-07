@@ -46,11 +46,11 @@ public class Claim {
 	private String custName;
 	
 
-	public String getClaimNumber() {
+	public int getClaimNumber() {
 		return claimNumber;
 	}
 
-	public void setClaimNumber(String claimNumber) {
+	public void setClaimNumber(int claimNumber) {
 		this.claimNumber = claimNumber;
 	}
 
@@ -94,11 +94,11 @@ public class Claim {
 		this.releaseDate = releaseDate;
 	}
 
-	public boolean isStatus() {
+	public String isStatus() {
 		return status;
 	}
 
-	public void setStatus(boolean status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
@@ -126,11 +126,27 @@ public class Claim {
 		this.postCharge = postCharge;
 	}
 
+	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((claimNumber == null) ? 0 : claimNumber.hashCode());
+		result = prime * result + ((admitDate == null) ? 0 : admitDate.hashCode());
+		result = prime * result + claimNumber;
+		result = prime * result + ((custName == null) ? 0 : custName.hashCode());
+		result = prime * result + ((datePaid == null) ? 0 : datePaid.hashCode());
+		result = prime * result + ((incurredDate == null) ? 0 : incurredDate.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(postCharge);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(preCharge);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((releaseDate == null) ? 0 : releaseDate.hashCode());
+		result = prime * result + ((reportedDate == null) ? 0 : reportedDate.hashCode());
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
+		temp = Double.doubleToLongBits(totalCharge);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
 
@@ -143,10 +159,48 @@ public class Claim {
 		if (getClass() != obj.getClass())
 			return false;
 		Claim other = (Claim) obj;
-		if (claimNumber == null) {
-			if (other.claimNumber != null)
+		if (admitDate == null) {
+			if (other.admitDate != null)
 				return false;
-		} else if (!claimNumber.equals(other.claimNumber))
+		} else if (!admitDate.equals(other.admitDate))
+			return false;
+		if (claimNumber != other.claimNumber)
+			return false;
+		if (custName == null) {
+			if (other.custName != null)
+				return false;
+		} else if (!custName.equals(other.custName))
+			return false;
+		if (datePaid == null) {
+			if (other.datePaid != null)
+				return false;
+		} else if (!datePaid.equals(other.datePaid))
+			return false;
+		if (incurredDate == null) {
+			if (other.incurredDate != null)
+				return false;
+		} else if (!incurredDate.equals(other.incurredDate))
+			return false;
+		if (Double.doubleToLongBits(postCharge) != Double.doubleToLongBits(other.postCharge))
+			return false;
+		if (Double.doubleToLongBits(preCharge) != Double.doubleToLongBits(other.preCharge))
+			return false;
+		if (releaseDate == null) {
+			if (other.releaseDate != null)
+				return false;
+		} else if (!releaseDate.equals(other.releaseDate))
+			return false;
+		if (reportedDate == null) {
+			if (other.reportedDate != null)
+				return false;
+		} else if (!reportedDate.equals(other.reportedDate))
+			return false;
+		if (status == null) {
+			if (other.status != null)
+				return false;
+		} else if (!status.equals(other.status))
+			return false;
+		if (Double.doubleToLongBits(totalCharge) != Double.doubleToLongBits(other.totalCharge))
 			return false;
 		return true;
 	}
