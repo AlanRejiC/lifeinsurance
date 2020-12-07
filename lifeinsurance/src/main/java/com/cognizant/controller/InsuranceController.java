@@ -55,14 +55,25 @@ public class InsuranceController {
 	public String postClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
 		System.out.println("/n/n/n/n/nInside post page/n/n/n/n");
 		Insurance insurance=claimService.findUser(claim.getCustName());
+		
 		Policy policy=claimService.findTotDeductible(insurance.getPolicyName());
 		map.addAttribute("totDeductible", policy.getTotDeductible());
 		map.addAttribute("totCoInsurance", policy.getTotCoInsurance());
-		map.addAttribute("totExcludedAmt",policy.getNetAmountPerYear()*policy.getPolicyTerm()-claim.getTotalCharge());
-		map.addAttribute("totExcludedAmt",claim.getTotalCharge()-policy.getNetAmountPerYear()*policy.getPolicyTerm());
+		if(policy.getNetAmountPerYear()*policy.getPolicyTerm()-claim.getTotalCharge()>=0)
+		{
+		map.addAttribute("totExcludedAmt",(policy.getNetAmountPerYear()*policy.getPolicyTerm())-claim.getTotalCharge());
+		map.addAttribute("totExceededAmt",0);
+		}
+		else
+		{
+		map.addAttribute("totExceededAmt",claim.getTotalCharge()-(policy.getNetAmountPerYear()*policy.getPolicyTerm()));
+		map.addAttribute("totExcludedAmt",0);
+		}
 		map.addAttribute("totBenefit",policy.getNetAmountPerYear()*policy.getPolicyTerm());
 		map.addAttribute("Status", "Requested");
 		map.addAttribute("success", "Insurance Claim was successfull");
+		claim.setStatus("requested");
+		claimService.saveClaim(claim);
 		return "claim";
 	}
 	
@@ -71,14 +82,6 @@ public class InsuranceController {
 	
 	
 	
-	@ModelAttribute("claimStatus")
-	public List<String> claimStatus() {
-		List<String> list = new ArrayList<String>();
-		list.add("Requested");
-		list.add("Approved");
-		list.add("Rejected");
-		return list;
-	}
 
 	@ModelAttribute("genderList")
 	public List<String> listGender() {

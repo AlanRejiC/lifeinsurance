@@ -15,7 +15,7 @@
 <title>Insurance Claim Submission</title>
 </head>
 <body style="background-color: lavender">
-	<div>${success}</div>
+	
 	<div align="center">
 		<h1>Insurance Claim Submission Form</h1>
 		<form:form action="/getClaimPage" method="POST" name="userRegister"
@@ -26,6 +26,12 @@
 					<td><form:input path="claimNumber" type="text"
 							name="claimNumber" /></td>
 					<td><form:errors path="claimNumber" /></td>
+				</tr>
+				<tr>
+					<td>Customer Name</td>
+					<td><form:input path="custName" type="text"
+							name="custName" /></td>
+					<td><form:errors path="custName" /></td>
 				</tr>
 				<tr>
 					<td>Incurred date</td>
@@ -46,7 +52,7 @@
 				</tr>
 				<tr>
 					<td>Date of admission</td>
-					<td><form:select path="admitDate" type="text" name="admitDate" /></td>
+					<td><form:input path="admitDate" type="text" name="admitDate" /></td>
 					<td><form:errors path="admitDate"></form:errors></td>
 				</tr>
 				<tr>
@@ -56,23 +62,27 @@
 					<td><form:errors path="releaseDate" /></td>
 				</tr>
 				<tr>
-					<td>Claim Status</td>
-					<td><form:select path="status" name="status" items="${claimStatus}"/></td>
-					<td><form:errors path="status" /></td>
-				</tr>
-				<tr>
 					<td>Total Charges</td>
 					<td><form:input path="totalCharge" name="totalCharge" /></td>
 					<td><form:errors path="totalCharge" /></td>
 				</tr>
 
 
-
+				<tr>
+					<td>Total pre-hospital charges</td>
+					<td><form:input path="preCharge" name="preCharge" /></td>
+					<td><form:errors path="preCharge" /></td>
+				</tr>
+				<tr>
+					<td>Total post-hospital charges</td>
+					<td><form:input path="postCharge" name="postCharge" /></td>
+					<td><form:errors path="postCharge" /></td>
+				</tr>
 
 
 				<tr>
 					<td>Total deductible paid</td>
-					<td><form:input type="text" name="name" value="${totDeductible}" /></td>
+					<td>${totDeductible}</td>
 				</tr>
 				<tr>
 					<td>Total co-insurance amount</td>
@@ -93,24 +103,44 @@
 
 
 
+		<center>
+<td><label for="img">Choose image</label></td>
+            <td><input type="file" id="img" name="img" accept="image/* " onchange="loadFile(event)"></td>
+               </tr>
+            <tr> <td>Uploaded Image  </td>
+                <td><img id="output" width="200" height="100" /></td></tr>
+            <tr>
+           
+            
+        <h2><div id="Result"></div></h2>
+        </center>
+            <script>
+                    var loadFile = function(event) {
+                        var image = document.getElementById('output');
+                        image.src = URL.createObjectURL(event.target.files[0]);
+                    };
+                var x = 0;
+                var array = Array();
+
+                function add_element_to_array()
+                {
+                     //array[x] = document.getElementById("artid").value;
+                    // alert("Element: " + array[x] + " Added at index " + x);
+                    document.getElementById("Result").innerHTML="File Uploaded Successfully";
+                     //x++;
+                     //document.getElementById("artid").value = "";
+                }
+
+            </script>
 
 
-				<tr>
-					<td>Total pre-hospital charges</td>
-					<td><form:input path="preCharge" name="preCharge" /></td>
-					<td><form:errors path="preCharge" /></td>
-				</tr>
-				<tr>
-					<td>Total post-hospital charges</td>
-					<td><form:input path="postCharge" name="postCharge" /></td>
-					<td><form:errors path="postCharge" /></td>
-				</tr>
 			</table>
 			<input type="submit" value="Submit" style="background-color: green" />
-
+			<h2><div>${success}</div></h2>
 		</form:form>
-
-
+<center>
+<h2><a href="/getHomePage">Go to Home Page</a></h2>
+</center>
 	</div>
 </body>
 </html>

@@ -32,6 +32,10 @@ public class ClaimService {
 		return policyRepo.getOne(policyName);
 	}
 	
+	public void saveClaim(Claim claim)
+	{
+		claimRepo.save(claim);
+	}
 	
 	
 //	public float findTotDeductible(String custName) {
