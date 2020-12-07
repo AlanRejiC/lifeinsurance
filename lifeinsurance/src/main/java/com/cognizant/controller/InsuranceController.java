@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cognizant.model.Claim;
+import com.cognizant.model.Policy;
 import com.cognizant.model.Insurance;
 import com.cognizant.model.Payment;
+import com.cognizant.service.ClaimService;
 import com.cognizant.service.InsuranceService;
 import com.cognizant.service.PaymentService;
 import com.cognizant.validate.InsuranceValidator;
@@ -32,6 +34,9 @@ public class InsuranceController {
 	private InsuranceService insuranceService;
 
 	@Autowired
+	private ClaimService claimService;
+	
+	@Autowired
 	private PaymentService paymentService;
 
 	@Autowired
@@ -42,13 +47,37 @@ public class InsuranceController {
 
 	@GetMapping(value = "/getClaimPage")
 	public String getClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
+		System.out.println("/n/n/n/n/nInside get page/n/n/n/n");
 		return "claim";
 	}
 
 	@PostMapping(value = "/getClaimPage")
 	public String postClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
+		System.out.println("/n/n/n/n/nInside post page/n/n/n/n");
+		Insurance insurance=claimService.findUser(claim.getCustName());
+		Policy policy=claimService.findTotDeductible(insurance.getPolicyName());
+		map.addAttribute("totDeductible", policy.getTotDeductible());
+		map.addAttribute("totCoInsurance", policy.getTotCoInsurance());
+		map.addAttribute("totExcludedAmt",policy.getNetAmountPerYear()*policy.getPolicyTerm()-claim.getTotalCharge());
+		map.addAttribute("totExcludedAmt",claim.getTotalCharge()-policy.getNetAmountPerYear()*policy.getPolicyTerm());
+		map.addAttribute("totBenefit",policy.getNetAmountPerYear()*policy.getPolicyTerm());
+		map.addAttribute("Status", "Requested");
 		map.addAttribute("success", "Insurance Claim was successfull");
 		return "claim";
+	}
+	
+	
+	
+	
+	
+	
+	@ModelAttribute("claimStatus")
+	public List<String> claimStatus() {
+		List<String> list = new ArrayList<String>();
+		list.add("Requested");
+		list.add("Approved");
+		list.add("Rejected");
+		return list;
 	}
 
 	@ModelAttribute("genderList")

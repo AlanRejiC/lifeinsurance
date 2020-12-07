@@ -1,32 +1,43 @@
 package com.cognizant.service;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cognizant.model.Claim;
+import com.cognizant.model.Insurance;
+import com.cognizant.model.User;
+import com.cognizant.model.Policy;
 import com.cognizant.repository.ClaimRepo;
-
+import com.cognizant.repository.PolicyRepo;
+import com.cognizant.repository.InsuranceRepo;
 @Service
 public class ClaimService {
+	
+	@Autowired
+	private ClaimRepo claimRepo;
+	@Autowired
+	private PolicyRepo policyRepo;
 
 	@Autowired
-	ClaimRepo claimRepo;
+	private InsuranceRepo insuranceRepo;
 	
-	public Claim getClaim(int claimNumber)
+	public Insurance findUser(String custName)
 	{
-		return claimRepo.getOne(claimNumber);
+		return insuranceRepo.getOne(custName);
 	}
 	
-	public void saveClaim(Claim claim)
+	public Policy findTotDeductible(String policyName)
 	{
-		claimRepo.save(claim);
+		return policyRepo.getOne(policyName);
 	}
 	
-	public List<Claim> getAll()
-	{
-		return claimRepo.findAll();
-	}
+	
+	
+//	public float findTotDeductible(String custName) {
+//		policyRepo.
+//		return 0;
+//		
+//	}
 	
 }

@@ -57,7 +57,7 @@
 				</tr>
 				<tr>
 					<td>Claim Status</td>
-					<td><form:input path="status" name="status" /></td>
+					<td><form:select path="status" name="status" items="${claimStatus}"/></td>
 					<td><form:errors path="status" /></td>
 				</tr>
 				<tr>
@@ -72,23 +72,23 @@
 
 				<tr>
 					<td>Total deductible paid</td>
-					<!--<td><form:input path="totalCharge"  name="totalCharge" /></td>
-					<td><form:errors path="totalCharge" /></td>-->
+					<td><form:input type="text" name="name" value="${totDeductible}" /></td>
 				</tr>
 				<tr>
 					<td>Total co-insurance amount</td>
-					<!--<td><form:input path="totalCharge"  name="totalCharge" /></td>
-					<td><form:errors path="totalCharge" /></td>-->
+					<td>${totCoInsurance}</td>
 				</tr>
 				<tr>
 					<td>Total excluded amount</td>
-					<!--<td><form:input path="totalCharge"  name="totalCharge" /></td>
-					<td><form:errors path="totalCharge" /></td>-->
+					<td>${totExcludedAmt}</td>
+				</tr>
+				<tr>
+					<td>Total exceeded amount</td>
+					<td>${totExceededAmt}</td>
 				</tr>
 				<tr>
 					<td>Total benefit paid</td>
-					<!--<td><form:input path="totalCharge"  name="totalCharge" /></td>
-					<td><form:errors path="totalCharge" /></td>-->
+					<td>${totBenefit}</td>
 				</tr>
 
 
