@@ -1,7 +1,8 @@
+
 @charset "ISO-8859-1";
 
 .header {
-	background-color: #1B315B;
+	background-color: #241B5B;
 	height: 10%;
 	width: 100%;
 	align-content: center;
@@ -9,43 +10,60 @@
 	margin-left: 0;
 }
 
+h1 {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 25px;
+	letter-spacing: 1px;
+	word-spacing: 1px;
+	color: #FFFFFF;
+	font-weight: normal;
+	text-decoration: none;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+}
+
 #navigation_bar {
 	background: #0099CC;
 	color: #FFF;
 	height: 45px;
-	padding-left: 18px;
+	padding-left: 0px;
 	border-radius: 10px;
 }
+
 #navigation_bar ul, #navigation_bar li {
 	margin: 0 auto;
 	padding: 0;
 	list-style: none
 }
+
 #navigation_bar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
 }
+
 #navigation_bar li {
 	float: left;
 }
 
 #navigation_bar li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
 
 #navigation_bar li a:hover {
-  background-color: #111;
+	background-color: #111;
 }
 
 .footer {
-	background-color: #4983F4;
+	background-color: #241B5B;
 	height: 10%;
 	position: relative;
+	color: #FFFFFF;
 }

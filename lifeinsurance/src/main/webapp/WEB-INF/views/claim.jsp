@@ -7,19 +7,7 @@
 <!DOCTYPE html>
 <html>
 <style>
-<%@
-include
- 
-file
-="/
-WEB-INF
-/
-styles
-/
-style
-.css
-"%
->
+<%@include file="/WEB-INF/styles/style.css"%>
 </style>
 
 <head>
