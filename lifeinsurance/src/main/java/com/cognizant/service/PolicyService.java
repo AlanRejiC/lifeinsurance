@@ -19,8 +19,8 @@ public class PolicyService {
 	@Autowired
 	PolicyRepo policyRepo;
 
-	public Policy findPolicyNo(int policyNumber) {
-		return policyRepo.getOne(policyNumber);
+	public Policy findPolicyName(String policyName) {
+		return policyRepo.getOne(policyName);
 	}
 
 	public List<Policy> getAll() {
@@ -32,13 +32,13 @@ public class PolicyService {
 		policyRepo.save(policy);
 	}
 
-	public boolean policyNumberValiadtion(Policy policy) {
+	public boolean policyNameValiadtion(Policy policy) {
 		boolean isValid = false;
-		Policy temp = findPolicyNo(policy.getPolicyNumber());
+		Policy temp = findPolicyName(policy.getPolicyName());
 		if (temp == null)
 			return false;
 
-		if (temp.getPolicyNumber() == policy.getPolicyNumber())
+		if (temp.getPolicyName() == policy.getPolicyName())
 			isValid = true;
 
 		return isValid;

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.cognizant.model.Policy;
 
 @Repository
-public interface PolicyRepo extends JpaRepository<Policy, Integer> {
+public interface PolicyRepo extends JpaRepository<Policy, String>{
 
 }

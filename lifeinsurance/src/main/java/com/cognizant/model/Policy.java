@@ -11,10 +11,10 @@ import javax.persistence.*;
 @Table(name = "policy_table")
 public class Policy {
 	@Id
-	@Column(name = "policy_number")
-	private int policyNumber;
 	@Column(name = "policy_name")
 	private String policyName;
+	@Column(name = "policy_number")
+	private int policyNumber;
 	@Column(name = "policy_description")
 	private String policyDescription;
 	@Column(name = "net_amount_per_year")
