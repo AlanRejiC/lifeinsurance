@@ -12,19 +12,18 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>User Login Page</title>
+<title>Admin Login Page</title>
 </head>
 <body>
 <header class="header">
 	<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
 </header>
 	<div align="center">
-		<center><h2>User Login Page</h2></center>
-		<form:form action="/getLoginPage" method="post" modelAttribute="user">
+		<center><h2>Admin Login Page</h2></center>
+		<form:form action="/getAdminLoginPage" method="post" modelAttribute="user">
 			<table>
-			
 				<tr>
-					<td>Enter User ID:</td>
+					<td>Enter Admin ID:</td>
 					<td><form:input path="userId" name="userId" /></td>
 					<td><form:errors path="userId"></form:errors></td>
 				</tr>
@@ -38,7 +37,7 @@
 			<br>
 			<input type="submit" value="Submit" id="submitbutton"/>
 			<h3>${invalid}</h3>
-				<h3><a id="adminlink" href="/getAdminLoginPage" >Click here for Admin login</a></h3>
+			<h3>${invalidRole}</h3>
 		</form:form>
 	</div>
 </body>

@@ -18,7 +18,9 @@ public class Claim {
 
 	@Id
 	@Column(name = "claim_number")
-	private int claimNumber;
+	private String claimNumber;
+	@Column(name = "cust_name")
+	private String custName;
 	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name = "incurred_date")
 	private LocalDate incurredDate;
@@ -42,15 +44,12 @@ public class Claim {
 	private double preCharge;
 	@Column(name = "post_charge")
 	private double postCharge;
-	@Column(name="cust_name")
-	private String custName;
-	
 
-	public int getClaimNumber() {
+	public String getClaimNumber() {
 		return claimNumber;
 	}
 
-	public void setClaimNumber(int claimNumber) {
+	public void setClaimNumber(String claimNumber) {
 		this.claimNumber = claimNumber;
 	}
 
@@ -93,8 +92,15 @@ public class Claim {
 	public void setReleaseDate(LocalDate releaseDate) {
 		this.releaseDate = releaseDate;
 	}
+	public String getCustName() {
+		return custName;
+	}
 
-	public String isStatus() {
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+
+	public String getStatus() {
 		return status;
 	}
 
@@ -126,27 +132,11 @@ public class Claim {
 		this.postCharge = postCharge;
 	}
 
-	
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((admitDate == null) ? 0 : admitDate.hashCode());
-		result = prime * result + claimNumber;
-		result = prime * result + ((custName == null) ? 0 : custName.hashCode());
-		result = prime * result + ((datePaid == null) ? 0 : datePaid.hashCode());
-		result = prime * result + ((incurredDate == null) ? 0 : incurredDate.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(postCharge);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(preCharge);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((releaseDate == null) ? 0 : releaseDate.hashCode());
-		result = prime * result + ((reportedDate == null) ? 0 : reportedDate.hashCode());
-		result = prime * result + ((status == null) ? 0 : status.hashCode());
-		temp = Double.doubleToLongBits(totalCharge);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((claimNumber == null) ? 0 : claimNumber.hashCode());
 		return result;
 	}
 
@@ -159,48 +149,10 @@ public class Claim {
 		if (getClass() != obj.getClass())
 			return false;
 		Claim other = (Claim) obj;
-		if (admitDate == null) {
-			if (other.admitDate != null)
+		if (claimNumber == null) {
+			if (other.claimNumber != null)
 				return false;
-		} else if (!admitDate.equals(other.admitDate))
-			return false;
-		if (claimNumber != other.claimNumber)
-			return false;
-		if (custName == null) {
-			if (other.custName != null)
-				return false;
-		} else if (!custName.equals(other.custName))
-			return false;
-		if (datePaid == null) {
-			if (other.datePaid != null)
-				return false;
-		} else if (!datePaid.equals(other.datePaid))
-			return false;
-		if (incurredDate == null) {
-			if (other.incurredDate != null)
-				return false;
-		} else if (!incurredDate.equals(other.incurredDate))
-			return false;
-		if (Double.doubleToLongBits(postCharge) != Double.doubleToLongBits(other.postCharge))
-			return false;
-		if (Double.doubleToLongBits(preCharge) != Double.doubleToLongBits(other.preCharge))
-			return false;
-		if (releaseDate == null) {
-			if (other.releaseDate != null)
-				return false;
-		} else if (!releaseDate.equals(other.releaseDate))
-			return false;
-		if (reportedDate == null) {
-			if (other.reportedDate != null)
-				return false;
-		} else if (!reportedDate.equals(other.reportedDate))
-			return false;
-		if (status == null) {
-			if (other.status != null)
-				return false;
-		} else if (!status.equals(other.status))
-			return false;
-		if (Double.doubleToLongBits(totalCharge) != Double.doubleToLongBits(other.totalCharge))
+		} else if (!claimNumber.equals(other.claimNumber))
 			return false;
 		return true;
 	}
@@ -212,5 +164,4 @@ public class Claim {
 				+ status + ", totalCharge=" + totalCharge + ", preCharge=" + preCharge + ", postCharge=" + postCharge
 				+ "]";
 	}
-
 }

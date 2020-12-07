@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cognizant.model.Claim;
+import com.cognizant.model.Policy;
 import com.cognizant.model.Insurance;
 import com.cognizant.model.Payment;
+import com.cognizant.service.ClaimService;
 import com.cognizant.service.InsuranceService;
 import com.cognizant.service.PaymentService;
 import com.cognizant.validate.InsuranceValidator;
@@ -32,6 +34,9 @@ public class InsuranceController {
 	private InsuranceService insuranceService;
 
 	@Autowired
+	private ClaimService claimService;
+	
+	@Autowired
 	private PaymentService paymentService;
 
 	@Autowired
@@ -42,14 +47,41 @@ public class InsuranceController {
 
 	@GetMapping(value = "/getClaimPage")
 	public String getClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
+		System.out.println("/n/n/n/n/nInside get page/n/n/n/n");
 		return "claim";
 	}
 
 	@PostMapping(value = "/getClaimPage")
 	public String postClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
+		System.out.println("/n/n/n/n/nInside post page/n/n/n/n");
+		Insurance insurance=claimService.findUser(claim.getCustName());
+		
+		Policy policy=claimService.findTotDeductible(insurance.getPolicyName());
+		map.addAttribute("totDeductible", policy.getTotDeductible());
+		map.addAttribute("totCoInsurance", policy.getTotCoInsurance());
+		if(policy.getNetAmountPerYear()*policy.getPolicyTerm()-claim.getTotalCharge()>=0)
+		{
+		map.addAttribute("totExcludedAmt",(policy.getNetAmountPerYear()*policy.getPolicyTerm())-claim.getTotalCharge());
+		map.addAttribute("totExceededAmt",0);
+		}
+		else
+		{
+		map.addAttribute("totExceededAmt",claim.getTotalCharge()-(policy.getNetAmountPerYear()*policy.getPolicyTerm()));
+		map.addAttribute("totExcludedAmt",0);
+		}
+		map.addAttribute("totBenefit",policy.getNetAmountPerYear()*policy.getPolicyTerm());
+		map.addAttribute("Status", "Requested");
 		map.addAttribute("success", "Insurance Claim was successfull");
+		claim.setStatus("requested");
+		claimService.saveClaim(claim);
 		return "claim";
 	}
+	
+	
+	
+	
+	
+	
 
 	@ModelAttribute("genderList")
 	public List<String> listGender() {
