@@ -8,19 +8,25 @@ import javax.persistence.*;
  *
  */
 @Entity
-@Table(name="policy_table")
+@Table(name = "policy_table")
 public class Policy {
 	@Id
-	@Column(name="policy_number")
+	@Column(name = "policy_number")
 	private int policyNumber;
-	@Column(name="policy_name")
+	@Column(name = "policy_name")
 	private String policyName;
-	@Column(name="policy_description")
+	@Column(name = "policy_description")
 	private String policyDescription;
-	@Column(name="net_amount_per_year")
+	@Column(name = "net_amount_per_year")
 	private float netAmountPerYear;
-	@Column(name="policy_term")
+	@Column(name = "policy_term")
 	private int policyTerm;
+	@Column(name = "tot_deductible")
+	private float totDeductible;
+	@Column(name = "tot_co_insurance")
+	private int totCoInsurance;
+	@Column(name = "interest_rate")
+	private float interestRate;
 
 	public int getPolicyNumber() {
 		return policyNumber;
@@ -60,6 +66,30 @@ public class Policy {
 
 	public void setPolicyTerm(int policyTerm) {
 		this.policyTerm = policyTerm;
+	}
+
+	public float getTotDeductible() {
+		return totDeductible;
+	}
+
+	public void setTotDeductible(float totDeductible) {
+		this.totDeductible = totDeductible;
+	}
+
+	public int getTotCoInsurance() {
+		return totCoInsurance;
+	}
+
+	public void setTotCoInsurance(int totCoInsurance) {
+		this.totCoInsurance = totCoInsurance;
+	}
+
+	public float getInterestRate() {
+		return interestRate;
+	}
+
+	public void setInterestRate(float interestRate) {
+		this.interestRate = interestRate;
 	}
 
 	@Override
