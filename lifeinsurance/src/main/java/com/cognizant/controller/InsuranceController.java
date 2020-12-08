@@ -17,12 +17,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cognizant.model.Claim;
+import com.cognizant.model.Home;
 import com.cognizant.model.Policy;
 import com.cognizant.model.Insurance;
 import com.cognizant.model.Payment;
 import com.cognizant.service.ClaimService;
 import com.cognizant.service.InsuranceService;
 import com.cognizant.service.PaymentService;
+import com.cognizant.service.UserService;
 import com.cognizant.validate.InsuranceValidator;
 import com.cognizant.validate.PaymentValidator;
 
@@ -44,38 +46,11 @@ public class InsuranceController {
 
 	@Autowired
 	private PaymentValidator paymentValidator;
+	
+	@Autowired
+	private UserService userService;
 
-	@GetMapping(value = "/getClaimPage")
-	public String getClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
-		System.out.println("/n/n/n/n/nInside get page/n/n/n/n");
-		return "claim";
-	}
-
-	@PostMapping(value = "/getClaimPage")
-	public String postClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
-		System.out.println("/n/n/n/n/nInside post page/n/n/n/n");
-		Insurance insurance=claimService.findUser(claim.getCustName());
-		
-		Policy policy=claimService.findTotDeductible(insurance.getPolicyName());
-		map.addAttribute("totDeductible", policy.getTotDeductible());
-		map.addAttribute("totCoInsurance", policy.getTotCoInsurance());
-		if(policy.getNetAmountPerYear()*policy.getPolicyTerm()-claim.getTotalCharge()>=0)
-		{
-		map.addAttribute("totExcludedAmt",(policy.getNetAmountPerYear()*policy.getPolicyTerm())-claim.getTotalCharge());
-		map.addAttribute("totExceededAmt",0);
-		}
-		else
-		{
-		map.addAttribute("totExceededAmt",claim.getTotalCharge()-(policy.getNetAmountPerYear()*policy.getPolicyTerm()));
-		map.addAttribute("totExcludedAmt",0);
-		}
-		map.addAttribute("totBenefit",policy.getNetAmountPerYear()*policy.getPolicyTerm());
-		map.addAttribute("Status", "Requested");
-		map.addAttribute("success", "Insurance Claim was successfull");
-		claim.setStatus("requested");
-		claimService.saveClaim(claim);
-		return "claim";
-	}
+	
 	
 	
 	
@@ -134,6 +109,10 @@ public class InsuranceController {
 
 	@RequestMapping(value = "/getInsurancePage", method = RequestMethod.GET)
 	public String getInsurancePage(@ModelAttribute("insurance") Insurance insurance) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		System.out.println("\n\n\n\n\nInside Get Insurance\n\n\n\n\n\n");
 		return "form";
 	}
