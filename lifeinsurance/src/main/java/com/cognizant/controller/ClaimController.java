@@ -71,8 +71,8 @@ public class ClaimController {
 	
 	
 	@GetMapping(value = "/getClaimEdit")
-	public String getEditClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
-		
+	public String getEditClaimPage(@RequestParam int claimNum,@ModelAttribute("claim") Claim claim, ModelMap map) {
+		map.addAttribute("item",claimService.findCust(claimNum));
 		return "claimedit";
 	}
 	
