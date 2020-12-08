@@ -21,19 +21,19 @@
 	<br>
 	<center>
 		<h1>Update user claim status</h1>
-		<form:form modelAttribute="claim" method="GET" action="/getUserUpdateSuccess">
+		 <!--  <form:form modelAttribute="claim" method="GET" action="/getUserUpdateSuccess">-->
 		<table>
 			<tr id="head">
 				<td><label for="userId"><b>User Id</b></label></td>
 				<td><label for="firstName"><b>Claim Status</b></label></td>
 			</tr>
 			<tr>
-				<td>${userid}</td>
-				<td><form:select path="status" type="text" items="${claim.status}" /></td>
+				<td>${userId}</td>
+				<td>${status}</td>
 			</tr>
 			</center>
 		</table>
-		</form:form>
+		 <!-- </form:form>-->
 		<h3>
 			<a href="/getUserPage">Go to User Menu</a>
 		</h3>

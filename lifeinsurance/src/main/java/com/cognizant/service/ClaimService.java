@@ -36,8 +36,8 @@ public class ClaimService {
         return insuranceRepo.getOne(custName);
     }
     public Claim findCustName(String firstName) {
-    	List<Claim> claim=claimRepo.findClaim(firstName);
-    	return claim.get(0);
+    	Claim claim=claimRepo.findClaim(firstName);
+    	return claim;
     }
     public Policy findTotDeductible(String policyName) {
         return policyRepo.getOne(policyName);

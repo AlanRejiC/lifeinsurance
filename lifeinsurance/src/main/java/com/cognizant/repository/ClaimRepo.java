@@ -12,5 +12,5 @@ import com.cognizant.model.Claim;
 @Repository
 public interface ClaimRepo extends PagingAndSortingRepository<Claim, Integer> {
 	@Query("select c from Claim c where cust_name = ?1")
-			List<Claim> findClaim(String custName);
+			Claim findClaim(String custName);
 }
