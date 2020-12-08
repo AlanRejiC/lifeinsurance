@@ -15,3 +15,4 @@ alter table policy_table add column interest_rate int not null;
 ALTER TABLE payment DROP FOREIGN KEY payment_ibfk_1;
 
 alter table user add column login boolean;
+ALTER TABLE claim ADD status_updated_date date not null;
