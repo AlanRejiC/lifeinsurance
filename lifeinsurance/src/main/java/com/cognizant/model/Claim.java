@@ -16,152 +16,150 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 @Table(name = "claim")
 public class Claim {
 
-	@Id
-	@Column(name = "claim_number")
-	private String claimNumber;
-	@Column(name = "cust_name")
-	private String custName;
-	@DateTimeFormat(iso = ISO.DATE)
-	@Column(name = "incurred_date")
-	private LocalDate incurredDate;
-	@DateTimeFormat(iso = ISO.DATE)
-	@Column(name = "reported_date")
-	private LocalDate reportedDate;
-	@DateTimeFormat(iso = ISO.DATE)
-	@Column(name = "date_paid")
-	private LocalDate datePaid;
-	@DateTimeFormat(iso = ISO.DATE)
-	@Column(name = "admit_date")
-	private LocalDate admitDate;
-	@DateTimeFormat(iso = ISO.DATE)
-	@Column(name = "release_date")
-	private LocalDate releaseDate;
-	@Column(name = "status")
-	private String status;
-	@Column(name = "total_charge")
-	private double totalCharge;
-	@Column(name = "pre_charge")
-	private double preCharge;
-	@Column(name = "post_charge")
-	private double postCharge;
+    @Id
+    @Column(name = "claim_number")
+    private int claimNumber;
+    @Column(name = "cust_name")
+    private String custName;
+    @DateTimeFormat(iso = ISO.DATE)
+    @Column(name = "incurred_date")
+    private LocalDate incurredDate;
+    @DateTimeFormat(iso = ISO.DATE)
+    @Column(name = "reported_date")
+    private LocalDate reportedDate;
+    @DateTimeFormat(iso = ISO.DATE)
+    @Column(name = "date_paid")
+    private LocalDate datePaid;
+    @DateTimeFormat(iso = ISO.DATE)
+    @Column(name = "admit_date")
+    private LocalDate admitDate;
+    @DateTimeFormat(iso = ISO.DATE)
+    @Column(name = "release_date")
+    private LocalDate releaseDate;
+    @Column(name = "status")
+    private String status;
+    @Column(name = "total_charge")
+    private double totalCharge;
+    @Column(name = "pre_charge")
+    private double preCharge;
+    @Column(name = "post_charge")
+    private double postCharge;
 
-	public String getClaimNumber() {
-		return claimNumber;
-	}
+    public int getClaimNumber() {
+        return claimNumber;
+    }
 
-	public void setClaimNumber(String claimNumber) {
-		this.claimNumber = claimNumber;
-	}
+    public void setClaimNumber(int claimNumber) {
+        this.claimNumber = claimNumber;
+    }
 
-	public LocalDate getIncurredDate() {
-		return incurredDate;
-	}
+    public LocalDate getIncurredDate() {
+        return incurredDate;
+    }
 
-	public void setIncurredDate(LocalDate incurredDate) {
-		this.incurredDate = incurredDate;
-	}
+    public void setIncurredDate(LocalDate incurredDate) {
+        this.incurredDate = incurredDate;
+    }
 
-	public LocalDate getReportedDate() {
-		return reportedDate;
-	}
+    public LocalDate getReportedDate() {
+        return reportedDate;
+    }
 
-	public void setReportedDate(LocalDate reportedDate) {
-		this.reportedDate = reportedDate;
-	}
+    public void setReportedDate(LocalDate reportedDate) {
+        this.reportedDate = reportedDate;
+    }
 
-	public LocalDate getDatePaid() {
-		return datePaid;
-	}
+    public LocalDate getDatePaid() {
+        return datePaid;
+    }
 
-	public void setDatePaid(LocalDate datePaid) {
-		this.datePaid = datePaid;
-	}
+    public void setDatePaid(LocalDate datePaid) {
+        this.datePaid = datePaid;
+    }
 
-	public LocalDate getAdmitDate() {
-		return admitDate;
-	}
+    public LocalDate getAdmitDate() {
+        return admitDate;
+    }
 
-	public void setAdmitDate(LocalDate admitDate) {
-		this.admitDate = admitDate;
-	}
+    public void setAdmitDate(LocalDate admitDate) {
+        this.admitDate = admitDate;
+    }
 
-	public LocalDate getReleaseDate() {
-		return releaseDate;
-	}
+    public LocalDate getReleaseDate() {
+        return releaseDate;
+    }
 
-	public void setReleaseDate(LocalDate releaseDate) {
-		this.releaseDate = releaseDate;
-	}
-	public String getCustName() {
-		return custName;
-	}
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
+    }
 
-	public void setCustName(String custName) {
-		this.custName = custName;
-	}
+    public String getCustName() {
+        return custName;
+    }
 
-	public String getStatus() {
-		return status;
-	}
+    public void setCustName(String custName) {
+        this.custName = custName;
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
+    public String getStatus() {
+        return status;
+    }
 
-	public double getTotalCharge() {
-		return totalCharge;
-	}
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-	public void setTotalCharge(double totalCharge) {
-		this.totalCharge = totalCharge;
-	}
+    public double getTotalCharge() {
+        return totalCharge;
+    }
 
-	public double getPreCharge() {
-		return preCharge;
-	}
+    public void setTotalCharge(double totalCharge) {
+        this.totalCharge = totalCharge;
+    }
 
-	public void setPreCharge(double preCharge) {
-		this.preCharge = preCharge;
-	}
+    public double getPreCharge() {
+        return preCharge;
+    }
 
-	public double getPostCharge() {
-		return postCharge;
-	}
+    public void setPreCharge(double preCharge) {
+        this.preCharge = preCharge;
+    }
 
-	public void setPostCharge(double postCharge) {
-		this.postCharge = postCharge;
-	}
+    public double getPostCharge() {
+        return postCharge;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((claimNumber == null) ? 0 : claimNumber.hashCode());
-		return result;
-	}
+    public void setPostCharge(double postCharge) {
+        this.postCharge = postCharge;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Claim other = (Claim) obj;
-		if (claimNumber == null) {
-			if (other.claimNumber != null)
-				return false;
-		} else if (!claimNumber.equals(other.claimNumber))
-			return false;
-		return true;
-	}
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + claimNumber;
+        return result;
+    }
 
-	@Override
-	public String toString() {
-		return "Claim [claimNumber=" + claimNumber + ", incurredDate=" + incurredDate + ", reportedDate=" + reportedDate
-				+ ", datePaid=" + datePaid + ", admitDate=" + admitDate + ", releaseDate=" + releaseDate + ", status="
-				+ status + ", totalCharge=" + totalCharge + ", preCharge=" + preCharge + ", postCharge=" + postCharge
-				+ "]";
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Claim other = (Claim) obj;
+        if (claimNumber != other.claimNumber)
+            return false;
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Claim [claimNumber=" + claimNumber + ", incurredDate=" + incurredDate + ", reportedDate=" + reportedDate
+                + ", datePaid=" + datePaid + ", admitDate=" + admitDate + ", releaseDate=" + releaseDate + ", status="
+                + status + ", totalCharge=" + totalCharge + ", preCharge=" + preCharge + ", postCharge=" + postCharge
+                + "]";
+    }
 }
