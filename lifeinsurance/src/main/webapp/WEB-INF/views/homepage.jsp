@@ -32,7 +32,7 @@
   <li><a href="/getLoginPage">Sign In</a></li>
   <li><a href="/getSignUpPage">Sign Up</a></li>
   <li><a href="/getInsurancePage">Apply for Insurance</a></li>
-  <li><a href="/getNotficationpage">Notification Page</a></li>
+  <li><a href="/getNotificationpage">Notification Page</a></li>
   <li><a href="/getLogOut">Log Out</a></li>
   
   
@@ -48,11 +48,11 @@ KEY TAKEAWAYS
 
 1)Life insurance is a legally binding contract.<br>
 
-2)For the contract to be enforceable, the life insurance application must accurately disclose the insuredâ€™s past and current health conditions and high-risk activities.<br>
+2)For the contract to be enforceable , the life insurance application must accurately disclose the insured'€™s past and current health conditions and high-risk activities.<br>
 
-3)For a life insurance policy to remain in force, the policyholder must pay a single premium up front or pay regular premiums over time.<br>
+3)For a life insurance policy to remain in force, the policy holder must pay a single premium up front or pay regular premiums over time.<br>
 
-4)When the insured dies, the policyâ€™s named beneficiaries will receive the policyâ€™s face value, or death benefit.<br>
+4)When the insured dies, the policy's named beneficiaries will receive the policy's face value, or death benefit.<br>
 
 5)Term life insurance policies expire after a certain number of years. Permanent life insurance policies remain active until the insured dies, stops paying premiums, or surrenders the policy.<br>
 

@@ -22,7 +22,7 @@
 	<div align="center">
 		<h1>Insurance Claim Re-Submission Form</h1>
 		<h2>Please Re-Submit your Claim as your previous submission has been Rejected.</h2>
-		<form:form action="/getClaimEdit" method="POST" name="userResubmit"
+		<form:form action="/getClaimEdit?claimNum=${item.claimNumber}" method="POST" name="userResubmit"
 			modelAttribute="claim">
 			<table>
 				<tr>
@@ -82,7 +82,7 @@
 					<td><form:input path="postCharge" name="postCharge" value="${item.postCharge}"  /></td>
 					<td><form:errors path="postCharge" /></td>
 				</tr>
-
+				<form:hidden path="statuUpdatedDate"/>
 
 				<tr>
 					<td>Total deductible paid</td>

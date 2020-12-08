@@ -17,7 +17,7 @@
 <header class="header">
 	<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
 </header>
-	<form:form modelAttribute="claim" action="/getNotificationpage" method="post">
+	<form:form modelAttribute="claim" action="/getNotificationpage" method="POST">
 		<h3>Claim notifications </h3>
 		<table>
 				<tr>
