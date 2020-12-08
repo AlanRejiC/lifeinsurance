@@ -5,3 +5,9 @@ alter tables
  alter table claim add column release_date date not null;
  alter table payment add column pin INT NOT null;
  
+ ALTER TABLE claim MODIFY  COLUMN status varchar(20);
+ ALTER TABLE claim ADD cust_name varchar(30);
+ALTER TABLE claim ADD FOREIGN KEY (cust_name) REFERENCES insurance_table(cust_name);
+alter table policy_table add column tot_deductible float Not null;
+alter table policy_table add column tot_co_insurance int not null;
+alter table policy_table add column interest_rate int not null;
