@@ -40,6 +40,9 @@ public class ClaimService {
     public void saveClaim(Claim claim) {
         claimRepo.save(claim);
     }
+    public Claim findCust(int claimNum) {
+    	return claimRepo.getOne(claimNum);
+    }
 
     public String claimStatus(int claimNo) {
         Claim claim=claimRepo.getOne(claimNo);
