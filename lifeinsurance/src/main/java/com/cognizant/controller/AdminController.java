@@ -40,4 +40,9 @@ public class AdminController {
             return "adminDashboard";
         }
     }
+    @RequestMapping(value = "/getDashboard", method = RequestMethod.GET)
+    public String getAdminDashboard() {
+        return "adminDashboard";
+    }
+    
 }
