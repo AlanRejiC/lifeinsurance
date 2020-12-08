@@ -22410,3 +22410,11 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.apache.po
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 2020-12-08 16:31:16,918 [Worker-192: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.xmlbeans:xmlbeans:3.0.2
 2020-12-08 16:31:16,920 [Worker-192: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.commons:commons-compress:1.18
+2020-12-08 16:31:16,923 [Worker-192: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for com.github.virtuald:curvesapi:1.05
+2020-12-08 16:36:11,659 [Worker-199: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-12-08 16:36:12,199 [Worker-199: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cts.proj:lifeinsurance:0.0.1-SNAPSHOT @ C:\Users\UnniKutty\eclipse-workspace\lifeinsurance\pom.xml.
+2020-12-08 16:36:13,186 [Worker-199: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /lifeinsurance/src/main/java
+2020-12-08 16:36:13,187 [Worker-199: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /lifeinsurance/src/main/resources
+2020-12-08 16:36:13,187 [Worker-199: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /lifeinsurance/src/main/resources
+2020-12-08 16:36:13,187 [Worker-199: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /lifeinsurance/src/test/java
+2020-12-08 16:36:13,487 [Worker-199: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
