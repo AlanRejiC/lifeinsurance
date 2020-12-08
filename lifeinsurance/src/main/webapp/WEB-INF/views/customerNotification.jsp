@@ -16,12 +16,21 @@
 	<form:form modelAttribute="claim" action="/getNotificationpage" method="post">
 		<h3>Claim notifications </h3>
 		<table>
-			<tr>
-				<td>Enter claim Number:</td>
-				<td><form:input path="claimNumber" name="claimNumber" /></td>
-			</tr>
+				<tr>
+					<td>Enter claim number</td>
+					<td><form:input path="claimNumber" type="text"
+							name="claimNumber" /></td>
+					<td><form:errors path="claimNumber" /></td>
+				</tr>		
 		</table>
+		<input type="submit" value="Submit" id="submitbutton"/>
+		<h3>${status}</h3>
+		<h3>${nullStatus}</h3>
+		<h3>${invalidclaim}</h3>
 	</form:form>
+<center>
+<h4><a href="/getHomePage">Go to Home Page</a></h4>
+</center>	
 <footer class="footer">
   <p>Life Insurance copyrights 2020<br>
   Locations <br> Connect with us <br></p>
