@@ -56,7 +56,7 @@ public class UserController {
 	@GetMapping(value = "/userDelete")
 	public String showUserDelete(@RequestParam int userId,@ModelAttribute("user") User user, ModelMap map) {
 		User user1 = userService.findUser(userId);
-		userService.deleteUs(user1);
+		userService.deleteUser(user1);
 		System.out.println("inside get user delete page");
 		return "userDelete" ;
 		}

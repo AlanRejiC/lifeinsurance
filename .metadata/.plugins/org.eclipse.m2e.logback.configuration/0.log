@@ -22418,3 +22418,19 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.apache.po
 2020-12-08 16:36:13,187 [Worker-199: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /lifeinsurance/src/main/resources
 2020-12-08 16:36:13,187 [Worker-199: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /lifeinsurance/src/test/java
 2020-12-08 16:36:13,487 [Worker-199: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2020-12-08 16:52:59,194 [Worker-208: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-12-08 16:52:59,195 [Worker-208: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-12-08 16:52:59,196 [Worker-208: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-12-08 16:52:59,217 [Worker-208: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2020-12-08 16:52:59,227 [Worker-208: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-12-08 16:52:59,229 [Worker-208: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-12-08 16:52:59,229 [Worker-208: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-12-08 16:52:59,229 [Worker-208: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UnniKutty\eclipse-workspace\lifeinsurance\src\test\resources
+2020-12-08 16:53:54,347 [Worker-211: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-12-08 16:53:54,347 [Worker-211: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-12-08 16:53:54,349 [Worker-211: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-12-08 16:53:54,406 [Worker-211: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2020-12-08 16:53:54,409 [Worker-211: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-12-08 16:53:54,412 [Worker-211: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-12-08 16:53:54,412 [Worker-211: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-12-08 16:53:54,412 [Worker-211: Launching LifeinsuranceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UnniKutty\eclipse-workspace\lifeinsurance\src\test\resources
