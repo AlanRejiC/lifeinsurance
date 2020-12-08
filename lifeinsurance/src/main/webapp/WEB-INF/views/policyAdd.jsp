@@ -43,7 +43,7 @@
 			</tr>
 			<tr>
 				<td>Policy Term</td>
-				<td><form:select path="policyTerm" type="number" name="policyTerm" placeholder="Policy Term"/></td>
+				<td><form:input path="policyTerm" type="number" name="policyTerm" /></td>
 				<td><form:errors path="policyTerm"></form:errors></td>
 			</tr>
 			<tr>
