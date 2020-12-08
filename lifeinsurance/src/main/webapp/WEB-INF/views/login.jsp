@@ -39,6 +39,7 @@
 			<input type="submit" value="Submit" id="submitbutton"/>
 			<h3>${invalid}</h3>
 				<h3><a id="adminlink" href="/getAdminLoginPage" >Click here for Admin login</a></h3>
+				<h3><a id="adminlink" href="/getSignUpPage" >Sign Up</a></h3>
 		</form:form>
 	</div>
 </body>

@@ -32,6 +32,10 @@
   <li><a href="/getLoginPage">Sign In</a></li>
   <li><a href="/getSignUpPage">Sign Up</a></li>
   <li><a href="/getInsurancePage">Apply for Insurance</a></li>
+  <li><a href="/getInsurancePage">Notification Page(Not Mapped)</a></li>
+  <li><a href="/getLogOut">Log Out</a></li>
+  
+  
 </ul>
 </div>
 <h4>Types of Life Insurance</h4><br><br>

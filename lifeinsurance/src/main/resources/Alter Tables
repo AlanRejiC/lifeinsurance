@@ -11,3 +11,7 @@ ALTER TABLE claim ADD FOREIGN KEY (cust_name) REFERENCES insurance_table(cust_na
 alter table policy_table add column tot_deductible float Not null;
 alter table policy_table add column tot_co_insurance int not null;
 alter table policy_table add column interest_rate int not null;
+
+ALTER TABLE payment DROP FOREIGN KEY payment_ibfk_1;
+
+alter table user add column login boolean;

@@ -53,7 +53,7 @@ public class RegistrationValidator implements Validator{
 		Pattern p = Pattern.compile(regex);
 		Matcher m1 = p.matcher(user.getPassword());
 		Matcher m2 = p.matcher(user.getConfirmpassword());
-		if (m1.matches() == false) {
+		/*if (m1.matches() == false) {
 			errors.rejectValue("password", "",
 					" Check whether \r\n" + "It contains at least 8 characters and at most 20 characters.\r\n"
 							+ "It contains at least one digit.\r\n"
@@ -72,7 +72,7 @@ public class RegistrationValidator implements Validator{
 							+ "It contains at least one special character which includes !@#$%&*()-+=^.\r\n"
 							+ "It doesn't contain any white space.");
 			status2=false;
-		}
+		}*/
 		if(status1 && status2){
 		    if(!(user.getConfirmpassword().equals(user.getPassword()))){
 			errors.rejectValue("confirmpassword","", "Password and Confirm Password should be same");

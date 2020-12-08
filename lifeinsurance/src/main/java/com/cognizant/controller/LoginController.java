@@ -21,7 +21,7 @@ import com.cognizant.model.Insurance;
 import com.cognizant.model.Payment;
 
 import com.cognizant.model.Claim;
-
+import com.cognizant.model.Home;
 import com.cognizant.model.User;
 import com.cognizant.service.PaymentService;
 import com.cognizant.service.UserService;
@@ -70,6 +70,7 @@ public class LoginController {
 		user.setSecurity1(" ");
 		user.setSecurity2(" ");
 		user.setSecurity3(" ");
+		user.setLogin(false);
 		System.out.println(user);
 		userService.saveUser(user);
 		return "success";
@@ -86,19 +87,36 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/getLoginPage", method = RequestMethod.POST)
-
 	public String getSuccess2(@Valid @ModelAttribute("user") User user, BindingResult result, ModelMap map) {
 		// userService.userValidation(user);
 		// System.out.println(user);
-
+		try {
 		if (result.hasErrors() || !userService.userValidation(user)) {
 			map.addAttribute("invalid", "Invalid username or password");
 			return "login";
 		} else {
+			user=userService.findUser(user.getUserId());
+			System.out.println(user);
+			user.setLogin(true);
+			userService.saveUser(user);
+			Home.Id=user.getUserId();
 			return "success";
+		}
+		}
+		catch(Exception e)
+		{
+			return "invalidlogin";
 		}
 	}
 
+	@RequestMapping(value = "/getLogOut", method = RequestMethod.GET)
+	public String LogOut()
+	{
+		User user=userService.findUser(Home.Id);
+		user.setLogin(false);
+		Home.Id=0;
+		return "logout";
+	}
 
 	@ModelAttribute("genderList")
 	public List<String> listGender() {
