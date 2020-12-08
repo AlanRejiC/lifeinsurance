@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cognizant.model.User;
+import com.cognizant.model.Claim;
 import com.cognizant.repository.UserRepo;
 
 @Service
@@ -25,7 +26,10 @@ public class UserService {
     public void saveUser(User user) {
         userRepo.save(user);
     }
-
+    public Claim findUser(String firstName) {
+    	return userRepo.findClaim(firstName);
+    }
+    
     public boolean userValidation(User user) {
         boolean isValid = false;
         User temp = findUser(user.getUserId());
