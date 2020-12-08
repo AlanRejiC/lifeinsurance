@@ -72,6 +72,19 @@ public class ClaimController {
 		
 		Insurance insurance=claimService.findUser(claim.getCustName());
 		
+		map.addAttribute("oldClaimNumber", claim.getClaimNumber());
+		map.addAttribute("customerName", claim.getCustName());
+		map.addAttribute("incurredDate", claim.getIncurredDate());
+		map.addAttribute("reportedDate", claim.getReportedDate());
+		map.addAttribute("dateOfClaimPaid", claim.getDatePaid());
+		map.addAttribute("dateOfAdmission", claim.getAdmitDate());
+		map.addAttribute("dateOfDischarge", claim.getReleaseDate());
+		map.addAttribute("totalCharges", claim.getTotalCharge());
+		map.addAttribute("preCharges", claim.getPreCharge());
+		map.addAttribute("postCharges", claim.getPostCharge());
+		
+		
+		
 		Policy policy=claimService.findTotDeductible(insurance.getPolicyName());
 		map.addAttribute("totDeductible", policy.getTotDeductible());
 		map.addAttribute("totCoInsurance", policy.getTotCoInsurance());

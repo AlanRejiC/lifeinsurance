@@ -28,58 +28,58 @@
 				<tr>
 					<td>Old claim number</td>
 					<td><form:input path="claimNumber" type="text"
-							name="claimNumber" /></td>
+							name="claimNumber" value="${oldClaimNumber}" /></td>
 					<td><form:errors path="claimNumber" /></td>
 				</tr>
 				<tr>
 					<td>Customer Name</td>
 					<td><form:input path="custName" type="text"
-							name="custName" /></td>
+							name="custName" value="${customerName}"  /></td>
 					<td><form:errors path="custName" /></td>
 				</tr>
 				<tr>
 					<td>Incurred date</td>
 					<td><form:input path="incurredDate" type="text"
-							name="incurredDate" /></td>
+							name="incurredDate" value="${incurredDate}"  /></td>
 					<td><form:errors path="incurredDate" /></td>
 				</tr>
 				<tr>
 					<td>Reported date</td>
 					<td><form:input path="reportedDate" type="text"
-							name="reportedDate" /></td>
+							name="reportedDate" value="${reportedDate}"  /></td>
 					<td><form:errors path="reportedDate" /></td>
 				</tr>
 				<tr>
 					<td>Date of claim paid</td>
-					<td><form:input path="datePaid" type="text" name="datePaid" /></td>
+					<td><form:input path="datePaid" type="text" name="datePaid" value="${dateOfClaimPaid}" /></td>
 					<td><form:errors path="datePaid" /></td>
 				</tr>
 				<tr>
 					<td>Date of admission</td>
-					<td><form:input path="admitDate" type="text" name="admitDate" /></td>
+					<td><form:input path="admitDate" type="text" name="admitDate" value="${dateOfAdmission}"  /></td>
 					<td><form:errors path="admitDate"></form:errors></td>
 				</tr>
 				<tr>
 					<td>Date of discharge</td>
 					<td><form:input path="releaseDate" type="text"
-							name="releaseDate" /></td>
+							name="releaseDate"  value="${dateOfDischarge}"/></td>
 					<td><form:errors path="releaseDate" /></td>
 				</tr>
 				<tr>
 					<td>Total Charges</td>
-					<td><form:input path="totalCharge" name="totalCharge" /></td>
+					<td><form:input path="totalCharge" name="totalCharge" value="${totalCharges}" /></td>
 					<td><form:errors path="totalCharge" /></td>
 				</tr>
 
 
 				<tr>
 					<td>Total pre-hospital charges</td>
-					<td><form:input path="preCharge" name="preCharge" /></td>
+					<td><form:input path="preCharge" name="preCharge" value="${preCharges}" /></td>
 					<td><form:errors path="preCharge" /></td>
 				</tr>
 				<tr>
 					<td>Total post-hospital charges</td>
-					<td><form:input path="postCharge" name="postCharge" /></td>
+					<td><form:input path="postCharge" name="postCharge" value="${postCharges}"  /></td>
 					<td><form:errors path="postCharge" /></td>
 				</tr>
 
