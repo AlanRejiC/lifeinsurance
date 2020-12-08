@@ -30,7 +30,9 @@ public class ClaimService {
     public Insurance findUser(String custName) {
         return insuranceRepo.getOne(custName);
     }
-
+    public Claim findCustName(String firstName) {
+    	return claimRepo.findClaim(firstName);
+    }
     public Policy findTotDeductible(String policyName) {
         return policyRepo.getOne(policyName);
     }

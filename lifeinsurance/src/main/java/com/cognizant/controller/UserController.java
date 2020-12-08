@@ -48,7 +48,7 @@ public class UserController {
 	@GetMapping(value = "/userUpdate")
 	public String showPolicySave(@RequestParam int userId,@ModelAttribute("user") User user, ModelMap map) {
 		User user1=userService.findUser(userId);
-		Claim claim=claimService.findUser(user1.getFirstName());
+		Claim claim=claimService.findCustName(user1.getFirstName());
 		map.addAttribute("status", claim.getStatus());
 		map.addAttribute("userId", user1.getUserId());
 		return "userUpdate";
@@ -56,7 +56,7 @@ public class UserController {
 	@GetMapping(value = "/userDelete")
 	public String showUserDelete(@RequestParam int userId,@ModelAttribute("user") User user, ModelMap map) {
 		User user1 = userService.findUser(userId);
-		userService.deleteUser(user1);
+		userService.deleteUs(user1);
 		System.out.println("inside get user delete page");
 		return "userDelete" ;
 		}
