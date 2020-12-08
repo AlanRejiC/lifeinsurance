@@ -48,8 +48,8 @@ public class ClaimService {
         return null;
     }
     
-   /** public Claim findClaim(String custName) {
+   public Claim findClaim(String custName) {
         return claimRepo.getOne(custName);
         return null;      
-    }*/
+    }
 }
