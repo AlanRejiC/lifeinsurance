@@ -67,6 +67,14 @@ public class ClaimController {
 		return "claim";
 	}
 	
+	
+	
+	@GetMapping(value = "/getClaimEdit")
+	public String getEditClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
+		
+		return "claimedit";
+	}
+	
 	@PostMapping(value = "/getClaimEdit")
 	public String reSubmitClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
 		
@@ -103,7 +111,7 @@ public class ClaimController {
 		map.addAttribute("success", "Insurance Claim was successfull");
 		claim.setStatus("requested");
 		claimService.saveClaim(claim);
-		return "claim";
+		return "claimedit";
 	}
 
 

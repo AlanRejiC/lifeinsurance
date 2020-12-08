@@ -7,6 +7,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.cognizant.model.Claim;
 import com.cognizant.model.User;
 import com.cognizant.service.ClaimService;
@@ -23,11 +25,12 @@ public class CustNotificationController {
     private ClaimService claimService;
     
     @RequestMapping(value = "/getNotificationpage", method = RequestMethod.GET)
-    public String getNotificationPage(@ModelAttribute("user") User user) {
+    public String getNotificationPage(@ModelAttribute("claim") Claim claim) {
         return "customerNotification";
     }
     
     @RequestMapping(value = "/getNotificationpage", method = RequestMethod.POST)
+    //@RequestParam(String invalidclaim,String nullStatus )
     public String getCustNotiSuccess(@ModelAttribute("claim") Claim claim, BindingResult result, ModelMap map) {
         String status=claimService.claimStatus(claim.getClaimNumber());
         if (result.hasErrors()) {
