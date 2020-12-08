@@ -17,6 +17,7 @@
 <header class="header">
 	<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
 </header>
+	<div align="center">
 	<form:form modelAttribute="claim" action="/getNotificationpage" method="POST">
 		<h3>Claim notifications </h3>
 		<table>
@@ -35,6 +36,7 @@
 <center>
 <h4><a href="/getHomePage">Go to Home Page</a></h4>
 </center>	
+</div>
 <footer class="footer">
   <p>Life Insurance copyrights 2020<br>
   Locations <br> Connect with us <br></p>
