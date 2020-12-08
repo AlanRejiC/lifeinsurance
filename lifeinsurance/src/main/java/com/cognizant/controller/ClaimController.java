@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cognizant.model.Claim;
 import com.cognizant.model.Policy;
@@ -76,11 +77,13 @@ public class ClaimController {
 	}
 	
 	@PostMapping(value = "/getClaimEdit")
-	public String reSubmitClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
+	public String reSubmitClaimPage(@RequestParam int claimNum,@ModelAttribute("claim") Claim claim, ModelMap map) {
 		
 		Insurance insurance=claimService.findUser(claim.getCustName());
+		Claim claim1 = claimService.findCust(claimNum);
+		map.addAttribute("item", claim1);
 		
-		map.addAttribute("oldClaimNumber", claim.getClaimNumber());
+		/*map.addAttribute("oldClaimNumber", claim.getClaimNumber());
 		map.addAttribute("customerName", claim.getCustName());
 		map.addAttribute("incurredDate", claim.getIncurredDate());
 		map.addAttribute("reportedDate", claim.getReportedDate());
@@ -89,7 +92,7 @@ public class ClaimController {
 		map.addAttribute("dateOfDischarge", claim.getReleaseDate());
 		map.addAttribute("totalCharges", claim.getTotalCharge());
 		map.addAttribute("preCharges", claim.getPreCharge());
-		map.addAttribute("postCharges", claim.getPostCharge());
+		map.addAttribute("postCharges", claim.getPostCharge());*/
 		
 		
 		
