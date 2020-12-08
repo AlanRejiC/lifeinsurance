@@ -11,6 +11,7 @@ import com.cognizant.model.User;
 import com.cognizant.model.Policy;
 import com.cognizant.repository.ClaimRepo;
 import com.cognizant.repository.PolicyRepo;
+import com.cognizant.repository.UserRepo;
 import com.cognizant.repository.InsuranceRepo;
 
 @Service
@@ -20,7 +21,9 @@ public class ClaimService {
     private ClaimRepo claimRepo;
     @Autowired
     private PolicyRepo policyRepo;
-
+    @Autowired
+    private UserRepo userRepo;
+    
     @Autowired
     private InsuranceRepo insuranceRepo;
 
@@ -46,10 +49,5 @@ public class ClaimService {
             return status;
         }
         return null;
-    }
-    
-   public Claim findClaim(String custName) {
-        return claimRepo.getOne(custName);
-        return null;      
     }
 }
