@@ -34,9 +34,10 @@ public class CustNotificationController {
             map.addAttribute("invalidclaim", "Invalid claim Number");
             return "customerNotification";
         } 
-        /**if(status==null) {
-            return "No notification yet!!";
-        }*/
+        if(status==null) {
+            map.addAttribute("nullStatus","No notification yet!!");
+        }
+        map.addAttribute("status", claim.getStatus());
         return "customerNotification";
     }
 }

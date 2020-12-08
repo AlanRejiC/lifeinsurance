@@ -44,6 +44,16 @@ public class Claim {
     private double preCharge;
     @Column(name = "post_charge")
     private double postCharge;
+    @Column(name = "status_updated_date")
+    private LocalDate statuUpdatedDate;
+
+    public LocalDate getStatuUpdatedDate() {
+        return statuUpdatedDate;
+    }
+
+    public void setStatuUpdatedDate(LocalDate statuUpdatedDate) {
+        this.statuUpdatedDate = statuUpdatedDate;
+    }
 
     public int getClaimNumber() {
         return claimNumber;
