@@ -53,11 +53,14 @@ public class ClaimService {
 
     public boolean claimStatus(int claimNo) {
         Claim claim=claimRepo2.getOne(claimNo);
-        String status=claim.getStatus();
+        //String status=claim.getStatus();
         LocalDate now=LocalDate.now();
         LocalDate date=claim.getStatuUpdatedDate();
-        Period diff= Period.between(now, date);
-        if(diff.getDays()<=7 && diff.getDays()>=0 && diff.getMonths()==0 && diff.getYears()==0) {
+        System.out.println(date);
+        Period period= Period.between(now, date);
+        int diff = Math.abs(period.getDays());
+        System.out.println(diff);
+        if(diff<=7 && diff>=0 ) {
             return true;
         }
         return false;

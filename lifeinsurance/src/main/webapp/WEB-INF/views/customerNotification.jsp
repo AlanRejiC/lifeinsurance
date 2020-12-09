@@ -4,6 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +35,7 @@
 		<h3>${invalidclaim}</h3>
 	</form:form>
 <center>
-<h3><a href="/getClaimEdit?claimNumber=${Number}">Edit</a></h3>
+<h3><a href="/getClaimEdit?claimNumber=${number}">Edit</a></h3>
 <h4><a href="/getHomePage">Go to Home Page</a></h4>
 </center>	
 </div>
