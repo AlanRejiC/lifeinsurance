@@ -15,8 +15,7 @@
 	<form:form>
 		<center><h1>Admin Dashboard</h1></center>
 		<table>
-		<tr><h3><a id="userlink" href="/getUserPage?role=All" >User Menu</a></h3></tr>
-		<tr><h3><a id="premiumlink" href="" >Policy Premium Calculator</a></h3></tr>
+		<tr><h3><a id="userlink" href="/getUserPage?role=All" >View Users</a></h3></tr>
 		<tr><h3><a id="policylink" href="/getPolicyPage" >View Policies</a></h3></tr>
 		<tr><h3><a id="addpolicylink" href="/getPolicyAdd">Add Policies</a></h3></tr>
 		<tr><h3><a id="agentDetails" href="/getAgentDetails">Agent Details</a></h3></tr>
