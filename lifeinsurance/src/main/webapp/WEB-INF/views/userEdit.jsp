@@ -43,24 +43,24 @@
 			</tr>
 
 			<tr>
-				<form:input path="userId" type="text" value="${item.userId}" />
-				<form:input path="firstName" type="text" value="${item.firstName}" />
-				<form:input path="lastName" type="text" value="${item.lastName}" />
-				<form:input path="gender" type="text" value="${item.gender}" />
-				<form:input path="dob" type="text" value="${item.dob}" />
-				<form:input path="contact" type="text" value="${item.contact}" />
+				<td><form path="userId" value="${item.userId}"/></td>
+				<td><form:input path="firstName" type="text" value="${item.firstName}" /></td>
+				<td><form:input path="lastName" type="text" value="${item.lastName}" /></td>
+				<td><form:input path="gender" type="text" value="${item.gender}" /></td>
+				<td><form:input path="dob" type="text" value="${item.dob}" /></td>
+				<td><form:input path="contact" type="text" value="${item.contact}" /></td>
 				
-				<form:input path="password" type="password" value="${item.password}" />
-				<form:input path="confirmpassword" type="password" value="${item.confirmpassword}" />
+				<td><form:input path="password" type="password" value="${item.password}" /></td>
+				<td><form:input path="confirmpassword" type="password" value="${item.confirmpassword}" /></td>
 				
-				<form:input path="email" type="text" value="${item.email}" />
-				<form:input path="security1" type="text" value="${item.security1}" />
-				<form:input path="ans1" type="text" value="${item.ans1}" />
-				<form:input path="security2" type="text" value="${item.security2}" />
-				<form:input path="ans2" type="text" value="${item.ans2}" />
-				<form:input path="security3" type="text" value="${item.security3}" />
-				<form:input path="ans3" type="text" value="${item.ans3}" />
-				<form:input path="role" type="text" value="${item.role}" />
+				<td><form:input path="email" type="text" value="${item.email}" /></td>
+				<td><form:input path="security1" type="text" value="${item.security1}" /></td>
+				<td><form:input path="ans1" type="text" value="${item.ans1}" /></td>
+				<td><form:input path="security2" type="text" value="${item.security2}" /></td>
+				<td><form:input path="ans2" type="text" value="${item.ans2}" /></td>
+				<td><form:input path="security3" type="text" value="${item.security3}" /></td>
+				<td><form:input path="ans3" type="text" value="${item.ans3}" /></td>
+				<td><form:input path="role" type="text" value="${item.role}" /></td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="Save"></td>

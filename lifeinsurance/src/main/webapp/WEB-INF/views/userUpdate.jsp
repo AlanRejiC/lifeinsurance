@@ -30,6 +30,9 @@
 			<tr>
 				<td>${userId}</td>
 				<td>${status}</td>
+				<form:form modelAttribute="claim">
+				<td><a href="/getUserUpdateSuccess?status=Accepted">Accepted</a></td>
+				<td>${status}</td>
 			</tr>
 			</center>
 		</table>

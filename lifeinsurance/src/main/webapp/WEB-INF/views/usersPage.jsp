@@ -31,13 +31,9 @@
 			<td><label for="contact"><b>Contact Number</b></label></td>
 			<td><label for="email"><b>Email Id</b></label>
 			<td><label for="role"><b>Role</b></label></td>
-			<form:form modelAttribute="user">
-				<td><select name="item">
-						<c:forEach items="${roleList}" var="id">
-							<option  value="${id}">${id}</option>
-						</c:forEach>
-				</select></td>
-			</form:form>
+			<td><form action="usersPage?role=Customer" method="get"><button >Customer</button></form></td>
+			<td><form action="usersPage?role=Agent" method="get"><button >Agent</button></form></td>
+			<td><form action="usersPage?role=Admin" method="get"><button >Admin</button></form></td>
 		</tr>
 
 		<c:forEach var="user" items="${user}">
@@ -50,6 +46,9 @@
 				<td>${user.contact}</td>
 				<td>${user.email}</td>
 				<td>${user.role}</td>
+				<td></td>
+				<td></td>
+				<td></td>
 				<td><a href="/userEdit?userId=${user.userId}">Edit</a></td>
 				<td><a href="/userUpdate?userId=${user.userId}">Update
 						Claim Status</a></td>

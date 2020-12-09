@@ -18,57 +18,84 @@ import com.cognizant.model.User;
 import com.cognizant.service.ClaimService;
 import com.cognizant.service.InsuranceService;
 import com.cognizant.service.UserService;
+
 @Controller
 public class UserController {
 	@Autowired
 	UserService userService;
-	
+
 	@Autowired
 	ClaimService claimService;
-	
+
 	@GetMapping(value = "/getUserPage")
-	public String getUserPage(@ModelAttribute("user") User user, ModelMap map) {
+	public String getUserPage(@RequestParam String role, @ModelAttribute("user") User user, ModelMap map) {
 //		String role=request.getParameter("item");;
 		System.out.println("inside get user page");
-		map.addAttribute("user",userService.getAll());
-//		map.addAttribute("id", role);
-		System.out.println("role");
+		if (role.equalsIgnoreCase("Cutomer")) {
+			map.addAttribute("user", userService.findUserWithRole("customer"));
+		}
+
+		else if (role.equalsIgnoreCase("Agent")) {
+			map.addAttribute("user", userService.findUserWithRole("agent"));
+		}
+
+		else if (role.equalsIgnoreCase("Cutomer")) {
+			map.addAttribute("user", userService.findUserWithRole("customer"));
+		} else {
+			map.addAttribute("user", userService.getAll());
+			
+		}
 		return "usersPage";
 	}
+
 //	
 	@GetMapping(value = "/userEdit")
-	public String getUserEdit(@RequestParam int userId,@ModelAttribute("user") User user,ModelMap map) {
+	public String getUserEdit(@RequestParam int userId, @ModelAttribute("user") User user, ModelMap map) {
 		System.out.println("inside get user  EDIT page");
-		map.addAttribute("item",userService.findUser(userId));
+		User user1=userService.findUser(userId);
+		user1.setUserId(userId);
+		map.addAttribute("item",user1 );
 		return "userEdit";
 	}
-	
+
 	@GetMapping(value = "/userSuccess")
-	public String getUserSuccess(@RequestParam int userId,@ModelAttribute("user") User user,ModelMap map) {
+	public String getUserSuccess(@RequestParam int userId, @ModelAttribute("user") User user, ModelMap map) {
 		System.out.println("inside success page");
-		//map.addAttribute("success",success);
+		// map.addAttribute("success",success);
 //		User user1=userService.findUser(userId);
 		userService.saveUser(user);
 		return "userSuccess";
 	}
+
+	@GetMapping(value = "/getPageSearch")
+	public String showFilter(@RequestParam String role) {
+		return "usersPage";
+	}
+
 	@GetMapping(value = "/userUpdate")
-	public String showUserUpdate(@RequestParam int userId,@ModelAttribute("claim") Claim claim, ModelMap map) {
-		User user=userService.findUser(userId);
+	public String showUserUpdate(@RequestParam int userId, @ModelAttribute("claim") Claim claim, ModelMap map) {
+		User user = userService.findUser(userId);
 		System.out.println(user);
-		Claim claim1=claimService.findCustName(user.getFirstName());
-		map.addAttribute("status",claim1.getStatus());
+		Claim claim1 = claimService.findCustName(user.getFirstName());
+		map.addAttribute("status", claim1.getStatus());
 		map.addAttribute("userId", user.getUserId());
 		System.out.println(claim1.getStatus());
 		System.out.println("inside update page");
 		return "userUpdate";
 	}
+//	@GetMapping(value = "/getUserUpdateSuccess")
+//	public String getUserUpdateSuccess(@RequestParam String status,@ModelAttribute ("claim") Claim claim) {
+//		
+//	}
+
 	@GetMapping(value = "/userDelete")
-	public String showUserDelete(@RequestParam int userId,@ModelAttribute("user") User user, ModelMap map) {
+	public String showUserDelete(@RequestParam int userId, @ModelAttribute("user") User user, ModelMap map) {
 		User user1 = userService.findUser(userId);
 		userService.deleteUser(user1);
 		System.out.println("inside get user delete page");
-		return "userDelete" ;
-		}
+		return "userDelete";
+	}
+
 	@ModelAttribute("roleList")
 	public List<String> listRole() {
 		List<String> list = new ArrayList<String>();
