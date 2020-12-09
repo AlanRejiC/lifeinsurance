@@ -24,20 +24,22 @@
 
 
 			<tr id="head">
-				<td><label for="userId"><b>User Id</b></label></td>
-				<td><label for="firstName"><b>First Name</b></label></td>
-				<td><label for="lastName"><b>Last Name</b></label></td>
-				<td><label for="gender"><b>Gender</b></label></td>
-				<td><label for="dob"><b>Date of Birth</b></label></td>
-				<td><label for="contact"><b>Contact Number</b></label></td>
-				<td><label for="email"><b>Email Id</b></label>
-				<td><label for="role"><b>Security question 1</b></label></td>
-				<td><label for="role"><b>Answer 1</b></label></td>
-				<td><label for="role"><b>Security question 2</b></label></td>
-				<td><label for="role"><b>Answer 1</b></label></td>
-				<td><label for="role"><b>Security question 3</b></label></td>
-				<td><label for="role"><b>Answer 1</b></label></td>
-				<td><label for="role"><b>Role</b></label></td>
+				<th><label for="userId"><b>User Id</b></label></th>
+				<th><label for="firstName"><b>First Name</b></label></th>
+				<th><label for="lastName"><b>Last Name</b></label></th>
+				<th><label for="gender"><b>Gender</b></label></th>
+				<th><label for="dob"><b>Date of Birth</b></label></th>
+				<th><label for="contact"><b>Contact Number</b></label></th>
+				<th><label for="contact"><b>Password</b></label></th>
+				<th><label for="contact"><b>Confirm Password</b></label></th>
+				<th><label for="email"><b>Email Id</b></label></th>
+				<th><label for="security1"><b>Security question 1</b></label></th>
+				<th><label for="ans_1"><b>Answer 1</b></label></th>
+				<th><label for="security2"><b>Security question 2</b></label></th>
+				<th><label for="ans_2"><b>Answer 1</b></label></th>
+				<th><label for="security3"><b>Security question 3</b></label></th>
+				<th><label for="ans_3"><b>Answer 1</b></label></th>
+				<th><label for="role"><b>Role</b></label></th>
 			</tr>
 
 			<tr>
@@ -47,6 +49,10 @@
 				<form:input path="gender" type="text" value="${item.gender}" />
 				<form:input path="dob" type="text" value="${item.dob}" />
 				<form:input path="contact" type="text" value="${item.contact}" />
+				
+				<form:input path="password" type="password" value="${item.password}" />
+				<form:input path="confirmpassword" type="password" value="${item.confirmpassword}" />
+				
 				<form:input path="email" type="text" value="${item.email}" />
 				<form:input path="security1" type="text" value="${item.security1}" />
 				<form:input path="ans1" type="text" value="${item.ans1}" />

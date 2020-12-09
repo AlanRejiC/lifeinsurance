@@ -17,6 +17,10 @@
 <header class="header">
 	<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
 </header>
+<<<<<<< HEAD
+=======
+	<div align="center">
+>>>>>>> b085272d80aa8d2c50e4cdac7b2cb40b3e69a1ef
 	<form:form modelAttribute="claim" action="/getNotificationpage" method="POST">
 		<h3>Claim notifications </h3>
 		<table>
@@ -33,8 +37,10 @@
 		<h3>${invalidclaim}</h3>
 	</form:form>
 <center>
+<h3><a href="/getClaimEdit?claimNumber=${item.claimNumber}">Edit</a></h3>
 <h4><a href="/getHomePage">Go to Home Page</a></h4>
 </center>	
+</div>
 <footer class="footer">
   <p>Life Insurance copyrights 2020<br>
   Locations <br> Connect with us <br></p>

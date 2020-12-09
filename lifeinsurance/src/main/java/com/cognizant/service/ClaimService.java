@@ -36,8 +36,8 @@ public class ClaimService {
         return insuranceRepo.getOne(custName);
     }
     public Claim findCustName(String firstName) {
-    	List<Claim> claim=claimRepo.findClaim(firstName);
-    	return claim.get(0);
+    	Claim claim=claimRepo.findClaim(firstName);
+    	return claim;
     }
     public Policy findTotDeductible(String policyName) {
         return policyRepo.getOne(policyName);
@@ -50,15 +50,16 @@ public class ClaimService {
     	return claimRepo2.getOne(claimNum);
     }
 
-    public String claimStatus(int claimNo) {
+
+    public boolean claimStatus(int claimNo) {
         Claim claim=claimRepo2.getOne(claimNo);
         String status=claim.getStatus();
         LocalDate now=LocalDate.now();
-        LocalDate date=claim.getReportedDate();
+        LocalDate date=claim.getStatuUpdatedDate();
         Period diff= Period.between(now, date);
-        if(diff.getDays()<=7) {
-            return status;
+        if(diff.getDays()<=7 && diff.getDays()>=0 && diff.getMonths()==0 && diff.getYears()==0) {
+            return true;
         }
-        return null;
+        return false;
     }
 }

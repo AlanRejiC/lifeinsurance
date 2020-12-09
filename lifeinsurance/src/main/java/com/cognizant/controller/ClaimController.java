@@ -1,6 +1,5 @@
 package com.cognizant.controller;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,10 +31,10 @@ import com.cognizant.validate.PaymentValidator;
 @ComponentScan("com.service")
 
 public class ClaimController {
-	
+
 	@Autowired
 	private ClaimService claimService;
-	
+
 	@GetMapping(value = "/getClaimPage")
 	public String getClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
 		System.out.println("/n/n/n/n/nInside get page/n/n/n/n");
@@ -45,77 +44,73 @@ public class ClaimController {
 	@PostMapping(value = "/getClaimPage")
 	public String postClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
 		System.out.println("/n/n/n/n/nInside post page/n/n/n/n");
-		Insurance insurance=claimService.findUser(claim.getCustName());
-		
-		Policy policy=claimService.findTotDeductible(insurance.getPolicyName());
+		Insurance insurance = claimService.findUser(claim.getCustName());
+
+		Policy policy = claimService.findTotDeductible(insurance.getPolicyName());
 		map.addAttribute("totDeductible", policy.getTotDeductible());
 		map.addAttribute("totCoInsurance", policy.getTotCoInsurance());
-		if(policy.getNetAmountPerYear()*policy.getPolicyTerm()-claim.getTotalCharge()>=0)
-		{
-		map.addAttribute("totExcludedAmt",(policy.getNetAmountPerYear()*policy.getPolicyTerm())-claim.getTotalCharge());
-		map.addAttribute("totExceededAmt",0);
+		if (policy.getNetAmountPerYear() * policy.getPolicyTerm() - claim.getTotalCharge() >= 0) {
+			map.addAttribute("totExcludedAmt",
+					(policy.getNetAmountPerYear() * policy.getPolicyTerm()) - claim.getTotalCharge());
+			map.addAttribute("totExceededAmt", 0);
+		} else {
+			map.addAttribute("totExceededAmt",
+					claim.getTotalCharge() - (policy.getNetAmountPerYear() * policy.getPolicyTerm()));
+			map.addAttribute("totExcludedAmt", 0);
 		}
-		else
-		{
-		map.addAttribute("totExceededAmt",claim.getTotalCharge()-(policy.getNetAmountPerYear()*policy.getPolicyTerm()));
-		map.addAttribute("totExcludedAmt",0);
-		}
-		map.addAttribute("totBenefit",policy.getNetAmountPerYear()*policy.getPolicyTerm());
+		map.addAttribute("totBenefit", policy.getNetAmountPerYear() * policy.getPolicyTerm());
 		map.addAttribute("Status", "Requested");
 		map.addAttribute("success", "Insurance Claim was successfull");
 		claim.setStatus("requested");
 		claimService.saveClaim(claim);
 		return "claim";
 	}
+
 	
 	
 	
 	@GetMapping(value = "/getClaimEdit")
-	public String getEditClaimPage(@RequestParam int claimNum,@ModelAttribute("claim") Claim claim, ModelMap map) {
-		map.addAttribute("item",claimService.findCust(claimNum));
+	public String getEditClaimPage(	@RequestParam int claimNumber,@ModelAttribute("claim") Claim claim, ModelMap map) {
+		map.addAttribute("item", claimService.findCust(claimNumber));
 		return "claimedit";
 	}
-	
+
 	@PostMapping(value = "/getClaimEdit")
-	public String reSubmitClaimPage(@RequestParam int claimNum,@ModelAttribute("claim") Claim claim, ModelMap map) {
-		
-		Insurance insurance=claimService.findUser(claim.getCustName());
-		Claim claim1 = claimService.findCust(claimNum);
-		map.addAttribute("item", claim1);
-		
-		/*map.addAttribute("oldClaimNumber", claim.getClaimNumber());
-		map.addAttribute("customerName", claim.getCustName());
-		map.addAttribute("incurredDate", claim.getIncurredDate());
-		map.addAttribute("reportedDate", claim.getReportedDate());
-		map.addAttribute("dateOfClaimPaid", claim.getDatePaid());
-		map.addAttribute("dateOfAdmission", claim.getAdmitDate());
-		map.addAttribute("dateOfDischarge", claim.getReleaseDate());
-		map.addAttribute("totalCharges", claim.getTotalCharge());
-		map.addAttribute("preCharges", claim.getPreCharge());
-		map.addAttribute("postCharges", claim.getPostCharge());*/
-		
-		
-		
-		Policy policy=claimService.findTotDeductible(insurance.getPolicyName());
+	public String reSubmitClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
+
+		Insurance insurance = claimService.findUser(claim.getCustName());
+
+		/*
+		 * map.addAttribute("oldClaimNumber", claim.getClaimNumber());
+		 * map.addAttribute("customerName", claim.getCustName());
+		 * map.addAttribute("incurredDate", claim.getIncurredDate());
+		 * map.addAttribute("reportedDate", claim.getReportedDate());
+		 * map.addAttribute("dateOfClaimPaid", claim.getDatePaid());
+		 * map.addAttribute("dateOfAdmission", claim.getAdmitDate());
+		 * map.addAttribute("dateOfDischarge", claim.getReleaseDate());
+		 * map.addAttribute("totalCharges", claim.getTotalCharge());
+		 * map.addAttribute("preCharges", claim.getPreCharge());
+		 * map.addAttribute("postCharges", claim.getPostCharge());
+		 */
+
+		Policy policy = claimService.findTotDeductible(insurance.getPolicyName());
 		map.addAttribute("totDeductible", policy.getTotDeductible());
 		map.addAttribute("totCoInsurance", policy.getTotCoInsurance());
-		if(policy.getNetAmountPerYear()*policy.getPolicyTerm()-claim.getTotalCharge()>=0)
-		{
-		map.addAttribute("totExcludedAmt",(policy.getNetAmountPerYear()*policy.getPolicyTerm())-claim.getTotalCharge());
-		map.addAttribute("totExceededAmt",0);
+		if (policy.getNetAmountPerYear() * policy.getPolicyTerm() - claim.getTotalCharge() >= 0) {
+			map.addAttribute("totExcludedAmt",
+					(policy.getNetAmountPerYear() * policy.getPolicyTerm()) - claim.getTotalCharge());
+			map.addAttribute("totExceededAmt", 0);
+		} else {
+			map.addAttribute("totExceededAmt",
+					claim.getTotalCharge() - (policy.getNetAmountPerYear() * policy.getPolicyTerm()));
+			map.addAttribute("totExcludedAmt", 0);
 		}
-		else
-		{
-		map.addAttribute("totExceededAmt",claim.getTotalCharge()-(policy.getNetAmountPerYear()*policy.getPolicyTerm()));
-		map.addAttribute("totExcludedAmt",0);
-		}
-		map.addAttribute("totBenefit",policy.getNetAmountPerYear()*policy.getPolicyTerm());
-		
+		map.addAttribute("totBenefit", policy.getNetAmountPerYear() * policy.getPolicyTerm());
+
 		map.addAttribute("success", "Insurance Claim was successfull");
 		claim.setStatus("requested");
 		claimService.saveClaim(claim);
 		return "claimedit";
 	}
-
 
 }

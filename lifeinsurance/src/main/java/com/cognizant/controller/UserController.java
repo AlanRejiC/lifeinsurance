@@ -1,5 +1,8 @@
 package com.cognizant.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -25,8 +28,11 @@ public class UserController {
 	
 	@GetMapping(value = "/getUserPage")
 	public String getUserPage(@ModelAttribute("user") User user, ModelMap map) {
+//		String role=request.getParameter("item");;
 		System.out.println("inside get user page");
 		map.addAttribute("user",userService.getAll());
+//		map.addAttribute("id", role);
+		System.out.println("role");
 		return "usersPage";
 	}
 //	
@@ -38,19 +44,22 @@ public class UserController {
 	}
 	
 	@GetMapping(value = "/userSuccess")
-	public String getUserSuccess(@RequestParam int userId,ModelMap map) {
+	public String getUserSuccess(@RequestParam int userId,@ModelAttribute("user") User user,ModelMap map) {
 		System.out.println("inside success page");
 		//map.addAttribute("success",success);
-		User user1=userService.findUser(userId);
-		userService.saveUser(user1);
+//		User user1=userService.findUser(userId);
+		userService.saveUser(user);
 		return "userSuccess";
 	}
 	@GetMapping(value = "/userUpdate")
-	public String showPolicySave(@RequestParam int userId,@ModelAttribute("user") User user, ModelMap map) {
-		User user1=userService.findUser(userId);
-		Claim claim=claimService.findCustName(user1.getFirstName());
-		map.addAttribute("status", claim.getStatus());
-		map.addAttribute("userId", user1.getUserId());
+	public String showUserUpdate(@RequestParam int userId,@ModelAttribute("claim") Claim claim, ModelMap map) {
+		User user=userService.findUser(userId);
+		System.out.println(user);
+		Claim claim1=claimService.findCustName(user.getFirstName());
+		map.addAttribute("status",claim1.getStatus());
+		map.addAttribute("userId", user.getUserId());
+		System.out.println(claim1.getStatus());
+		System.out.println("inside update page");
 		return "userUpdate";
 	}
 	@GetMapping(value = "/userDelete")
@@ -60,5 +69,12 @@ public class UserController {
 		System.out.println("inside get user delete page");
 		return "userDelete" ;
 		}
-	
+	@ModelAttribute("roleList")
+	public List<String> listRole() {
+		List<String> list = new ArrayList<String>();
+		list.add("Customer");
+		list.add("Agent");
+		list.add("Admin");
+		return list;
+	}
 }

@@ -48,7 +48,11 @@ KEY TAKEAWAYS
 
 1)Life insurance is a legally binding contract.<br>
 
+<<<<<<< HEAD
 2)For the contract to be enforceable , the life insurance application must accurately disclose the insured'��s past and current health conditions and high-risk activities.<br>
+=======
+2)For the contract to be enforceable , the life insurance application must accurately disclose the insured'€™s past and current health conditions and high-risk activities.<br>
+>>>>>>> b085272d80aa8d2c50e4cdac7b2cb40b3e69a1ef
 
 3)For a life insurance policy to remain in force, the policy holder must pay a single premium up front or pay regular premiums over time.<br>
 
@@ -56,7 +60,7 @@ KEY TAKEAWAYS
 
 5)Term life insurance policies expire after a certain number of years. Permanent life insurance policies remain active until the insured dies, stops paying premiums, or surrenders the policy.<br>
 
-6)A life insurance policy is only as good as the financial strength of the company that issues it. State guaranty funds may pay claims if the issuer can’t.</p>
+6)A life insurance policy is only as good as the financial strength of the company that issues it. State guaranty funds may pay claims if the issuer canâ€™t.</p>
 
 <footer class="footer">
   <p>Life Insurance copyrights 2020<br>
