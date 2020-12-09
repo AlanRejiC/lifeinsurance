@@ -27,7 +27,7 @@
 <ul>
   <li><a  href="">Renewal</a></li>
   <li><a href="/getClaimPage">Claim</a></li>
-  <li><a href="">Become an Agent</a></li>
+  <li><a href="/getAgentPage">Become an Agent</a></li>
   <li><a href="">Term Premium calculator</a></li>
   <li><a href="/getLoginPage">Sign In</a></li>
   <li><a href="/getSignUpPage">Sign Up</a></li>
@@ -48,11 +48,7 @@ KEY TAKEAWAYS
 
 1)Life insurance is a legally binding contract.<br>
 
-<<<<<<< HEAD
-2)For the contract to be enforceable , the life insurance application must accurately disclose the insured'€™s past and current health conditions and high-risk activities.<br>
-=======
 2)For the contract to be enforceable , the life insurance application must accurately disclose the insured'â‚¬â„¢s past and current health conditions and high-risk activities.<br>
->>>>>>> b085272d80aa8d2c50e4cdac7b2cb40b3e69a1ef
 
 3)For a life insurance policy to remain in force, the policy holder must pay a single premium up front or pay regular premiums over time.<br>
 

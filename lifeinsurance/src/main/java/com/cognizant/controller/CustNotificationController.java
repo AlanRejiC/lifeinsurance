@@ -26,16 +26,18 @@ public class CustNotificationController {
     
     @RequestMapping(value = "/getNotificationpage", method = RequestMethod.GET)
     public String getNotificationPage(@ModelAttribute("claim") Claim claim) {
-    	System.out.print(4);
+        System.out.print(4);
         return "customerNotification";
     }
     
     @RequestMapping(value = "/getNotificationpage", method = RequestMethod.POST)
     public String getCustNotiSuccess(@ModelAttribute("claim") Claim claim, BindingResult result, ModelMap map) {
+        
         claim=claimService.findCust(claim.getClaimNumber());
+        System.out.println(claim.getClaimNumber());
+        map.addAttribute("Number", claim.getClaimNumber());
        boolean isvalid=claimService.claimStatus(claim.getClaimNumber());
         if (result.hasErrors()) {
-        	System.out.print(1);
             map.addAttribute("invalidclaim", "Invalid claim Number");
             return "customerNotification";
         } 
@@ -44,7 +46,6 @@ public class CustNotificationController {
         }else {
             map.addAttribute("status", claim.getStatus());
         }
-
         return "customerNotification";
     }
 }
