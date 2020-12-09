@@ -34,6 +34,7 @@
 		<h3>${invalidclaim}</h3>
 	</form:form>
 <center>
+<h3><a href="/getClaimEdit?claimNumber=${item.claimNumber}">Edit</a></h3>
 <h4><a href="/getHomePage">Go to Home Page</a></h4>
 </center>	
 </div>
