@@ -9,7 +9,7 @@
 <body>
 <h1>Successfull</h1>
 	<h3>
-		<a href="/getUserPage">Go to User Menu</a>
+		<a href="/getUserPage?role=All">Go to User Menu</a>
 	</h3>
 </body>
 </html>

@@ -31,14 +31,14 @@
 				<td>${userId}</td>
 				<td>${status}</td>
 				<form:form modelAttribute="claim">
-				<td><a href="/getUserUpdateSuccess?status=Accepted">Accepted</a></td>
-				<td>${status}</td>
+				<td><a href="/getUserUpdateSuccess?status=accepted&userId=${userId}">Accepted</a></td>
+				<td><a href="/getUserUpdateSuccess?status=rejected&userId=${userId}">Rejected</a></td>
 			</tr>
 			</center>
 		</table>
 		 <!-- </form:form>-->
 		<h3>
-			<a href="/getUserPage">Go to User Menu</a>
+			<a href="/getUserPage?role=All">Go to User Menu</a>
 		</h3>
 </body>
 </html>

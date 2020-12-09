@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.cognizant.model.Claim;
 import com.cognizant.model.Insurance;
 import com.cognizant.model.Policy;
+import com.cognizant.model.Search;
 import com.cognizant.model.User;
 import com.cognizant.service.ClaimService;
 import com.cognizant.service.InsuranceService;
@@ -28,24 +29,48 @@ public class UserController {
 	ClaimService claimService;
 
 	@GetMapping(value = "/getUserPage")
-	public String getUserPage(@RequestParam String role, @ModelAttribute("user") User user, ModelMap map) {
+	public String getUserPage(@RequestParam String role, @ModelAttribute("search") Search search, ModelMap map) {
 //		String role=request.getParameter("item");;
+		try {
+		System.out.println(role);
 		System.out.println("inside get user page");
-		if (role.equalsIgnoreCase("Cutomer")) {
+		if (role.equalsIgnoreCase("customer")) {
 			map.addAttribute("user", userService.findUserWithRole("customer"));
+			System.out.println(userService.findUserWithRole("customer"));
 		}
 
-		else if (role.equalsIgnoreCase("Agent")) {
+		else if (role.equalsIgnoreCase("agent")) {
 			map.addAttribute("user", userService.findUserWithRole("agent"));
 		}
 
-		else if (role.equalsIgnoreCase("Cutomer")) {
-			map.addAttribute("user", userService.findUserWithRole("customer"));
+		else if (role.equalsIgnoreCase("admin")) {
+			map.addAttribute("user", userService.findUserWithRole("admin"));
 		} else {
 			map.addAttribute("user", userService.getAll());
 			
 		}
+		System.out.println(search.getName());
 		return "usersPage";
+		}
+		catch(Exception e)
+		{
+			return "userUpdateSuccess";
+		}
+	}
+	
+
+	@PostMapping(value = "/getSearch")
+	public String getSearch( @ModelAttribute("search") Search search, ModelMap map) {
+//		String role=request.getParameter("item");;
+		try {
+		System.out.println(search.getName());
+		map.addAttribute("user", userService.findParticularUser(search.getName()));
+		return "usersPage";
+		}
+		catch(Exception e)
+		{
+			return "userUpdateSuccess";
+		}
 	}
 
 //	
@@ -83,10 +108,19 @@ public class UserController {
 		System.out.println("inside update page");
 		return "userUpdate";
 	}
-//	@GetMapping(value = "/getUserUpdateSuccess")
-//	public String getUserUpdateSuccess(@RequestParam String status,@ModelAttribute ("claim") Claim claim) {
-//		
-//	}
+	
+	@GetMapping(value = "/getUserUpdateSuccess")
+	public String getUserUpdateSuccess(@RequestParam int userId,@RequestParam String status,@ModelAttribute ("claim") Claim claim) {
+		
+		User user = userService.findUser(userId);
+		Claim claim1 = claimService.findCustName(user.getFirstName());
+		claim1.setStatus(status);
+		claimService.saveClaim(claim1);
+		System.out.println(userId);
+		System.out.println(claim);
+		return "userSuccess";
+		
+	}
 
 	@GetMapping(value = "/userDelete")
 	public String showUserDelete(@RequestParam int userId, @ModelAttribute("user") User user, ModelMap map) {

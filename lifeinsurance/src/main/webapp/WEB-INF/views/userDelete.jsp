@@ -21,7 +21,7 @@
 <br>
 <center>
 <h1>The User has been deleted</h1>
-<h3><a href="/getUserPage">Go to User Menu</a></h3>
+<h3><a href="/getUserPage?role=All">Go to User Menu</a></h3>
 </center>
 </body>
 </html>

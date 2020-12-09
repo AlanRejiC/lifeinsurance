@@ -62,7 +62,7 @@ public class AgentController {
 	@GetMapping(value = "/getAgentDetails")
 	public String getAgentPage(@ModelAttribute("user") User user, ModelMap map) {
 
-		map.addAttribute("user", userService.getAll());
+		map.addAttribute("user", userService.findUserWithRole("agent"));
 
 		return "agentDetails";
 	}
@@ -71,7 +71,7 @@ public class AgentController {
 	@PostMapping(value = "/getAgentDetails")
 	public String getAgentView(@ModelAttribute("user") User user, ModelMap map) {
 
-		map.addAttribute("user", userService.getAll());
+		map.addAttribute("user", userService.findUserWithRole("agent"));
 
 
 		return "agentDetails";

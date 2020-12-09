@@ -60,9 +60,8 @@ public class UserService {
     	return userRepo2.findUsersRole(role);
     }
     
-    public User findParticularUser(String name)
+    public List<User> findParticularUser(String name)
     {
-    	List<User> users= userRepo2.findParticularUser(name);
-    	return users.get(0);
+    	return userRepo2.findParticularUser(name);
     }
 }

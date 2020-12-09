@@ -43,7 +43,8 @@
 			</tr>
 
 			<tr>
-				<td><form path="userId" value="${item.userId}"/></td>
+				<form:hidden path="userId" value="${item.userId}"/>
+				<td><label>${item.userId}</label></td>
 				<td><form:input path="firstName" type="text" value="${item.firstName}" /></td>
 				<td><form:input path="lastName" type="text" value="${item.lastName}" /></td>
 				<td><form:input path="gender" type="text" value="${item.gender}" /></td>

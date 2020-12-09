@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cognizant.model.Claim;
+import com.cognizant.model.Home;
 import com.cognizant.service.ClaimService;
+import com.cognizant.service.UserService;
 
 /**
  * 
@@ -23,8 +25,15 @@ public class CustNotificationController {
     @Autowired
     private ClaimService claimService;
 
+    @Autowired
+	private UserService userService;
+    
     @RequestMapping(value = "/getNotificationpage", method = RequestMethod.GET)
     public String getNotificationPage(@ModelAttribute("claim") Claim claim) {
+    	if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
         return "customerNotification";
     }
 
@@ -44,6 +53,7 @@ public class CustNotificationController {
         } else {
             map.addAttribute("status", claim.getStatus());
         }
+        map.addAttribute("Edit", "Edit");
         return "customerNotification";
     }
 }

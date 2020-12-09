@@ -1,5 +1,6 @@
 package com.cognizant.controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,12 +19,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cognizant.model.Claim;
+import com.cognizant.model.Home;
 import com.cognizant.model.Policy;
 import com.cognizant.model.Insurance;
 import com.cognizant.model.Payment;
 import com.cognizant.service.ClaimService;
 import com.cognizant.service.InsuranceService;
 import com.cognizant.service.PaymentService;
+import com.cognizant.service.UserService;
 import com.cognizant.validate.InsuranceValidator;
 import com.cognizant.validate.PaymentValidator;
 
@@ -34,9 +37,16 @@ public class ClaimController {
 
 	@Autowired
 	private ClaimService claimService;
+	
+	@Autowired
+	private UserService userService;
 
 	@GetMapping(value = "/getClaimPage")
 	public String getClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		System.out.println("/n/n/n/n/nInside get page/n/n/n/n");
 		return "claim";
 	}
@@ -61,6 +71,7 @@ public class ClaimController {
 		map.addAttribute("totBenefit", policy.getNetAmountPerYear() * policy.getPolicyTerm());
 		map.addAttribute("Status", "Requested");
 		map.addAttribute("success", "Insurance Claim was successfull");
+		claim.setStatuUpdatedDate(LocalDate.now());
 		claim.setStatus("requested");
 		claimService.saveClaim(claim);
 		return "claim";
@@ -109,6 +120,7 @@ public class ClaimController {
 
 		map.addAttribute("success", "Insurance Claim was successfull");
 		claim.setStatus("requested");
+		claim.setStatuUpdatedDate(LocalDate.now());
 		claimService.saveClaim(claim);
 		return "claimedit";
 	}
