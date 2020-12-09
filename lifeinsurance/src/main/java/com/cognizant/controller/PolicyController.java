@@ -97,13 +97,13 @@ public class PolicyController {
 		
 	@ModelAttribute("policyList")
 	public List<String> listPolicy() {
-		List<String> list = new ArrayList<>();
+		List<String> list = new ArrayList<String>();
 		list.add("Child Policy");
 		list.add("Term Insurance Policy");
 		list.add("Endowment Policy");
 		list.add("Unit Linked Insurance Policy");
 		list.add("Money Back Policy");
-		list.add("Whole Life Policy");
+		list.add("Death Policy");
 		return list;
 	}
 

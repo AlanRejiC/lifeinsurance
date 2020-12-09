@@ -13,4 +13,6 @@ insert into policy_table values(12345,"Child Policy","Secure your Child's future
 
 insert into payment values(100002,"Alan",342,"2020-10-20","visa",100000,1234);
 
-
+insert into policy_table values(10004,"Money Back Policy","It provides life coverage during the term of the policy and the maturity benefits are paid in installments by way of survival benefits in every 5 years. The plan is available with 20 years and 25 years term.",25,50000,1200,600,4.4);
+insert into policy_table values(10002, "Term Insurance Policy", "Life insurance coverage till demise.", 10, 100000, 0, 0, 2.5);
+insert into policy_table values(10003,"Endowment Policy","An endowment policy is a life insurance contract designed to pay a lump sum after a specific term (on its 'maturity') or on death.Typical maturities are ten, fifteen or twenty years up to a certain age limit.",15,20000,500,1200,2.2);
