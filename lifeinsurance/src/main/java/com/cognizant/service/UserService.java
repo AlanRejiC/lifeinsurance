@@ -9,12 +9,16 @@ import com.cognizant.model.User;
 import com.cognizant.model.Claim;
 import com.cognizant.model.Policy;
 import com.cognizant.repository.UserRepo;
+import com.cognizant.repository.UserRepo2;
 
 @Service
 public class UserService {
 
     @Autowired
     private UserRepo userRepo;
+    
+    @Autowired
+    private UserRepo2 userRepo2;
 
     public User findUser(int userId) {
         return userRepo.getOne(userId);
@@ -51,4 +55,14 @@ public class UserService {
         return isValid;
     }
     
+    public List<User> findUserWithRole(String role)
+    {
+    	return userRepo2.findUsersRole(role);
+    }
+    
+    public User findParticularUser(String name)
+    {
+    	List<User> users= userRepo2.findParticularUser(name);
+    	return users.get(0);
+    }
 }
