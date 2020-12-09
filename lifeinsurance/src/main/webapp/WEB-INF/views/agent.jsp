@@ -18,30 +18,43 @@
 	<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
 </header>
 <div align="center">
-	<form:form modelAttribute="agent" action="/getAgentPage" method="POST">
+	<form:form modelAttribute="user" action="/getAgentPage" method="POST">
 		<h3>Become an Agent</h3>
 		<table>
 			<tr>
 				<td>Name</td>
-				<td><form:input path="agentName" name="agentName"></form:input></td>
-				<td><form:errors path="agentName"></form:errors></td>
+				<td><form:input path="firstName" name="firstName"></form:input></td>
+				<td><form:errors path="firstName"></form:errors></td>
 			</tr>
 			<tr>
 				<td>Email</td>
-				<td><form:input path="agentEmail" name="agentEmail"
+				<td><form:input path="email" name="email"
 						placeholder="ID@Domain" /></td>
-				<td><form:errors path="agentEmail" /></td>
+				<td><form:errors path="email" /></td>
 			</tr>
 			<tr>
 				<td>Mobile Number</td>
-				<td><form:input path="agentMobileNo" type="text" name="agentMobileNo"
-						placeholder="MobileNo" /></td>
-				<td><form:errors path="agentMobileNo" /></td>
+				<td><form:input path="contact" type="text" name="contact"
+						placeholder="Contact No" /></td>
+				<td><form:errors path="contact" /></td>
 			</tr>
 			<tr>
-				<td>Address</td>
-				<td><form:input path="agentAddress" type="textbox" name="agentAddress" /></td>
-				<td><form:errors path="agentAddress"></form:errors></td>
+				<td>Agent ID</td>
+				<td><form:input path="userId" name="userId"
+						placeholder="User ID" /></td>
+				<td><form:errors path="userId" /></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><form:input path="password" type="password" name="password"
+						placeholder="Password" /></td>
+				<td><form:errors path="password" /></td>
+			</tr>
+			<tr>
+				<td>Confirm Password</td>
+				<td><form:input path="confirmpassword" type="password"
+						name="confirmpassword" placceholder="Confirm Password" /></td>
+				<td><form:errors path="confirmpassword" /></td>
 			</tr>
 		</table>
 		<input type="submit" value="Submit" id="submitbutton"/>
