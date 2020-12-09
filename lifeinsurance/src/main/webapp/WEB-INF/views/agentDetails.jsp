@@ -17,15 +17,15 @@
 <header class="header">
 	<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
 </header>
-
+<center>
 <table border="1">
                <tr id="head">
                 <td><label for="firstName"><b>Agent Name</b></label></td>
                    <td><label for="email"><b>Agent Email</b></label></td>
                    <td><label for="contact"><b>Agent Mobile Number</b></label></td>
                    
-                   <td><b>Links to view Agents</b></td>
-                    <td><b>Links to Delete Agents</b></td>
+                   <td><b>Link to view Agents</b></td>
+                    <td><b>Link to Delete Agents</b></td>
                    
                     </tr>
                     
@@ -44,6 +44,8 @@
 			</tr>
 		</c:forEach>
 		</table>
+		<h3><a id="adminlink" href="/getDashBoard" >Go to Admin DashBoard</a></h3>
+		</center>
 
 </body>
 </html>

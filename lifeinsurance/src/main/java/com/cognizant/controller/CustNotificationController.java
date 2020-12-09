@@ -30,7 +30,7 @@ public class CustNotificationController {
 
     @RequestMapping(value = "/getNotificationpage", method = RequestMethod.POST)
     public String getCustNotiSuccess(@RequestParam int claimNumber,@ModelAttribute("claim") Claim claim, BindingResult result, ModelMap map) {
-
+    	
         claim = claimService.findCust(claim.getClaimNumber());
         System.out.println(claim.getClaimNumber());
         map.addAttribute("number", claim.getClaimNumber());

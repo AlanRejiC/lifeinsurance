@@ -21,7 +21,7 @@
 <br>
 <center>
 <h1>The Agent has been deleted</h1>
-<h3><a href="/getUserPage">Go to User Menu</a></h3>
+<h4><a href="/getAdminLoginPage">Go to Admin Home Page/a></h4>
 </center>
 </body>
 </html>
