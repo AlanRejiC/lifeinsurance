@@ -23,22 +23,24 @@ public class ClaimService {
     private ClaimRepo claimRepo;
     @Autowired
     private ClaimRepo2 claimRepo2;
-    
+
     @Autowired
     private PolicyRepo policyRepo;
     @Autowired
     private UserRepo userRepo;
-    
+
     @Autowired
     private InsuranceRepo insuranceRepo;
 
     public Insurance findUser(String custName) {
         return insuranceRepo.getOne(custName);
     }
+
     public Claim findCustName(String firstName) {
-    	Claim claim=claimRepo.findClaim(firstName);
-    	return claim;
+        Claim claim = claimRepo.findClaim(firstName);
+        return claim;
     }
+
     public Policy findTotDeductible(String policyName) {
         return policyRepo.getOne(policyName);
     }
@@ -46,21 +48,20 @@ public class ClaimService {
     public void saveClaim(Claim claim) {
         claimRepo.save(claim);
     }
+
     public Claim findCust(int claimNum) {
-    	return claimRepo2.getOne(claimNum);
+        return claimRepo2.getOne(claimNum);
     }
 
-
     public boolean claimStatus(int claimNo) {
-        Claim claim=claimRepo2.getOne(claimNo);
-        //String status=claim.getStatus();
-        LocalDate now=LocalDate.now();
-        LocalDate date=claim.getStatuUpdatedDate();
-        System.out.println(date);
-        Period period= Period.between(now, date);
+        Claim claim = claimRepo2.getOne(claimNo);
+        LocalDate now = LocalDate.now();
+        LocalDate date = claim.getStatuUpdatedDate();
+        Period period = Period.between(now, date);
+        int diffmonths = Math.abs(period.getMonths());
+        int diffyears = Math.abs(period.getYears());
         int diff = Math.abs(period.getDays());
-        System.out.println(diff);
-        if(diff<=7 && diff>=0 ) {
+        if (diff <= 7 && diff >= 0 && diffyears == 0 && diffmonths == 0) {
             return true;
         }
         return false;
