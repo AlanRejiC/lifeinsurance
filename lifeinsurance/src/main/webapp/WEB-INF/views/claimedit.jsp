@@ -22,6 +22,7 @@
 	<div align="center">
 		<h1>Insurance Claim Re-Submission Form</h1>
 		<h2>Please Re-Submit your Claim as your previous submission has been Rejected.</h2>
+		
 		<form:form action="/getClaimEdit" method="POST" name="userResubmit"
 			modelAttribute="claim">
 			<table>
