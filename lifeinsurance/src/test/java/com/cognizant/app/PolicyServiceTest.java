@@ -13,6 +13,8 @@ import com.cognizant.model.Policy;
 import com.cognizant.repository.PolicyRepo;
 import com.cognizant.service.PolicyService;
 
+import junit.framework.Assert;
+
 /**
  * 
  * @author SA
@@ -55,20 +57,22 @@ public class PolicyServiceTest {
         Mockito.verify(policyRepo, Mockito.times(1)).delete((Policy)Mockito.anyObject());
     }
     
-    /**
+
+    @SuppressWarnings("deprecation")
     @Test 
     public void policyNameValiadtionTest() {
         try {
-            policyservice.policyNameValiadtion((Policy)Mockito.anyObject());
-            when(this.policy.getPolicyName()).thenReturn("Child Policy");
-            when(policyservice.findPolicyName(Mockito.anyString())).thenReturn(policy);
-            
+            //policyservice.policyNameValiadtion((Policy)Mockito.anyObject());
+            //when(this.policy.getPolicyName()).thenReturn("Child Policy");
+            //Mockito.when(policyservice.policyNameValiadtion((Policy)Mockito.anyObject())).thenReturn(true);
+           Assert.assertFalse(policyservice.policyNameValiadtion(null));
+           Assert.assertTrue(policyservice.policyNameValiadtion((Policy)Mockito.anyObject()));
            
         } catch (NullPointerException e) {
             // TODO: handle exception
-            Mockito.verify(policyRepo, Mockito.times(1)).getOne(Mockito.anyString());
+            //Mockito.verify(policyRepo, Mockito.times(1)).getOne(Mockito.anyString());
         }
         
-    }*/
+    }
     
 }
