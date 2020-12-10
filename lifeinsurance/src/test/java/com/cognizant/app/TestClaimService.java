@@ -6,6 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.cognizant.model.Claim;
 import com.cognizant.repository.ClaimRepo;
@@ -16,6 +17,7 @@ import com.cognizant.repository.UserRepo;
 import com.cognizant.service.ClaimService;
 
 @RunWith(MockitoJUnitRunner.class)
+
 public class TestClaimService {
 
 	@InjectMocks

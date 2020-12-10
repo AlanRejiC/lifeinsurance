@@ -2,6 +2,7 @@ package com.cognizant.app;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Before;
@@ -40,23 +41,28 @@ public class TestClaimController {
 	}
 	
 	@Test
-	public void claimPage() throws Exception{
+	public void testClaimPage() throws Exception{
 		this.mockMvc.perform(get("/getClaimPage")).andExpect(status().isOk());
 	}
 	
 	@Test
-	public void PostClaimPage() throws Exception{
+	public void testPostClaimPage() throws Exception{
 		this.mockMvc.perform(get("/getClaimPage")).andExpect(status().isOk());
 	}
 	
 	@Test
-	public void claimEditPage() throws Exception{
+	public void testClaimEditPage() throws Exception{
 		this.mockMvc.perform(get("/getClaimEdit")).andExpect(status().isOk());
 	}
 	
 	@Test
-	public void PostClaimEditPage() throws Exception{
+	public void postClaimEditPage() throws Exception{
 		this.mockMvc.perform(get("/getClaimEdit")).andExpect(status().isOk());
+	}
+	
+	@Test
+	public void testGetEditClaimPage() throws Exception{
+		this.mockMvc.perform(get("/getClaimEdit").param("claimNumber", "1236")).andExpect(redirectedUrl("/getClaimEdit)"));
 	}
 	
 }
