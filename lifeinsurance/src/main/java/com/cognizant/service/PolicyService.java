@@ -16,48 +16,46 @@ import com.cognizant.repository.PolicyRepo;
 @Service
 public class PolicyService {
 
-	@Autowired
-	PolicyRepo policyRepo;
+    @Autowired
+    PolicyRepo policyRepo;
 
-	public Policy findPolicyName(String policyName) {
-		return policyRepo.getOne(policyName);
-	}
+    public Policy findPolicyName(String policyName) {
+        return policyRepo.getOne(policyName);
+    }
 
-	public List<Policy> getAll() {
-		return policyRepo.findAll();
+    public List<Policy> getAll() {
+        return policyRepo.findAll();
+    }
 
-	}
+    public void savePolicy(Policy policy) {
+        policyRepo.save(policy);
+    }
 
-	public void savePolicy(Policy policy) {
-		policyRepo.save(policy);
-	}
-	
-	public void deletePolicy(Policy policy) {
-		policyRepo.delete(policy);
-	}
+    public void deletePolicy(Policy policy) {
+        policyRepo.delete(policy);
+    }
 
-	public boolean policyNameValiadtion(Policy policy) {
-		boolean isValid = false;
-		Policy temp = findPolicyName(policy.getPolicyName());
-		if (temp == null)
-			return false;
+    public boolean policyNameValiadtion(Policy policy) {
+        boolean isValid = false;
+        Policy temp = findPolicyName(policy.getPolicyName());
+        if (temp == null)
+            return false;
 
-		if (temp.getPolicyName() == policy.getPolicyName())
-			isValid = true;
+        if (temp.getPolicyName() == policy.getPolicyName())
+            isValid = true;
 
-		return isValid;
+        return isValid;
+    }
 
-	}
-
-	public void getPolicyDetails(Policy policy) {
-		policy.getPolicyNumber();
-		policy.getPolicyName();
-		policy.getPolicyDescription();
-		policy.getInterestRate();
-		policy.getNetAmountPerYear();
-		policy.getPolicyTerm();
-		policy.getTotDeductible();
-		policy.getTotCoInsurance();
-	}
+    public void getPolicyDetails(Policy policy) {
+        policy.getPolicyNumber();
+        policy.getPolicyName();
+        policy.getPolicyDescription();
+        policy.getInterestRate();
+        policy.getNetAmountPerYear();
+        policy.getPolicyTerm();
+        policy.getTotDeductible();
+        policy.getTotCoInsurance();
+    }
 
 }
