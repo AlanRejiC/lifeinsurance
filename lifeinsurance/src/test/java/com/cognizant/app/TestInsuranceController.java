@@ -1,7 +1,6 @@
 package com.cognizant.app;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.request;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Before;
@@ -31,48 +30,61 @@ import com.cognizant.validate.PaymentValidator;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class TestInsuranceController {
-	
+public class TestInsuranceController {
+
 	@InjectMocks
 	private InsuranceController insuranceController;
 	private MockMvc mockMvc;
-	
+
 	@Mock
 	private InsuranceService insuranceService;
-	
+
 	@Mock
 	private ClaimService claimService;
-	
+
 	@Mock
 	private PaymentService paymentService;
-	
+
 	@Mock
 	private InsuranceValidator insuranceValidator;
-	
+
 	@Mock
 	private PaymentValidator paymentValidator;
-	
+
 	@Mock
 	private UserService userService;
-	
+
+	@SuppressWarnings("deprecation")
 	@Before
-	public void setUp() throws Exception{
-		
+	public void setUp() throws Exception {
+
 		MockitoAnnotations.initMocks(this);
-		this.mockMvc=MockMvcBuilders.standaloneSetup(insuranceController).build();
+		this.mockMvc = MockMvcBuilders.standaloneSetup(insuranceController).build();
 	}
-	
-	
+
 	@Test
-	public void getPayment() throws Exception{
-		
-		this.mockMvc.perform(get("/getPaymentPage"))
-		.andExpect(status().isOk());
+	public void getPayment() throws Exception {
+
+		this.mockMvc.perform(get("/getPaymentPage")).andExpect(status().isOk());
 	}
-	
+
 	@Test
-	public void getSuccessPayment() throws Exception{
-		
+	public void getSuccessPayment() throws Exception {
+
+		this.mockMvc.perform(get("/getPaymentPage")).andExpect(status().isOk());
+	}
+
+	@Test
+	public void getInsurancePageTest() throws Exception {
+
+		this.mockMvc.perform(get("/getInsurancePage")).andExpect(status().isOk());
+	}
+
+	@Test
+	public void getPaymentPageTest() throws Exception {
+
+		this.mockMvc.perform(get("/getInsurancePage")).andExpect(status().isOk());
+
 	}
 
 }
