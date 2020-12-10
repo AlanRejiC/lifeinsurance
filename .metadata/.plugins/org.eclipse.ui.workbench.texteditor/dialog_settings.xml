@@ -10,8 +10,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="re"/>
+		<item key="selection" value="Upda"/>
 		<list key="findhistory">
+			<item value="upda"/>
 			<item value="re"/>
 			<item value="true"/>
 			<item value="ser"/>
@@ -22,8 +23,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="601"/>
-		<item key="DIALOG_Y_ORIGIN" value="82"/>
+		<item key="DIALOG_X_ORIGIN" value="165"/>
+		<item key="DIALOG_Y_ORIGIN" value="141"/>
 		<item key="DIALOG_WIDTH" value="248"/>
 		<item key="DIALOG_HEIGHT" value="354"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-21|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
