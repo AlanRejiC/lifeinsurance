@@ -15,16 +15,11 @@
 	<br>
 	<br>
 	<br>
-	<h1>Users</h1>
+	<h1>Policies</h1>
 	<br>
 	<br>
 	<br>
 	<br>
-	<a href="/download/users.xlsx">import</a>
-	<form:form action="/getSearch" modelAttribute="search" method="POST">
-	<form:input path="name"/>
-	<input type="submit" value="Search"/>
-	</form:form>
 	<table>
 
 		<tr id="head">
@@ -36,9 +31,9 @@
 			<td><label for="contact"><b>Contact Number</b></label></td>
 			<td><label for="email"><b>Email Id</b></label>
 			<td><label for="role"><b>Role</b></label></td>
-			<td><a href="getUserPage?role=customer">Customer</a></td>
-			<td><a href="getUserPage?role=agent">Agent</a></td>
-			<td><a href="getUserPage?role=admin">Admin</a></td>
+			<td><form action="usersPage?role=Customer" ><button >Customer</button></form></td>
+			<!--  <td><form action="usersPage?role=Agent" ><button >Agent</button></form></td>
+			<td><form action="usersPage?role=Admin" ><button >Admin</button></form></td>-->
 		</tr>
 
 		<c:forEach var="user" items="${user}">
@@ -58,7 +53,6 @@
 				<td><a href="/userUpdate?userId=${user.userId}">Update
 						Claim Status</a></td>
 				<td><a href="/userDelete?userId=${user.userId}">Delete</a></td>
-
 			</tr>
 		</c:forEach>
 
