@@ -18,7 +18,8 @@ public interface UserRepo2 extends PagingAndSortingRepository<User,Integer>{
 	@Query("select u from User u where first_name = ?1")
 	List<User> findParticularUser(String firstName);
 	
-	
+	@Query("select u from User u where contact = ?1")
+	List<User> findUserNumber(String contact);
 }
 
 
