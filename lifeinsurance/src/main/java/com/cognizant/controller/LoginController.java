@@ -46,6 +46,11 @@ public class LoginController {
 	public String homePage() {
 		return "homepage";
 	}
+	
+	@RequestMapping(value = "/getContactPage", method = RequestMethod.GET)
+	public String contactPage() {
+		return "contactUs";
+	}
 
 	@RequestMapping(value = "/forgotPassword", method = RequestMethod.GET)
 	public String forgotPassword(@ModelAttribute("user") User user) {
