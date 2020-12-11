@@ -34,6 +34,7 @@
   <li><a href="/getInsurancePage">Apply for Insurance</a></li>
   <li><a href="/getNotificationpage">Notification Page</a></li>
   <li><a href="/getLogOut">Log Out</a></li>
+  <li><a href="/getContactPage">Contact Us</a></li>
   
   
 </ul>
@@ -57,6 +58,8 @@ KEY TAKEAWAYS
 5)Term life insurance policies expire after a certain number of years. Permanent life insurance policies remain active until the insured dies, stops paying premiums, or surrenders the policy.<br>
 
 6)A life insurance policy is only as good as the financial strength of the company that issues it. State guaranty funds may pay claims if the issuer canâ€™t.</p>
+
+
 
 <footer class="footer">
   <p>Life Insurance copyrights 2020<br>

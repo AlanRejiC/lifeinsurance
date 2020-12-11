@@ -45,6 +45,11 @@ public class LoginController {
 	public String homePage() {
 		return "homepage";
 	}
+	
+	@RequestMapping(value = "/getContactPage", method = RequestMethod.GET)
+	public String contactPage() {
+		return "contactUs";
+	}
 
 	@RequestMapping(value = "/getSignUpPage", method = RequestMethod.GET)
 	public String getSignUp(@ModelAttribute("user") User user) {

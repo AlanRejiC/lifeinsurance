@@ -81,3 +81,12 @@
 #policylink {
 	color:#ff8000;
 }
+
+.float-button {
+position: fixed;
+right: -77px;
+top: 270px;
+transition: all 0.2s ease-in 0s; //this is the key attribute
+z-index: 9999;
+cursor: pointer;
+}
