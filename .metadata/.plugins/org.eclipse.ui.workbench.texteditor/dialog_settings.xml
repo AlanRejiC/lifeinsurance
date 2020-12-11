@@ -10,8 +10,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Upda"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="claimStatus"/>
 			<item value="upda"/>
 			<item value="re"/>
 			<item value="true"/>
