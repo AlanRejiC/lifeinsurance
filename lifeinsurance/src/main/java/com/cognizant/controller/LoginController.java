@@ -196,23 +196,19 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
-	public String postForgotPassword(@RequestParam String oldpassword,@ModelAttribute("user") User user, ModelMap map) {
-		User user1=userService.findUser(user.getUserId());
-		map.addAttribute("oldpassword", user.getPassword());
-		System.out.println(user);
-		System.out.println(user1);
-		System.out.println(oldpassword);
-		if(oldpassword.equals(user1.getPassword())) {
+	public String postForgotPassword(@ModelAttribute("user") User user, ModelMap map) {
+		User user1=userService.findUser(Home.Id);
+//		map.addAttribute("oldpassword", user.getPassword());
+//		String oldPassword =requestParameter("old");
+//		if(oldpassword==user1.getPassword()) {
 			
 			user1.setPassword(user.getPassword());
 			user1.setConfirmpassword(user.getConfirmpassword());
-			System.out.println(user);
-			System.out.println(user1);
 			userService.saveUser(user1);
-			return "homepage";
-		}
-		else
-		return "forgotMyPassword";
+			return "success";
+//		}
+//		else
+//		return "forgotMyPassword";
 	}
 
 	@ModelAttribute("genderList")

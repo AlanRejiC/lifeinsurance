@@ -30,15 +30,9 @@
 										here.</p>
 									<div class="panel-body">
 										<fieldset>
-											<form:form action="/forgotPassword?oldpassword=${oldPassword}" modelAttribute="user" method="POST">
+											<form:form action="/forgotPassword" modelAttribute="user" method="post">
 												<div class="form-group">
 												
-													<form:input path="userId" class="form-control input-lg"
-														placeholder="User ID" />
-													<input class="form-control input-lg"
-														placeholder="Old Password" id="old" type="password" value="${oldPassword}"/>
-														
-														
 													<form:input path="password" class="form-control input-lg"
 														placeholder="New Password" name="new" type="text" />
 													<form:input path="confirmpassword" class="form-control input-lg"
