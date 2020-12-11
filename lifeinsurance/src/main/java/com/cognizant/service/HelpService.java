@@ -1,10 +1,13 @@
 package com.cognizant.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cognizant.model.Help;
 import com.cognizant.model.Insurance;
+import com.cognizant.model.User;
 import com.cognizant.repository.HelpRepo;
 import com.cognizant.repository.InsuranceRepo;
 
@@ -23,5 +26,12 @@ public class HelpService {
     
     public void saveHelpIssue(Help help) {
         helpRepo.save(help);
+    }
+    public List<Help> getAll() {
+        return helpRepo.findAll();
+    }
+    
+    public Help findHelpbyRequestID(Help help) {
+        return helpRepo.getOne(help.getRequestId());     
     }
 }

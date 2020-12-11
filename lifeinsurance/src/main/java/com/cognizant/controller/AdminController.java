@@ -9,7 +9,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.cognizant.model.Help;
 import com.cognizant.model.User;
+import com.cognizant.service.HelpService;
 import com.cognizant.service.UserService;
 
 /**
@@ -22,6 +26,9 @@ public class AdminController {
 
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private HelpService helpService;
 
     @RequestMapping(value = "/getAdminLoginPage", method = RequestMethod.GET)
     public String getAdminLoginPage(@ModelAttribute("user") User user) {
@@ -45,4 +52,18 @@ public class AdminController {
         return "adminDashboard";
     }
     
+    @RequestMapping(value="/getHelpRequest", method = RequestMethod.GET)
+    public String getResolutionPage(@ModelAttribute("help") Help help, BindingResult result, ModelMap map){
+        
+        map.addAttribute("help", helpService.getAll());
+        return "resolveHelpRequest";     
+    }
+    
+    @RequestMapping(value="/getEditHelpRequest", method = RequestMethod.GET)
+    public String getEditResolutionPage(@ModelAttribute("help") Help help, BindingResult result, ModelMap map) {
+            Help help1=helpService.findHelpbyRequestID(help);
+            map.addAttribute("item", help1);
+
+        return "editResolveHelpRequest"; 
+    }
 }

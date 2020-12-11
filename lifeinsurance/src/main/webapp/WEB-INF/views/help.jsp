@@ -18,7 +18,7 @@
 	<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
 </header>
 	<center><h2>Help Desk</h2></center>
-	<div align="left">
+	<div align="center">
 		<form:form modelAttribute="help" method="POST" action="/getHelpPage">
 			<table>
 				<tr>
@@ -41,6 +41,9 @@
 			</table>
 			<br>
 			<input type="submit" value="Submit" id="submitbutton"/>
+			<br>
+			<br>
+			<a href="/getContactPage">Contact Us</a>
 		</form:form>
 	</div>
 <footer class="footer">
