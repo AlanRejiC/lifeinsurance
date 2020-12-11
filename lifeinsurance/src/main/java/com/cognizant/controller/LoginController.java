@@ -57,19 +57,7 @@ public class LoginController {
 		
 		return "forgotMyPassword";
 	}
-	@RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
-	public String postForgotPassword(@RequestParam String password,@ModelAttribute("user") User user) {
-		User user1=userService.findUser(user.getUserId());
-		if(password==user1.getPassword()) {
-			
-			user1.setPassword(user.getPassword());
-			user1.setConfirmpassword(user.getConfirmpassword());
-			userService.saveUser(user1);
-			return "homepage";
-		}
-		else
-		return "forgotMyPassword";
-	}
+
 	
 	
 	@RequestMapping(value = "/getSignUpPage", method = RequestMethod.GET)

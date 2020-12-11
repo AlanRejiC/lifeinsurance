@@ -16,7 +16,6 @@
 			<table>
 
 			
-
 					<tr><td>Enter Contact</td></tr>
 					<tr><td><form:input path="contact" 
 							placeholder="Contact" /></td><tr>

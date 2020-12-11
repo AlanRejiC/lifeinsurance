@@ -16,7 +16,7 @@
 			<table>
 
 
-				
+				<form:hidden path="contact" />
 				<tr>
 				<td>${Question1}</td>
 				</tr>
