@@ -18,7 +18,7 @@
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">×</button>
-					<h1 class="text-center">Forgot Password?</h1>
+					<h1 class="text-center">Change Password?</h1>
 				</div>
 				<div class="modal-body">
 					<div class="col-md-12">

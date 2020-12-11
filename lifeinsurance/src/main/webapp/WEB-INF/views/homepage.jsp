@@ -21,7 +21,7 @@
 <header class="header">
 <center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
 <div class="container">
-  <a href="/forgotPassword" data-target="#pwdModal" data-toggle="modal">Forgot my password</a>
+  <a href="/forgotPassword" data-target="#pwdModal" data-toggle="modal">Change password</a>
 </div>
 
 </header>
