@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cognizant.model.Insurance;
 import com.cognizant.model.Payment;
@@ -46,6 +47,26 @@ public class LoginController {
 		return "homepage";
 	}
 
+	@RequestMapping(value = "/forgotPassword", method = RequestMethod.GET)
+	public String forgotPassword(@ModelAttribute("user") User user) {
+		
+		return "forgotMyPassword";
+	}
+	@RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
+	public String postForgotPassword(@RequestParam String password,@ModelAttribute("user") User user) {
+		User user1=userService.findUser(user.getUserId());
+		if(password==user1.getPassword()) {
+			
+			user1.setPassword(user.getPassword());
+			user1.setConfirmpassword(user.getConfirmpassword());
+			userService.saveUser(user1);
+			return "homepage";
+		}
+		else
+		return "forgotMyPassword";
+	}
+	
+	
 	@RequestMapping(value = "/getSignUpPage", method = RequestMethod.GET)
 	public String getSignUp(@ModelAttribute("user") User user) {
 
