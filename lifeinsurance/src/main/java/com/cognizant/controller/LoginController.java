@@ -90,12 +90,6 @@ public class LoginController {
 			return "userRegistration";
 		}
 		user.setRole("customer"); // Setting the role to customer
-		user.setAns1(" "); // These functionalities are a part of a later User Story
-		user.setAns2(" ");
-		user.setAns3(" ");
-		user.setSecurity1(" ");
-		user.setSecurity2(" ");
-		user.setSecurity3(" ");
 		user.setLogin(false);
 		System.out.println(user);
 		userService.saveUser(user);
@@ -143,6 +137,79 @@ public class LoginController {
 		Home.Id=0;
 		return "logout";
 	}
+	
+	@RequestMapping(value = "/forgotEnter", method = RequestMethod.GET)
+	public String forgotUserIdEnterEmailorPassword(@ModelAttribute("user") User user,ModelMap map)
+	{
+		User user1=null;
+		try {
+			if(user.getEmail()!="")
+			{
+				System.out.println(user.getEmail());
+				user1 = userService.findUserEmail(user.getEmail()).get(0);
+				user = user1 ;
+				System.out.println(1);
+				map.addAttribute("Question1",user.getSecurity1());
+				System.out.println(2);
+				map.addAttribute("Question2",user.getSecurity2());
+				map.addAttribute("Question3",user.getSecurity3());
+				
+				return "forgotId";
+				
+			}
+			else if(user.getContact()!="")
+			{
+				user1 = userService.findUserNumber(user.getContact()).get(0);
+				user = user1 ;
+				map.addAttribute("Question1",user.getSecurity1());
+				map.addAttribute("Question2",user.getSecurity2());
+				map.addAttribute("Question3",user.getSecurity3());
+				return "forgotId";
+			}
+			
+		}
+		catch(Exception e)
+		{
+			map.addAttribute("status", "You have entered the wrong Phone number or Email");
+			System.out.println("Exception");
+			return "forgotEnter";
+		}
+		map.addAttribute("status", "You have entered the wrong Phone number or Email");
+		return "forgotEnter";
+	}
+	
+
+	
+	@RequestMapping(value = "/forgotUserId", method = RequestMethod.POST)
+	public String forgotUserIdWithId(@ModelAttribute("user") User user,ModelMap map)
+	{
+	
+		map.addAttribute("Question1",user.getSecurity1());
+		map.addAttribute("Question2",user.getSecurity2());
+		map.addAttribute("Question3",user.getSecurity3());
+		System.out.println(user);
+		User user1=userService.findUserNumber(user.getContact()).get(0);
+		if(user.getAns1().equalsIgnoreCase(user1.getAns1()) && user.getAns2().equalsIgnoreCase(user1.getAns2()) && user.getAns3().equalsIgnoreCase(user1.getAns3()))
+		map.addAttribute("id",user.getUserId());
+	
+		
+		return "forgotId";
+	}
+	
+	@RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
+	public String postForgotPassword(@RequestParam String oldpassword,@ModelAttribute("user") User user, ModelMap map) {
+		User user1=userService.findUser(user.getUserId());
+		map.addAttribute("oldpassword", user.getPassword());
+		if(oldpassword==user1.getPassword()) {
+			
+			user1.setPassword(user.getPassword());
+			user1.setConfirmpassword(user.getConfirmpassword());
+			userService.saveUser(user1);
+			return "homepage";
+		}
+		else
+		return "forgotMyPassword";
+	}
 
 	@ModelAttribute("genderList")
 	public List<String> listGender() {
@@ -150,6 +217,19 @@ public class LoginController {
 		list.add("Male");
 		list.add("Female");
 		list.add("Other");
+		return list;
+	}
+	
+	@ModelAttribute("securityList")
+	public List<String> listSecurity() {
+		List<String> list = new ArrayList<String>();
+		list.add("Where were you born ?");
+		list.add("What was your first pet ?");
+		list.add("What is your Mothers maiden name ?");
+		list.add("What is your favourite sport ?");
+		list.add("What is your favourite hobby ?");
+		list.add("Where did you go to college ?");
+		list.add("Choose a number between 1 and 100");
 		return list;
 	}
 

@@ -68,5 +68,10 @@ public class UserService {
 		System.out.println("-----Inside findUserNumber----");
 		return userRepo2.findUserNumber(number);
 	}
+	
+	public List<User> findUserEmail(String email) {
+		System.out.println("-----Inside findUserEMail---");
+		return userRepo2.findUserEmail(email);
+	}
 
 }

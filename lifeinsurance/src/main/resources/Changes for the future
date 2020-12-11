@@ -13,3 +13,5 @@ Changes to be made for the future
 6 The admin login has to return error for id not present
 
 7 placeholders for all the dates
+
+6 add location to agent

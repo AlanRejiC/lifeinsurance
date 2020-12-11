@@ -56,6 +56,40 @@
 						name="confirmpassword" placceholder="Confirm Password" /></td>
 				<td><form:errors path="confirmpassword" /></td>
 			</tr>
+			<tr>
+				<td>Choose the first Question</td>
+				<td><form:select path="security1" 
+						items="${securityList}" /></td>
+				<td><form:errors path="security1"></form:errors></td>
+				<tr>
+				<tr>
+					<td>Enter the answer</td>
+					<td><form:input path="ans1" /></td>
+					<td><form:errors path="ans1" /></td>
+				</tr>
+				</tr>
+				<td>Choose the second Question</td>
+				<td><form:select path="security2" 
+						items="${securityList}" /></td>
+				<td><form:errors path="security2"></form:errors></td>
+				</tr>
+				<tr>
+					<td>Enter the answer</td>
+					<td><form:input path="ans2" /></td>
+					<td><form:errors path="ans2" /></td>
+				</tr>
+				
+				<tr>
+				<td>Choose the third Question</td>
+				<td><form:select path="security3" 
+						items="${securityList}" /></td>
+				<td><form:errors path="security3"></form:errors></td>
+				</tr>
+				<tr>
+					<td>Enter the answer</td>
+					<td><form:input path="ans3"  /></td>
+					<td><form:errors path="ans3" /></td>
+				</tr>
 		</table>
 		<input type="submit" value="Submit" id="submitbutton"/>
 	</form:form>

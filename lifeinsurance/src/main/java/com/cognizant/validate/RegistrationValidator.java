@@ -32,12 +32,12 @@ public class RegistrationValidator implements Validator{
 		ValidationUtils.rejectIfEmpty(errors, "password","", "Password cannot be blank");
 		ValidationUtils.rejectIfEmpty(errors, "confirmpassword","", "Password cannot be blank");
 		ValidationUtils.rejectIfEmpty(errors, "email","", "Email cannot be blank");
-//		ValidationUtils.rejectIfEmpty(errors, "security1","", "Please select a security question");
-//		ValidationUtils.rejectIfEmpty(errors, "ans1","", "This field cannot be blank");
-//		ValidationUtils.rejectIfEmpty(errors, "security2","", "Please select a security question");
-//		ValidationUtils.rejectIfEmpty(errors, "ans2","", "UserName cannot be blank");
-//		ValidationUtils.rejectIfEmpty(errors, "security3","", "Please select a security question");
-//		ValidationUtils.rejectIfEmpty(errors, "ans3","", "This field cannot be blank");
+		ValidationUtils.rejectIfEmpty(errors, "security1","", "Please select a security question");
+		ValidationUtils.rejectIfEmpty(errors, "ans1","", "This field cannot be blank");
+		ValidationUtils.rejectIfEmpty(errors, "security2","", "Please select a security question");
+		ValidationUtils.rejectIfEmpty(errors, "ans2","", "UserName cannot be blank");
+		ValidationUtils.rejectIfEmpty(errors, "security3","", "Please select a security question");
+		ValidationUtils.rejectIfEmpty(errors, "ans3","", "This field cannot be blank");
 		String userid=""+user.getUserId();
 		if(!userid.matches("[0-9]{8}")){
 			errors.rejectValue("userId", "","UserId should be a 8 digit number");
