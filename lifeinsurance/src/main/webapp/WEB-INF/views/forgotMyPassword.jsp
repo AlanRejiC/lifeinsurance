@@ -12,12 +12,12 @@
 </head>
 <body>
 	<div id="pwdModal" class="modal fade" tabindex="-1" role="dialog"
-		aria-hidden="true">
+		aria-hidden="true" >
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">×</button>
+						aria-hidden="true" oncancel="/getHomePage">×</button>
 					<h1 class="text-center">Change Password?</h1>
 				</div>
 				<div class="modal-body">
@@ -30,13 +30,13 @@
 										here.</p>
 									<div class="panel-body">
 										<fieldset>
-											<form:form action="/forgotPassword?password=old" modelAttribute="user" method="post">
+											<form:form action="/forgotPassword?oldpassword=${oldPassword}" modelAttribute="user" method="post">
 												<div class="form-group">
 												
 													<form:input path="userId" class="form-control input-lg"
 														placeholder="User ID" />
 													<input class="form-control input-lg"
-														placeholder="Old Password" name="old" type="password" />
+														placeholder="Old Password" id="old" type="password" value="${oldPassword}"/>
 														
 														
 													<form:input path="password" class="form-control input-lg"
@@ -45,7 +45,7 @@
 														placeholder="Confirm Password" name="confirm" type="password" />
 												</div>
 												<input class="btn btn-lg btn-primary btn-block"
-													value="Send My Password" type="submit">
+													value="Update Password" type="submit">
 											</form:form>
 										</fieldset>
 									</div>
@@ -56,7 +56,7 @@
 				</div>
 				<div class="modal-footer">
 					<div class="col-md-12">
-						<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+						<button class="btn" data-dismiss="modal" aria-hidden="true" onclick="/getHomePage">Cancel</button>
 					</div>
 				</div>
 			</div>
