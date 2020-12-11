@@ -28,6 +28,7 @@
 <div id="navigation_bar">
 <ul>
   <li><a  href="">Renewal</a></li>
+  <li><a href="/getHelpPage">Help Desk</a></li>
   <li><a href="/getClaimPage">Claim</a></li>
   <li><a href="/getAgentPage">Become an Agent</a></li>
   <li><a href="/getPolicyPremium">Term Premium calculator</a></li>

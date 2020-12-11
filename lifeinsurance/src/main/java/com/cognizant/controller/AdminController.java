@@ -71,11 +71,18 @@ public class AdminController {
         return "editResolveHelpRequest"; 
     }
     
-    @GetMapping(value = "/resolveSuccess")
+    @RequestMapping(value="/resolveSuccess",method = RequestMethod.GET)
     public String getUserSuccess(@ModelAttribute("help") Help help, BindingResult result, ModelMap map) {
-        //Help help1=helpService.findHelpbyRequestID(help);
+    	System.out.println(help+" ///// from the model attribute");
+    	Help help1=helpService.findHelpbyRequestID(help);
+    	System.out.println(help1+" ///// from the the database");
+        help1.setResolutionByAdmin(help.getResolutionByAdmin());
+        System.out.println(help1+" ///// setting the resolved by admin of object from db with model attribute value");
         //System.out.println(help1);
-        //helpService.saveHelpIssue(help1);
+       
+        helpService.saveHelpIssue(help1);
+        System.out.println("saving");
+    	
         return "success";
     }
 }

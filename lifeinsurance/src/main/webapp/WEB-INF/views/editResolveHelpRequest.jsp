@@ -19,7 +19,7 @@
 </header>
 	<center><h2>Resolve Help Requests</h2></center>
 	<div align="center">
-	<form:form modelAttribute="help" method="GET" action="/resolveSuccess">
+	<form:form modelAttribute="help" method="GET" action="resolveSuccess">
 		<table>
 			<tr id="head">
 				<th><label for="requestId"><b>Request ID</b></label></th>
