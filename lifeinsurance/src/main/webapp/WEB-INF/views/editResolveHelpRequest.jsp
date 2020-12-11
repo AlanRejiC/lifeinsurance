@@ -19,7 +19,7 @@
 </header>
 	<center><h2>Resolve Help Requests</h2></center>
 	<div align="center">
-	<form:form modelAttribute="help" method="GET" action="/getEditHelpRequest">
+	<form:form modelAttribute="help" method="GET" action="/resolveSuccess">
 		<table>
 			<tr id="head">
 				<th><label for="requestId"><b>Request ID</b></label></th>
@@ -35,7 +35,7 @@
 				<td><label>${item.issue}</label></td>
 				<td><label>${item.description}</label></td>
 				<td><label>${item.dateOfTicket}</label></td>
-				<td><form:input path="resolutionByAdmin" type="text" value="${item.resolutionByAdmin}" /></td>
+				<td><form:input path="resolutionByAdmin" type="text"  name="resolutionByAdmin" value="${item.resolutionByAdmin}" /></td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="Save"></td>

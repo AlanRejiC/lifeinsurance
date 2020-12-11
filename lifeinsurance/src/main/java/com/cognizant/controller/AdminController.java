@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -63,7 +64,18 @@ public class AdminController {
     public String getEditResolutionPage(@ModelAttribute("help") Help help, BindingResult result, ModelMap map) {
             Help help1=helpService.findHelpbyRequestID(help);
             map.addAttribute("item", help1);
-
+            help.setCustName(help1.getCustName());
+            System.out.println("get Edit resolve");
+            System.out.println(help1);
+            helpService.saveHelpIssue(help1);
         return "editResolveHelpRequest"; 
+    }
+    
+    @GetMapping(value = "/resolveSuccess")
+    public String getUserSuccess(@ModelAttribute("help") Help help, BindingResult result, ModelMap map) {
+        //Help help1=helpService.findHelpbyRequestID(help);
+        //System.out.println(help1);
+        //helpService.saveHelpIssue(help1);
+        return "success";
     }
 }
