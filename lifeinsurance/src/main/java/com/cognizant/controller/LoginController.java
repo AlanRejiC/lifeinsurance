@@ -131,7 +131,7 @@ public class LoginController {
 	{
 		User user1=null;
 		try {
-			if(user.getEmail()!="")
+			if(user.getEmail()!="" && user.getEmail()!=null)
 			{
 				System.out.println(user.getEmail());
 				user1 = userService.findUserEmail(user.getEmail()).get(0);
@@ -145,7 +145,7 @@ public class LoginController {
 				return "forgotId";
 				
 			}
-			else if(user.getContact()!="")
+			else if(user.getContact()!="" && user.getContact()!=null)
 			{
 				user1 = userService.findUserNumber(user.getContact()).get(0);
 				user = user1 ;
@@ -162,7 +162,7 @@ public class LoginController {
 			System.out.println("Exception");
 			return "forgotEnter";
 		}
-		map.addAttribute("status", "You have entered the wrong Phone number or Email");
+		//map.addAttribute("status", "You have entered the wrong Phone number or Email");
 		return "forgotEnter";
 	}
 	
@@ -176,9 +176,20 @@ public class LoginController {
 		map.addAttribute("Question2",user.getSecurity2());
 		map.addAttribute("Question3",user.getSecurity3());
 		System.out.println(user);
-		User user1=userService.findUserNumber(user.getContact()).get(0);
+		User user1= null;
+		if(user.getEmail()!="")
+		{
+			user1=userService.findUserEmail(user.getEmail()).get(0);
+		}
+		else
+			if(user.getContact()!="")
+		{
+		 user1=userService.findUserNumber(user.getContact()).get(0);	
+		}
 		if(user.getAns1().equalsIgnoreCase(user1.getAns1()) && user.getAns2().equalsIgnoreCase(user1.getAns2()) && user.getAns3().equalsIgnoreCase(user1.getAns3()))
-		map.addAttribute("id",user.getUserId());
+		map.addAttribute("id","Your User ID is :"+user1.getUserId());
+		else
+			map.addAttribute("id","The Answers do not Match");	
 	
 		
 		return "forgotId";
@@ -188,10 +199,15 @@ public class LoginController {
 	public String postForgotPassword(@RequestParam String oldpassword,@ModelAttribute("user") User user, ModelMap map) {
 		User user1=userService.findUser(user.getUserId());
 		map.addAttribute("oldpassword", user.getPassword());
-		if(oldpassword==user1.getPassword()) {
+		System.out.println(user);
+		System.out.println(user1);
+		System.out.println(oldpassword);
+		if(oldpassword.equals(user1.getPassword())) {
 			
 			user1.setPassword(user.getPassword());
 			user1.setConfirmpassword(user.getConfirmpassword());
+			System.out.println(user);
+			System.out.println(user1);
 			userService.saveUser(user1);
 			return "homepage";
 		}

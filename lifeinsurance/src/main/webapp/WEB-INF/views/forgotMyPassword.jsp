@@ -30,7 +30,7 @@
 										here.</p>
 									<div class="panel-body">
 										<fieldset>
-											<form:form action="/forgotPassword?oldpassword=${oldPassword}" modelAttribute="user" method="post">
+											<form:form action="/forgotPassword?oldpassword=${oldPassword}" modelAttribute="user" method="POST">
 												<div class="form-group">
 												
 													<form:input path="userId" class="form-control input-lg"

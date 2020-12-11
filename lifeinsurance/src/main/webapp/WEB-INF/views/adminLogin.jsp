@@ -38,6 +38,7 @@
 			<input type="submit" value="Submit" id="submitbutton"/>
 			<h3>${invalid}</h3>
 			<h3>${invalidRole}</h3>
+			<h3><a id="adminlink" href="/forgotEnter">Forgot Id</a>
 		</form:form>
 	</div>
 </body>

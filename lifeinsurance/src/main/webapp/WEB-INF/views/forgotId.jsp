@@ -17,6 +17,7 @@
 
 
 				<form:hidden path="contact" />
+				<form:hidden path="email" />
 				<tr>
 				<td>${Question1}</td>
 				</tr>
