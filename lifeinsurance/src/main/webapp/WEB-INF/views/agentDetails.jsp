@@ -17,7 +17,7 @@
 <header class="header">
 	<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
 </header>
-<form:form action="/getAgentDetails" modelAttribute="search" method="POST">
+<form:form action="/getAgentDetail" modelAttribute="search" method="POST">
 	<form:input path="name"/>
 	<input type="submit" value="Search"/>
 	</form:form>

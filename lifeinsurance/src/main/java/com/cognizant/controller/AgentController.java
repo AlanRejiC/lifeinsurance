@@ -62,7 +62,7 @@ public class AgentController {
 	}
 
 	@GetMapping(value = "/getAgentDetails")
-	public String getAgentPage(@ModelAttribute("search") Search search, ModelMap map) {
+	public String getAgentPage(@ModelAttribute("user") User user,@ModelAttribute("search") Search search, ModelMap map) {
 
 		map.addAttribute("user", userService.findUserWithRole("agent"));
 
@@ -70,8 +70,15 @@ public class AgentController {
 	}
 
 	@PostMapping(value = "/getAgentDetails")
-	public String getAgentView(@ModelAttribute("search") Search search, ModelMap map) {
+	public String getAgentView(@ModelAttribute("user") User user,@ModelAttribute("search") Search search, ModelMap map) {
 
+		map.addAttribute("user", userService.findUserWithRole("agent"));
+
+		return "agentDetails";
+	}
+	
+	@PostMapping(value = "/getAgentDetail")
+	public String getSearch(@ModelAttribute("search") Search search, ModelMap map) {
 		String name = search.getName();
 		char charArray[] = name.toCharArray();
 		boolean bool = Character.isDigit(charArray[0]);
@@ -90,17 +97,18 @@ public class AgentController {
 
 			return "agentDetails";
 		}
+		
 	}
 
 	@GetMapping(value = "/getAgentView")
-	public String getUserEdit(@RequestParam int userId, @ModelAttribute("user") User user, ModelMap map) {
+	public String getUserEdit(@RequestParam int userId, @ModelAttribute("user") User user,@ModelAttribute("search") Search search, ModelMap map) {
 
 		map.addAttribute("item", userService.findUser(userId));
 		return "agentView";
 	}
 
 	@GetMapping(value = "/getAgentDelete")
-	public String showUserDelete(@RequestParam int userId, @ModelAttribute("user") User user, ModelMap map) {
+	public String showUserDelete(@RequestParam int userId, @ModelAttribute("user") User user,@ModelAttribute("search") Search search, ModelMap map) {
 		User user1 = userService.findUser(userId);
 		userService.deleteUser(user1);
 
