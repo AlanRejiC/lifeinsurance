@@ -66,7 +66,7 @@ KEY TAKEAWAYS
 
 <footer class="footer">
   <p>Life Insurance copyrights 2020<br>
-  Locations <br> Connect with us <br></p>
+  Locations <br> Connect with us <br><a href="/getFeedBackPage">Customer FeedBack</a></p>
 </footer>
 
 </body>

@@ -39,6 +39,9 @@
 			
 		</form:form>
 	</div>
+	<center>
+<h4><a href="/getHomePage">Go to Home Page</a></h4>
+</center>
 	<footer class="footer">
   <p>Life Insurance copyrights 2020<br>
   Locations <br> Connect with us <br></p>

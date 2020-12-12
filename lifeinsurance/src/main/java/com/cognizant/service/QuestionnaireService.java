@@ -17,12 +17,14 @@ public class QuestionnaireService {
 	@Autowired
 	private QuestionnaireRepo questionnaireRepo;
 
-	public User findUser(int userId) {
-		return userRepo.getOne(userId);
-	}
+	
 
 	public void saveResponse(Questionnaire questionnaire) {
 		questionnaireRepo.save(questionnaire);
+	}
+	
+	public Questionnaire findUser(int userId) {
+		return questionnaireRepo.getOne(userId);
 	}
 
 }
