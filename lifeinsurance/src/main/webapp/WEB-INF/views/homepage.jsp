@@ -11,44 +11,73 @@
 <%@ include file="/WEB-INF/styles/style.css"%>
 
 </style>
-
-
-
-
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"> </script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"> </script> 
 <title>home page</title>
 </head>
-<body>
-<header class="header">
-<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
-<div class="container">
-  <a href="/forgotPassword" data-target="#pwdModal" data-toggle="modal">Change password</a>
+<body  style="background-image: url('img/image.png'); background-size:100% 100%; height:500px ">
+<!-- <div class="form" style="background-image: url('http://www.innitialliance.com/Images/life-insurance-claim.jpg')";> -->
+<header class="bg-dark" style="height: 3rem;">
+<div class="bg-dark">
+	<center ><h1 class=" text-white" id="home_heading"><strong>Life Insurance Management private Limited</strong></h1></center>
 </div>
-
+    <nav class="navbar navbar-expand-sm bg-dark"> 
+    	<ul class="navbar-nav">
+    		<li class="nav-item " style="padding-right:10px;"> 
+				<a href="/getHelpPage" class="btn btn-warning btn-small navbar-btn text-dark">Help Desk</a>
+            </li>
+			<li class="nav-item" style="padding-right:10px;"> 
+				<a href="/getAgentPage" class="btn btn-warning btn-small navbar-btn text-dark" >Become an Agent</a>
+            </li>
+            <li class="nav-item" style="padding-right:10px;"> 
+				<a href="/getPolicyPremium" class="btn btn-warning btn-small navbar-btn text-dark" >Term Premium calculator</a>
+            </li>
+            <li class="nav-item" style="padding-right:10px;"> 
+				<a href="/getClaimPage" class="btn btn-warning btn-small navbar-btn text-dark" >Claim</a>
+            </li>
+            <li class="nav-item" style="padding-right:10px;"> 
+				<a href="/getInsurancePage" class="btn btn-warning btn-small navbar-btn text-dark" >Apply for Insurance</a>
+            </li>
+            <li class="nav-item" style="padding-right:10px;"> 
+				<a href="/getNotificationpage" class="btn btn-warning btn-small navbar-btn text-dark" >Notifications</a>
+            </li>
+    	</ul>
+        <ul class="navbar-nav ml-auto"> 
+            <li class="nav-item" style="padding-right:10px; padding-left:10px;"> 
+				<a href="/verification" class="btn btn-warning btn-small navbar-btn text-dark" >Change Password</a>
+            </li> 
+            <li class="nav-item" style="padding-right:10px;"> 
+                <a href="/getLoginPage" class="btn btn-warning btn-small navbar-btn text-dark" >Sign In</a> 
+            </li> 
+            <li class="nav-item" style="padding-right:10px;">
+                <a href="/getSignUpPage" class="btn btn-warning btn-small navbar-btn text-dark" >Sign Up</a> 
+            </li> 
+            <li class="nav-item"> 
+                <a href="/getLogOut" class="btn btn-warning btn-small navbar-btn text-dark" >Log Out</a> 
+            </li> 
+        </ul> 
+    </nav> 
 </header>
-<div id="navigation_bar">
-<ul>
-  <li><a  href="">Renewal</a></li>
-  <li><a href="/getHelpPage">Help Desk</a></li>
-  <li><a href="/getClaimPage">Claim</a></li>
-  <li><a href="/getAgentPage">Become an Agent</a></li>
-  <li><a href="/getPolicyPremium">Term Premium calculator</a></li>
-  <li><a href="/getLoginPage">Sign In</a></li>
-  <li><a href="/getSignUpPage">Sign Up</a></li>
-  <li><a href="/getInsurancePage">Apply for Insurance</a></li>
-  <li><a href="/getNotificationpage">Notification Page</a></li>
-  <li><a href="/getLogOut">Log Out</a></li>
-  <li><a href="/getContactPage">Contact Us</a></li>
-  
-  
-</ul>
-</div>
-<h4>Types of Life Insurance</h4><br><br>
+<br>
+<br>
+<br>
+<br>
+<h4><Strong>Types of Life Insurance</Strong></h4><br>
 
-<p>What Is Life Insurance?
-
+<p><strong>What Is Life Insurance?
+<br>
 Life insurance is a contract between an insurer and a policyholder. A life insurance policy guarantees the insurer pays a sum of money to named beneficiaries when the insured policyholder dies, in exchange for the premiums paid by the policyholder during their lifetime.<br><br>
 
-KEY TAKEAWAYS
+KEY TAKEAWAYS<br>
+<br>
 
 1)Life insurance is a legally binding contract.<br>
 
@@ -60,14 +89,24 @@ KEY TAKEAWAYS
 
 5)Term life insurance policies expire after a certain number of years. Permanent life insurance policies remain active until the insured dies, stops paying premiums, or surrenders the policy.<br>
 
-6)A life insurance policy is only as good as the financial strength of the company that issues it. State guaranty funds may pay claims if the issuer canâ€™t.</p>
+6)A life insurance policy is only as good as the financial strength of the company that issues it. State guaranty funds may pay claims if the issuer canâ€™t.</strong></p>
 
-
-
-<footer class="footer">
-  <p>Life Insurance copyrights 2020<br>
-  Locations <br> Connect with us <br><a href="/getFeedBackPage">Customer FeedBack</a></p>
+<footer class="page-footer font-small bg-dark text-white  teal pt-4">
+<!--/.First column-->  
+      <div class="container text-center mt-1 ">
+	        </h6>
+	        	<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br>
+	        	<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact Us</strong></a><br>
+        </div>
+<!--/.First column-->
+<!--/.Copyright -->  
+  	<div class="footer-copyright text-center py-3">
+    &copy; 2020 Copyright:
+	<a href="/getHomePage" class="text-white"><strong> LifeInsurance.com</strong></a>
+  </div>
+<!--/.Copyright -->
 </footer>
 
 </body>
+
 </html>
