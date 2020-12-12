@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form action="/forgotEnter" method="GET" name="userRegister"
+<form:form action="/forgotPass" method="GET" name="userRegister"
 			modelAttribute="user">
 			<table>
 

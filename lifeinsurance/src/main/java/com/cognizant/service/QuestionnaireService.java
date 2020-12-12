@@ -26,5 +26,16 @@ public class QuestionnaireService {
 	public Questionnaire findUser(int userId) {
 		return questionnaireRepo.getOne(userId);
 	}
+	
+	public void deleteResponse(Questionnaire questionnaire) {
+		System.out.println(questionnaire);
+		questionnaireRepo.delete(questionnaire);
+		System.out.println("after deleting");
+	}
+	
+	public Questionnaire findQuestionnaire(int user)
+	{
+		return questionnaireRepo.getOne(user);
+	}
 
 }

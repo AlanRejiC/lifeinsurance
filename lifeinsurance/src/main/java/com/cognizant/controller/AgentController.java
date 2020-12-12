@@ -1,6 +1,7 @@
 package com.cognizant.controller;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -113,5 +114,18 @@ public class AgentController {
 		userService.deleteUser(user1);
 
 		return "agentDelete";
+	}
+	
+	@ModelAttribute("securityList")
+	public List<String> listSecurity() {
+		List<String> list = new ArrayList<String>();
+		list.add("Where were you born ?");
+		list.add("What was your first pet ?");
+		list.add("What is your Mothers maiden name ?");
+		list.add("What is your favourite sport ?");
+		list.add("What is your favourite hobby ?");
+		list.add("Where did you go to college ?");
+		list.add("Choose a number between 1 and 100");
+		return list;
 	}
 }

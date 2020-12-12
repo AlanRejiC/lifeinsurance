@@ -228,8 +228,94 @@ public class LoginController {
 //		
 		// map.addAttribute("status", "You have entered the wrong Phone number or
 		// Email");}
-			
+		
 	
+	@RequestMapping(value = "/forgotPass", method = RequestMethod.GET)
+	public String forgotPsssEnterEmailorPassword(@ModelAttribute("user") User user, ModelMap map) {
+		User user1 = null;
+		try {
+			if (user.getEmail() != "" && user.getEmail() != null) {
+				System.out.println(user.getEmail());
+				user1 = userService.findUserEmail(user.getEmail()).get(0);
+				user = user1;
+				System.out.println(1);
+				map.addAttribute("Question1", user.getSecurity1());
+				System.out.println(2);
+				map.addAttribute("Question2", user.getSecurity2());
+				map.addAttribute("Question3", user.getSecurity3());
+
+				return "forgotpass2";
+
+			} else if (user.getContact() != "" && user.getContact() != null) {
+				user1 = userService.findUserNumber(user.getContact()).get(0);
+				user = user1;
+				map.addAttribute("Question1", user.getSecurity1());
+				map.addAttribute("Question2", user.getSecurity2());
+				map.addAttribute("Question3", user.getSecurity3());
+				return "forgotpass2";
+			}
+
+		} catch (Exception e) {
+			map.addAttribute("status", "You have entered the wrong Phone number or Email");
+			System.out.println("Exception");
+			return "forgotPass";
+		}
+		// map.addAttribute("status", "You have entered the wrong Phone number or
+		// Email");
+		return "forgotPass";
+	}
+	
+	@RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
+	public String forgotPassWithId(@ModelAttribute("user") User user, ModelMap map) {
+
+		map.addAttribute("Question1", user.getSecurity1());
+		map.addAttribute("Question2", user.getSecurity2());
+		map.addAttribute("Question3", user.getSecurity3());
+		System.out.println(user);
+		User user1 = null;
+		if (user.getEmail() != "") {
+			user1 = userService.findUserEmail(user.getEmail()).get(0);
+		} else if (user.getContact() != "") {
+			user1 = userService.findUserNumber(user.getContact()).get(0);
+		}
+		if (user.getAns1().equalsIgnoreCase(user1.getAns1()) && user.getAns2().equalsIgnoreCase(user1.getAns2())
+				&& user.getAns3().equalsIgnoreCase(user1.getAns3()))
+		{
+			map.addAttribute("id", "Your User ID is :" + user1.getUserId());
+			Home.Id=user1.getUserId();
+			return "changePass3";
+		}
+		else
+			map.addAttribute("id", "The Answers do not Match");
+		System.out.println(user);
+		System.out.println(user1);
+		Home.Id=user1.getUserId();
+		return "forgotpass2";
+	}
+	
+	@RequestMapping(value = "/passwordReseted", method = RequestMethod.POST)
+	public String changePassword(@ModelAttribute("user") User user, ModelMap map) {
+		System.out.println("changePasswordReset");
+		System.out.println(user);
+		System.out.println(Home.Id);
+		//System.out.println(user1);
+		User user1 = userService.findUser(Home.Id);
+		//Home.Id = user1.getUserId();
+		System.out.println(user1);
+			if (user.getPassword().equals(user.getConfirmpassword())) {
+				
+				System.out.println(user.getPassword());
+				System.out.println(user.getPassword());
+				map.addAttribute("status", "Password Changed");
+					System.out.println("return changemypassword");
+					user1.setPassword(user.getPassword());
+					user1.setConfirmpassword(user.getConfirmpassword());
+					userService.saveUser(user1);
+					return "changePass3";
+				}
+			map.addAttribute("status", "Password Do not match ");
+			return "changePass3";
+			}
 
 	@ModelAttribute("genderList")
 	public List<String> listGender() {

@@ -1,5 +1,7 @@
 package com.cognizant.controller;
 
+import java.time.LocalDateTime;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -101,14 +103,36 @@ public class AdminController {
     @RequestMapping(value="/setQuestion",method = RequestMethod.POST)
     public String setQuestionPOST(@ModelAttribute("questionnaire") Questionnaire questionnaire,ModelMap map)
     {
-    	questionnaire.setResponse1("admin");
+    	try {
+    	System.out.println(questionnaire);
+    	questionnaire.setId(1);
+    	String str=LocalDateTime.now()+"";
+    	String str1[]=str.split("-|:|T");
+        str=str1[1]+str1[2]+str1[3]+str1[4]+str1[5].charAt(0)+str1[5].charAt(1);
+        System.out.println(str);
+        //Questionnaire questionnaire1=questionnaireService.findQuestionnaire(0);
+       // System.out.println(questionnaire1);
+       // questionnaireService.deleteResponse(questionnaire1);
+    	questionnaire.setResponse1("admin2");
     	questionnaire.setResponse2("admin");
     	questionnaire.setResponse3("admin");
     	questionnaire.setFeedback("admin");
     	questionnaire.setUserId(10000);
+    	//questionnaire1.setId(2);
     	questionnaire.setId(0);
+    	//questionnaireService.deleteResponse(questionnaire);
+    	
+    	//System.out.println(questionnaire1);
     	System.out.println(questionnaire);
     	questionnaireService.saveResponse(questionnaire);
+    	}
+    	catch(Exception e)
+    	{
+    		map.addAttribute("status", "Questions have been set");
+        	return "QuestionSet";
+    	}
+    	
+    	
     	map.addAttribute("status", "Questions have been set");
     	return "QuestionSet";
     }
