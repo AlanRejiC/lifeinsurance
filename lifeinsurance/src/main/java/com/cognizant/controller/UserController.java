@@ -1,6 +1,7 @@
 package com.cognizant.controller;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -141,11 +142,21 @@ public class UserController {
 
     @PostMapping(value = "/getHelpPage")
     public String postHelpPage(@ModelAttribute("help") Help help, ModelMap map) {
+    	System.out.println(help);
         Insurance insurance = helpService.findUserHelp(help.getCustName());
         map.addAttribute("custName", insurance.getCustName());
+        System.out.println(LocalDate.now());
+        System.out.println(LocalDateTime.now());
+        String str=LocalDateTime.now()+"";
+        String str1[]=str.split("-|:|T");
+        str=str1[1]+str1[2]+str1[3]+str1[4]+str1[5].charAt(0)+str1[5].charAt(1);
+        System.out.println(str);
         map.addAttribute("autopopDate", LocalDate.now());
+        help.setRequestId(Integer.parseInt(str));
+        //help.setCustName(str);
         help.setResolutionByAdmin(" ");
         help.setDateOfTicket(LocalDate.now());
+        System.out.println(help);
         helpService.saveHelpIssue(help);
         return "success";
     }

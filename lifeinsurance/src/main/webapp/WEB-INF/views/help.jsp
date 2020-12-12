@@ -34,10 +34,6 @@
 					<td>Description</td>
 					<td><form:textarea path="description" rows="10" column="50" name="description" placeholder='description' /></td>
 				</tr>
-				<tr>
-					<td>Date of Ticket</td>
-					<td><form:input path="dateOfTicket" name="dateOfTicket" value="${autopopDate}"/></td>
-				</tr>
 			</table>
 			<br>
 			<input type="submit" value="Submit" id="submitbutton"/>
