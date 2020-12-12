@@ -38,7 +38,7 @@ public class FeedBackController {
 		 
 		try {
 				if (result.hasErrors() || userService.userValidation(user)) {
-					map.addAttribute("invalid", "Invalid username or password");
+					map.addAttribute("invalid", "Please Enter a Valid User ID");
 					return "feedbackform";
 				}else 
 				{
@@ -65,7 +65,7 @@ public class FeedBackController {
 	        return "feedbackform";
 	    }}
 		catch(Exception e) {
-			map.addAttribute("invalid", "Invalid username or password");
+			map.addAttribute("invalid", "Please Enter a Valid User ID");
 			 return "feedbackform";
 		}
 	 }
