@@ -106,6 +106,7 @@ public class AdminController {
     	questionnaire.setResponse3("admin");
     	questionnaire.setFeedback("admin");
     	questionnaire.setUserId(10000);
+    	questionnaire.setId(0);
     	System.out.println(questionnaire);
     	questionnaireService.saveResponse(questionnaire);
     	map.addAttribute("status", "Questions have been set");
