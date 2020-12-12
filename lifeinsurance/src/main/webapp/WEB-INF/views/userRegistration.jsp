@@ -6,6 +6,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"> </script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"> </script>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
 <style>
 <%@ include file="/WEB-INF/styles/style.css"%>
 </style>
@@ -15,120 +31,243 @@
 <title>New User Registration Page</title>
 </head>
 <body>
-	<header class="header">
-		<center>
-			<h1 id="home_heading">Life Insurance Management private Limited</h1>
-		</center>
-	</header>
-	<div align="center">
-		<h2>New User Registration</h2>
-		<h3>Personal Details</h3>
+<div class="form" style="background-image: url('https://image.cnbcfm.com/api/v1/image/105964745-1560376510health-insurance-life-insurance-car-insurance.jpg?v=1561045239&w=1600&h=900')";>
+	
+	<header class="bg-dark" style="height: 3rem;">
+<div class="bg-dark">
+	<center ><h1 class=" text-white" id="home_heading"><strong>Life Insurance Management private Limited</strong></h1></center>
+</div>
+   <nav class="navbar navbar-expand-sm bg-dark"> 
+        <ul class="navbar-nav ml-auto"> 
+        <li class="nav-item" style="padding-right:10px;"> 
+				<a href="/getHomePage" class="btn btn-primary btn-small navbar-btn" >Home Page</a>
+            </li>
+            <li class="nav-item" style="padding-right:10px;"> 
+				<a href="/verification" class="btn btn-primary btn-small navbar-btn" >Change Password</a>
+            </li> 
+            <li> </li>
+            <li class="nav-item" style="padding-right:10px;"> 
+                <a href="/getLoginPage" class="btn btn-primary btn-small navbar-btn " >Sign In</a> 
+            </li> 
+            <li class="nav-item" style="padding-right:10px;">
+                <a href="/getSignUpPage" class="btn btn-primary btn-small navbar-btn" >SIGN UP</a> 
+            </li> 
+            <li class="nav-item"> 
+                <a href="/getLogOut" class="btn btn-primary btn-small navbar-btn" >Log Out</a> 
+            </li> 
+        </ul> 
+    </nav> 
+</header>
+	
+	
+	<br>
+		
+	<!-- Registration form -->
+	<div class="container">
+	<table class="table table-bordered view">
+	<div align="center" style="color: white">
+	<h5 class=" display-4 card-header success-color white-text text-center py-4"><strong>New User Registration</strong></h5>
+	
+		<!-- Card Content -->
+	<div  class="card-body bg-dark text-white" ;>
+	<!-- Form -->
 		<form:form action="/getSignUpPage" method="POST" name="userRegister"
 			modelAttribute="user">
-			<table>
-				<tr>
-					<td>First Name</td>
-					<td><form:input path="firstName" name="firstName"
-							placeholder='First Name' /></td>
-					<td><form:errors path="firstName" /></td>
-				</tr>
-				<tr>
-					<td>Last Name</td>
-					<td><form:input path="lastName" name="lastName"
-							placeholder="Last Name" /></td>
-					<td><form:errors path="lastName" /></td>
-				</tr>
-				<tr>
-					<td>DoB</td>
-					<td><form:input path="dob" type="text" name="dob"
-							placeholder="yyyy-mm-dd" /></td>
-					<td><form:errors path="dob" /></td>
-				</tr>
-				<tr>
-					<td>Gender</td>
-					<td><form:select path="gender" id="gender"
-							items="${genderList}" /></td>
-					<td><form:errors path="gender"></form:errors></td>
-				</tr>
-				<tr>
-					<td>Contact</td>
-					<td><form:input path="contact" type="text" name="contact"
-							placeholder="Contact" /></td>
-					<td><form:errors path="contact" /></td>
-				</tr>
-				<tr>
-					<td>Email</td>
-					<td><form:input path="email" name="email"
-							placeholder="ID@Domain" /></td>
-					<td><form:errors path="email" /></td>
-				</tr>
-				<tr>
-					<td>User ID</td>
-					<td><form:input path="userId" name="userId"
-							placeholder="User ID" /></td>
-					<td><form:errors path="userId" /></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td><form:input path="password" type="password"
-							name="password" placeholder="Password" /></td>
-					<td><form:errors path="password" /></td>
-				</tr>
-				<tr>
-					<td>Confirm Password</td>
-					<td><form:input path="confirmpassword" type="password"
-							name="confirmpassword" placeholder="Confirm Password" /></td>
-					<td><form:errors path="confirmpassword" /></td>
-				</tr>
-				<tr>
-				<td>Choose the first Question</td>
-				<td><form:select path="security1" 
-						items="${securityList}" /></td>
-				<td><form:errors path="security1"></form:errors></td>
-				<tr>
-				<tr>
-					<td>Enter the answer</td>
-					<td><form:input path="ans1" /></td>
-					<td><form:errors path="ans1" /></td>
-				</tr>
-				</tr>
-				<td>Choose the second Question</td>
-				<td><form:select path="security2" 
-						items="${securityList}" /></td>
-				<td><form:errors path="security2"></form:errors></td>
-				</tr>
-				<tr>
-					<td>Enter the answer</td>
-					<td><form:input path="ans2" /></td>
-					<td><form:errors path="ans2" /></td>
-				</tr>
-				
-				<tr>
-				<td>Choose the third Question</td>
-				<td><form:select path="security3" 
-						items="${securityList}" /></td>
-				<td><form:errors path="security3"></form:errors></td>
-				</tr>
-				<tr>
-					<td>Enter the answer</td>
-					<td><form:input path="ans3"  /></td>
-					<td><form:errors path="ans3" /></td>
-				</tr>
-				
-			</table>
-			<div>
-				<input type="submit" value="Submit" style="background-color: green" />
+			<br>
+			<div class="form-row mb-5">
+			<div class="col-md-6">
+			<!-- First Name -->
+			<div class="md-form text-white">
+				<form:input path="firstName" name="firstName" class="form-control"/>
+				<label for="firstname">First Name</label>
+				<form:errors path="firstName" />
 			</div>
-		</form:form>
-		
-
+			</div>
+			
+						
+				<div class="col-md-6">
+				<!-- Last Name -->
+				<div class="md-form text-white">
+					<form:input path="lastName" name="lastName" class="form-control"/>
+							<label for="lastname">Last Name</label>
+							<form:errors path="lastName" />
+				</div>
+			    </div>
+				</div>		
+					
+					
+				<div class="row mb-5">
+				<div class="col-md-2">
+				<!-- DOB -->
+				<div class="md-form text-white">
+					<form:input path="dob" type="text" name="dob"
+							placeholder="yyyy-mm-dd" class="form-control" />
+					<label for="dob">DoB</label>
+					<form:errors path="dob" />
+				</div>
+				</div>
+				
+			
+				<div class="col-md-2">
+				<!-- Gender -->
+				<div class="md-form text-white">
+				   <form:select path="gender" id="gender"
+							items="${genderList}" class="form-control input-sm" />
+					<label for="gender">Gender</label>
+				  	<form:errors path="gender"></form:errors>
+				 </div>
+				 </div>
+							
+					<div class="col-md-4">			
+					<!-- Contact -->
+						<div class="md-form text-white">
+							<form:input path="contact" type="text" name="contact"
+							class="form-control" />
+							<label for="contact">Contact</label>		
+							<form:errors path="contact" />
+						</div>
+					</div>
+					
+					
+					<div class="col-md-4">
+					<!-- Email -->
+					<div class="md-form text-white">
+					<form:input path="email" name="email" class="form-control"/>
+					<label for="email">Email</label>
+					<form:errors path="email" />
+					</div>
+					</div>
+					</div>
+														
+				
+				
+				<div class="row mb-5">
+				<div class="col-md-4">
+				<!-- User ID -->
+				<div class="md-form text-white">
+					<form:input path="userId" name="userId" class="form-control"/>
+					<label for="userid">User ID</label>
+					<form:errors path="userId" />
+				</div>
+				</div>
+								
+				
+				<div class="col-md-4">
+				<!-- Password -->
+				<div class="md-form text-white">
+					<form:input path="password" type="password"
+							name="password"  class="form-control"/>
+							<label for="password">Password</label>
+							<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-white mb-3">
+                    At least 8 characters,1 digit and 1 special character.
+                </small>
+					<form:errors path="password" />		
+				</div>
+				</div>
+				
+				<div class="col-md-4">
+				<!-- Confirm Password -->
+				<div class="md-form text-white">
+				<form:input path="confirmpassword" type="password"
+							name="confirmpassword" class="form-control" />
+					<label for="confirmpassword">Confirm Password</label>
+					<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-white mb-3">
+                    Must match with password
+                </small>
+				<form:errors path="confirmpassword" />
+				</div>
+				</div>
+				</div>
+							
+				<div class="form-row mb-5">
+				<div class="col-md-4">
+				<!-- Security question 1 -->
+				<div class="md-form text-white"
+					<label for="ques1">Choose the first Question</label>
+					<form:select path="security1" 
+						items="${securityList}" class="form-control" />
+					<form:errors path="security1"></form:errors>	
+				</div>
+				</div>
+				
+				<div class="col-md-4">
+				<!-- Security question 2 -->
+				<div class="md-form text-white">
+				<label for="ques2">Choose the second Question</label>
+				<form:select path="security2" 
+						items="${securityList}" class="form-control"/>
+						 <form:errors path="security2"></form:errors>
+						 </div>
+						 </div>
+						 
+				<div class="col-md-4">
+				<!-- Security question 3 -->
+				<div class="md-form text-white">				
+				<label for="ques3">Choose the third Question</label>
+				<form:select path="security3" 
+						items="${securityList}"  class="form-control"/>
+				<form:errors path="security3"></form:errors>
+				</div>
+				</div>
+				</div>
+				
+				
+				
+				<div class="form-row mb-5">
+				<div class="col-md-4">
+				<!-- Security answer 1 -->
+				<div class="md-form text-white">
+				<label for="ans1">Enter the answer</label>
+				<form:input path="ans1" class="form-control"/>
+				<form:errors path="ans1" />
+				</div>
+				</div>	
+				
+						<div class="col-md-4">
+						 <!-- Security Answer 2 -->
+						 <div class="md-form text-white">
+						 <label for="ans2">Enter the answer</label>
+						 <form:input path="ans2" class="form-control" />
+						 <form:errors path="ans2" />
+						 </div>
+						 </div>
+						 
+						 
+			   <div class="col-md-4">
+				<!-- Security Answer 3 -->
+				<div class="md-from text-white">
+				<label for="ans2">Enter the answer</label>
+				<form:input path="ans3" class="form-control" />
+				<form:errors path="ans3" />
+				</div>
+				</div>
+				</div>
+				
+		    <!-- Sign in button -->
+		    <button class="btn btn-warning  btn-rounded btn-small navbar-btn text-white" type="submit">Sign Up</button>
+            </form:form>
 	</div>
+	</div>
+	</div>
+	</table>
+</div>
+</div>
 
-	<footer class="footer">
-		<p>
-			Life Insurance copyrights 2020<br> Locations <br> Connect
-			with us <br>
-		</p>
-	</footer>
-</body>
+<footer class="page-footer font-small bg-dark text-white  teal pt-4">
+<!--/.First column-->  
+      <div class="container text-center mt-1 ">
+	        </h6>
+	        	<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br>
+	        	<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact Us</strong></a><br>
+        </div>
+<!--/.First column-->
+<!--/.Copyright -->  
+  	<div class="footer-copyright text-center py-3">
+    &copy; 2020 Copyright:
+	<a href="/getHomePage" class="text-white"><strong> LifeInsurance.com</strong></a>
+  </div>
+<!--/.Copyright -->
+</footer>
+
+	</body>
 </html>

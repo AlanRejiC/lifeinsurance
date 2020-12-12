@@ -40,12 +40,15 @@
 	
 	<p>
 		Toll free no. 18004259876 for Health Insurance policies from 10 AM to 5 PM on all working days. Our trained executive will talk to you.<br>
-		Mail us at: reachATLifms@lifms.in
+		Mail us at: reachLifms@lifms.in
 	</p>
 	
-<footer class="footer">
+</div>
+
+<div>
+	<footer class="footer">
   <p>Life Insurance copyrights 2020<br>
-  Locations <br> Connect with us <br></p>
+  Locations: Delhi, Mumbai, Chennai, Kolkata <br> Connect with us at www.LIFMS.in <br></p>
 </footer>
 </div>
 </body>
