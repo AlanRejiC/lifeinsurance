@@ -67,7 +67,8 @@ public class AdminController {
             help.setCustName(help1.getCustName());
             System.out.println("get Edit resolve");
             System.out.println(help1);
-            helpService.saveHelpIssue(help1);
+            help=help1;
+            //helpService.saveHelpIssue(help1);
         return "editResolveHelpRequest"; 
     }
     

@@ -29,6 +29,7 @@
 				<th><label for="dateOfTicket"><b>Date of Ticket</b></label></th>
 				<th><label for="resolutionByAdmin"><b>Resolution</b></label></th>
 			</tr>
+			<form:hidden path="requestId" value="${item.requestId}"/>
 			<tr>
 				<td><label>${item.requestId}</label></td>
 				<td><label>${item.custName}</label></td>
