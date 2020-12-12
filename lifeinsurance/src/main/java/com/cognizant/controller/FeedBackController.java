@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,7 +34,14 @@ public class FeedBackController {
 	    }
 	 
 	 @PostMapping(value = "/getFeedBackPage")
-	    public String postFeedBackPage(@ModelAttribute("questionnaire") Questionnaire questionnaire, ModelMap map) {
+	    public String postFeedBackPage(@ModelAttribute("questionnaire") Questionnaire questionnaire,BindingResult result,@ModelAttribute("user") User user, ModelMap map) {
+		 
+		try {
+				if (result.hasErrors() || userService.userValidation(user)) {
+					map.addAttribute("invalid", "Invalid username or password");
+					return "feedbackform";
+				}else 
+				{
 		 map.addAttribute("success", "Your FeedBack Details has been successfully Submitted");
 		 String str=LocalDateTime.now()+"";
 	        String str1[]=str.split("-|:|T");
@@ -55,6 +63,10 @@ public class FeedBackController {
 	       questionnaireService.saveResponse(questionnaire);
 	       
 	        return "feedbackform";
-	    }
-
+	    }}
+		catch(Exception e) {
+			map.addAttribute("invalid", "Invalid username or password");
+			 return "feedbackform";
+		}
+	 }
 }

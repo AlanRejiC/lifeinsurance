@@ -17,7 +17,7 @@
 </header>
 <center><h2>FeedBack Form</h2></center>
 	<div align="center">
-		<form:form modelAttribute="questionnaire" method="POST" action="/getFeedBackPage">
+		<form:form  modelAttribute="questionnaire" method="POST" action="/getFeedBackPage">
 			<table>
 				<tr>
 					<td>Enter User ID</td>
@@ -36,6 +36,9 @@
 			<br>
 			<br>
 			<h2><div>${success}</div></h2>
+			<h2><div>${invalid}</div></h2>
+			
+			
 			
 		</form:form>
 	</div>
