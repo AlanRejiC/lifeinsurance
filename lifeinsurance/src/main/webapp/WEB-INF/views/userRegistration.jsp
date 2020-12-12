@@ -50,7 +50,7 @@
                 <a href="/getLoginPage" class="btn btn-primary btn-small navbar-btn " >Sign In</a> 
             </li> 
             <li class="nav-item" style="padding-right:10px;">
-                <a href="/getSignUpPage" class="btn btn-primary btn-small navbar-btn" >SIGN UP</a> 
+                <a href="/getSignUpPage" class="btn btn-primary btn-small navbar-btn" >Sign Up</a> 
             </li> 
             <li class="nav-item"> 
                 <a href="/getLogOut" class="btn btn-primary btn-small navbar-btn" >Log Out</a> 
