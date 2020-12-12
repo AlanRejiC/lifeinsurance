@@ -1,19 +1,36 @@
 package com.cognizant.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * 
  * @author Priyanka Nath
  *
  */
+@Entity
+@Table(name = "questionnaire")
 public class Questionnaire {
+	@Id
+	@Column(name = "id")
 	private int id;
+	@Column(name = "user_id")
 	private int userId;
+	@Column(name = "question_1")
 	private String question1;
+	@Column(name = "question_2")
 	private String question2;
+	@Column(name = "question_3")
 	private String question3;
+	@Column(name = "response_1")
 	private String response1;
+	@Column(name = "response_2")
 	private String response2;
+	@Column(name = "response_3")
 	private String response3;
+	@Column(name = "feedback")
 	private String feedback;
 
 	public int getId() {
