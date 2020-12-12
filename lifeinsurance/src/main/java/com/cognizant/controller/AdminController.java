@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cognizant.model.Help;
+import com.cognizant.model.Questionnaire;
 import com.cognizant.model.User;
 import com.cognizant.service.HelpService;
+import com.cognizant.service.QuestionnaireService;
 import com.cognizant.service.UserService;
 
 /**
@@ -30,6 +32,9 @@ public class AdminController {
     
     @Autowired
     private HelpService helpService;
+    
+    @Autowired
+	 private QuestionnaireService questionnaireService;
 
     @RequestMapping(value = "/getAdminLoginPage", method = RequestMethod.GET)
     public String getAdminLoginPage(@ModelAttribute("user") User user) {
@@ -85,5 +90,25 @@ public class AdminController {
         System.out.println("saving");
     	
         return "success";
+    }
+    
+    @RequestMapping(value="/setQuestion",method = RequestMethod.GET)
+    public String setQuestion(@ModelAttribute("questionnaire") Questionnaire questionnaire,ModelMap map)
+    {
+    	return "QuestionSet";
+    }
+    
+    @RequestMapping(value="/setQuestion",method = RequestMethod.POST)
+    public String setQuestionPOST(@ModelAttribute("questionnaire") Questionnaire questionnaire,ModelMap map)
+    {
+    	questionnaire.setResponse1("admin");
+    	questionnaire.setResponse2("admin");
+    	questionnaire.setResponse3("admin");
+    	questionnaire.setFeedback("admin");
+    	questionnaire.setUserId(10000);
+    	System.out.println(questionnaire);
+    	questionnaireService.saveResponse(questionnaire);
+    	map.addAttribute("status", "Questions have been set");
+    	return "QuestionSet";
     }
 }

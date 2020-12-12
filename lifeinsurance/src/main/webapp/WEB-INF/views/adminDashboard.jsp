@@ -20,6 +20,7 @@
 		<tr><h3><a id="addpolicylink" href="/getPolicyAdd">Add Policies</a></h3></tr>
 		<tr><h3><a id="agentDetails" href="/getAgentDetails">Agent Details</a></h3></tr>
 		<tr><h3><a id="helpRequest" href="/getHelpRequest">Resolve Help Request</a></h3></tr>
+		<tr><h3><a id="setQuestoin" href="/setQuestion">Set Questions</a></h3></tr>
 		</table>
 	</form:form>
 </body>
