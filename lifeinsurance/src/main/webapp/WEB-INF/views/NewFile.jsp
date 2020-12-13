@@ -18,6 +18,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"> </script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"> </script> 
+    
+    <link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+	
 <title>Home Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +32,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<body style="background-color: #484544;">
+<body style="background-color: #292828;">
 
 <header class="bg-dark" style="height: 3rem;">
 <div class="bg-dark">
@@ -89,22 +95,27 @@
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+       <li data-target="#myCarousel" data-slide-to="3" class="active"></li>
       
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="https://wallpaperaccess.com/full/320438.jpg" alt="Life Insurance" style="width:100% ;background-size: cover;" >
+        <img src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-172170,resizemode-1,msid-70444745/wealth/insure/life-insurance/8-major-death-cases-which-are-not-covered-in-term-life-insurance.jpg" alt="Term Life Insurance" style="height:100%; width:100%; background-size: cover;  " >
       </div>
 
       <div class="item">
-        <img src="https://mk0ehealtheletsj3t14.kinstacdn.com/wp-content/uploads/2016/12/health-insurance.jpg" alt="Healh Insurance" style="width:100%;">
+        <img src="https://mk0ehealtheletsj3t14.kinstacdn.com/wp-content/uploads/2016/12/health-insurance.jpg" alt="Insurance" style="width:100%;">
+      </div>
+      
+      <div class="item">
+        <img src="https://pe-insights.com/wp-content/uploads/2020/09/life-insurance.jpg" alt="Health Insurance" style="width:100%;">
       </div>
     
          
     <div class="item">
-        <img src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-172170,resizemode-1,msid-70444745/wealth/insure/life-insurance/8-major-death-cases-which-are-not-covered-in-term-life-insurance.jpg" alt="Term Life Insurance" style="width:100%; background-size: cover;">
+        <img src="https://cpb-us-e1.wpmucdn.com/blogs.cornell.edu/dist/a/7543/files/2017/11/Insurance_Social-Media-A-Game-Changer_HD-1uukuxp.jpg" alt="Life Insurance" style="width:100% ;background-size: cover;">
       </div>
     </div>
 

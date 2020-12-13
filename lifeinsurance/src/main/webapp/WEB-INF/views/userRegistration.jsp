@@ -246,7 +246,7 @@
 				</div>
 				
 		    <!-- Sign in button -->
-		    <button class="btn btn-warning  btn-rounded btn-small navbar-btn text-white" type="submit">Sign Up</button>
+		    <button class="btn btn-warning  btn-rounded btn-small navbar-btn text-dark" type="submit">Sign Up</button>
             </form:form>
 	</div>
 	</div>
