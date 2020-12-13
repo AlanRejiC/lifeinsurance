@@ -93,7 +93,7 @@ cursor: pointer;
 }
 
 body {
-  font-family: 'Comic Sans MS', sans-serif !important;
+  font-family: 'Bodoni MT', sans-serif !important;
   margin: 0;
   padding: 0;
   background-size: cover;
@@ -107,6 +107,9 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
     background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+ 
 }
 
 .text-large{
@@ -126,7 +129,13 @@ body {
 }
 .btn{
 	opacity: .9;
+	font-size: 20px;
+	
 }
 .md-form{
 	opacity: .9;
+}
+
+.navbar{
+	font-size: 20px;
 }

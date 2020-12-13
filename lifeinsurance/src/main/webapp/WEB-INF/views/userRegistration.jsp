@@ -30,30 +30,32 @@
 <meta charset="ISO-8859-1">
 <title>New User Registration Page</title>
 </head>
-<body>
+
+<body style="background-color: #484544;">
+
 <div class="form" style="background-image: url('https://image.cnbcfm.com/api/v1/image/105964745-1560376510health-insurance-life-insurance-car-insurance.jpg?v=1561045239&w=1600&h=900')";>
 	
 	<header class="bg-dark" style="height: 3rem;">
 <div class="bg-dark">
-	<center ><h1 class=" text-white" id="home_heading"><strong>Life Insurance Management private Limited</strong></h1></center>
+	<center ><h1 style="font-size:50px;" class=" text-white" id="home_heading"><strong>Life Insurance Management private Limited</strong></h1></center>
 </div>
    <nav class="navbar navbar-expand-sm bg-dark"> 
         <ul class="navbar-nav ml-auto"> 
         <li class="nav-item" style="padding-right:10px;"> 
-				<a href="/getHomePage" class="btn btn-primary btn-small navbar-btn" >Home Page</a>
+				<a href="/getHomePage" class="btn btn-warning btn-small navbar-btn" >Home Page</a>
             </li>
             <li class="nav-item" style="padding-right:10px;"> 
-				<a href="/verification" class="btn btn-primary btn-small navbar-btn" >Change Password</a>
+				<a href="/verification" class="btn btn-warning btn-small navbar-btn" >Change Password</a>
             </li> 
             <li> </li>
             <li class="nav-item" style="padding-right:10px;"> 
-                <a href="/getLoginPage" class="btn btn-primary btn-small navbar-btn " >Sign In</a> 
+                <a href="/getLoginPage" class="btn btn-warning btn-small navbar-btn " >Sign In</a> 
             </li> 
             <li class="nav-item" style="padding-right:10px;">
-                <a href="/getSignUpPage" class="btn btn-primary btn-small navbar-btn" >Sign Up</a> 
+                <a href="/getSignUpPage" class="btn btn-warning btn-small navbar-btn" >Sign Up</a> 
             </li> 
             <li class="nav-item"> 
-                <a href="/getLogOut" class="btn btn-primary btn-small navbar-btn" >Log Out</a> 
+                <a href="/getLogOut" class="btn btn-warning btn-small navbar-btn" >Log Out</a> 
             </li> 
         </ul> 
     </nav> 
@@ -61,7 +63,7 @@
 	
 	
 	<br>
-		
+	<br>
 	<!-- Registration form -->
 	<div class="container">
 	<table class="table table-bordered view">

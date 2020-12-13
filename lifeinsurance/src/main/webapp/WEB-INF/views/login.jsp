@@ -30,37 +30,40 @@
 <meta charset="ISO-8859-1">
 <title>User Login Page</title>
 </head>
-<body>
-<div class="form" style="background-image: url('https://backgroundcheckall.com/wp-content/uploads/2017/12/login-page-background-images-hd-2.jpg')";>
+
+<body style="background-color: black;">
+
+<div class="form" style="background-image: url('https://wallpapercave.com/wp/wp2939880.jpg')";>
 
 <header class="bg-dark" style="height: 3rem;">
 <div class="bg-dark">
-	<center ><h1 class=" text-white" id="home_heading"><strong>Life Insurance Management private Limited</strong></h1></center>
+	<center ><h1 style="font-size:50px;" class=" text-white" id="home_heading"><strong>Life Insurance Management private Limited</strong></h1></center>
 </div>
    <nav class="navbar navbar-expand-sm bg-dark"> 
         <ul class="navbar-nav ml-auto"> 
         <li class="nav-item" style="padding-right:10px;"> 
-				<a href="/getHomePage" class="btn btn-primary btn-small navbar-btn" >Home Page</a>
+				<a href="/getHomePage" class="btn btn-warning btn-small navbar-btn" >Home Page</a>
             </li>
             <li class="nav-item" style="padding-right:10px;"> 
-				<a href="/verification" class="btn btn-primary btn-small navbar-btn" >Change Password</a>
+				<a href="/verification" class="btn btn-warning btn-small navbar-btn" >Change Password</a>
             </li> 
             <li> </li>
             <li class="nav-item" style="padding-right:10px;">
-                <a href="/getSignUpPage" class="btn btn-primary btn-small navbar-btn" >Sign Up</a> 
+                <a href="/getSignUpPage" class="btn btn-warning btn-small navbar-btn" >Sign Up</a> 
             </li> 
             <li class="nav-item"> 
-                <a href="/getLogOut" class="btn btn-primary btn-small navbar-btn" >Log Out</a> 
+                <a href="/getLogOut" class="btn btn-warning btn-small navbar-btn" >Log Out</a> 
             </li> 
         </ul> 
     </nav> 
 </header>
 
 <br>
+<br>
 
 <div align="center" style="color: white">
-		<h2 class=" display-4 card-header success-color white-text text-center py-4"><strong>User Login Page</strong></h2></center>
-		<div  class="form-area text-dark text-large">
+		<h2 class=" display-4 card-header success-color white-text text-center py-4"><strong>Login</strong></h2></center>
+		<div  class="form-area text-white text-large">
 		
 		<!-- Form -->
 		<form:form action="/getLoginPage" method="post" modelAttribute="user">
@@ -85,13 +88,23 @@
 					</div>
 					</div>
 					</div>
-					
+			
+			
+
+			<!-- Forgot Pass -->		
 						
-			<li id="adminlink" style="padding-right:10px;">
+			<li id="adminlink" style="padding-right:5px;">
                 <a href="/forgotPass" class="btn btn-warning btn-small navbar-btn">Forgot Password</a> 
             </li> 
+            
+            <!-- Forgot ID -->
+            
+            <li id="adminlink" style="padding-right:5px;">
+                <a href="/forgotId" class="btn btn-warning btn-small navbar-btn">Forgot User ID</a> 
+            </li> 
+            
 			<!-- Sign in button -->
-            <button class="btn btn-warning btn-small navbar-btn" type="submit">Sign In</button>
+            <button class="btn btn-success btn-small navbar-btn" type="submit">Sign In</button>
 			<h3>${invalid}</h3>
 			
 			<li id="adminlink" style="padding-right:10px;">
@@ -99,8 +112,8 @@
             </li> 
             
             
-            
       </form:form>
+      
 	</div>
 	</div>
 	</div>
