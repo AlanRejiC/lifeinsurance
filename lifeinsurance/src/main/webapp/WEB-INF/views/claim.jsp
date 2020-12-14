@@ -6,6 +6,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"> </script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"> </script>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
 <style>
 <%@include file="/WEB-INF/styles/style.css"%>
 </style>
@@ -14,109 +29,275 @@
 <meta charset="ISO-8859-1">
 <title>Insurance Claim Submission</title>
 </head>
-<body>
-<header class="header">
-<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
+
+<body style="background-color: #484544;">
+
+<div class="form" style="background-image: url('https://image.cnbcfm.com/api/v1/image/105964745-1560376510health-insurance-life-insurance-car-insurance.jpg?v=1561045239&w=1600&h=900')";>
+
+<header class="bg-dark" style="height: 3rem;">
+<div class="bg-dark">
+	<center ><h1 style="font-size:50px;" class=" text-white" id="home_heading"><strong>Life Insurance Management private Limited</strong></h1></center>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark"> 
+        <ul class="navbar-nav ml-auto"> 
+        <li class="nav-item" style="padding-right:10px;"> 
+				<a href="/getHomePage" class="btn btn-warning btn-small navbar-btn" >Home Page</a>
+            </li>
+            <li class="nav-item" style="padding-right:10px;"> 
+				<a href="/verification" class="btn btn-warning btn-small navbar-btn" >Change Password</a>
+            </li> 
+            <li class="nav-item"> 
+                <a href="/getLogOut" class="btn btn-warning btn-small navbar-btn" >Log Out</a> 
+            </li> 
+        </ul> 
+    </nav> 
 </header>
+
+	<br>
+	<br>
+	<!-- Claim Form -->
+	<div class="container">
+	<table class="table table-bordered view">
+	<div align="center" style="color: white">
+	<h5 class=" display-4 card-header success-color white-text text-center py-4"><strong>Insurance Claim Submission Form</strong></h5>
+<!-- Card Content -->
+	<div  class="card-body bg-dark text-white" >
+	<!-- Form -->
 	
-	<div align="center">
-		<h1>Insurance Claim Submission Form</h1>
+
+		
 		<form:form action="/getClaimPage" method="POST" name="userRegister"
 			modelAttribute="claim">
-			<table>
-				<tr>
-					<td>Old claim number</td>
-					<td><form:input path="claimNumber" type="text"
-							name="claimNumber" /></td>
-					<td><form:errors path="claimNumber" /></td>
-				</tr>
-				<tr>
-					<td>Customer Name</td>
-					<td><form:input path="custName" type="text"
-							name="custName" /></td>
-					<td><form:errors path="custName" /></td>
-				</tr>
-				<tr>
-					<td>Incurred date</td>
-					<td><form:input path="incurredDate" type="text"
-							name="incurredDate" /></td>
-					<td><form:errors path="incurredDate" /></td>
-				</tr>
-				<tr>
-					<td>Reported date</td>
-					<td><form:input path="reportedDate" type="text"
-							name="reportedDate" /></td>
-					<td><form:errors path="reportedDate" /></td>
-				</tr>
-				<tr>
-					<td>Date of claim paid</td>
-					<td><form:input path="datePaid" type="text" name="datePaid" /></td>
-					<td><form:errors path="datePaid" /></td>
-				</tr>
-				<tr>
-					<td>Date of admission</td>
-					<td><form:input path="admitDate" type="text" name="admitDate" /></td>
-					<td><form:errors path="admitDate"></form:errors></td>
-				</tr>
-				<tr>
-					<td>Date of discharge</td>
-					<td><form:input path="releaseDate" type="text"
-							name="releaseDate" /></td>
-					<td><form:errors path="releaseDate" /></td>
-				</tr>
-				<tr>
-					<td>Total Charges</td>
-					<td><form:input path="totalCharge" name="totalCharge" /></td>
-					<td><form:errors path="totalCharge" /></td>
-				</tr>
+			<br>
+			
+			<div class="form-row mb-5">
+			<div class="col-md-6">
+			<div class="md-form text-white">
+					<strong>Old claim number</strong>
+					<form:input path="claimNumber" type="text"
+							name="claimNumber" />
+					<form:errors path="claimNumber" cssClass="error"/>
+			</div>
+			</div>
+		
+				
+			
+		
+				
+			
+			<div class="col-md-6">
+			<div class="md-form text-white">
+				
+					<strong>Customer Name</strong>
+					<form:input path="custName" type="text"
+							name="custName" />
+					<form:errors path="custName" cssClass="error" />
+			</div>
+			</div>
+			</div>
+			
+						
+			<div class="form-row mb-5">
+			<div class="col-md-6">
+			<div class="md-form text-white">
+				
+					<strong>Incurred date</strong>
+					<form:input path="incurredDate" type="text"
+							name="incurredDate" />
+					<form:errors path="incurredDate" cssClass="error"/>
+					
+			
+			</div>
+			</div>
+		
+		
+		
+			<div class="col-md-6">
+			<div class="md-form text-white">
+				
+					<strong>Reported date</strong>
+					<form:input path="reportedDate" type="text"
+							name="reportedDate" />
+					<form:errors path="reportedDate" cssClass="error" />
+					
+					</div>
+			</div>
+			</div>
+			
+			<div class="form-row mb-5">
+			<div class="col-md-6">
+			<div class="md-form text-white">
+			
+				
+					<strong>Date of claim paid</strong>
+					<form:input path="datePaid" type="text" name="datePaid" />
+					<form:errors path="datePaid"  cssClass="error" />
+					
+					
+			</div>
+			</div>
+				
+			<div class="col-md-6">
+			<div class="md-form text-white">
+			
+				
+					<strong>Date of admission</strong>
+					<form:input path="admitDate" type="text" name="admitDate" />
+					<form:errors path="admitDate" cssClass="error"></form:errors>
+					
+					</div>
+			</div>
+			</div>
+			
+			<div class="form-row mb-5">
+			<div class="col-md-6">
+			<div class="md-form text-white">
+			
+					
+					
+			
+				
+					<strong>Date of discharge</strong>
+					<form:input path="releaseDate" type="text"
+							name="releaseDate" />
+					<form:errors path="releaseDate"  cssClass="error"/>
+					
+						
+			</div>
+			</div>
+			
+			
+			<div class="col-md-6">
+			<div class="md-form text-white">
+			
+				
+				
+					<strong>Total Charges</strong>
+					<form:input path="totalCharge" name="totalCharge" />
+					<form:errors path="totalCharge"  cssClass="error"/>
+					
+					</div>
+			</div>
+			</div>
+			
+				<div class="form-row mb-5">
+			<div class="col-md-6">
+			<div class="md-form text-white">
+					
+					
+				
 
 
-				<tr>
-					<td>Total pre-hospital charges</td>
-					<td><form:input path="preCharge" name="preCharge" /></td>
-					<td><form:errors path="preCharge" /></td>
-				</tr>
-				<tr>
-					<td>Total post-hospital charges</td>
-					<td><form:input path="postCharge" name="postCharge" /></td>
-					<td><form:errors path="postCharge" /></td>
-				</tr>
+				
+					<strong>Total pre-hospital charges</strong>
+					<form:input path="preCharge" name="preCharge" />
+					<form:errors path="preCharge" cssClass="error" />
+					
+						
+			</div>
+			</div>
+			
+				
+			<div class="col-md-6">
+			<div class="md-form text-white">
+					
+				
+				
+					<strong>Total post-hospital charges</strong>
+					<form:input path="postCharge" name="postCharge" />
+					<form:errors path="postCharge"  cssClass="error" />
+								</div>
+			</div>
+			</div>
+			<center>
+			<div class="form-row mb-5">
+			
+			<div class="md-form text-white">
+					
+			
 
 
-				<tr>
-					<td>Total deductible paid</td>
-					<td>${totDeductible}</td>
-				</tr>
-				<tr>
-					<td>Total co-insurance amount</td>
-					<td>${totCoInsurance}</td>
-				</tr>
-				<tr>
-					<td>Total excluded amount</td>
-					<td>${totExcludedAmt}</td>
-				</tr>
-				<tr>
-					<td>Total exceeded amount</td>
-					<td>${totExceededAmt}</td>
-				</tr>
-				<tr>
-					<td>Total benefit paid</td>
-					<td>${totBenefit}</td>
-				</tr>
+				
+					<strong>Total deductible paid</strong>
+					<div class="col-md-6">
+					${totDeductible}
+					
+					</div>
+			</div>
+			</div>
+				
+				<div class="form-row mb-5">
+		
+			<div class="md-form text-white">
+					<strong>Total co-insurance amount</strong>
+						<div class="col-md-6">
+					${totCoInsurance}
+					
+						</div>
+			</div>
+			</div>
+					
+				<div class="form-row mb-5">
+			
+			<div class="md-form text-white">
+				
+					<strong>Total excluded amount</strong>
+					<div class="col-md-6">
+					${totExcludedAmt}
+					</div>
+			</div>
+			</div>
+				<div class="form-row mb-5">
+			
+			<div class="md-form text-white">
+			
+			
+					<strong>Total exceeded amount</strong>
+					<div class="col-md-6">
+					${totExceededAmt}
+					</div>
+			</div>
+			</div>
+				
+				<div class="form-row mb-5">
+			
+			<div class="md-form text-white">
+				
+					<strong>Total benefit paid</strong>
+					<div class="col-md-6">
+					${totBenefit}
+						</div>
+			</div>
+			</div>
+				
 
 
-
-		<center>
-<td><label for="img">Choose image</label></td>
-            <td><input type="file" id="img" name="img" accept="image/* " onchange="loadFile(event)"></td>
-               </tr>
-            <tr> <td>Uploaded Image  </td>
-                <td><img id="output" width="200" height="100" /></td></tr>
-            <tr>
+<div class="form-row mb-5">
+			<div class="col-md-6">
+			<div class="md-form text-white">
+		
+<label for="img"><strong>Choose image</strong></label>
+            <input type="file" id="img" name="img" accept="image/* " onchange="loadFile(event)">
+            </div>
+			</div>
+			</div>
+			
+			<div class="form-row mb-5">
+			<div class="col-md-6">
+			<div class="md-form text-white">
+               
+            <strong>Uploaded Image </strong> 
+                <img id="output" width="200" height="100" />
+                  </div>
+			</div>
+			</div>
+			</center>
            
+          
             
         <h2><div id="Result"></div></h2>
-        </center>
+       
             <script>
                     var loadFile = function(event) {
                         var image = document.getElementById('output');
@@ -136,20 +317,33 @@
 
             </script>
 
-
-			</table>
-			<input type="submit" value="Submit" style="background-color: green" />
-			<h2><div>${success}</div></h2>
-		</form:form>
+</div>
+			
+			</div>
+</div>
 <center>
-<h4><a href="/getHomePage">Go to Home Page</a></h4>
-</center>
+<button class="btn btn-warning  btn-rounded btn-small navbar-btn text-dark" type="submit">Submit</button>
+			
+			<h2><div>${success}</div></h2>
+			</center>
+		</form:form>
+		</table>
+
 	</div>
-	<footer class="footer">
-		<p>
-			Life Insurance copyrights 2020<br> Locations <br> Connect
-			with us <br>
-		</p>
-	</footer>
+	<footer class="page-footer font-small bg-dark text-white  teal pt-4">
+<!--/.First column-->  
+      <div class="container text-center mt-1 ">
+	        </h6>
+	        	<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br>
+	        	<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact Us</strong></a><br>
+        </div>
+<!--/.First column-->
+<!--/.Copyright -->  
+  	<div class="footer-copyright text-center py-3">
+    &copy; 2020 Copyright:
+	<a href="/getHomePage" class="text-white"><strong> LifeInsurance.com</strong></a>
+  </div>
+<!--/.Copyright -->
+</footer>
 </body>
 </html>
