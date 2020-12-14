@@ -84,7 +84,7 @@ public class LoginController {
 		user.setLogin(false);
 		System.out.println(user);
 		userService.saveUser(user);
-		return "success";
+		return "userRegistration";
 	}
 
 	@RequestMapping(value = "/getLoginPage", method = RequestMethod.GET)

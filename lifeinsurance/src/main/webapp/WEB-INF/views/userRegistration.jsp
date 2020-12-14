@@ -68,10 +68,10 @@
 	<div class="container">
 	<table class="table table-bordered view">
 	<div align="center" style="color: white">
-	<h5 class=" display-4 card-header success-color white-text text-center py-4"><strong>New User Registration</strong></h5>
+	<h5 class=" display-4 card-header success-color text-white text-center py-4"><strong>New User Registration</strong></h5>
 	
 		<!-- Card Content -->
-	<div  class="card-body bg-dark text-white" ;>
+	<div  class="card-body bg-dark text-white">
 	<!-- Form -->
 		<form:form action="/getSignUpPage" method="POST" name="userRegister"
 			modelAttribute="user">
@@ -82,7 +82,7 @@
 			<div class="md-form text-white">
 				<form:input path="firstName" name="firstName" class="form-control"/>
 				<label for="firstname">First Name</label>
-				<form:errors path="firstName" />
+				<form:errors path="firstName" cssClass="error" />
 			</div>
 			</div>
 			
@@ -92,7 +92,7 @@
 				<div class="md-form text-white">
 					<form:input path="lastName" name="lastName" class="form-control"/>
 							<label for="lastname">Last Name</label>
-							<form:errors path="lastName" />
+							<form:errors path="lastName" cssClass="error"/>
 				</div>
 			    </div>
 				</div>		
@@ -105,7 +105,7 @@
 					<form:input path="dob" type="text" name="dob"
 							placeholder="yyyy-mm-dd" class="form-control" />
 					<label for="dob">DoB</label>
-					<form:errors path="dob" />
+					<form:errors path="dob" cssClass="error"/>
 				</div>
 				</div>
 				
@@ -116,7 +116,7 @@
 				   <form:select path="gender" id="gender"
 							items="${genderList}" class="form-control input-sm" />
 					<label for="gender">Gender</label>
-				  	<form:errors path="gender"></form:errors>
+				  	<form:errors path="gender" cssClass="error"></form:errors>
 				 </div>
 				 </div>
 							
@@ -126,7 +126,7 @@
 							<form:input path="contact" type="text" name="contact"
 							class="form-control" />
 							<label for="contact">Contact</label>		
-							<form:errors path="contact" />
+							<form:errors path="contact" cssClass="error" />
 						</div>
 					</div>
 					
@@ -136,7 +136,7 @@
 					<div class="md-form text-white">
 					<form:input path="email" name="email" class="form-control"/>
 					<label for="email">Email</label>
-					<form:errors path="email" />
+					<form:errors path="email" cssClass="error"/>
 					</div>
 					</div>
 					</div>
@@ -149,7 +149,7 @@
 				<div class="md-form text-white">
 					<form:input path="userId" name="userId" class="form-control"/>
 					<label for="userid">User ID</label>
-					<form:errors path="userId" />
+					<form:errors path="userId" cssClass="error"/>
 				</div>
 				</div>
 								
@@ -163,7 +163,7 @@
 							<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-white mb-3">
                     At least 8 characters,1 digit and 1 special character.
                 </small>
-					<form:errors path="password" />		
+					<form:errors path="password" cssClass="error"/>		
 				</div>
 				</div>
 				
@@ -176,19 +176,19 @@
 					<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-white mb-3">
                     Must match with password
                 </small>
-				<form:errors path="confirmpassword" />
+				<form:errors path="confirmpassword" cssClass="error" />
 				</div>
 				</div>
 				</div>
 							
-				<div class="form-row mb-5">
+				<div class="form-row mb-4">
 				<div class="col-md-4">
 				<!-- Security question 1 -->
-				<div class="md-form text-white"
+				<div class="md-form text-white">
 					<label for="ques1">Choose the first Question</label>
 					<form:select path="security1" 
 						items="${securityList}" class="form-control" />
-					<form:errors path="security1"></form:errors>	
+					<form:errors path="security1" cssClass="error"></form:errors>	
 				</div>
 				</div>
 				
@@ -198,7 +198,7 @@
 				<label for="ques2">Choose the second Question</label>
 				<form:select path="security2" 
 						items="${securityList}" class="form-control"/>
-						 <form:errors path="security2"></form:errors>
+						 <form:errors path="security2" cssClass="error"></form:errors>
 						 </div>
 						 </div>
 						 
@@ -208,7 +208,7 @@
 				<label for="ques3">Choose the third Question</label>
 				<form:select path="security3" 
 						items="${securityList}"  class="form-control"/>
-				<form:errors path="security3"></form:errors>
+				<form:errors path="security3" cssClass="error"></form:errors>
 				</div>
 				</div>
 				</div>
@@ -221,7 +221,7 @@
 				<div class="md-form text-white">
 				<label for="ans1">Enter the answer</label>
 				<form:input path="ans1" class="form-control"/>
-				<form:errors path="ans1" />
+				<form:errors path="ans1" cssClass="error" />
 				</div>
 				</div>	
 				
@@ -230,7 +230,7 @@
 						 <div class="md-form text-white">
 						 <label for="ans2">Enter the answer</label>
 						 <form:input path="ans2" class="form-control" />
-						 <form:errors path="ans2" />
+						 <form:errors path="ans2" cssClass="error"/>
 						 </div>
 						 </div>
 						 
@@ -240,26 +240,56 @@
 				<div class="md-from text-white">
 				<label for="ans2">Enter the answer</label>
 				<form:input path="ans3" class="form-control" />
-				<form:errors path="ans3" />
+				<form:errors path="ans3" cssClass="error"/>
 				</div>
 				</div>
 				</div>
 				
+				<!-- .Launch Modal Button-->
 		    <!-- Sign in button -->
-		    <button class="btn btn-warning  btn-rounded btn-small navbar-btn text-dark" type="submit">Sign Up</button>
+		    <button class="btn btn-primary  btn-rounded btn-small navbar-btn text-white" type="submit" data-toggle="modal" data-target="#Mymodal" >Sign Up
+		    </button>
+		    
+		    <!-- modal -->
+			<div class="modal fade" id="Mymodal">
+				<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+                &times;
+                </button> 
+				<h4 class="modal-title">
+                	Success
+                </h4>                                                             
+			</div> 
+			<div class="modal-body">
+				Details  submitted successfully!
+			</div>   
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">
+                	Close
+                </button>
+				<button type="button" class="btn btn-primary">
+                	Ok
+                </button>                                 
+			</div>
+		</div>                                                                       
+	</div>                                      
+</div>
+		    
+
             </form:form>
 	</div>
 	</div>
-	</div>
 	</table>
+	
 </div>
 </div>
 
 <footer class="page-footer font-small bg-dark text-white  teal pt-4">
 <!--/.First column-->  
       <div class="container text-center mt-1 ">
-	        </h6>
-	        	<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br>
+	           	<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br>
 	        	<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact Us</strong></a><br>
         </div>
 <!--/.First column-->

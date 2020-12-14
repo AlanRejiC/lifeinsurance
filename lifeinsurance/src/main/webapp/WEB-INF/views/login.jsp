@@ -94,17 +94,17 @@
 			<!-- Forgot Pass -->		
 						
 			<li id="adminlink" style="padding-right:5px;">
-                <a href="/forgotPass" class="btn btn-warning btn-small navbar-btn">Forgot Password</a> 
+                <a href="/forgotPass" class="btn text-warning btn-small navbar-btn">Forgot Password</a> 
             </li> 
             
             <!-- Forgot ID -->
             
             <li id="adminlink" style="padding-right:5px;">
-                <a href="/forgotUserId" class="btn btn-warning btn-small navbar-btn">Forgot User ID</a> 
+                <a href="/forgotUserId" class="btn text-warning btn-small navbar-btn">Forgot User ID</a> 
             </li> 
-            
-			<!-- Sign in button -->
-            <button class="btn btn-success btn-small navbar-btn" type="submit">Sign In</button>
+           
+           	<!-- Sign in button -->
+            <button class="btn btn-success btn-small navbar-btn" type="submit" style=" padding-right: 5px;">Sign In</button>
 			<h3>${invalid}</h3>
 			
 			<li id="adminlink" style="padding-right:10px;">
