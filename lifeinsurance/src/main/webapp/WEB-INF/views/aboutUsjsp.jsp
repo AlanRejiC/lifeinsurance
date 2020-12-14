@@ -21,7 +21,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"> </script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"> </script> 
-<title>home page</title>
+<title>About Us page</title>
 </head>
 <!-- <body  style="background-image: url(''); background-size:100% 100%; height:500px; background-size: cover; "> -->
 
@@ -36,6 +36,9 @@
 
     <nav class="navbar navbar-expand-sm bg-dark"> 
     	<ul class="navbar-nav">
+    		<li class="nav-item " style="padding-right:10px;"> 
+				<a href="/getHomePage" class="btn btn-warning btn-small navbar-btn text-dark">Home Page</a>
+            </li>
     		<li class="nav-item " style="padding-right:10px;"> 
 				<a href="/getHelpPage" class="btn btn-warning btn-small navbar-btn text-dark">Help Desk</a>
             </li>
@@ -102,12 +105,8 @@ KEY TAKEAWAYS<br>
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
 <footer class="page-footer font-small bg-dark text-white  teal pt-4">
 <!--/.First column-->  
       <div class="container text-center mt-1 ">
