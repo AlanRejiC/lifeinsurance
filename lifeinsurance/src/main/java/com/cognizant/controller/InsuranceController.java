@@ -83,7 +83,8 @@ public class InsuranceController {
 		}
 		catch(Exception e)
 		{
-			return "invalid";
+			map.addAttribute("rejected", "Invalid Account Number");
+			return "payment";
 		}
 		if (result.hasErrors()) {
 			System.out.println("Errors");
