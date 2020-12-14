@@ -15,6 +15,11 @@
 			width:100vw;
 			height:100vh;
 		}
+		.bg-cover{
+			background-image: url('img/login.jpg');
+			background-size:cover;
+			height:100%;
+		}
 	</style>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
@@ -28,8 +33,7 @@
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <title>User Page</title>
 </head>
-<body style="background-image: url('img/login.jpg'); height:auto; max-width:100%; ">
-<header class="bg-dark" style="height: 6rem;">
+<header class="bg-dark " style="height: 6rem;">
 	<div class="bg-dark">
 		<center>
 			<h1 style="font-size: 50px;" class="text-white" id="home_heading">
@@ -58,6 +62,10 @@
 		</ul>
 	</nav>
 </header>
+<body style=" " >
+<div class="jumbotron jumbotron bg-cover" >
+
+
 <center><h3 class=" py-5 text-body  display-4"><strong class="text-white">Users</strong></h3></center>
 <div class="d-flex justify-content-left">
 	<form:form action="/getSearch" modelAttribute="search" method="POST">
@@ -89,25 +97,25 @@
 <div>
 	<table class="table table-light font-weight-bold border border-dark" >
 	<tr id="head" class="bg-dark text-white">
-		<td><label for="userId"><b>User Id</b></label></td>
-		<td><label for="firstName"><b>First Name</b></label></td>
-		<td><label for="lastName"><b>Last Name</b></label></td>
-		<td><label for="gender"><b>Gender</b></label></td>
-		<td><label for="dob"><b>Date of Birth</b></label></td>
-		<td><label for="contact"><b>Contact Number</b></label></td>
-		<td><label for="email"><b>Email Id</b></label>
-		<td><label for="role"><b>Role</b></label></td>
+		<td><label for="userId"><b><h3>User Id</h3></b></label></td>
+		<td><label for="firstName"><b><h3>First Name</h3></b></label></td>
+		<td><label for="lastName"><b><h3>Last Name</h3></b></label></td>
+		<td><label for="gender"><b><h3>Gender</h3></b></label></td>
+		<td><label for="dob"><b><h3>Date of Birth</h3></b></label></td>
+		<td><label for="contact"><b><h3>Contact Number</h3></b></label></td>
+		<td><label for="email"><b><h3>Email Id</h3></b></label>
+		<td><label for="role"><b><h3>Role</h3></b></label></td>
 	</tr>
 	<c:forEach var="user" items="${user}">
 		<tr>
-			<td>${user.userId}</td>
-			<td>${user.firstName}</td>
-			<td>${user.lastName}</td>
-			<td>${user.gender}</td>
-			<td>${user.dob}</td>
-			<td>${user.contact}</td>
-			<td>${user.email}</td>
-			<td>${user.role}</td>
+			<td><h3>${user.userId}</h3></td>
+			<td><h3>${user.firstName}</h3></td>
+			<td><h3>${user.lastName}</h3></td>
+			<td><h3>${user.gender}</h3></td>
+			<td><h3>${user.dob}</h3></td>
+			<td><h3>${user.contact}</h3></td>
+			<td><h3>${user.email}</h3></td>
+			<td><h3>${user.role}</h3></td>
 			<td><h3><a class="btn btn-info btn-lg active navbar-btn text-white font-weight-bold" 
 					 href="/userEdit?userId=${user.userId}">Edit</a></h3></td>
 			<td><h3><a class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold" 
@@ -120,20 +128,19 @@
 </table>
 
 </div>
-
-
 	<div class="d-flex justify-content-center">
 		<ul>
 			<li class="navbar navbar-expand-sm navbar-nav ml-auto" style="padding-right: 10px;">
-					<h3><a class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold" 
-					href="/download/users.xlsx" >Import</a></h3>
+					<h1><a class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold" 
+					href="/download/users.xlsx" >Import</a></h1>
 			</li>
 		</ul>
 	</div>
-<footer
-	class="footer fixed-bottom bg-dark text-white" style="height: 7rem;">
+	<br>
+<footer class="page-footer bg-dark text-white" style="height: 11rem; ">
+<div >
 	<!--/.First column-->
-	<div class="container text-center mt-1 ">
+	<div class="container text-center mt-1">
 		<h3><a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br> 
 		<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact Us</strong></a><br></h3>
 	</div>
@@ -144,7 +151,9 @@
 		<a href="/getHomePage" class="text-white"><strong>LifeInsurance.com</strong></a></h3>
 	</div>
 	<!--/.Copyright -->
+</div>	
 </footer>	
+</div>
 </body>
 
 </html>

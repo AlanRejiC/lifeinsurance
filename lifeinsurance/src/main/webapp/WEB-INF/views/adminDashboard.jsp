@@ -57,31 +57,31 @@
 		<div  class="card-body bg-dark text-white col-md-4 rounded py-5" style="margin: 0 auto; float:none;">
 			<ul class=" navbar navbar-expand-sm navbar-nav">
 				<li style="padding-left: 15px;">
-					<h2><a class="btn btn-primary btn-lg active navbar-btn text-white font-weight-bold" 
+					<h2><a class="btn bg-primary btn-lg active navbar-btn text-white font-weight-bold" 
 					href="/getUserPage?role=All" >View Users</a></h2>
 				</li>
 				<li class="navbar navbar-expand-sm navbar-nav ml-auto" style="padding-right: 10px;">
-					<h3><a class="btn btn-primary btn-lg active navbar-btn text-white font-weight-bold" 
+					<h3><a class="btn bg-primary btn-lg active navbar-btn text-white font-weight-bold" 
 					href="/getPolicyPage" >View Policies</a></h3>
 				</li>
 			</ul>	
 			<ul class=" navbar navbar-expand-sm navbar-nav">
 				<li style="padding-left: 15px;">
-					<h3><a class="btn btn-primary btn-lg active navbar-btn text-white font-weight-bold" 
+					<h3><a class="btn bg-success btn-lg active navbar-btn text-white font-weight-bold" 
 					href="/getPolicyAdd" >Add Policies</a></h3>
 				</li>
 				<li class="navbar navbar-expand-sm navbar-nav ml-auto" style="padding-right: 10px;">
-					<h3><a class="btn btn-primary btn-lg active navbar-btn text-white font-weight-bold" 
+					<h3><a class="btn bg-success btn-lg active navbar-btn text-white font-weight-bold" 
 					href="/getAgentDetails">Agent Details</a></h3>
 				</li>
 			</ul>
 			<ul class=" navbar navbar-expand-sm navbar-nav">
 				<li style="padding-left: 15px;">
-					<h3><a class="btn btn-primary btn-lg active navbar-btn text-white font-weight-bold" 
+					<h3><a class="btn bg-info btn-lg active navbar-btn text-white font-weight-bold" 
 					href="/getHelpRequest" >Resolve Help Request</a></h3>
 				</li>
 				<li class="navbar navbar-expand-sm navbar-nav ml-auto" style="padding-right: 10px;">
-					<h1><a class="btn btn-primary btn-lg active navbar-btn text-white font-weight-bold" 
+					<h1><a class="btn bg-info btn-lg active navbar-btn text-white font-weight-bold" 
 					href="/setQuestion">Set Questions</a></h1>
 				</li>
 			</ul>
