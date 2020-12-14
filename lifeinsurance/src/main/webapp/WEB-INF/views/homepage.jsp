@@ -23,7 +23,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"> </script> 
 <title>home page</title>
 </head>
-<body  style="background-image: url('img/image.png'); background-size:100% 100%; height:500px; background-size: cover; ">
+<body  style="background-image: url('img/image.png'); background-size:100% 100%; height:auto; max-width:100%; ">
 <!-- <div class="form" style="background-image: url('http://www.innitialliance.com/Images/life-insurance-claim.jpg')";> -->
 <header class="bg-dark" style="height: 3rem;">
 <div class="bg-dark">
