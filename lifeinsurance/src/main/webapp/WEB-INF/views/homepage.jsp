@@ -148,7 +148,7 @@
   	<div class="footer-copyright text-center py-3">
     &copy; 2020 Copyright:
 	<a href="/getHomePage" class="text-white"><strong> LifeInsurance.com</strong></a>
-  </div>
+  </div> 
 <!--/.Copyright -->
 </footer>
 
