@@ -46,6 +46,11 @@ public class LoginController {
 	public String homePage() {
 		return "homepage";
 	}
+	
+	@RequestMapping(value = "/getAboutUs", method = RequestMethod.GET)
+	public String aboutPage() {
+		return "aboutUsjsp";
+	}
 
 	@RequestMapping(value = "/getContactPage", method = RequestMethod.GET)
 	public String contactPage() {

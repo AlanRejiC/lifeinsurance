@@ -31,9 +31,9 @@
 <title>User Login Page</title>
 </head>
 
-<body style="background-color: black;">
+<body style="background-color: black; background-image: url('https://wallpapercave.com/wp/wp2939880.jpg')";>
 
-<div class="form" style="background-image: url('https://wallpapercave.com/wp/wp2939880.jpg')";>
+<div class="form" >
 
 <header class="bg-dark" style="height: 3rem;">
 <div class="bg-dark">
@@ -118,6 +118,15 @@
 	</div>
 	</div>
 	</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <footer class="page-footer font-small bg-dark text-white  teal pt-4">
 <!--/.First column-->  
