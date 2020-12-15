@@ -110,7 +110,7 @@
 
 
 			<div class="form-row mb-5 row-col-12 w-100 h-100">
-				<div class="col-md-6 text-white input-group-text-border-custom" style="padding-left: 500px;font-size: larger;">${q1}</div>
+				<div class="col-md-6 text-white" style="padding-left: 500px;font-size: larger;">${q1}</div>
 								<div class="col-md-6">
 									<label for="ans1" class="text-white" style="margin-left: 200px;">Enter the answer</label>
 									<form:input path="response1" name="ans1" placeholder="Answer for first question"/>
