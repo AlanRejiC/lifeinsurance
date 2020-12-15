@@ -11,7 +11,7 @@ import org.springframework.validation.Validator;
 import com.cognizant.model.User;
 
 @Service
-public class RegistrationValidator implements Validator{
+public class AgentValidator implements Validator{
 
 	@Override
 	public boolean supports(Class<?> clazz) {
@@ -25,9 +25,9 @@ public class RegistrationValidator implements Validator{
 		User user = (User) target;
 		ValidationUtils.rejectIfEmpty(errors, "userId","", "UserId cannot be blank");
 		ValidationUtils.rejectIfEmpty(errors, "firstName","", "First Name Id cannot be blank");
-		ValidationUtils.rejectIfEmpty(errors, "lastName","", "Last Name cannot be blank");
-		ValidationUtils.rejectIfEmpty(errors, "gender","", "Choose any one of the options");
-		ValidationUtils.rejectIfEmpty(errors, "dob","", "Date Of Birth cannot be blank");
+		//ValidationUtils.rejectIfEmpty(errors, "lastName","", "Last Name cannot be blank");
+		//ValidationUtils.rejectIfEmpty(errors, "gender","", "Choose any one of the options");
+		//ValidationUtils.rejectIfEmpty(errors, "dob","", "Date Of Birth cannot be blank");
 		ValidationUtils.rejectIfEmpty(errors, "contact","", "Please fill your contact number");
 		ValidationUtils.rejectIfEmpty(errors, "password","", "Password cannot be blank");
 		ValidationUtils.rejectIfEmpty(errors, "confirmpassword","", "Password cannot be blank");
@@ -81,8 +81,6 @@ public class RegistrationValidator implements Validator{
 		if(!(user.getEmail().matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"))){
 			errors.rejectValue("email", "","Should be a proper email ID format");
 		}
-
 	}
-	
 
 }

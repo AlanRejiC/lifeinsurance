@@ -3,6 +3,7 @@ package com.cognizant.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -120,6 +121,7 @@ public class LoginController {
 
 	@RequestMapping(value = "/getLogOut", method = RequestMethod.GET)
 	public String LogOut() {
+		
 		User user = userService.findUser(Home.Id);
 		user.setLogin(false);
 		Home.Id = 0;

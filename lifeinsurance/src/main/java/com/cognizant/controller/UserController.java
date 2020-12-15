@@ -40,7 +40,11 @@ public class UserController {
     @GetMapping(value = "/getUserPage")
     public String getUserPage(@RequestParam String role, @ModelAttribute("search") Search search, ModelMap map) {
 //		String role=request.getParameter("item");;
-        try {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
+    	try {
             System.out.println(role);
             System.out.println("inside get user page");
             if (role.equalsIgnoreCase("customer")) {
@@ -68,7 +72,11 @@ public class UserController {
     @PostMapping(value = "/getSearch")
     public String getSearch(@ModelAttribute("search") Search search, ModelMap map) {
 //		String role=request.getParameter("item");;
-        try {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
+    	try {
             System.out.println(search.getName());
             map.addAttribute("user", userService.findParticularUser(search.getName()));
             return "usersPage";
@@ -80,7 +88,11 @@ public class UserController {
 //	
     @GetMapping(value = "/userEdit")
     public String getUserEdit(@RequestParam int userId, @ModelAttribute("user") User user, ModelMap map) {
-        System.out.println("inside get user  EDIT page");
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
+    	System.out.println("inside get user  EDIT page");
         User user1 = userService.findUser(userId);
         user1.setUserId(userId);
         map.addAttribute("item", user1);
@@ -89,7 +101,11 @@ public class UserController {
 
     @GetMapping(value = "/userSuccess")
     public String getUserSuccess(@RequestParam int userId, @ModelAttribute("user") User user, ModelMap map) {
-        System.out.println("inside success page");
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
+    	System.out.println("inside success page");
         // map.addAttribute("success",success);
 //		User user1=userService.findUser(userId);
         userService.saveUser(user);
@@ -98,12 +114,20 @@ public class UserController {
 
     @GetMapping(value = "/getPageSearch")
     public String showFilter(@RequestParam String role) {
-        return "usersPage";
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
+    	return "usersPage";
     }
 
     @GetMapping(value = "/userUpdate")
     public String showUserUpdate(@RequestParam int userId, @ModelAttribute("claim") Claim claim, ModelMap map) {
-        User user = userService.findUser(userId);
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
+    	User user = userService.findUser(userId);
         System.out.println(user);
         Claim claim1 = claimService.findCustName(user.getFirstName());
         map.addAttribute("status", claim1.getStatus());
@@ -116,7 +140,10 @@ public class UserController {
     @GetMapping(value = "/getUserUpdateSuccess")
     public String getUserUpdateSuccess(@RequestParam int userId, @RequestParam String status,
             @ModelAttribute("claim") Claim claim) {
-
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
         User user = userService.findUser(userId);
         Claim claim1 = claimService.findCustName(user.getFirstName());
         claim1.setStatus(status);
@@ -129,7 +156,11 @@ public class UserController {
 
     @GetMapping(value = "/userDelete")
     public String showUserDelete(@RequestParam int userId, @ModelAttribute("user") User user, ModelMap map) {
-        User user1 = userService.findUser(userId);
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
+    	User user1 = userService.findUser(userId);
         userService.deleteUser(user1);
         System.out.println("inside get user delete page");
         return "userDelete";
@@ -167,7 +198,6 @@ public class UserController {
     	
     	return "help";
     }
-
     @ModelAttribute("roleList")
     public List<String> listRole() {
         List<String> list = new ArrayList<String>();
