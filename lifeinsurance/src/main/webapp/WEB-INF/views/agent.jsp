@@ -28,7 +28,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body class="container-fluid bg1 w-100 col-md-10">
+<body style="background-image: url('img/login.jpg');max-width:100%";>
 	<header class="bg-dark" style="height: 3rem;">
 		<div class="bg-dark">
 			<center>
@@ -58,17 +58,16 @@
 			</nav>
 		</div>
 	</header>
-
-	<br>
 	<br><br>
-	<div class="container card-body bg-dark text-white w-100 col-md-12 "
+	<br><br><br>
+	<br><br><br>
+	<div class="container card-body bg-dark text-white w-90 col-md-7 "
 		align="center">
 		
 		<form:form modelAttribute="user" action="/getAgentPage" method="POST">
 			<h1
 				class=" display-4 card-header success-color white-text text-center py-4">Become
 				an Agent</h1>
-			<br><br>
 			<div class="form-row mb-5 row-col-12 w-100 h-100">
 				<div class="col-md-4">
 					<label for="firstName">Name</label>
@@ -146,8 +145,8 @@
 			
 			<input type="submit" value="Submit" id="submitbutton" />
 		</form:form>
-	
-	</div>
+		
+	<div>
 	<footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
 <!--/.First column-->  
       <div class="container text-center mt-1 ">
@@ -163,6 +162,6 @@
   </div> 
 <!--/.Copyright -->
 </footer>
-
+</div>
 </body>
 </html>

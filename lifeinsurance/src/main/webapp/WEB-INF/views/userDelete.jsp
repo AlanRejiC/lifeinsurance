@@ -52,12 +52,6 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <body style="background-image: url('img/login.jpg'); height:auto; max-width:100%; ">
 
 			

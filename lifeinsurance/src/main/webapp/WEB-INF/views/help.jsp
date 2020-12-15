@@ -29,7 +29,7 @@
 <style><%@ include file="/WEB-INF/styles/style.css"%>
 </style>
 </head>
-<body class="bg" style="background-color: #484544;height: 100vh;">
+<body style="background-image: url('img/login.jpg');max-width:100%"; >
 
 
 	<!-- <div class="form" style="background-image: url('http://www.innitialliance.com/Images/life-insurance-claim.jpg')";> -->
@@ -78,8 +78,8 @@
 				<h1>Help Desk</h1>
 			</div>
 			<br>
-			<div class="container text-white "><center>${success}</center> </div>
-			<div class="container text-white "><center>${invalid}</center> </div>
+			<div class="container text-white "><h3><center>${success}</center></h3></div>
+			<div class="container text-white "><h3><center>${invalid}</center> </h3></div>
 			<br>
 			
 			<div class="container">
