@@ -62,10 +62,12 @@
 				</ul>
 			</nav>
 		</header>
+		
 <body class="bg-cover">
 		<div class="mx-auto text-center form p-5">
 			<center><h3 class=" py-5 text-body  display-4"><strong class="text-white">Update User Claim Status</strong></h3></center>
 			<br>
+			<h1 align="center" style="background-color:powderblue;">${noti}</h1>
 			<div class="d-flex justify-content-center py-5 " >
 				<table class="table table-sm table-light font-weight-bold " style="width:30%;" >
 					<tr id="head" class="bg-dark text-white">

@@ -66,7 +66,8 @@ public class AgentController {
 		user.setLogin(false);
 		System.out.println(user);
 		userService.saveUser(user);
-		return "agentSuccess";
+		map.addAttribute("reject", "Succesfully registered as Agent");
+		return "agent";
 		}
 		catch(Exception e)
 		{
@@ -119,7 +120,6 @@ public class AgentController {
 		} else {
 			System.out.println(search.getName());
 			map.addAttribute("user", userService.findParticularUser(search.getName()));
-
 			return "agentDetails";
 		}
 		
@@ -143,8 +143,9 @@ public class AgentController {
 		}
 		User user1 = userService.findUser(userId);
 		userService.deleteUser(user1);
-
-		return "agentDelete";
+		map.addAttribute("status", "Agent is deleted");
+		map.addAttribute("user", userService.findUserWithRole("agent"));
+		return "agentDetails";
 	}
 	
 	@ModelAttribute("securityList")

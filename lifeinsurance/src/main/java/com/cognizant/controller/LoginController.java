@@ -112,10 +112,12 @@ public class LoginController {
 				user.setLogin(true);
 				userService.saveUser(user);
 				Home.Id = user.getUserId();
-				return "success";
+				//map.addAttribute("invalid", "Login Su");
+				return "homepage";
 			}
 		} catch (Exception e) {
-			return "invalidlogin";
+			map.addAttribute("invalid", "Invalid username or password");
+			return "login";
 		}
 	}
 

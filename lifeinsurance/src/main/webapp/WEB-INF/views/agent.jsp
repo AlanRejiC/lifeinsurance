@@ -143,7 +143,7 @@
 					<div><form:errors path="ans3" /></div>
 				</div>
 			</div>
-			
+			<h1>${reject}</h1>
 			<input type="submit" value="Submit" id="submitbutton" />
 		</form:form>
 		

@@ -108,8 +108,10 @@ public class UserController {
     	System.out.println("inside success page");
         // map.addAttribute("success",success);
 //		User user1=userService.findUser(userId);
+    	user.setLogin(true);
         userService.saveUser(user);
-        return "userSuccess";
+        map.addAttribute("status", "Your Edit has been Saved");
+        return "userEdit";
     }
 
     @GetMapping(value = "/getPageSearch")
@@ -123,7 +125,9 @@ public class UserController {
 
     @GetMapping(value = "/userUpdate")
     public String showUserUpdate(@RequestParam int userId, @ModelAttribute("claim") Claim claim, ModelMap map) {
-		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		try
+		{
+    	if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
 		{
 			return "pleaseLogin";
 		}
@@ -135,7 +139,13 @@ public class UserController {
         System.out.println(claim1.getStatus());
         System.out.println("inside update page");
         return "userUpdate";
-    }
+		}
+		catch(Exception e)
+		{
+			map.addAttribute("noti", "This User has no claim");
+			return "userUpdate";
+		}
+	}
 
     @GetMapping(value = "/getUserUpdateSuccess")
     public String getUserUpdateSuccess(@RequestParam int userId, @RequestParam String status,

@@ -70,6 +70,7 @@
 	<center><h1 style="color: white">Edit Menu Item</h1></center>
 	<br><br>
 	<div>
+	<h1 align="center" style="background-color:powderblue;">${status}</h1>
 	<form:form modelAttribute="user" method="GET" action="/userSuccess">
 	<table class="table table-light font-weight-bold border border-dark" >
 	<tr id="head" class="bg-dark text-white">
@@ -111,6 +112,7 @@
 				<td><h3><form:input path="security3" type="text" value="${item.security3}" /></h3></td>
 				<td><h3><form:input path="ans3" type="text" value="${item.ans3}" /></h3></td>
 				<td><h3><form:input path="role" type="text" value="${item.role}" /></h3></td>
+				<form:hidden path="login"></form:hidden>
 			</tr>
 			<tr>
 				<td><button class="btn btn-success btn-small navbar-btn" type="submit" style=" padding-right: 5px;">Submit</button></td>

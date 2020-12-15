@@ -68,7 +68,9 @@
 	</form:form>
 </div>
 <center>
+<center><h1 align="center" style="background-color:red;">${status}</h1></center>
 <div>
+	
 	<table class="table table-light font-weight-bold border border-dark" >
 	<tr id="head" class="bg-dark text-white">
                 <td><label for="firstName"><b><h3>Agent Name</h3></b></label></td>
@@ -96,7 +98,9 @@
 
 			</tr>
 		</c:forEach>
+		
 		</table>
+		
 		</div>
 		
 		</div>
