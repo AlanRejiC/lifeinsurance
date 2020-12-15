@@ -100,7 +100,7 @@
             <!-- Forgot ID -->
             
             <li id="adminlink" style="padding-right:5px;">
-                <a href="/forgotUserId" class="btn text-warning btn-small navbar-btn">Forgot User ID</a> 
+                <a href="/forgotEnter" class="btn text-warning btn-small navbar-btn">Forgot User ID</a> 
             </li> 
            
            	<!-- Sign in button -->
