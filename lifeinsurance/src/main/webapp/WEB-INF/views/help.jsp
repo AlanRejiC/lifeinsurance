@@ -29,7 +29,7 @@
 <style><%@ include file="/WEB-INF/styles/style.css"%>
 </style>
 </head>
-<body class="bg" style="background-color: #484544;">
+<body class="bg" style="background-color: #484544;height: 100vh;">
 
 
 	<!-- <div class="form" style="background-image: url('http://www.innitialliance.com/Images/life-insurance-claim.jpg')";> -->
@@ -40,28 +40,29 @@
 					<strong>Life Insurance Management private Limited</strong>
 				</h1>
 			</center>
-		
-		<nav class="navbar navbar-expand-sm bg-dark">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item" style="padding-right: 10px;"><a
-					href="/getHomePage" class="btn btn-warning btn-small navbar-btn">Home
-						Page</a></li>
-				<li class="nav-item" style="padding-right: 10px;"><a
-					href="/verification" class="btn btn-warning btn-small navbar-btn">Change
-						Password</a></li>
-				<li></li>
-				<li class="nav-item" style="padding-right: 10px;"><a
-					href="/getLoginPage" class="btn btn-warning btn-small navbar-btn ">Sign
-						In</a></li>
-				<li class="nav-item" style="padding-right: 10px;"><a
-					href="/getSignUpPage" class="btn btn-warning btn-small navbar-btn">Sign
-						Up</a></li>
-				<li class="nav-item"><a href="/getLogOut"
-					class="btn btn-warning btn-small navbar-btn">Log Out</a></li>
-			</ul>
-		</nav>
+
+			<nav class="navbar navbar-expand-sm bg-dark">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item" style="padding-right: 10px;"><a
+						href="/getHomePage" class="btn btn-warning btn-small navbar-btn">Home
+							Page</a></li>
+					<li class="nav-item" style="padding-right: 10px;"><a
+						href="/verification" class="btn btn-warning btn-small navbar-btn">Change
+							Password</a></li>
+					<li></li>
+					<li class="nav-item" style="padding-right: 10px;"><a
+						href="/getLoginPage" class="btn btn-warning btn-small navbar-btn ">Sign
+							In</a></li>
+					<li class="nav-item" style="padding-right: 10px;"><a
+						href="/getSignUpPage" class="btn btn-warning btn-small navbar-btn">Sign
+							Up</a></li>
+					<li class="nav-item"><a href="/getLogOut"
+						class="btn btn-warning btn-small navbar-btn">Log Out</a></li>
+				</ul>
+			</nav>
 		</div>
 	</header>
+
 	
 	
 	
@@ -69,14 +70,16 @@
 	
 	
 	
-	<div class="container-fluid ">
+	<div class="container-fluid " style="font-size:25px;">
 		<div class="container" style="margin-top: 100px">
 			<div class="align-center ml-10 text-light">
-				<br> <br>
+				
 				<br>
 				<h1>Help Desk</h1>
 			</div>
 			<br>
+			<div class="container text-white "><center>${success}</center> </div>
+			<div class="container text-white "><center>${invalid}</center> </div>
 			<br>
 			
 			<div class="container">
@@ -122,7 +125,7 @@
 							<div class="col-md-6">
 								<form:textarea  path="description" rows="10" column="50"
 									name="description" placeholder='Description of the issue in 50 words'
-									class="input-group-text-border-custom textarea" />
+									class="input-group-text-border-custom textarea" style="min-width: 100%"/>
 							</div>
 						</div>
 					</table>
@@ -144,7 +147,7 @@
 			</div>
 		</div>
 	</div>
-	<footer class="page-footer font-small bg-dark text-white  teal pt-4">
+	<footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
 		<!--/.First column-->
 		<div class="container text-center mt-1 ">
 

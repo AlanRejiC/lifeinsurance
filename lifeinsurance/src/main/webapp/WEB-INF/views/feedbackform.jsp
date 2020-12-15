@@ -7,48 +7,179 @@
 <head>
 <meta charset="ISO-8859-1">
 <style>
-	<%@ include file="/WEB-INF/styles/style.css"%>
+<%@ include file="/WEB-INF/styles/style.css"%>
 </style>
 <title>FeedBackForm</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-<header class="header">
-	<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
-</header>
-<center><h2>FeedBack Form</h2></center>
-	<div align="center">
-		<form:form  modelAttribute="questionnaire" method="POST" action="/getFeedBackPage">
-			<table>
-				<tr>
-					<td>Enter User ID</td>
-					<td><form:input path="userId" type="text" name="userId" /></td>
-					<td><form:errors path="userId" /></td>
-				</tr>
-				
-				<tr>
-					<td>Description</td>
-					<td><form:textarea path="feedback" rows="10" column="50" name="description" placeholder='Enter your Review or Feedback' /></td>
-				</tr>
-				
-			</table>
-			<br>
-			<input type="submit" value="Submit FeedBack" id="submitbutton"/>
-			<br>
-			<br>
-			<h2><div>${success}</div></h2>
-			<h2><div>${invalid}</div></h2>
-			
-			
-			
-		</form:form>
-	</div>
-	<center>
-<h4><a href="/getHomePage">Go to Home Page</a></h4>
-</center>
-	<footer class="footer">
-  <p>Life Insurance copyrights 2020<br>
-  Locations <br> Connect with us <br></p>
-</footer>	
+<body class="bg">
+	<header class="bg-dark" style="height: 3rem;">
+		<div class="bg-dark">
+			<center>
+				<h1 style="font-size: 50px;" class=" text-white" id="home_heading">
+					<strong>Life Insurance Management private Limited</strong>
+				</h1>
+			</center>
 
+			<nav class="navbar navbar-expand-sm bg-dark">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item" style="padding-right: 10px;"><a
+						href="/getHomePage" class="btn btn-warning btn-small navbar-btn">Home
+							Page</a></li>
+					<li class="nav-item" style="padding-right: 10px;"><a
+						href="/verification" class="btn btn-warning btn-small navbar-btn">Change
+							Password</a></li>
+					<li></li>
+					<li class="nav-item" style="padding-right: 10px;"><a
+						href="/getLoginPage" class="btn btn-warning btn-small navbar-btn ">Sign
+							In</a></li>
+					<li class="nav-item" style="padding-right: 10px;"><a
+						href="/getSignUpPage" class="btn btn-warning btn-small navbar-btn">Sign
+							Up</a></li>
+					<li class="nav-item"><a href="/getLogOut"
+						class="btn btn-warning btn-small navbar-btn">Log Out</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<br><br><br>
+	<div class="container-fluid " style="font-size: 25px;">
+<div class=" display-4 card-body success-color text-white text-center py-3">
+		<h1>
+			
+			<strong>FeedBack Form</strong>
+		</h1>
+		<div class="container text-white "><center>${success}</center> </div>
+			<div class="container text-white "><center>${invalid}</center> </div>
+			
+
+</div>
+		<form:form modelAttribute="questionnaire" method="POST"
+			action="/getFeedBackPage">
+			
+			
+			
+			
+			
+		
+
+
+						<div class="input-group mb-3 row col-md-12 w-100">
+							<div class="col-md-3"></div>
+							<div class="input-group-prepend col-md-2 ml-3 h-100">
+								<span
+									class="input-group-text w-100 input-group-text-border-custom h-16"><strong>Enter User ID</strong></span>
+							</div>
+							<div class="col-md-6">
+								<form:input path="userId" type="text" name="userId" />
+						<form:errors path="userId" placeholder="Enter Your User Id"/>
+							</div>
+						</div>
+
+			
+						<div class="input-group mb-3 row col-md-12 w-100">
+							<div class="col-md-3"></div>
+							<div class="input-group-prepend col-md-2 ml-3 ">
+								<span
+									class="input-group-text w-100 pl-3 input-group-text-border-custom h-20"><strong>Description</strong></span>
+							</div>
+							<div class="col-md-6">
+								<form:textarea path="feedback" rows="5" column="50"
+							name="description" placeholder='Enter your Review or Feedback' style="min-width: 100%"/>
+							</div>
+						</div>
+						
+			
+			
+			
+			
+			
+			
+			
+			
+			<div class="form-row mb-5 row-col-12 w-100 h-100">
+				<div class="col-md-6" >
+					<label for="q1" class="text-white" style="margin-right: 30px;margin-left: 200px;">  Choose the first Question   </label>
+					<form:select class="h-100" path="question1" items="${securityList}" name="q1" />
+					<form:errors path="question1"></form:errors>
+				</div>
+				<div class="col-md-6">
+					<label for="ans1" class="text-white" style="margin-left: 200px;">Enter the answer</label>
+					<form:input path="response1" name="ans1" placeholder="Answer for first question"/>
+					<form:errors path="response1" />
+				</div>
+			</div>
+			<div class="form-row mb-5 row-col-12 w-100 h-100">
+				<div class="col-md-6">
+					<label for="q2" class="text-white" style="margin-left: 200px;">Choose the second Question</label>
+					<form:select class="h-100" path="question2" items="${securityList}" name="q2" />
+					<form:errors path="question2"></form:errors>
+				</div>
+				<div class="col-md-6">
+					<label for="ans2" class="text-white" style="margin-left: 200px;">Enter the answer</label>
+					<form:input path="response2" name="ans2" placeholder="Answer for second question"/>
+					<form:errors path="response2" />
+				</div>
+			</div>
+			<div class="form-row mb-5 row-col-12 w-100 h-100">
+				<div class="col-md-6">
+					<label for="q3" class="text-white" style="margin-right: 20px;margin-left: 200px;">Choose the third Question</label>
+					<form:select class="h-100" path="question3" items="${securityList}" name="q3" />
+					<form:errors path="question3"></form:errors>
+				</div>
+				<div class="col-md-6">
+					<label for="ans3" class="text-white" style="margin-left: 200px;">Enter the answer</label>
+					<form:input path="response3" name="ans3" placeholder="Answer for third question"/>
+					<form:errors path="response3" />
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+
+		</form:form>
+
+		<center>
+			<h4>
+				<input type="submit" value="Submit FeedBack"
+						id="submitbutton" />
+			</h4>
+		</center>
+	</div>
+	</div>
+	<footer
+		class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
+		<!--/.First column-->
+		<div class="container text-center mt-1 ">
+			</h6>
+			<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact
+					Us</strong></a><br>
+		</div>
+		<!--/.First column-->
+		<!--/.Copyright -->
+		<div class="footer-copyright text-center py-3">
+			&copy; 2020 Copyright: <a href="/getHomePage" class="text-white"><strong>
+					LifeInsurance.com</strong></a>
+		</div>
+		<!--/.Copyright -->
+	</footer>
 </body>
 </html>

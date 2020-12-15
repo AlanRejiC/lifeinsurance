@@ -142,7 +142,7 @@ public class UserController {
 
     @PostMapping(value = "/getHelpPage")
     public String postHelpPage(@ModelAttribute("help") Help help, ModelMap map) {
-    	System.out.println(help);
+    	try{System.out.println(help);
         Insurance insurance = helpService.findUserHelp(help.getCustName());
         map.addAttribute("custName", insurance.getCustName());
         System.out.println(LocalDate.now());
@@ -158,7 +158,14 @@ public class UserController {
         help.setDateOfTicket(LocalDate.now());
         System.out.println(help);
         helpService.saveHelpIssue(help);
-        return "success";
+        map.addAttribute("success", "Issue submitted successfully...Thank you for bringing the issue to our attention");
+    	}catch (Exception e) {
+			// TODO: handle exception
+    		map.addAttribute("invalid", "Please fill the details in the form ");
+        	
+		}
+    	
+    	return "help";
     }
 
     @ModelAttribute("roleList")

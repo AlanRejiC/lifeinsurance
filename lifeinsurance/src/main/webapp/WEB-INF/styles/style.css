@@ -164,7 +164,7 @@ body {
 	border-radius:.25rem .25rem !important;
 }
 .h-16{
-	height:16%;
+	height:26%;
 }
 .bg{
 	 /* The image used */
@@ -217,6 +217,10 @@ body {
 #adminloginheader{
 	height: 6rem;
 }
+
+.h-20{
+	height:20%;
+
 /**/
 
 /**/

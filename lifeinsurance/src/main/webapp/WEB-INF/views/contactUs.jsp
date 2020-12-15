@@ -66,28 +66,28 @@
 		<br>
 		<br>
 		<br>
-		<h2 class="font-weight-bold text-center">Phone Contact Details</h2>
+		<h1 class="font-weight-bold text-center"><strong>Phone Contact Details</strong></h1>
 
+<br><br><br>
+		<center><p><h2>Contact call center:</h2><h3> 022 6895 1254<br>
+		Services now available 24x7</h3></p></center>
 
-		<p><h4>Contact call center:</h4> 022 6895 1254<br>
-		Services now available 24x7</p>
-
-
-		<h2 class="font-weight-bold text-center">SMS Help</h2>
-
-		<label>SMS LIMSHELP pol.no. to 9222492224 or SMS LIMSHELP pol.no. to 56767877</label>
+<br><br><br>
+		<h1 class="font-weight-bold text-center"><strong>SMS Help</strong></h1>
+<br><br><br>
+		<center><h3><label>SMS LIMSHELP pol.no. to 9222492224 or SMS LIMSHELP pol.no. to 56767877</label>
 
 
 		<p>
 			Toll free no. 18004259876 for Health Insurance policies from 10 AM to
 			5 PM on all working days. Our trained executive will talk to you.<br>
 			Mail us at: reachLifms@lifms.in
-		</p>
+		</p></center></h3>
 
 	</div>
 
 	<div>
-		<footer class="page-footer font-small bg-dark text-white  teal pt-4">
+		<footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
 			<!--/.First column-->
 			<div class="container text-center mt-1 ">
 

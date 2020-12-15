@@ -28,7 +28,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body class="bg1">
+<body class="container-fluid bg1 w-100 col-md-10">
 	<header class="bg-dark" style="height: 3rem;">
 		<div class="bg-dark">
 			<center>
@@ -60,17 +60,15 @@
 	</header>
 
 	<br>
-	<br>
-	<br>
+	<br><br>
 	<div class="container card-body bg-dark text-white w-100 col-md-12 "
 		align="center">
-		<br>
+		
 		<form:form modelAttribute="user" action="/getAgentPage" method="POST">
 			<h1
 				class=" display-4 card-header success-color white-text text-center py-4">Become
 				an Agent</h1>
-			<br>
-			<br>
+			<br><br>
 			<div class="form-row mb-5 row-col-12 w-100 h-100">
 				<div class="col-md-4">
 					<label for="firstName">Name</label>
@@ -145,29 +143,26 @@
 					<form:errors path="ans3" />
 				</div>
 			</div>
-			<br>
-			<br>
+			
 			<input type="submit" value="Submit" id="submitbutton" />
 		</form:form>
 	
 	</div>
-	<footer class="page-footer font-small bg-dark text-white  teal pt-4">
-		<!--/.First column-->
-		<div class="container text-center mt-1 ">
-
-			<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer
-					FeedBack</strong></a><br> <a href="/getContactPage"
-				class="align-self-center ml-2 text-white"><strong>Contact
-					Us</strong></a><br>
-		</div>
-		<!--/.First column-->
-		<!--/.Copyright -->
-		<div class="footer-copyright text-center py-3">
-			&copy; 2020 Copyright: <a href="/getHomePage" class="text-white"><strong>
-					LifeInsurance.com</strong></a>
-		</div>
-		<!--/.Copyright -->
-	</footer>
+	<footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
+<!--/.First column-->  
+      <div class="container text-center mt-1 ">
+	        </h6>
+	        	<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br>
+	        	<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact Us</strong></a><br>
+        </div>
+<!--/.First column-->
+<!--/.Copyright -->  
+  	<div class="footer-copyright text-center py-3">
+    &copy; 2020 Copyright:
+	<a href="/getHomePage" class="text-white"><strong> LifeInsurance.com</strong></a>
+  </div> 
+<!--/.Copyright -->
+</footer>
 
 </body>
 </html>
