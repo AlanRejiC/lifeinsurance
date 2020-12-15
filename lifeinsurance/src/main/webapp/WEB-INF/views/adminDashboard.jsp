@@ -30,9 +30,6 @@
 </head>
 <body id="adminbody">
 <div class="container-fluid p-0">
-	
-	
-
 	<header id="adminheader" class="bg-dark">
 		<div class="bg-dark">
 			<center>
@@ -58,6 +55,9 @@
 					href="/verification"
 					class="btn btn-warning btn-small navbar-btn text-dark"><h4>Change
 							Password</h4></a></li>
+				<li class="nav-item " style="padding-right: 10px;">
+				<a href="/getLoginPage" class="btn btn-warning btn-small navbar-btn text-dark" ><h4>Login</h4></a> 
+				</li>			
 				<li class="nav-item"><a href="/getLogOut"
 					class="btn btn-warning btn-small navbar-btn text-dark"><h4>Log
 							Out</h4></a></li>

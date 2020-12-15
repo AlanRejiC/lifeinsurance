@@ -55,11 +55,11 @@
 		</ul>
 	</nav>
 </header>
-<center><h3 class=" py-5 text-body  display-4"><strong class="text-white">Policies</strong></h3></center>
+<center><h3 class="py-5 text-body display-4"><strong class="text-white">Policies</strong></h3></center>
 <body>
 <center>
-            <table class="table table-light font-weight-bold border border-dark" >
-			<tr id="head" class="bg-dark text-white">
+            <table class="table table-light font-weight-bold border border-dark col-md-10" >
+			<tr id="head" class="bg-dark text-white font-weight-bold">
                    <td><label for="policyNumber"><b><h3>Policy Number</h3></b></label></td>
                    <td><label for="policyName"><b><h3>Policy Name</h3></b></label></td>
                    <td><label for="policyDescription"><b><h3>Description</h3></b></label></td>
@@ -90,19 +90,25 @@
                 </table>
            </center>
 </body>
-<footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
-<!--/.First column-->  
-      <div class="container text-center mt-1 ">
-	           	<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br>
-	        	<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact Us</strong></a><br>
-        </div>
-<!--/.First column-->
-<!--/.Copyright -->  
-  	<div class="footer-copyright text-center py-3">
-    &copy; 2020 Copyright:
-	<a href="/getHomePage" class="text-white"><strong> LifeInsurance.com</strong></a>
-  </div>
-<!--/.Copyright -->
-</footer>
+	<footer class="footer fixed-bottom bg-dark text-white">
+		<!--/.First column-->
+		<div class="container text-center mt-1 ">
+			<h3>
+				<a href="/getFeedBackPage"
+					class=" align-self-center ml-2 text-white"><strong>Customer
+						FeedBack</strong></a><br> <a href="/getContactPage"
+					class="align-self-center ml-2 text-white"><strong>Contact
+						Us</strong></a><br>
+			</h3>
+		</div>
+		<!--/.First column-->
+		<!--/.Copyright -->
+		<div class="footer-copyright text-center py-3">
+			<h3>
+				&copy; 2020 Copyright: <a href="/getHomePage" class="text-white"><strong>LifeInsurance.com</strong></a>
+			</h3>
+		</div>
+		<!--/.Copyright -->
+	</footer>
 
 </html>

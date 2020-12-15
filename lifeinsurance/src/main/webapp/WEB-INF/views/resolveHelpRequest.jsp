@@ -61,8 +61,8 @@
 		<form:form method="POST" actin="/getHelpRequest" modelAttribute="help" >
 		<center>
 		<div>
-		<table class="table table-light font-weight-bold border border-dark" >
-		<tr id="head" class="bg-dark text-white">>
+		<table class="table table-sm table-light font-weight-bold border border-dark" >
+		<tr id="head" class="bg-dark text-white">
 			<td><label for="requestId"><b><h3>Request ID</h3></b></label></td>
 			</tr>
 				<c:forEach var="help" items="${help}">
