@@ -75,9 +75,14 @@
 			<input type="submit" class="btn btn-primary btn-lg active navbar-btn text-white font-weight-bold"
 			 value="Search"/></li>
 		</ul >	
+		
+		<div class="d-flex justify-content-center">
+		
+	</div>
+		
 	</form:form>
 	<div class="navbar navbar-expand-sm navbar-nav ml-auto">
-		<ul class=" navbar navbar-expand-sm navbar-nav">
+		<ul class=" navbar navbar-expand-sm navbar-nav text-white">
 			<li><h3><strong>Search based on Role :</strong></h3></li>
 			<li class="navbar navbar-expand-sm navbar-nav ml-auto" style="padding-left: 10px; padding-right: 10px;">
 				<h3><a class="btn btn-info btn-lg active navbar-btn text-white font-weight-bold" 
@@ -91,6 +96,12 @@
 				<h3><a class="btn btn-info btn-lg active navbar-btn text-white font-weight-bold" 
 					href="getUserPage?role=admin">Admin</a></h3>
 			</li>
+			<ul>
+			<li class="navbar navbar-expand-sm navbar-nav ml-auto" style="padding-right: 10px;">
+					<h1><a class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold" 
+					href="/download/users.xlsx" >Import</a></h1>
+			</li>
+		</ul>
 		</ul>
 	</div>
 </div>	
@@ -126,14 +137,7 @@
 	</c:forEach>
 </table>
 </div>
-	<div class="d-flex justify-content-center">
-		<ul>
-			<li class="navbar navbar-expand-sm navbar-nav ml-auto" style="padding-right: 10px;">
-					<h1><a class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold" 
-					href="/download/users.xlsx" >Import</a></h1>
-			</li>
-		</ul>
-	</div>
+	
 </div>
 	
 </body>

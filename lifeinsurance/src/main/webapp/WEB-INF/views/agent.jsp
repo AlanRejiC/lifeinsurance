@@ -58,10 +58,10 @@
 			</nav>
 		</div>
 	</header>
-	<br><br><br>
+	<br><br><br><br>
 	
 	
-	<div class="container card-body bg-dark text-white w-90 col-md-12 "
+	<div class="container card-body bg-dark text-white w-10 col-md-9"
 		align="center">
 		
 		<form:form modelAttribute="user" action="/getAgentPage" method="POST">

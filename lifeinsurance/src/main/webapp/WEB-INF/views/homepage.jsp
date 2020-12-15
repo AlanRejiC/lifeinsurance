@@ -90,16 +90,9 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
 <div class="container display-4">
   <center><h1 style="color:white; font-weight: bold">WELCOME TO LIFE INSURANCE PVT LTD</h1></center>  
-  
-   <br><br><br><br>
-  
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
