@@ -99,9 +99,7 @@
 		</table>
 		</div>
 		
-		<h3><a id="adminlink" class ="btn btn-info btn-lg active navbar-btn text-white font-weight-bold"href="/getDashBoard" >Go to Admin DashBoard</a></h3>
-		</center>
-</div>
+		</div>
 
 <footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
 <!--/.First column-->  

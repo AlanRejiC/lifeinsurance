@@ -128,7 +128,7 @@
 <br>
 <br>
 
-<footer class="page-footer font-small bg-dark text-white  teal pt-4">
+<footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
 <!--/.First column-->  
       <div class="container text-center mt-1 ">
 	        </h6>

@@ -30,9 +30,9 @@
 <title>Policy Premium Calculator</title>
 </head>
 
-<body>
+<body style="background-color: black; background-image: url('https://image.cnbcfm.com/api/v1/image/105964745-1560376510health-insurance-life-insurance-car-insurance.jpg?v=1561045239&w=1600&h=900');height:auto; max-width:100%; ">
 
-<div style="background-color: black; background-image: url('https://image.cnbcfm.com/api/v1/image/105964745-1560376510health-insurance-life-insurance-car-insurance.jpg?v=1561045239&w=1600&h=900');height:auto; max-width:100%; ">
+<div >
 <div class="form" >
 <header class="bg-dark" style="height: 3rem;">
 <div class="bg-dark">
@@ -65,22 +65,22 @@
 	<div align="center" style="color: white">
 	<div class="container">
 
-	
+	<br><br><br>
 	
 	<!-- Card Content -->
-	<div  class="card-body bg-dark text-white py-4" ;>
-		<h2>Policy Premium Calculator</h2>
+	<div align="center"  class="card-body bg-dark text-white py-4" ;>
+		<h2 style="font-size: 45px">Policy Premium Calculator</h2><br><br>
 		<form:form action="/getPolicyPremium" method="POST"
 			name="policyPremium" modelAttribute="policy">
 			<table >
 				<tr>
-					<td style="text-align:center"><label>Choose the Policy</label></td>
+					<td style="text-align:justify"><label>Choose the Policy</label></td>
 					<td style="text-align:center"><form:select path="policyName" name="policyName" placeholder="Policy Name"
 							items="${policyList}" style="text-align:center"/></td>
 				</tr>
 				
 				<tr>
-					<td style="text-align:center"><label>Annual Income</label></td>
+					<td style="text-align:justify"><label>Annual Income</label></td>
 					<td style="text-align:center"><select>
 							<option>Upto 4lakhs</option>
 							<option>5lakhs-10lakhs</option>
@@ -90,26 +90,26 @@
 				</tr>
 				
 				<tr>
-					<td style="text-align:center"><label>${putvalue1}</label></td>
+					<td style="text-align:justify"><label>${putvalue1}</label></td>
 					<td style="text-align:center">${item1}</td>
 				</tr>
 
 				<tr>
-					<td style="text-align:center"><label>${putvalue2}</label></td>
+					<td style="text-align:justify"><label>${putvalue2}</label></td>
 					<td style="text-align:center">${item}</td>
 				</tr>
 
 				<tr>
-					<td style="text-align:center"><label>${putvalue3}</label></td>
+					<td style="text-align:justify"><label>${putvalue3}</label></td>
 					<td style="text-align:center">${term}</td>
 				</tr>
 
 				<tr>
-					<td style="text-align:center">${putvalue4}</td>
+					<td style="text-align:justify">${putvalue4}</td>
 					<td style="text-align:center">${netAmount}</td>
 				</tr>
 				<tr>
-					<td style="text-align:center">${putvalue5}</td>
+					<td style="text-align:justify">${putvalue5}</td>
 					<td style="text-align:center">${amountPerMonth}</td>
 				</tr>
 
@@ -132,7 +132,7 @@
 			<br>
 			<br>
 			<br>
-<footer class="page-footer font-small bg-dark text-white  teal pt-4">
+<footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
 <!--/.First column-->  
       <div class="container text-center mt-1 ">
 	        

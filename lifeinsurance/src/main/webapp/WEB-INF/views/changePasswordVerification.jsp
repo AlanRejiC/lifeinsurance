@@ -65,8 +65,8 @@
 <div class="container">
 	<div align="center" style="color: white">
 	<h5 class=" display-4 card-header success-color text-white text-center py-4"><strong>Reset your password</strong></h5>
-	
-	<div  class="card-body text-white">
+	<br><br><br>
+	<div  class="card-body bg-dark text-white" >
 	<!-- Form -->
 	<form:form action="/verification" method="Post" name="userRegister"
 			modelAttribute="user">
