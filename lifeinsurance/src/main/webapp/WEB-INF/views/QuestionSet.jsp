@@ -55,7 +55,6 @@
 		</ul>
 	</nav>
 </header>
-<body>
 <center><h3 class=" py-5 text-body  display-4"><strong class="text-white">Set Questionnaire</strong></h3></center>
 <form:form action="/setQuestion" method="POST" 
 			modelAttribute="questionnaire">
