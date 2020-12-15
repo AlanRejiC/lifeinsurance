@@ -9,12 +9,7 @@
 
 <head>
 	<style>
-	<%@ include file="/WEB-INF/styles/style.css"%>
-	body{
-		margin:0;
-		width:100vw;
-		height:100vh;
-	}	
+		<%@ include file="/WEB-INF/styles/style.css"%>
 	</style>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
@@ -29,12 +24,12 @@
 	<meta charset="ISO-8859-1">
 	<title>Admin Login Page</title>
 </head>
-
-<body style="background-image: url('img/login.jpg'); height:auto; max-width:100%; ">
-<header class="bg-dark" style="height: 6rem;">
+ 
+<body id="adminloginbody">
+<header id="adminloginheader" class="bg-dark">
 	<div class="bg-dark">
 		<center>
-			<h1 style="font-size: 50px;" class="text-white" id="home_heading">
+			<h1 class="text-white display-4" >
 				<strong>Life Insurance Management private Limited</strong>
 			</h1>
 		</center>

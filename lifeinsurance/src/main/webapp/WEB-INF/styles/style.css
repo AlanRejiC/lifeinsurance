@@ -205,4 +205,25 @@ body {
   height: 150px;
 }
 
+
+/*Admin Login JSP*/
+#adminloginbody{
+	background-image: url('img/login.jpg'); 
+	margin:0;
+	width:100vw;
+	height:100vh;
+}
+
+#adminloginheader{
+	height: 6rem;
+}
+/**/
+
+/**/
+
+/**/
+
+/**/
+
+
     

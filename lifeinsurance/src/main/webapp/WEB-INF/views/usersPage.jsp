@@ -62,7 +62,7 @@
 		</ul>
 	</nav>
 </header>
-<body style=" " >
+<body >
 <div class="jumbotron jumbotron bg-cover" >
 
 
@@ -124,9 +124,7 @@
 					 href="/userDelete?userId=${user.userId}">Delete</a></h3></td>		 	 
 		</tr>
 	</c:forEach>
-	
 </table>
-
 </div>
 	<div class="d-flex justify-content-center">
 		<ul>
@@ -136,9 +134,11 @@
 			</li>
 		</ul>
 	</div>
-	<br>
-<footer class="page-footer bg-dark text-white" style="height: 11rem; ">
-<div >
+</div>
+	
+</body>
+	<footer class="page-footer bg-dark text-white" style="height: 11rem; ">
+<div class="bg-dark">
 	<!--/.First column-->
 	<div class="container text-center mt-1">
 		<h3><a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br> 
@@ -152,8 +152,5 @@
 	</div>
 	<!--/.Copyright -->
 </div>	
-</footer>	
-</div>
-</body>
-
+</footer>
 </html>
