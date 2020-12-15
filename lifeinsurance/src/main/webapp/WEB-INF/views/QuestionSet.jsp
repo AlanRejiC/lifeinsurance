@@ -92,8 +92,7 @@
 				
 			</table>
 			<div>
-				<a class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold">Submit</a>
-			</div>
+				<button type="submit" class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold">Submit</a></div>
 			<h2>${status}</h2>
 		</form:form>
 		<div>
