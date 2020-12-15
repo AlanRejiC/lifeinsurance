@@ -219,4 +219,42 @@ body {
 }
 
 .h-20{
-	height:20%;}  
+	height:20%;}
+	
+/*--------------Admin Login JSP & Admin DashBoard JSP---------------*/
+#adminbody{
+	background-image: url('img/login.jpg'); 
+	margin:0;
+	width:100vw;
+	height:100vh;
+}
+
+#adminheader{
+	height: 6rem;
+}
+
+#adminform{
+	margin: 0 auto; 
+	float:none;
+}
+
+#adminfooter{
+	height: 10vh;
+}
+/* --------------------User JSP------------------------*/
+#main{
+	box-sizing: border-box;
+	overflow: scroll;
+	height:80vh;
+}
+
+#userfooter{
+	position:relative;
+	margin-top:50px;
+	height:150px;
+	claer:both;
+	padding-top:20px;
+}
+
+/*---------------------------*/
+	  

@@ -14,7 +14,7 @@
 			margin:0;
 			width:100vw;
 			height:100vh;
-		}
+			}
 		.bg-cover{
 			background-image: url('img/login.jpg');
 			background-size:cover;
@@ -64,63 +64,66 @@
 </header>
 
 <body>
-	<div class="jumbotron jumbotron bg-cover" align="center">
+	<div class="bg-cover" align="center">
 		<center><h3 class=" py-5 text-body  display-4"><strong class="text-white">Add New Policy</strong></h3></center>
-	<form:form modelAttribute="policy" action="/getPolicyAdd" method="POST">
-			<table class="font-weight-bold ">
+		<div id="adminform" class="card-body bg-dark text-white col-md-4 rounded">
+		<form:form modelAttribute="policy" action="/getPolicyAdd" method="POST">
+			<table class="font-weight-bold">
 			<tr>
-				<td>Policy Name</td>
-				<td><form:input path="policyName" name="policyName"
-						placeholder="Policy Name" /></td>
-				<td><form:errors path="policyName" /></td>
+				<td><h2 class="text-white">Policy Name</h2></td>
+				<td><h2><form:input path="policyName" name="policyName"
+						placeholder="Policy Name" /></h2></td>
+				<td><h2><form:errors class="text-danger" path="policyName" /></h2></td>
 			</tr>
 			<tr>
-				<td>Policy Number</td>
-				<td><form:input path="policyNumber" name="policyNumber"
-						placeholder="Policy Number" /></td>
-				<td><form:errors path="policyNumber" /></td>
+				<td><h2 class="text-white">Policy Number</h2></td>
+				<td><h2><form:input path="policyNumber" name="policyNumber"
+						placeholder="Policy Number" /></h2></td>
+				<td><h2><form:errors class="text-danger" path="policyNumber" /></h2></td>
 			</tr>
 			<tr>
-				<td>Description</td>
-				<td><form:input path="policyDescription" type="text" name="policyDescription"
-						placeholder="Policy Description" /></td>
-				<td><form:errors path="policyDescription" /></td>
+				<td><h2 class="text-white">Description</h2></td>
+				<td><h2><form:input path="policyDescription" type="text" name="policyDescription"
+						placeholder="Policy Description" /></h2></td>
+				<td><h2><form:errors class="text-danger" path="policyDescription" /></h2></td>
 			</tr>
 			<tr>
-				<td>Policy Term</td>
-				<td><form:input path="policyTerm" type="number" name="policyTerm" /></td>
-				<td><form:errors path="policyTerm"></form:errors></td>
+				<td><h2 class="text-white">Policy Term</h2></td>
+				<td><h2><form:input path="policyTerm" type="number" name="policyTerm" /></h2></td>
+				<td><h2><form:errors class="text-danger" path="policyTerm"></form:errors></h2></td>
 			</tr>
 			<tr>
-				<td>Net Amount Per Year</td>
-				<td><form:input path="netAmountPerYear" type="number" name="netAmountPerYear"
-						placeholder="Net Amount Per Year" /></td>
-				<td><form:errors path="netAmountPerYear" /></td>
+				<td><h2 class="text-white">Net Amount Per Year</h2></td>
+				<td><h2><form:input path="netAmountPerYear" type="number" name="netAmountPerYear"
+						placeholder="Net Amount Per Year" /></h2></td>
+				<td><h2><form:errors class="text-danger" path="netAmountPerYear" /></h2></td>
 			</tr>
 			<tr>
-				<td>Total Deductible</td>
-				<td><form:input path="totDeductible" name="totDeductible"
-						placeholder="Total Deductible Price" /></td>
-				<td><form:errors path="totDeductible" /></td>
+				<td><h2 class="text-white">Total Deductible</h2></td>
+				<td><h2><form:input path="totDeductible" name="totDeductible"
+						placeholder="Total Deductible Price" /></h2></td>
+				<td><h2><form:errors class="text-danger" path="totDeductible" /></h2></td>
 			</tr>
 			<tr>
-				<td>Total Co Insurance</td>
-				<td><form:input path="totCoInsurance" name="totCoInsurance"
-						placeholder="Total Co Insurance" /></td>
-				<td><form:errors path="totCoInsurance" /></td>
+				<td><h2 class="text-white">Total Co Insurance</h2></td>
+				<td><h2><form:input path="totCoInsurance" name="totCoInsurance"
+						placeholder="Total Co Insurance" /></h2></td>
+				<td><h2><form:errors class="text-danger" path="totCoInsurance" /></h2></td>
 			</tr>
 			<tr>
-				<td>Interest Rate</td>
-				<td><form:input path="interestRate" type="number" name="interestRate"
-						placeholder="Interest Rate" /></td>
-				<td><form:errors path="interestRate" /></td>
+				<td><h2 class="text-white">Interest Rate</h2></td>
+				<td><h2><form:input path="interestRate" type="number" name="interestRate"
+						placeholder="Interest Rate" /></h2></td>
+				<td><h2><form:errors class="text-danger" path="interestRate" /></h2></td>
 			</tr>
 		</table>
 		<div>
-			<input type="submit" value="Submit" style="background-color: green" />
+		<br>
+			<h2><input type="submit" class="text-white" value="Submit" id="submitbutton" /></h2>
 		</div>
 	</form:form>
-		<footer class="page-footer bg-dark text-white" style="height: 11rem; width:100%">
+	</div>
+		<footer class="page-footer fixed-bottom bg-dark text-white" style="height: 11rem; width:100%">
 			<!--/.First column-->
 			<div class="container text-center mt-1">
 				<h3><a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br> 

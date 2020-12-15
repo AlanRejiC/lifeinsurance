@@ -25,8 +25,8 @@
 	<title>Admin Login Page</title>
 </head>
  
-<body id="adminloginbody">
-<header id="adminloginheader" class="bg-dark">
+<body id="adminbody">
+<header id="adminheader" class="bg-dark">
 	<div class="bg-dark">
 		<center>
 			<h1 class="text-white display-4" >
@@ -57,8 +57,8 @@
 </header>
 	<div class="col-lg-6 col-md-8  mx-auto text-center form p-5">
 		<h1 class=" py-4 text-body"><strong class="text-white display-4">Admin Login</strong></h1>
-		<div  class="card-body bg-dark text-white col-md-8 rounded" style="margin: 0 auto; float:none;">
-			<form:form action="/getAdminLoginPage" method="post" modelAttribute="user" class="h-100 justify-content-center">
+		<div id="adminform" class="card-body bg-dark text-white col-md-8 rounded">
+			<form:form action="/getAdminLoginPage" method="post" modelAttribute="user" >
 				<div class="form-group">
 					<h2><label class="text-white">Enter Admin ID</label></h2>
 					<h2><form:input path="userId" name="userId" /></h2>
@@ -79,8 +79,7 @@
 			</form:form>
 		</div>
 	</div>
-<footer
-	class="footer fixed-bottom bg-dark text-white" style="height: 8rem;">
+<footer id="adminfooter" class="footer fixed-bottom bg-dark text-white">
 	<!--/.First column-->
 	<div class="container text-center mt-1 ">
 		<h3><a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br> 
