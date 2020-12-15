@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cognizant.model.Agent;
+import com.cognizant.model.Home;
 import com.cognizant.model.Search;
 import com.cognizant.model.User;
 import com.cognizant.service.AgentService;
 import com.cognizant.service.UserService;
+import com.cognizant.validate.AgentValidator;
 import com.cognizant.validate.RegistrationValidator;
 
 /**
@@ -36,7 +38,7 @@ public class AgentController {
 	UserService userService;
 
 	@Autowired
-	private RegistrationValidator registrationValidator;
+	private AgentValidator agentValidator;
 
 	@RequestMapping(value = "/getAgentPage", method = RequestMethod.GET)
 	public String getNotificationPage(@ModelAttribute("user") User user) {
@@ -45,26 +47,41 @@ public class AgentController {
 
 	@RequestMapping(value = "/getAgentPage", method = RequestMethod.POST)
 	public String getCustNotiSuccess(@ModelAttribute("user") User user, BindingResult result, ModelMap map) {
-		registrationValidator.validate(user, result);
+		try {
+		agentValidator.validate(user, result);
+		if(result.hasErrors())
+		{
+			return "agent";
+		}
 		user.setRole("agent"); // Setting the role to customer
 		user.setDob(LocalDate.now());
 		user.setLastName(" ");
 		user.setGender(" ");
-		user.setAns1(" "); // These functionalities are a part of a later User Story
-		user.setAns2(" ");
-		user.setAns3(" ");
-		user.setSecurity1(" ");
-		user.setSecurity2(" ");
-		user.setSecurity3(" ");
+		//user.setAns1(" "); // These functionalities are a part of a later User Story
+		//user.setAns2(" ");
+		//user.setAns3(" ");
+		//user.setSecurity1(" ");
+		//user.setSecurity2(" ");
+		//user.setSecurity3(" ");
 		user.setLogin(false);
 		System.out.println(user);
 		userService.saveUser(user);
 		return "agentSuccess";
+		}
+		catch(Exception e)
+		{
+			
+			map.addAttribute("reject", "User Name has already been chosen");
+			return "agent";
+		}
 	}
 
 	@GetMapping(value = "/getAgentDetails")
 	public String getAgentPage(@ModelAttribute("user") User user,@ModelAttribute("search") Search search, ModelMap map) {
-
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		map.addAttribute("user", userService.findUserWithRole("agent"));
 
 		return "agentDetails";
@@ -72,7 +89,10 @@ public class AgentController {
 
 	@PostMapping(value = "/getAgentDetails")
 	public String getAgentView(@ModelAttribute("user") User user,@ModelAttribute("search") Search search, ModelMap map) {
-
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		map.addAttribute("user", userService.findUserWithRole("agent"));
 
 		return "agentDetails";
@@ -80,6 +100,10 @@ public class AgentController {
 	
 	@PostMapping(value = "/getAgentDetail")
 	public String getSearch(@ModelAttribute("search") Search search, ModelMap map) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		String name = search.getName();
 		char charArray[] = name.toCharArray();
 		boolean bool = Character.isDigit(charArray[0]);
@@ -103,13 +127,20 @@ public class AgentController {
 
 	@GetMapping(value = "/getAgentView")
 	public String getUserEdit(@RequestParam int userId, @ModelAttribute("user") User user,@ModelAttribute("search") Search search, ModelMap map) {
-
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		map.addAttribute("item", userService.findUser(userId));
 		return "agentView";
 	}
 
 	@GetMapping(value = "/getAgentDelete")
 	public String showUserDelete(@RequestParam int userId, @ModelAttribute("user") User user,@ModelAttribute("search") Search search, ModelMap map) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		User user1 = userService.findUser(userId);
 		userService.deleteUser(user1);
 

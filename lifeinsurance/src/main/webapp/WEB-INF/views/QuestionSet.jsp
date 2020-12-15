@@ -59,41 +59,46 @@
 <center><h3 class=" py-5 text-body  display-4"><strong class="text-white">Set Questionnaire</strong></h3></center>
 <form:form action="/setQuestion" method="POST" 
 			modelAttribute="questionnaire">
-			<table class="table table-light font-weight-bold border border-dark" >
+			<table class="table table-light font-weight-bold border border-dark" style="float: right">
 			<tr id="head" class="bg-dark text-white">
 
 				<tr>
-				<td>Enter the first Question</td>
+				<td><h3><b><center>Enter the first Question</center></b></h3></td>
 				</tr>
 				<tr>
 					
-					<td><form:input align="center" path="question1" /></td>
-					<td><form:errors path="question1" /></td>
+					<td><center><h3><b><form:input align="center" path="question1" /></h3></b></center></td>
+					<td><center><h3><b><form:errors path="question1" /></b></h3></center></td>
 				</tr>
 				
 				<tr>
-				<td>Enter the Second Question</td>
+				<td><h3><center><b>Enter the Second Question</b></center></h3></td>
 				</tr>
 
 				<tr>
 					
-					<td><form:input path="question2" /></td>
-					<td><form:errors path="question2" /></td>
+					<td><h3><center><b><form:input path="question2" /></b></center></h3></td>
+					<td><h3><center><b><form:errors path="question2" /></h3></center></b></td>
 				</tr>
 				
 				<tr>
-				<td>Enter the Third Question</td>
+				<td><h3><center><b>Enter the Third Question</b></center></h3></td>
 				</tr>
 				<tr>
 					
-					<td><form:input path="question3"  /></td>
-					<td><form:errors path="question3" /></td>
+					<td><h3><center><b><form:input path="question3"  /></b></center></h3></td>
+					<td><h3><center><b><form:errors path="question3" /></b></center></h3></td>
 				</tr>
 				
 			</table>
+			<br><br>
+			<center>
 			<div>
+
 				<button type="submit" class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold">Submit</a></div>
+
 			<h2>${status}</h2>
+			</center>
 		</form:form>
 		<div>
 		<footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">

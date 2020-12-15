@@ -50,9 +50,13 @@ public class ClaimController {
 		System.out.println("/n/n/n/n/nInside get page/n/n/n/n");
 		return "claim";
 	}
-
+	
 	@PostMapping(value = "/getClaimPage")
 	public String postClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		System.out.println("/n/n/n/n/nInside post page/n/n/n/n");
 		Insurance insurance = claimService.findUser(claim.getCustName());
 
@@ -82,13 +86,20 @@ public class ClaimController {
 	
 	@GetMapping(value = "/getClaimEdit")
 	public String getEditClaimPage(	@RequestParam int claimNumber,@ModelAttribute("claim") Claim claim, ModelMap map) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		map.addAttribute("item", claimService.findCust(claimNumber));
 		return "claimedit";
 	}
 
 	@PostMapping(value = "/getClaimEdit")
 	public String reSubmitClaimPage(@ModelAttribute("claim") Claim claim, ModelMap map) {
-
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		Insurance insurance = claimService.findUser(claim.getCustName());
 
 		/*

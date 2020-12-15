@@ -69,6 +69,10 @@ public class InsuranceController {
 
 	@RequestMapping(value = "/getPaymentPage", method = RequestMethod.GET)
 	public String getPayment(@ModelAttribute("payment") Payment payment) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		System.out.println("\n\n\n\n\nInside Get Payment\n\n\n\n\n\n");
 		return "payment";
 	}
@@ -76,6 +80,10 @@ public class InsuranceController {
 	@RequestMapping(value = "/getPaymentPage", method = RequestMethod.POST)
 	public String getSuccessPayment(@Valid @ModelAttribute("payment") Payment payment, BindingResult result,
 			ModelMap map) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		try
 		{
 		System.out.println("\n\n\n\n\nInside Post Payment\n\n\n\n\n\n");
@@ -121,6 +129,10 @@ public class InsuranceController {
 	@RequestMapping(value = "/getInsurancePage", method = RequestMethod.POST)
 	public String getPaymentPage(@Valid @ModelAttribute("insurance") Insurance insurance, BindingResult result,
 			ModelMap map) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		System.out.println("\n\n\n\n\nInside Post Insurance\n\n\n\n\n\n");
 		insuranceValidator.validate(insurance, result);
 		if (result.hasErrors()) {

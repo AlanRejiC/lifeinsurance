@@ -39,6 +39,7 @@ public class FeedBackController {
 			ModelMap map) {
 System.out.println("inside feedback");
 		try {
+
 				map.addAttribute("success", "Your FeedBack Details has been successfully Submitted");
 				String str = LocalDateTime.now() + "";
 				String str1[] = str.split("-|:|T");
@@ -55,6 +56,7 @@ System.out.println("inside feedback");
 				map.addAttribute("q1", questionnaire.getQuestion1());
 				map.addAttribute("q2", questionnaire.getQuestion2());
 				map.addAttribute("q3", questionnaire.getQuestion3());
+
 
 //		 questionnaire.setResponse1("");
 //		 questionnaire.setResponse2("");

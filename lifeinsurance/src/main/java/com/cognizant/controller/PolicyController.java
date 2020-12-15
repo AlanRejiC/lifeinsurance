@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.cognizant.model.Home;
 import com.cognizant.model.Policy;
 import com.cognizant.service.PolicyService;
+import com.cognizant.service.UserService;
 
 @Controller
 @ComponentScan("com.service")
@@ -25,9 +27,15 @@ public class PolicyController {
 
 	@Autowired
 	PolicyService policyService;
+	@Autowired
+	private UserService userService;
 
 	@GetMapping(value = "/getPolicyPage")
 	public String getPolicyPage(@ModelAttribute("policy") Policy policy, ModelMap map) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		map.addAttribute("policyList", policyService.getAll());
 		return "policy";
 	}
@@ -37,7 +45,10 @@ public class PolicyController {
 	@GetMapping(value = "/getPolicyEdit")
 	public String showPolicyEdit(@RequestParam String policyName, @ModelAttribute("policy") Policy policy,
 			ModelMap map) {
-
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		Policy policy1 = policyService.findPolicyName(policyName);
 		map.addAttribute("item", policy1);
 		// map.addAttribute("policyNumber",policyNumber);
@@ -48,6 +59,10 @@ public class PolicyController {
 	// save
 	@GetMapping(value = "/getPolicySave")
 	public String showPolicySave(@ModelAttribute("policy") Policy policy, ModelMap map) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		map.addAttribute("success", "Policy Edit was successfull");
 		policyService.savePolicy(policy);
 		return "policySave";
@@ -57,6 +72,10 @@ public class PolicyController {
 	@GetMapping(value = "/getPolicyDelete")
 	public String showPolicyDelete(@RequestParam String policyName, @ModelAttribute("policy") Policy policy,
 			ModelMap map) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		System.out.println(policy);
 		System.out.println("hee");
 		try {
@@ -76,12 +95,20 @@ public class PolicyController {
 	//add
 	@RequestMapping(value = "/getPolicyAdd", method = RequestMethod.GET)
 	public String getInsurancePage(@ModelAttribute("policy") Policy policy) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		System.out.println("\n\n\n\n\nInside Get Insurance\n\n\n\n\n\n");
 		return "policyAdd";
 	}
 	
 	@RequestMapping(value = "/getPolicyAdd", method = RequestMethod.POST)
 	public String getPaymentPage(@Valid @ModelAttribute("policy") Policy policy, BindingResult result,	ModelMap map) {
+		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
+		{
+			return "pleaseLogin";
+		}
 		System.out.println("----------Post Policy add------------");
 		if (result.hasErrors()) {
 			System.out.println("---------------Post Policy add has errors-----------");

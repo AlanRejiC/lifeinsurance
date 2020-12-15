@@ -60,37 +60,37 @@
 <center>
             <table class="table table-light font-weight-bold border border-dark" >
 			<tr id="head" class="bg-dark text-white">
-                   <td><label for="policyNumber"><b>Policy Number</b></label></td>
-                   <td><label for="policyName"><b>Policy Name</b></label></td>
-                   <td><label for="policyDescription"><b>Description</b></label></td>
-                   <td><label for="policyTerm"><b>Policy Term</b></label></td>
-                   <td><label for="netAmountPerYear"><b>Net Amount Per Year</b></label></td>
-                   <td><label for="tot_deductable"><b>Total deductible</b></label></td>
-                   <td><label for="totCoInsurance"><b>Total Co Insurance</b></label></td>
-               	   <td><label for="interestRate"><b>Interest Rate</b></label>
+                   <td><label for="policyNumber"><b><h3>Policy Number</h3></b></label></td>
+                   <td><label for="policyName"><b><h3>Policy Name</h3></b></label></td>
+                   <td><label for="policyDescription"><b><h3>Description</h3></b></label></td>
+                   <td><label for="policyTerm"><b><h3>Policy Term</h3></b></label></td>
+                   <td><label for="netAmountPerYear"><b><h3>Net Amount Per Year</h3></b></label></td>
+                   <td><label for="tot_deductable"><b><h3>Total deductible</h3></b></label></td>
+                   <td><label for="totCoInsurance"><b><h3>Total Co Insurance</h3></b></label></td>
+               	   <td><label for="interestRate"><b><h3>Interest Rate</h3></b></label>
                	   
                </tr>
                
             	<c:forEach var="item" items="${policyList}">
             	<tr>
-            	<td>${item.policyNumber}</td>
-            	<td>${item.policyName}</td>
-            	<td>${item.policyDescription}</td>
-            	<td>${item.policyTerm}</td>
-            	<td>${item.netAmountPerYear}</td>
-            	<td>${item.totDeductible}</td>
-            	<td>${item.totCoInsurance}</td>
-            	<td>${item.interestRate}</td>
-            	<td><a class="btn btn-info btn-lg active navbar-btn text-white font-weight-bold" 
-					 href="/getPolicyEdit?policyName=${item.policyName}">Edit</a></td>
-            	<td><a class="btn btn-danger btn-lg active navbar-btn text-white font-weight-bold" 
-					 href="/getPolicyDelete?policyName=${item.policyName}">Delete</a></td>
+            	<td><h3>${item.policyNumber}</h3></td>
+            	<td><h3>${item.policyName}</h3></td>
+            	<td><h3>${item.policyDescription}</h3></td>
+            	<td><h3>${item.policyTerm}</h3></td>
+            	<td><h3>${item.netAmountPerYear}</h3></td>
+            	<td><h3>${item.totDeductible}</h3></td>
+            	<td><h3>${item.totCoInsurance}</h3></td>
+            	<td><h3>${item.interestRate}</h3></td>
+            	<td><h3><a class="btn btn-info btn-lg active navbar-btn text-white font-weight-bold" 
+					 href="/getPolicyEdit?policyName=${item.policyName}">Edit</a></h3></td>
+            	<td><h3><a class="btn btn-danger btn-lg active navbar-btn text-white font-weight-bold" 
+					 href="/getPolicyDelete?policyName=${item.policyName}">Delete</a></h3></td>
             	</tr>
             	</c:forEach>
                 </table>
            </center>
 </body>
-<footer class="page-footer font-small bg-dark text-white  teal pt-4">
+<footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
 <!--/.First column-->  
       <div class="container text-center mt-1 ">
 	           	<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br>

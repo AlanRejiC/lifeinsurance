@@ -57,18 +57,18 @@
 </header>
 <div>
 <center><h3 class=" py-5 text-body  display-4"><strong class="text-white">Resolve Help Requests</strong></h3></center>
-<div class="d-flex justify-content-left">
+<div class="d-flex justify-content-center">
 		<form:form method="POST" actin="/getHelpRequest" modelAttribute="help" >
 		<center>
 		<div>
 		<table class="table table-light font-weight-bold border border-dark" >
 		<tr id="head" class="bg-dark text-white">>
-			<td><label for="requestId"><b>Request ID</b></label></td>
+			<td><label for="requestId"><b><h3>Request ID</h3></b></label></td>
 			</tr>
 				<c:forEach var="help" items="${help}">
 			<tr>
-				<td><a class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold" 
-					 href="/getEditHelpRequest?requestId=${help.requestId}">${help.requestId}</a></td>
+				<td><h3><a class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold" 
+					 href="/getEditHelpRequest?requestId=${help.requestId}">${help.requestId}</a></h3></td>
 			</tr>
 				</c:forEach>
 		</table>

@@ -24,6 +24,7 @@
 	crossorigin="anonymous">
 <style>
 <%@ include file="/WEB-INF/styles/style.css"%>
+
 </style>
 
 <head>
@@ -31,9 +32,9 @@
 <title>New User Registration Page</title>
 </head>
 
-<body style="background-color: #484544;">
+<body style="background-color: #484544; background-image: url('https://image.cnbcfm.com/api/v1/image/105964745-1560376510health-insurance-life-insurance-car-insurance.jpg?v=1561045239&w=1600&h=900')";>
 
-<div class="form" style="background-image: url('https://image.cnbcfm.com/api/v1/image/105964745-1560376510health-insurance-life-insurance-car-insurance.jpg?v=1561045239&w=1600&h=900')";>
+<div class="form" >
 	
 	<header class="bg-dark" style="height: 3rem;">
 <div class="bg-dark">
@@ -61,7 +62,8 @@
     </nav> 
 </header>
 	
-	
+	<br>
+	<br>
 	<br>
 	<br>
 	<!-- Registration form -->
@@ -286,7 +288,7 @@
 </div>
 </div>
 
-<footer class="page-footer font-small bg-dark text-white  teal pt-4">
+<footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
 <!--/.First column-->  
       <div class="container text-center mt-1 ">
 	           	<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br>
