@@ -63,6 +63,14 @@ public class ClaimController {
 		Policy policy = claimService.findTotDeductible(insurance.getPolicyName());
 		map.addAttribute("totDeductible", policy.getTotDeductible());
 		map.addAttribute("totCoInsurance", policy.getTotCoInsurance());
+		map.addAttribute("Totaldeductiblepaid","Total deductible paid");
+		map.addAttribute("Totalcoinsuranceamount","Total co-insurance amount");
+		map.addAttribute("Totalexcludedamount","Total excluded amount");
+		map.addAttribute("Totalexceededamount","Total exceeded amount");
+		map.addAttribute("Totalbenefitpaid","Total benefit paid");
+		
+		
+		
 		if (policy.getNetAmountPerYear() * policy.getPolicyTerm() - claim.getTotalCharge() >= 0) {
 			map.addAttribute("totExcludedAmt",
 					(policy.getNetAmountPerYear() * policy.getPolicyTerm()) - claim.getTotalCharge());
@@ -118,6 +126,11 @@ public class ClaimController {
 		Policy policy = claimService.findTotDeductible(insurance.getPolicyName());
 		map.addAttribute("totDeductible", policy.getTotDeductible());
 		map.addAttribute("totCoInsurance", policy.getTotCoInsurance());
+		map.addAttribute("Totaldeductiblepaid","Total deductible paid");
+		map.addAttribute("Totalcoinsuranceamount","Total co-insurance amount");
+		map.addAttribute("Totalexcludedamount","Total excluded amount");
+		map.addAttribute("Totalexceededamount","Total exceeded amount");
+		map.addAttribute("Totalbenefitpaid","Total benefit paid");
 		if (policy.getNetAmountPerYear() * policy.getPolicyTerm() - claim.getTotalCharge() >= 0) {
 			map.addAttribute("totExcludedAmt",
 					(policy.getNetAmountPerYear() * policy.getPolicyTerm()) - claim.getTotalCharge());

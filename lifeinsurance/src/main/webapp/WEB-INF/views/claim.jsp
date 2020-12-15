@@ -212,6 +212,7 @@
 			</div>
 			<center>
 			<div class="form-row mb-5">
+			<div class="col-md-6">
 			
 			<div class="md-form text-white">
 					
@@ -219,57 +220,80 @@
 
 
 				
-					<strong>Total deductible paid</strong>
+					<strong>${Totaldeductiblepaid}</strong>
+					</div>
+					</div>
 					<div class="col-md-6">
-					${totDeductible}
+			
+			<div class="md-form text-white">
+					
+					<strong>${totDeductible}</strong>
 					
 					</div>
 			</div>
 			</div>
 				
 				<div class="form-row mb-5">
+				<div class="col-md-6">
 		
 			<div class="md-form text-white">
-					<strong>Total co-insurance amount</strong>
+					<strong>${Totalcoinsuranceamount}</strong>
+					</div>
+					</div>
+					
 						<div class="col-md-6">
-					${totCoInsurance}
+						<div class="md-form text-white">
+						<strong>${totCoInsurance}</strong>
 					
 						</div>
 			</div>
 			</div>
 					
 				<div class="form-row mb-5">
+					<div class="col-md-6">
 			
 			<div class="md-form text-white">
 				
-					<strong>Total excluded amount</strong>
+					<strong>${Totalexcludedamount}</strong>
+					</div>
+					</div>
 					<div class="col-md-6">
-					${totExcludedAmt}
+					<div class="md-form text-white">
+					<strong>${totExcludedAmt}</strong>
 					</div>
 			</div>
 			</div>
 				<div class="form-row mb-5">
+				<div class="col-md-6">
 			
 			<div class="md-form text-white">
 			
 			
-					<strong>Total exceeded amount</strong>
+					<strong>${Totalexceededamount}</strong>
+					</div>
+					</div>
 					<div class="col-md-6">
-					${totExceededAmt}
+					<div class="md-form text-white">
+					<strong>${totExceededAmt}</strong>
 					</div>
 			</div>
 			</div>
 				
 				<div class="form-row mb-5">
+					<div class="col-md-6">
 			
 			<div class="md-form text-white">
 				
-					<strong>Total benefit paid</strong>
+					<strong>${Totalbenefitpaid}</strong>
+					</div>
+					</div>
 					<div class="col-md-6">
-					${totBenefit}
+					<div class="md-form text-white">
+					<strong>${totBenefit}</strong>
 						</div>
 			</div>
 			</div>
+			</center>
 				
 
 
@@ -324,7 +348,7 @@
 <center>
 <button class="btn btn-warning  btn-rounded btn-small navbar-btn text-dark" type="submit">Submit</button>
 			
-			<h2><div>${success}</div></h2>
+			<div style="font-size:40px" class="md-form text-white"><strong>${success}</strong></div>
 			</center>
 		</form:form>
 		</table>
