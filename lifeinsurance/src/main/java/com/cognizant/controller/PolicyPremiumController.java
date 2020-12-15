@@ -36,12 +36,23 @@ public class PolicyPremiumController {
 	@PostMapping(value = "/getPolicyPremium")
 	public String postPolicyPage(@ModelAttribute("policy") Policy policy, ModelMap map) {
 		System.out.println("----------Inside post page-------------");
+		try {
 		Policy policy1 = premiumService.findPolicyName(policy.getPolicyName());
 		map.addAttribute("item", premiumService.getInterestRate(policy1.getPolicyName()));
+		map.addAttribute("putvalue1", "Deposit per Year");
 		map.addAttribute("term", premiumService.getTerm(policy1.getPolicyName()));
+		map.addAttribute("putvalue2", "Interest Rate");
 		map.addAttribute("item1",premiumService.getAmount(policy1.getPolicyName()));
+		map.addAttribute("putvalue3", "Term");
 		map.addAttribute("amountPerMonth", premiumService.getInterestRate(policy1.getPolicyName())*policy1.getNetAmountPerYear()/1000);
+		map.addAttribute("putvalue4", "Net Amount Assured");
 		map.addAttribute("netAmount", premiumService.getInterestRate(policy1.getPolicyName())*policy1.getNetAmountPerYear()/1000 * policy1.getPolicyTerm() + policy1.getNetAmountPerYear());
+		map.addAttribute("putvalue5", "Amount Payable Per Month");
+		}
+		catch( Exception e)
+		{
+			map.addAttribute("status", "Please choose a Policy");
+		}
 		return "policyPremium";
 	}
 	

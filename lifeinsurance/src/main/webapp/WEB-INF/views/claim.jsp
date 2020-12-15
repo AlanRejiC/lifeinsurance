@@ -30,9 +30,9 @@
 <title>Insurance Claim Submission</title>
 </head>
 
-<body style="background-color: #484544;">
 
-<div class="form" style="background-image: url('https://image.cnbcfm.com/api/v1/image/105964745-1560376510health-insurance-life-insurance-car-insurance.jpg?v=1561045239&w=1600&h=900')";>
+
+<body class="form" style="background-image: url('https://image.cnbcfm.com/api/v1/image/105964745-1560376510health-insurance-life-insurance-car-insurance.jpg?v=1561045239&w=1600&h=900')";>
 
 <header class="bg-dark" style="height: 3rem;">
 <div class="bg-dark">

@@ -128,6 +128,17 @@ body {
 	-moz-border-radius: 70px 0 70px 0;
 	border-radius:70px 0 70pz 0;
 }
+
+.form-area1{
+	width: 500px;
+	height: 500px;
+	position: relative;
+	text-align: center;
+	padding: 70px;
+	
+}
+
+
 .btn{
 	
 	font-size: 20px;
@@ -146,3 +157,52 @@ body {
         color: #ff0000;
         font-weight: bold;
     }
+.w-32{
+	width : 32%;
+}
+.input-group-text-border-custom{
+	border-radius:.25rem .25rem !important;
+}
+.h-16{
+	height:16%;
+}
+.bg{
+	 /* The image used */
+  background-image: url('https://wpamelia.com/wp-content/uploads/2019/02/background-black-colors-952670.jpg');
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg1{
+	 /* The image used */
+  background-image: url('https://wpamelia.com/wp-content/uploads/2019/02/background-black-colors-952670.jpg');
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ml-10{
+	margin-left: 27rem!important;
+}
+.ml-11{
+	margin-left: 29rem!important;
+}
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+.textarea {
+  width: 500px;
+  height: 150px;
+}
+
+    

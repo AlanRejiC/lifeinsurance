@@ -8,43 +8,159 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<style>
-	<%@ include file="/WEB-INF/styles/style.css"%>
-</style>
+
 <title>help desk page</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style><%@ include file="/WEB-INF/styles/style.css"%>
+</style>
 </head>
-<body>
-<header class="header">
-	<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
-</header>
-	<center><h2>Help Desk</h2></center>
-	<div align="center">
-		<form:form modelAttribute="help" method="POST" action="/getHelpPage">
-			<table>
-				<tr>
-					<td>Customer Name</td>
-					<td><form:input path="custName" type="text" name="custName" value="${custName}"/></td>
-					<td><form:errors path="custName" /></td>
-				</tr>
-				<tr>
-					<td>Issue</td>
-					<td><form:input path="issue" name="issue" placeholder='issue' /></td>
-				</tr>
-				<tr>
-					<td>Description</td>
-					<td><form:textarea path="description" rows="10" column="50" name="description" placeholder='description' /></td>
-				</tr>
-			</table>
+<body class="bg" style="background-color: #484544;">
+
+
+	<!-- <div class="form" style="background-image: url('http://www.innitialliance.com/Images/life-insurance-claim.jpg')";> -->
+	<header class="bg-dark" style="height: 3rem;">
+		<div class="bg-dark">
+			<center>
+				<h1 style="font-size: 50px;" class=" text-white" id="home_heading">
+					<strong>Life Insurance Management private Limited</strong>
+				</h1>
+			</center>
+		
+		<nav class="navbar navbar-expand-sm bg-dark">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item" style="padding-right: 10px;"><a
+					href="/getHomePage" class="btn btn-warning btn-small navbar-btn">Home
+						Page</a></li>
+				<li class="nav-item" style="padding-right: 10px;"><a
+					href="/verification" class="btn btn-warning btn-small navbar-btn">Change
+						Password</a></li>
+				<li></li>
+				<li class="nav-item" style="padding-right: 10px;"><a
+					href="/getLoginPage" class="btn btn-warning btn-small navbar-btn ">Sign
+						In</a></li>
+				<li class="nav-item" style="padding-right: 10px;"><a
+					href="/getSignUpPage" class="btn btn-warning btn-small navbar-btn">Sign
+						Up</a></li>
+				<li class="nav-item"><a href="/getLogOut"
+					class="btn btn-warning btn-small navbar-btn">Log Out</a></li>
+			</ul>
+		</nav>
+		</div>
+	</header>
+	
+	
+	
+	
+	
+	
+	
+	<div class="container-fluid ">
+		<div class="container" style="margin-top: 100px">
+			<div class="align-center ml-10 text-light">
+				<br> <br>
+				<br>
+				<h1>Help Desk</h1>
+			</div>
 			<br>
-			<input type="submit" value="Submit" id="submitbutton"/>
 			<br>
-			<br>
-			<a href="/getContactPage">Contact Us</a>
-		</form:form>
+			
+			<div class="container">
+				<form:form modelAttribute="help" method="POST" action="/getHelpPage"
+					class="w-100">
+					<table>
+
+
+						<div class="input-group mb-3 row col-md-12 w-100">
+							<div class="col-md-3"></div>
+							<div class="input-group-prepend col-md-2 ml-3 h-100">
+								<span
+									class="input-group-text w-100 input-group-text-border-custom h-16">Customer
+									Name</span>
+							</div>
+							<div class="col-md-6">
+								<form:input path="custName" type="text" name="custName"
+									placeholder='Enter your name' value="${custName}"
+									class="input-group-text-border-custom" />
+								<form:errors path="custName" />
+							</div>
+						</div>
+
+						<div class="input-group mb-3 row col-md-12 w-100">
+							<div class="col-md-3"></div>
+							<div class="input-group-prepend col-md-2 ml-3 h-100">
+								<span
+									class="input-group-text w-100 pl-5 input-group-text-border-custom h-16">Issue</span>
+
+							</div>
+							<div class="col-md-6">
+								<form:input path="issue" name="issue"
+									placeholder='What is the issue?'
+									class="input-group-text-border-custom" />
+							</div>
+						</div>
+						<div class="input-group mb-3 row col-md-12 w-100">
+							<div class="col-md-3"></div>
+							<div class="input-group-prepend col-md-2 ml-3 ">
+								<span
+									class="input-group-text w-100 pl-4 input-group-text-border-custom h-16">Description</span>
+							</div>
+							<div class="col-md-6">
+								<form:textarea  path="description" rows="10" column="50"
+									name="description" placeholder='Description of the issue in 50 words'
+									class="input-group-text-border-custom textarea" />
+							</div>
+						</div>
+					</table>
+					<br>
+<!-- 					<div class="alert alert-warning alert-dismissible fade show" role="alert"> -->
+					<div class="text-center row md-5">
+						<input type="submit" value="Submit" id="submitbutton"
+							 class="align-center col-md-3 ml-10" />
+					</div>
+<!-- 					</div> -->
+					<br>
+
+					<a class="btn btn-primary ml-11 align-center col-md-2 "
+						href="/getContactPage" role="button">Contact Us</a>
+				</form:form>
+				<br>
+				<br>
+				<br>
+			</div>
+		</div>
 	</div>
-<footer class="footer">
-  <p>Life Insurance copyrights 2020<br>
-  Locations <br> Connect with us <br></p>
-</footer>	
+	<footer class="page-footer font-small bg-dark text-white  teal pt-4">
+		<!--/.First column-->
+		<div class="container text-center mt-1 ">
+
+			<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer
+					FeedBack</strong></a><br> <a href="/getContactPage"
+				class="align-self-center ml-2 text-white"><strong>Contact
+					Us</strong></a><br>
+		</div>
+		<!--/.First column-->
+		<!--/.Copyright -->
+		<div class="footer-copyright text-center py-3">
+			&copy; 2020 Copyright: <a href="/getHomePage" class="text-white"><strong>
+					LifeInsurance.com</strong></a>
+		</div>
+		<!--/.Copyright -->
+	</footer>
+
 </body>
 </html>

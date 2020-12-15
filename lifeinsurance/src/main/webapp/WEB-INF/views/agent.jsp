@@ -8,95 +8,166 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<style>
-	<%@ include file="/WEB-INF/styles/style.css"%>
+<style><%@ include file="/WEB-INF/styles/style.css"%>
 </style>
 <title>Become an agent</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-<header class="header">
-	<center><h1 id="home_heading">Life Insurance Management private Limited</h1></center>
-</header>
-<div align="center">
-	<form:form modelAttribute="user" action="/getAgentPage" method="POST">
-		<h3>Become an Agent</h3>
-		<table>
-			<tr>
-				<td>Name</td>
-				<td><form:input path="firstName" name="firstName"></form:input></td>
-				<td><form:errors path="firstName"></form:errors></td>
-			</tr>
-			<tr>
-				<td>Email</td>
-				<td><form:input path="email" name="email"
-						placeholder="ID@Domain" /></td>
-				<td><form:errors path="email" /></td>
-			</tr>
-			<tr>
-				<td>Mobile Number</td>
-				<td><form:input path="contact" type="text" name="contact"
-						placeholder="Contact No" /></td>
-				<td><form:errors path="contact" /></td>
-			</tr>
-			<tr>
-				<td>Agent ID</td>
-				<td><form:input path="userId" name="userId"
-						placeholder="User ID" /></td>
-				<td><form:errors path="userId" /></td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td><form:input path="password" type="password" name="password"
-						placeholder="Password" /></td>
-				<td><form:errors path="password" /></td>
-			</tr>
-			<tr>
-				<td>Confirm Password</td>
-				<td><form:input path="confirmpassword" type="password"
-						name="confirmpassword" placceholder="Confirm Password" /></td>
-				<td><form:errors path="confirmpassword" /></td>
-			</tr>
-			<tr>
-				<td>Choose the first Question</td>
-				<td><form:select path="security1" 
-						items="${securityList}" /></td>
-				<td><form:errors path="security1"></form:errors></td>
-				<tr>
-				<tr>
-					<td>Enter the answer</td>
-					<td><form:input path="ans1" /></td>
-					<td><form:errors path="ans1" /></td>
-				</tr>
-				</tr>
-				<td>Choose the second Question</td>
-				<td><form:select path="security2" 
-						items="${securityList}" /></td>
-				<td><form:errors path="security2"></form:errors></td>
-				</tr>
-				<tr>
-					<td>Enter the answer</td>
-					<td><form:input path="ans2" /></td>
-					<td><form:errors path="ans2" /></td>
-				</tr>
-				
-				<tr>
-				<td>Choose the third Question</td>
-				<td><form:select path="security3" 
-						items="${securityList}" /></td>
-				<td><form:errors path="security3"></form:errors></td>
-				</tr>
-				<tr>
-					<td>Enter the answer</td>
-					<td><form:input path="ans3"  /></td>
-					<td><form:errors path="ans3" /></td>
-				</tr>
-		</table>
-		<input type="submit" value="Submit" id="submitbutton"/>
-	</form:form>
-</div>
-<footer class="footer">
-  <p>Life Insurance copyrights 2020<br>
-  Locations <br> Connect with us <br></p>
-</footer>
+<body class="bg1">
+	<header class="bg-dark" style="height: 3rem;">
+		<div class="bg-dark">
+			<center>
+				<h1 style="font-size: 50px;" class=" text-white" id="home_heading">
+					<strong>Life Insurance Management private Limited</strong>
+				</h1>
+			</center>
+
+			<nav class="navbar navbar-expand-sm bg-dark">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item" style="padding-right: 10px;"><a
+						href="/getHomePage" class="btn btn-warning btn-small navbar-btn">Home
+							Page</a></li>
+					<li class="nav-item" style="padding-right: 10px;"><a
+						href="/verification" class="btn btn-warning btn-small navbar-btn">Change
+							Password</a></li>
+					<li></li>
+					<li class="nav-item" style="padding-right: 10px;"><a
+						href="/getLoginPage" class="btn btn-warning btn-small navbar-btn ">Sign
+							In</a></li>
+					<li class="nav-item" style="padding-right: 10px;"><a
+						href="/getSignUpPage" class="btn btn-warning btn-small navbar-btn">Sign
+							Up</a></li>
+					<li class="nav-item"><a href="/getLogOut"
+						class="btn btn-warning btn-small navbar-btn">Log Out</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<br>
+	<br>
+	<br>
+	<div class="container card-body bg-dark text-white w-100 col-md-12 "
+		align="center">
+		<br>
+		<form:form modelAttribute="user" action="/getAgentPage" method="POST">
+			<h1
+				class=" display-4 card-header success-color white-text text-center py-4">Become
+				an Agent</h1>
+			<br>
+			<br>
+			<div class="form-row mb-5 row-col-12 w-100 h-100">
+				<div class="col-md-4">
+					<label for="firstName">Name</label>
+					<form:input path="firstName" name="firstName"
+						placeholder="Enter your Name"></form:input>
+					<form:errors path="firstName"></form:errors>
+				</div>
+				<div class="col-md-4">
+					<label for="email">Email</label>
+					<form:input path="email" name="email" placeholder="ID@Domain" />
+					<form:errors path="email" />
+				</div>
+				<div class="col-md-4">
+					<label for="email">Mobile Number</label>
+					<form:input path="contact" type="text" name="contact"
+						placeholder="Contact No" />
+					<form:errors path="contact" />
+				</div>
+			</div>
+			<div class="form-row mb-5 row-col-12 w-100 h-100">
+				<div class="col-md-4">
+					<label for="email">Agent ID</label>
+					<form:input path="userId" name="userId" placeholder="User ID" />
+					<form:errors path="userId" />
+				</div>
+				<div class="col-md-4">
+					<label for="email">Password</label>
+					<form:input path="password" type="password" name="password"
+						placeholder="Password" />
+					<form:errors path="password" />
+				</div>
+				<div class="col-md-4">
+					<label for="email">Confirm Password</label>
+					<form:input path="confirmpassword" type="password"
+						name="confirmpassword" placeholder="Confirm Password" />
+					<form:errors path="confirmpassword" />
+				</div>
+			</div>
+			<div class="form-row mb-5 row-col-12 w-100 h-100">
+				<div class="col-md-6">
+					<label for="q1">Choose the first Question</label>
+					<form:select class="h-100" path="security1" items="${securityList}" name="q1" />
+					<form:errors path="security1"></form:errors>
+				</div>
+				<div class="col-md-6">
+					<label for="ans1">Enter the answer</label>
+					<form:input path="ans1" name="ans1" placeholder="Answer for first question"/>
+					<form:errors path="ans1" />
+				</div>
+			</div>
+			<div class="form-row mb-5 row-col-12 w-100 h-100">
+				<div class="col-md-6">
+					<label for="q2">Choose the second Question</label>
+					<form:select class="h-100" path="security2" items="${securityList}" name="q2" />
+					<form:errors path="security2"></form:errors>
+				</div>
+				<div class="col-md-6">
+					<label for="ans2">Enter the answer</label>
+					<form:input path="ans2" name="ans2" placeholder="Answer for second question"/>
+					<form:errors path="ans2" />
+				</div>
+			</div>
+			<div class="form-row mb-5 row-col-12 w-100 h-100">
+				<div class="col-md-6">
+					<label for="q3">Choose the third Question</label>
+					<form:select class="h-100" path="security3" items="${securityList}" name="q3" />
+					<form:errors path="security3"></form:errors>
+				</div>
+				<div class="col-md-6">
+					<label for="ans3">Enter the answer</label>
+					<form:input path="ans3" name="ans3" placeholder="Answer for third question"/>
+					<form:errors path="ans3" />
+				</div>
+			</div>
+			<br>
+			<br>
+			<input type="submit" value="Submit" id="submitbutton" />
+		</form:form>
+	
+	</div>
+	<footer class="page-footer font-small bg-dark text-white  teal pt-4">
+		<!--/.First column-->
+		<div class="container text-center mt-1 ">
+
+			<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer
+					FeedBack</strong></a><br> <a href="/getContactPage"
+				class="align-self-center ml-2 text-white"><strong>Contact
+					Us</strong></a><br>
+		</div>
+		<!--/.First column-->
+		<!--/.Copyright -->
+		<div class="footer-copyright text-center py-3">
+			&copy; 2020 Copyright: <a href="/getHomePage" class="text-white"><strong>
+					LifeInsurance.com</strong></a>
+		</div>
+		<!--/.Copyright -->
+	</footer>
+
 </body>
 </html>
