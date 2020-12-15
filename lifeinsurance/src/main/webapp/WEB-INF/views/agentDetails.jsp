@@ -58,12 +58,12 @@
 <div>
 <center><h3 class=" py-5 text-body  display-4"><strong class="text-white">Agents</strong></h3></center>
 <div class="d-flex justify-content-left">
-	<form:form action="/getSearch" modelAttribute="search" method="POST">
+	<form:form action="/getAgentDetail" modelAttribute="search" method="POST">
 		<ul class=" navbar navbar-expand-sm navbar-nav">
 			<li style="padding-right: 10px; padding-left: 10px; "><form:input class="form-control input-lg" path="name"/></li>
 			<li class="navbar navbar-expand-sm navbar-nav ml-auto" style="padding-right: 10px;">
-			<input type="submit" class="btn btn-primary btn-lg active navbar-btn text-white font-weight-bold"
-			 value="Search"/></li>
+			<h3><input type="submit" class="btn btn-primary btn-lg active navbar-btn text-white font-weight-bold"
+			 value="Search"/></h3></li>
 		</ul >	
 	</form:form>
 </div>
@@ -71,12 +71,12 @@
 <div>
 	<table class="table table-light font-weight-bold border border-dark" >
 	<tr id="head" class="bg-dark text-white">
-                <td><label for="firstName"><b>Agent Name</b></label></td>
-                   <td><label for="email"><b>Agent Mobile Number</b></label></td>
-                   <td><label for="contact"><b>Agent Email</b></label></td>
+                <td><label for="firstName"><b><h3>Agent Name</h3></b></label></td>
+                   <td><label for="email"><b><h3>Agent Mobile Number</h3></b></label></td>
+                   <td><label for="contact"><b><h3>Agent Email</h3></b></label></td>
                    
-                   <td><b>Link to view Agents</b></td>
-                    <td><b>Link to Delete Agents</b></td>
+                   <td><b><h3>Link to view Agents</h3></b></td>
+                    <td><b><h3>Link to Delete Agents</h3></b></td>
                    
                     </tr>
                     
@@ -84,15 +84,15 @@
                     <c:forEach var="user" items="${user}">
 			<tr>
 				
-				<td>${user.firstName}</td>
-				<td>${user.contact}</td>
-				<td>${user.email}</td>
+				<td><h3>${user.firstName}</h3></td>
+				<td><h3>${user.contact}</h3></td>
+				<td><h3>${user.email}</h3></td>
 			
-				<td><a class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold" 
-					 href="/getAgentView?userId=${user.userId}">View</a></td>
+				<td><h3><a class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold" 
+					 href="/getAgentView?userId=${user.userId}">View</a></h3></td>
 				
-				<td><a class="btn btn-danger btn-lg active navbar-btn text-white font-weight-bold" 
-					 href="/getAgentDelete?userId=${user.userId}">Delete</a></td>
+				<td><h3><a class="btn btn-danger btn-lg active navbar-btn text-white font-weight-bold" 
+					 href="/getAgentDelete?userId=${user.userId}">Delete</a></h3></td>
 
 			</tr>
 		</c:forEach>
