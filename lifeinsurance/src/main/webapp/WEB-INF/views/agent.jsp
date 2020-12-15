@@ -58,88 +58,89 @@
 			</nav>
 		</div>
 	</header>
-	<br><br>
 	<br><br><br>
-	<br><br><br>
-	<div class="container card-body bg-dark text-white w-90 col-md-7 "
+	
+	
+	<div class="container card-body bg-dark text-white w-90 col-md-12 "
 		align="center">
 		
 		<form:form modelAttribute="user" action="/getAgentPage" method="POST">
-			<h1
-				class=" display-4 card-header success-color white-text text-center py-4">Become
-				an Agent</h1>
+			<h1 class=" display-4 card-header success-color white-text text-center py-4 ">
+				Become an Agent
+			</h1>
+			<br>
 			<div class="form-row mb-5 row-col-12 w-100 h-100">
 				<div class="col-md-4">
 					<label for="firstName">Name</label>
 					<form:input path="firstName" name="firstName"
 						placeholder="Enter your Name"></form:input>
-					<form:errors path="firstName"></form:errors>
+					<div><form:errors path="firstName"></form:errors></div>
 				</div>
 				<div class="col-md-4">
 					<label for="email">Email</label>
 					<form:input path="email" name="email" placeholder="ID@Domain" />
-					<form:errors path="email" />
+					<div><form:errors path="email" /></div>
 				</div>
 				<div class="col-md-4">
 					<label for="email">Mobile Number</label>
 					<form:input path="contact" type="text" name="contact"
 						placeholder="Contact No" />
-					<form:errors path="contact" />
+					<div><form:errors path="contact" /></div>
 				</div>
 			</div>
 			<div class="form-row mb-5 row-col-12 w-100 h-100">
 				<div class="col-md-4">
 					<label for="email">Agent ID</label>
 					<form:input path="userId" name="userId" placeholder="User ID" />
-					<form:errors path="userId" />
+					<div><form:errors path="userId" /></div>
 				</div>
 				<div class="col-md-4">
 					<label for="email">Password</label>
 					<form:input path="password" type="password" name="password"
 						placeholder="Password" />
-					<form:errors path="password" />
+					<div><form:errors path="password" /></div>
 				</div>
 				<div class="col-md-4">
 					<label for="email">Confirm Password</label>
 					<form:input path="confirmpassword" type="password"
 						name="confirmpassword" placeholder="Confirm Password" />
-					<form:errors path="confirmpassword" />
+					<div><form:errors path="confirmpassword" /></div>
 				</div>
 			</div>
 			<div class="form-row mb-5 row-col-12 w-100 h-100">
 				<div class="col-md-6">
 					<label for="q1">Choose the first Question</label>
 					<form:select class="h-100" path="security1" items="${securityList}" name="q1" />
-					<form:errors path="security1"></form:errors>
+					<div><form:errors path="security1"></form:errors></div>
 				</div>
 				<div class="col-md-6">
 					<label for="ans1">Enter the answer</label>
 					<form:input path="ans1" name="ans1" placeholder="Answer for first question"/>
-					<form:errors path="ans1" />
+					<div><form:errors path="ans1" /></div>
 				</div>
 			</div>
 			<div class="form-row mb-5 row-col-12 w-100 h-100">
 				<div class="col-md-6">
 					<label for="q2">Choose the second Question</label>
 					<form:select class="h-100" path="security2" items="${securityList}" name="q2" />
-					<form:errors path="security2"></form:errors>
+					<div><form:errors path="security2"></form:errors></div>
 				</div>
 				<div class="col-md-6">
 					<label for="ans2">Enter the answer</label>
 					<form:input path="ans2" name="ans2" placeholder="Answer for second question"/>
-					<form:errors path="ans2" />
+					<div><form:errors path="ans2" /></div>
 				</div>
 			</div>
 			<div class="form-row mb-5 row-col-12 w-100 h-100">
 				<div class="col-md-6">
 					<label for="q3">Choose the third Question</label>
 					<form:select class="h-100" path="security3" items="${securityList}" name="q3" />
-					<form:errors path="security3"></form:errors>
+					<div><form:errors path="security3"></form:errors></div>
 				</div>
 				<div class="col-md-6">
 					<label for="ans3">Enter the answer</label>
 					<form:input path="ans3" name="ans3" placeholder="Answer for third question"/>
-					<form:errors path="ans3" />
+					<div><form:errors path="ans3" /></div>
 				</div>
 			</div>
 			

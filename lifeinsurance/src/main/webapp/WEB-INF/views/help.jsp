@@ -75,7 +75,7 @@
 			<div class="align-center ml-10 text-light">
 				
 				<br>
-				<h1>Help Desk</h1>
+				<h1><strong>Help Desk</strong></h1>
 			</div>
 			<br>
 			<div class="container text-white "><h3><center>${success}</center></h3></div>
@@ -138,8 +138,6 @@
 <!-- 					</div> -->
 					<br>
 
-					<a class="btn btn-primary ml-11 align-center col-md-2 "
-						href="/getContactPage" role="button">Contact Us</a>
 				</form:form>
 				<br>
 				<br>
