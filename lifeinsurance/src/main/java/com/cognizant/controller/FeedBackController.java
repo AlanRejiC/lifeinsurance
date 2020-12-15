@@ -30,7 +30,12 @@ public class FeedBackController {
 	private UserService userService;
 
 	@GetMapping(value = "/getFeedBackPage")
-	public String getFeedBackPage(@ModelAttribute("questionnaire") Questionnaire questionnaire) {
+	public String getFeedBackPage(@ModelAttribute("questionnaire") Questionnaire questionnaire,ModelMap map) {
+		
+		Questionnaire question = questionnaireService.findUser(7777777);
+		map.addAttribute("q1", question.getQuestion1());
+		map.addAttribute("q2", question.getQuestion2());
+		map.addAttribute("q3", question.getQuestion3());
 		return "feedbackform";
 	}
 
@@ -45,7 +50,7 @@ System.out.println("inside feedback");
 				String str1[] = str.split("-|:|T");
 				str = str1[1] + str1[2] + str1[3] + str1[4] + str1[5].charAt(0) + str1[5].charAt(1);
 				System.out.println(str);
-				Questionnaire question = questionnaireService.findUser(10004);
+				Questionnaire question = questionnaireService.findUser(7777777);
 				System.out.println(question);
 				String str0 = question.getQuestion1();
 				String str2 = question.getQuestion2();

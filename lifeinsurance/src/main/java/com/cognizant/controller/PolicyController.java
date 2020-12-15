@@ -37,6 +37,8 @@ public class PolicyController {
 			return "pleaseLogin";
 		}
 		map.addAttribute("policyList", policyService.getAll());
+		for(Policy p:policyService.getAll())
+			System.out.println(p);
 		return "policy";
 	}
 	

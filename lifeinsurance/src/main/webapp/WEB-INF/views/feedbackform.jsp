@@ -118,31 +118,31 @@
 				<div class="col-md-6 text-white" >
 					${q1} 
 				</div>
-<!-- 				<div class="col-md-6"> -->
-<!-- 					<label for="ans1" class="text-white" style="margin-left: 200px;">Enter the answer</label> -->
-<%-- 					<form:input path="response1" name="ans1" placeholder="Answer for first question"/> --%>
-<%-- 					<form:errors path="response1" /> --%>
-<!-- 				</div> -->
+				<div class="col-md-6">
+					<label for="ans1" class="text-white" style="margin-left: 200px;">Enter the answer</label>
+					<form:input path="response1" name="ans1" placeholder="Answer for first question"/>
+					<form:errors path="response1" />
+				</div>
 			</div>
 			<div class="form-row mb-5 row-col-12 w-100 h-100">
 				<div class="col-md-6 text-white">
 					${q2}
 				</div>
-<!-- 				<div class="col-md-6"> -->
-<!-- 					<label for="ans2" class="text-white" style="margin-left: 200px;">Enter the answer</label> -->
-<%-- 					<form:input path="response2" name="ans2" placeholder="Answer for second question"/> --%>
-<%-- 					<form:errors path="response2" /> --%>
-<!-- 				</div> -->
+				<div class="col-md-6">
+					<label for="ans2" class="text-white" style="margin-left: 200px;">Enter the answer</label>
+					<form:input path="response2" name="ans2" placeholder="Answer for second question"/>
+					<form:errors path="response2" />
+				</div>
 			</div>
 			<div class="form-row mb-5 row-col-12 w-100 h-100">
 				<div class="col-md-6 text-white">
 					${q3} 
 				</div>
-<!-- 				<div class="col-md-6"> -->
-<!-- 					<label for="ans3" class="text-white" style="margin-left: 200px;">Enter the answer</label> -->
-<%-- 					<form:input path="response3" name="ans3" placeholder="Answer for third question"/> --%>
-<%-- 					<form:errors path="response3" /> --%>
-<!-- 				</div> -->
+				<div class="col-md-6">
+					<label for="ans3" class="text-white" style="margin-left: 200px;">Enter the answer</label>
+					<form:input path="response3" name="ans3" placeholder="Answer for third question"/>
+					<form:errors path="response3" />
+				</div>
 			</div>
 			
 			
@@ -151,13 +151,14 @@
 			
 			
 
-		</form:form>
+		
 
 		<center>
 			
 				<button type="submit" class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold">Submit</a>
 			
 		</center>
+		</form:form>
 	</div>
 	
 	<footer
