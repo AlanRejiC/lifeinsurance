@@ -75,7 +75,7 @@
 			<div class="form-row mb-5">
 			<div class="col-md-6">
 			<div class="md-form text-white">
-					<strong>Old claim number</strong>
+					<h3><strong>Old claim number</strong></h3>
 					<form:input path="claimNumber" type="text"
 							name="claimNumber" />
 					<form:errors path="claimNumber" cssClass="error"/>
