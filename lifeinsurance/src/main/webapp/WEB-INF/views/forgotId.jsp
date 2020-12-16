@@ -73,14 +73,7 @@
 			modelAttribute="user" class="w-100">
 			<form:hidden path="contact" />
 				<form:hidden path="email" />
-				<div class="input-group mb-3 row col-md-12 w-100">
-							<div class="col-md-3"></div>
-							<div class="input-group-prepend col-md-2 ml-3 h-100">
-							<div style="font-size:25px" class="md-form text-white">
-								<strong>${Question1}</strong>
-								</div>
-							</div>
-							</div>
+				
 							<br>
 							
 				
@@ -88,7 +81,7 @@
 							<div class="col-md-3"><form:errors path="security1"></form:errors></div>
 							<div class="input-group-prepend col-md-2 ml-3 h-100">
 							<div style="font-size:25px" class="md-form text-white">
-								<strong>Enter the answer</strong>
+								<strong>${Question1}</strong>
 								
 							</div>
 							</div>
@@ -102,14 +95,7 @@
 							
 				
 				
-				<div class="input-group mb-3 row col-md-12 w-100">
-							<div class="col-md-3"></div>
-							<div class="input-group-prepend col-md-2 ml-3 h-100">
-							<div style="font-size:25px" class="md-form text-white">
-								<strong>${Question2}</strong>
-								</div>
-							</div>
-							</div>
+				
 							<br>
 							
 							
@@ -117,7 +103,7 @@
 							<div class="col-md-3"><form:errors path="security2"></form:errors></div>
 							<div class="input-group-prepend col-md-2 ml-3 h-100">
 							<div style="font-size:25px" class="md-form text-white">
-								<strong>Enter the answer</strong>
+								<strong>${Question2}</strong>
 								
 							</div>
 							</div>
@@ -130,15 +116,7 @@
 				<br>
 							
 				
-				<div class="input-group mb-3 row col-md-12 w-100">
-							<div class="col-md-3"></div>
-							<div class="input-group-prepend col-md-2 ml-3 h-100">
-							<div style="font-size:25px" class="md-form text-white">
-								<strong>${Question3}</strong>
-								
-								</div>
-							</div>
-							</div>
+				
 							<br>
 						
 							
@@ -146,7 +124,7 @@
 							<div class="col-md-3"><form:errors path="security3"></form:errors></div>
 							<div class="input-group-prepend col-md-2 ml-3 h-100">
 							<div style="font-size:25px" class="md-form text-white">
-								<strong>Enter the answer</strong>
+								<strong>${Question3}</strong>
 								
 							</div>
 							</div>

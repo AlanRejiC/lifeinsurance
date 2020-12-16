@@ -74,10 +74,14 @@
 						
 		</table>
 		<button class="btn btn-warning  btn-rounded btn-small navbar-btn text-dark" type="submit">Submit</button>
-		
-		<h3>${status}</h3>
-		<h3>${nullStatus}</h3>
-		<h3>${invalidclaim}</h3>
+		<div style="font-size:40px" class="md-form text-white">
+		<center>
+		<strong>${status}	</strong>
+		<strong>${nullStatus}</strong>
+		<strong>${invalidclaim}</strong>
+		</center>
+	
+		</div>
 	</form:form>
 <center>
 <h3><a href="/getClaimEdit?claimNumber=${number}" class="btn btn-warning btn-small navbar-btn">${Edit}</a></h3>
