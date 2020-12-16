@@ -96,7 +96,7 @@ public class PolicyController {
 	
 	//add
 	@RequestMapping(value = "/getPolicyAdd", method = RequestMethod.GET)
-	public String getInsurancePage(@ModelAttribute("policy") Policy policy) {
+	public String getPolicyAdd(@ModelAttribute("policy") Policy policy) {
 		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
 		{
 			return "pleaseLogin";
@@ -106,7 +106,7 @@ public class PolicyController {
 	}
 	
 	@RequestMapping(value = "/getPolicyAdd", method = RequestMethod.POST)
-	public String getPaymentPage(@Valid @ModelAttribute("policy") Policy policy, BindingResult result,	ModelMap map) {
+	public String getPolicyAddPost(@Valid @ModelAttribute("policy") Policy policy, BindingResult result,	ModelMap map) {
 		if(Home.Id==0 || userService.findUser(Home.Id).getLogin()==false)
 		{
 			return "pleaseLogin";
