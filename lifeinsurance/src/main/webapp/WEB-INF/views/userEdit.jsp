@@ -49,6 +49,9 @@
 			<li class="nav-item " style="padding-right: 10px;">
 				<a href="/getDashBoard" class="btn btn-warning btn-small navbar-btn text-dark"><h4>Admin DashBoard</h4></a>
 			</li>
+			<li class="nav-item " style="padding-right: 10px;">
+				<a href="/getPolicyPage" class="btn btn-warning btn-small navbar-btn text-dark"><h4>View Users</h4></a>
+			</li>
 		</ul>
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item" style="padding-right: 10px; padding-left: 10px;">
@@ -67,75 +70,85 @@
 	<br>
 	<br>
 	<br>
-	<center><h1 style="color: white">Edit Menu Item</h1></center>
+	<center><h1 class="text-body"><strong class="text-white">Edit User</strong></h1></center>
 	<br><br>
 	<div>
 	<h1 align="center" style="background-color:powderblue;">${status}</h1>
 	<form:form modelAttribute="user" method="GET" action="/userSuccess">
-	<table class="table table-light font-weight-bold border border-dark" >
-	<tr id="head" class="bg-dark text-white">
+	<table class="table table-sm table-light font-weight-bold border border-dark" >
+			<tr id="head" class="bg-dark text-white">
 				<th><h3><label for="userId"><b>User Id</b></label></h3></th>
 				<th><h3><label for="firstName"><b>First Name</b></label></h3></th>
 				<th><h3><label for="lastName"><b>Last Name</b></label></h3></th>
 				<th><h3><label for="gender"><b>Gender</b></label></h3></th>
-				<th><h3><label for="dob"><b>Date of Birth</b></label></h3></th>
-				<th><h3><label for="contact"><b>Contact Number</b></label></h3></th>
-				<th><h3><label for="contact"><b>Password</b></label></h3></th>
-				<th><h3><label for="contact"><b>Confirm Password</b></label></h3></th>
-				<th><h3><label for="email"><b>Email Id</b></label></h3></th>
-				<th><h3><label for="security1"><b>Security question 1</b></label></h3></th>
-				<th><h3><label for="ans_1"><b>Answer 1</b></label></h3></th>
-				<th><h3><label for="security2"><b>Security question 2</b></label></h3></th>
-				<th><h3><label for="ans_2"><b>Answer 1</b></label></h3></th>
-				<th><h3><label for="security3"><b>Security question 3</b></label></h3></th>
-				<th><h3><label for="ans_3"><b>Answer 1</b></label></h3></th>
-				<th><h3><label for="role"><b>Role</b></label></h3></th>
 			</tr>
-
 			<tr>
 				<form:hidden path="userId" value="${item.userId}"/>
 				<td><h3><label>${item.userId}</label></h3></td>
 				<td><h3><form:input path="firstName" type="text" value="${item.firstName}" /></h3></td>
 				<td><h3><form:input path="lastName" type="text" value="${item.lastName}" /></h3></td>
 				<td><h3><form:input path="gender" type="text" value="${item.gender}" /></h3></td>
+			</tr>	
+			<tr id="head" class="bg-dark text-white">
+				<th><h3><label for="dob"><b>Date of Birth</b></label></h3></th>
+				<th><h3><label for="contact"><b>Contact Number</b></label></h3></th>
+				<th><h3><label for="contact"><b>Password</b></label></h3></th>
+				<th><h3><label for="contact"><b>Confirm Password</b></label></h3></th>
+			</tr>
+			<tr>
 				<td><h3><form:input path="dob" type="text" value="${item.dob}" /></h3></td>
 				<td><h3><form:input path="contact" type="text" value="${item.contact}" /></h3></td>
-				
 				<td><h3><form:input path="password" type="password" value="${item.password}" /></h3></td>
-				<td><form:input path="confirmpassword" type="password" value="${item.confirmpassword}" /></td>
-				
+				<td><h3><form:input path="confirmpassword" type="password" value="${item.confirmpassword}" /></h3></td>
+			</tr>
+			<tr id="head" class="bg-dark text-white">
+				<th><h3><label for="email"><b>Email Id</b></label></h3></th>
+				<th><h3><label for="role"><b>Role</b></label></h3></th>
+				<th><h3><label for="security1"><b>Security question 1</b></label></h3></th>
+				<th><h3><label for="ans_1"><b>Answer 1</b></label></h3></th>
+			</tr>
+			<tr>
 				<td><h3><form:input path="email" type="text" value="${item.email}" /></h3></td>
+				<td><h3><label>${item.role}</label></h3></td>
 				<td><h3><form:input path="security1" type="text" value="${item.security1}" /></h3></td>
 				<td><h3><form:input path="ans1" type="text" value="${item.ans1}" /></h3></td>
+			</tr>
+			<tr id="head" class="bg-dark text-white">
+				<th><h3><label for="security2"><b>Security question 2</b></label></h3></th>
+				<th><h3><label for="ans_2"><b>Answer 1</b></label></h3></th>
+				<th><h3><label for="security3"><b>Security question 3</b></label></h3></th>
+				<th><h3><label for="ans_3"><b>Answer 1</b></label></h3></th>
+			</tr>	
+			<tr>
 				<td><h3><form:input path="security2" type="text" value="${item.security2}" /></h3></td>
 				<td><h3><form:input path="ans2" type="text" value="${item.ans2}" /></h3></td>
 				<td><h3><form:input path="security3" type="text" value="${item.security3}" /></h3></td>
 				<td><h3><form:input path="ans3" type="text" value="${item.ans3}" /></h3></td>
-				<td><h3><form:input path="role" type="text" value="${item.role}" /></h3></td>
 				<form:hidden path="login"></form:hidden>
 			</tr>
-			<tr>
-				<td><button class="btn btn-success btn-small navbar-btn" type="submit" style=" padding-right: 5px;">Submit</button></td>
-			</tr>
 		</table>
+		<div class="d-flex justify-content-center">
+			<h1><input type="submit" value="Submit" 
+						class="btn btn-success btn-lg navbar-btn text-white font-weight-bold" /></h1>
+		</div>
 	</form:form>
 </div>
 
 <div>
-<footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
-<!--/.First column-->  
-      <div class="container text-center mt-1 ">
-	           	<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br>
-	        	<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact Us</strong></a><br>
-        </div>
-<!--/.First column-->
-<!--/.Copyright -->  
-  	<div class="footer-copyright text-center py-3">
-    &copy; 2020 Copyright:
-	<a href="/getHomePage" class="text-white"><strong> LifeInsurance.com</strong></a>
-  </div>
-<!--/.Copyright -->
-</footer>
+	<footer id="adminfooter" class="footer fixed-bottom bg-dark text-white">
+		<!--/.First column-->
+		<div class="container text-center mt-1 ">
+			<h3><a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br> 
+			<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact Us</strong></a><br></h3>
+		</div>
+		<!--/.First column-->
+		<!--/.Copyright -->
+		<div class="footer-copyright text-center py-3">
+			<h3>&copy; 2020 Copyright: 
+			<a href="/getHomePage" class="text-white"><strong>LifeInsurance.com</strong></a></h3>
+		</div>
+		<!--/.Copyright -->
+	</footer>
 </div>
 
 </body>
