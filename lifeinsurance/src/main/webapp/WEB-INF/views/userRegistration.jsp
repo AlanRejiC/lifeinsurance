@@ -45,19 +45,6 @@
         <li class="nav-item" style="padding-right:10px;"> 
 				<a href="/getHomePage" class="btn btn-warning btn-small navbar-btn" >Home Page</a>
             </li>
-            <li class="nav-item" style="padding-right:10px;"> 
-				<a href="/verification" class="btn btn-warning btn-small navbar-btn" >Change Password</a>
-            </li> 
-            <li> </li>
-            <li class="nav-item" style="padding-right:10px;"> 
-                <a href="/getLoginPage" class="btn btn-warning btn-small navbar-btn " >Sign In</a> 
-            </li> 
-            <li class="nav-item" style="padding-right:10px;">
-                <a href="/getSignUpPage" class="btn btn-warning btn-small navbar-btn" >Sign Up</a> 
-            </li> 
-            <li class="nav-item"> 
-                <a href="/getLogOut" class="btn btn-warning btn-small navbar-btn" >Log Out</a> 
-            </li> 
         </ul> 
     </nav> 
 </header>
