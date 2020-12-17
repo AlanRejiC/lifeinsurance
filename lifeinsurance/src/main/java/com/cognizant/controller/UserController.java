@@ -110,6 +110,8 @@ public class UserController {
         // map.addAttribute("success",success);
 //		User user1=userService.findUser(userId);
     	user.setLogin(true);
+    	User user1 = userService.findUser(userId);
+    	user.setRole(user1.getRole());
         userService.saveUser(user);
         map.addAttribute("status", "Your Edit has been Saved");
         return "userEdit";
