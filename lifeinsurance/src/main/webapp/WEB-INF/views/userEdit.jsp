@@ -110,6 +110,7 @@
 			<tr>
 				<td><h3><form:input path="email" type="text" value="${item.email}" /></h3></td>
 				<td><h3><label>${item.role}</label></h3></td>
+				<form:hidden path="role"></form:hidden>
 				<td><h3><form:input path="security1" type="text" value="${item.security1}" /></h3></td>
 				<td><h3><form:input path="ans1" type="text" value="${item.ans1}" /></h3></td>
 			</tr>

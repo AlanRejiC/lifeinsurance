@@ -251,6 +251,7 @@
 		    <!-- Sign in button -->
 		    <button class="btn btn-primary  btn-rounded btn-small navbar-btn text-white" type="submit" data-toggle="modal" data-target="#Mymodal" >Sign Up
 		    </button>
+		    <h1 align="center" style="background-color:powderblue;">${status}</h1>
 		    
 		    <!-- modal -->
 			<div class="modal fade" id="Mymodal">

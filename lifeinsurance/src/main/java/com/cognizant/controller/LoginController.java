@@ -71,7 +71,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/getSignUpPage", method = RequestMethod.POST)
-	public String getSuccess1(@ModelAttribute("user") @Valid User user, BindingResult result) {
+	public String getSuccess1(@ModelAttribute("user") @Valid User user, BindingResult result,ModelMap map) {
 		registrationValidator.validate(user, result);
 
 		// System.out.println("hello");
@@ -85,6 +85,7 @@ public class LoginController {
 		user.setLogin(false);
 		System.out.println(user);
 		userService.saveUser(user);
+		map.addAttribute("status", "Registration successfull");
 		return "userRegistration";
 	}
 
