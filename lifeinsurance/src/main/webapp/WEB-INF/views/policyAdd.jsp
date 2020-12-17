@@ -72,19 +72,19 @@
 			<tr>
 				<td><h2 class="text-white">Policy Name</h2></td>
 				<td><h2><form:input path="policyName" name="policyName"
-						placeholder="Policy Name" /></h2></td>
+						placeholder="Policy Name" required="true"/></h2></td>
 				<td><h2><form:errors class="text-danger" path="policyName" /></h2></td>
 			</tr>
 			<tr>
 				<td><h2 class="text-white">Policy Number</h2></td>
 				<td><h2><form:input path="policyNumber" name="policyNumber"
-						placeholder="Policy Number" /></h2></td>
+						placeholder="Policy Number" required="true"/></h2></td>
 				<td><h2><form:errors class="text-danger" path="policyNumber" /></h2></td>
 			</tr>
 			<tr>
 				<td><h2 class="text-white">Description</h2></td>
 				<td><h2><form:input path="policyDescription" type="text" name="policyDescription"
-						placeholder="Policy Description" /></h2></td>
+						placeholder="Policy Description" required="true"/></h2></td>
 				<td><h2><form:errors class="text-danger" path="policyDescription" /></h2></td>
 			</tr>
 			<tr>

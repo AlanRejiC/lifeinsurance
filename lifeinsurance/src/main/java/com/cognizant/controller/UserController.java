@@ -95,6 +95,7 @@ public class UserController {
     	System.out.println("inside get user  EDIT page");
         User user1 = userService.findUser(userId);
         user1.setUserId(userId);
+        System.out.println(user1);
         map.addAttribute("item", user1);
         return "userEdit";
     }

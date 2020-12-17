@@ -50,7 +50,7 @@
 				<a href="/getDashBoard" class="btn btn-warning btn-small navbar-btn text-dark"><h4>Admin DashBoard</h4></a>
 			</li>
 			<li class="nav-item " style="padding-right: 10px;">
-				<a href="/getPolicyPage" class="btn btn-warning btn-small navbar-btn text-dark"><h4>View Users</h4></a>
+				<a href="/getUserPage?role=All" class="btn btn-warning btn-small navbar-btn text-dark"><h4>View Users</h4></a>
 			</li>
 		</ul>
 		<ul class="navbar-nav ml-auto">
