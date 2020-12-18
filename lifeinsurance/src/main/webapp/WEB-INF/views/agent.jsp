@@ -109,37 +109,37 @@
 			</div>
 			<div class="form-row mb-5 row-col-12 w-100 h-100">
 				<div class="col-md-7 pl-4">
-					<label for="q1">Choose the first Question</label>
-					<form:select class="h-100" path="security1" items="${securityList}" name="q1" />
+					<label for="q1" style="padding-right: 12px;">Choose the first Question</label>
+					<form:select class="h-100" path="security1" items="${securityList}" name="q1" style="padding-right: 172px;" />
 					<div><form:errors path="security1"></form:errors></div>
 				</div>
-				<div class="col-md-5 pr-5">
+				<div class="col-md-1 pr-5">
 <!-- 					<label for="ans1">Enter the answer</label> -->
-					<form:input path="ans1" name="ans1" placeholder="Answer for first question"/>
+					<form:input path="ans1" name="ans1" placeholder="Answer for first question" style="padding-right: 366px;"/>
 					<div><form:errors path="ans1" /></div>
 				</div>
 			</div>
-			<div class="form-row mb-5 row-col-12 w-100 h-100">
+			<div class="form-row mb-5 row-col-8 w-100 h-100">
 				<div class="col-md-7">
 					<label for="q2">Choose the second Question</label>
-					<form:select class="h-100" path="security2" items="${securityList}" name="q2" />
+					<form:select class="h-100" path="security2" items="${securityList}" name="q2" style="padding-right: 172px;" />
 					<div><form:errors path="security2"></form:errors></div>
 				</div>
-				<div class="col-md-5 pr-5">
+				<div class="col-md-1 pr-5">
 <!-- 					<label for="ans2">Enter the answer</label> -->
-					<form:input path="ans2" name="ans2" placeholder="Answer for second question"/>
+					<form:input path="ans2" name="ans2" placeholder="Answer for second question" style="padding-right: 366px;"/>
 					<div><form:errors path="ans2" /></div>
 				</div>
 			</div>
 			<div class="form-row mb-5 row-col-12 w-100 h-100">
 				<div class="col-md-7 pl-4">
 					<label for="q3">Choose the third Question</label>
-					<form:select class="h-100" path="security3" items="${securityList}" name="q3" />
+					<form:select class="h-100" path="security3" items="${securityList}" name="q3" style="padding-right: 172px;"/>
 					<div><form:errors path="security3"></form:errors></div>
 				</div>
-				<div class="col-md-5 pr-5">
+				<div class="col-md-1 pr-5">
 					
-					<form:input path="ans3" name="ans3" placeholder="Answer for third question"/>
+					<form:input path="ans3" name="ans3" placeholder="Answer for third question" style="padding-right: 366px;"/>
 					<div><form:errors path="ans3" /></div>
 				</div>
 			</div>
