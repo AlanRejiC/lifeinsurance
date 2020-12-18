@@ -76,7 +76,7 @@
 			<div class="md-form text-white">
 					<strong>Old claimNumber</strong>
 					<form:input path="claimNumber" type="text"
-							name="claimNumber" />
+							name="claimNumber" class="form-control" />
 					<form:errors path="claimNumber" cssClass="error"/>
 			</div>
 			</div>
@@ -91,7 +91,7 @@
 				
 					<strong>Customer Name</strong>
 					<form:input path="custName" type="text"
-							name="custName" />
+							name="custName" class="form-control" />
 					<form:errors path="custName" cssClass="error" />
 			</div>
 			</div>
@@ -104,7 +104,7 @@
 				
 					<strong>Incurred date</strong>
 					<form:input path="incurredDate" type="text"
-							name="incurredDate" />
+							name="incurredDate" class="form-control"/>
 					<form:errors path="incurredDate" cssClass="error"/>
 					
 			
@@ -118,7 +118,7 @@
 				
 					<strong>Reported date</strong>
 					<form:input path="reportedDate" type="text"
-							name="reportedDate" />
+							name="reportedDate" class="form-control" />
 					<form:errors path="reportedDate" cssClass="error" />
 					
 					</div>
@@ -131,7 +131,7 @@
 			
 				
 					<strong>Date of claim paid</strong>
-					<form:input path="datePaid" type="text" name="datePaid" />
+					<form:input path="datePaid" type="text" name="datePaid" class="form-control" />
 					<form:errors path="datePaid"  cssClass="error" />
 					
 					
@@ -143,7 +143,7 @@
 			
 				
 					<strong>Date of admission</strong>
-					<form:input path="admitDate" type="text" name="admitDate" />
+					<form:input path="admitDate" type="text" name="admitDate" class="form-control" />
 					<form:errors path="admitDate" cssClass="error"></form:errors>
 					
 					</div>
@@ -160,7 +160,7 @@
 				
 					<strong>Date of discharge</strong>
 					<form:input path="releaseDate" type="text"
-							name="releaseDate" />
+							name="releaseDate" class="form-control"/>
 					<form:errors path="releaseDate"  cssClass="error"/>
 					
 						
@@ -174,7 +174,7 @@
 				
 				
 					<strong>Total Charges</strong>
-					<form:input path="totalCharge" name="totalCharge" />
+					<form:input path="totalCharge" name="totalCharge" class="form-control" />
 					<form:errors path="totalCharge"  cssClass="error"/>
 					
 					</div>
@@ -191,7 +191,7 @@
 
 				
 					<strong>Total pre-hospital charges</strong>
-					<form:input path="preCharge" name="preCharge" />
+					<form:input path="preCharge" name="preCharge" class="form-control" />
 					<form:errors path="preCharge" cssClass="error" />
 					
 						
@@ -205,7 +205,7 @@
 				
 				
 					<strong>Total post-hospital charges</strong>
-					<form:input path="postCharge" name="postCharge" />
+					<form:input path="postCharge" name="postCharge" class="form-control" />
 					<form:errors path="postCharge"  cssClass="error" />
 								</div>
 			</div>
