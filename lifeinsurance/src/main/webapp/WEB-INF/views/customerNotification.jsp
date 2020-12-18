@@ -32,7 +32,7 @@
 
 <body class="form" style="background-image: url('https://image.cnbcfm.com/api/v1/image/105964745-1560376510health-insurance-life-insurance-car-insurance.jpg?v=1561045239&w=1600&h=900')";>
 
-<header class="bg-dark" style="height: 3rem;">
+<header class="bg-dark" >
 <div class="bg-dark">
 	<center ><h1 style="font-size:50px;" class=" text-white" id="home_heading"><strong>Life Insurance Management private Limited</strong></h1></center>
 </div>
@@ -60,23 +60,27 @@
 	<div align="center" style="color: white">
 	<h5 class=" display-4 card-header success-color white-text text-center py-4"><strong>Claim notifications</strong></h5>
 <!-- Card Content -->
-	<div  class="card-body bg-dark text-white d-flex  justify-content-center" >
-	<!-- Form -->
+	<div  class="card-body bg-dark text-white" >
+	<div class="d-flex justify-content-center">
+		<!-- Form -->
 	<form:form modelAttribute="claim" action="/getNotificationpage" method="POST">
 		
 			<div class="form-row mb-5">
-			<div class="col-md-6">
+			<div >
 			<div class="md-form text-white">
 				
-					<strong>Enter claim number</strong>
+					<strong style="padding-right:10px;">Enter claim number</strong>
 					<form:input path="claimNumber" type="text"
-							name="claimNumber" />
+							name="claimNumber" style="padding-left:10px;"/>
 					<form:errors path="claimNumber" cssClass="error" />
 					</div>
 						
 		
-		<button class="btn btn-warning  btn-rounded btn-small navbar-btn text-dark" type="submit" align="center">Submit</button>
+		
 		</table>
+		<div class="d-flex justify-content-center">
+			<button class="btn btn-warning  btn-rounded btn-small navbar-btn text-dark" type="submit" align="center">Submit</button>
+		</div>
 		<div style="font-size:40px" class="md-form text-white">
 		<center>
 		<strong><h1 style="color:white; font-size: 80px; background-color:powderblue;"">${status}</h1></strong>
@@ -87,25 +91,28 @@
 		</div>
 		</div>
 	</form:form>
+	</div>
+	
 <center>
 <h3><a href="/getClaimEdit?claimNumber=${number}" class="btn btn-warning btn-small navbar-btn">${Edit}</a></h3>
 
 </center>	
 </div>
 <footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
-<!--/.First column-->  
-      <div class="container text-center mt-1 ">
-	        </h6>
-	        	<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br>
-	        	<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact Us</strong></a><br>
-        </div>
-<!--/.First column-->
-<!--/.Copyright -->  
-  	<div class="footer-copyright text-center py-3">
-    &copy; 2020 Copyright:
-	<a href="/getHomePage" class="text-white"><strong> LifeInsurance.com</strong></a>
-  </div>
-<!--/.Copyright -->
+<div class="bg-dark">
+	<!--/.First column-->
+	<div class="container text-center mt-1">
+		<h3><a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br> 
+		<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact Us</strong></a><br></h3>
+	</div>
+	<!--/.First column-->
+	<!--/.Copyright -->
+	<div class="footer-copyright text-center py-3">
+		<h3>&copy; 2020 Copyright: 
+		<a href="/getHomePage" class="text-white"><strong>LifeInsurance.com</strong></a></h3>
+	</div>
+	<!--/.Copyright -->
+</div>	
 </footer>
 </body>
 </html>
