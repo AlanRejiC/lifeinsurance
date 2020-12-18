@@ -64,7 +64,7 @@
 <div align="center">
 	<div  class="card-body bg-dark text-white col-md-5">
 	<form:form modelAttribute="user" action="/getAgentDetails" method="POST">
-		<h1 class=" display-3 card-header success-color white-text text-center py-5 ">Agent View Page</h1><br>
+		<h1 class=" display-3 card-header success-color white-text text-center py-5 ">Agent Details</h1><br>
 		<table>
 		<tr>
 				<td><b><h2>Agent ID</h2></b></td>
