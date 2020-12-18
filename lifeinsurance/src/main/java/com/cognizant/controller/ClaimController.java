@@ -122,6 +122,8 @@ public class ClaimController {
 		 * map.addAttribute("preCharges", claim.getPreCharge());
 		 * map.addAttribute("postCharges", claim.getPostCharge());
 		 */
+		Claim editClaim=claimService.findCust(claim.getClaimNumber());
+		map.addAttribute("item",editClaim);
 
 		Policy policy = claimService.findTotDeductible(insurance.getPolicyName());
 		map.addAttribute("totDeductible", policy.getTotDeductible());
