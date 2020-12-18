@@ -12,6 +12,8 @@
 		<item key="isRegEx" value="false"/>
 		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="getsignup"/>
+			<item value="getsingup"/>
 			<item value="claimStatus"/>
 			<item value="upda"/>
 			<item value="re"/>

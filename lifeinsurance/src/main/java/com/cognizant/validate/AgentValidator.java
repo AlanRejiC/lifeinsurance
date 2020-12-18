@@ -35,7 +35,7 @@ public class AgentValidator implements Validator{
 		ValidationUtils.rejectIfEmpty(errors, "security1","", "Please select a security question");
 		ValidationUtils.rejectIfEmpty(errors, "ans1","", "This field cannot be blank");
 		ValidationUtils.rejectIfEmpty(errors, "security2","", "Please select a security question");
-		ValidationUtils.rejectIfEmpty(errors, "ans2","", "UserName cannot be blank");
+		ValidationUtils.rejectIfEmpty(errors, "ans2","", "This field cannot be blank");
 		ValidationUtils.rejectIfEmpty(errors, "security3","", "Please select a security question");
 		ValidationUtils.rejectIfEmpty(errors, "ans3","", "This field cannot be blank");
 		String userid=""+user.getUserId();
@@ -65,12 +65,7 @@ public class AgentValidator implements Validator{
 		}
 		if (m2.matches() == false) {
 			errors.rejectValue("password", "",
-					" Check whether \r\n" + "It contains at least 8 characters and at most 20 characters.\r\n"
-							+ "It contains at least one digit.\r\n"
-							+ "It contains at least one upper case alphabet.\r\n"
-							+ "It contains at least one lower case alphabet.\r\n"
-							+ "It contains at least one special character which includes !@#$%&*()-+=^.\r\n"
-							+ "It doesn't contain any white space.");
+					"");
 			status2=false;
 		}
 		if(status1 && status2){

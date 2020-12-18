@@ -21,7 +21,10 @@ import com.cognizant.model.Excel;
 public class ExcelFileExporter {
 	
 	public static ByteArrayInputStream contactListToExcelFile(List<Excel> customers) {
-		try(Workbook workbook = new XSSFWorkbook()){
+		try(
+		        // Creating Workbook instances
+			Workbook workbook = new XSSFWorkbook()){
+			// Creating Sheets using sheet object 
 			Sheet sheet = workbook.createSheet("Users");
 			
 			Row row = sheet.createRow(0);
@@ -131,7 +134,7 @@ public class ExcelFileExporter {
 	        sheet.autoSizeColumn(13);
 	        sheet.autoSizeColumn(14);
 	        sheet.autoSizeColumn(15);
-	        
+	     // An output stream accepts output bytes and sends them to sink. 
 	        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 	        workbook.write(outputStream);
 	        return new ByteArrayInputStream(outputStream.toByteArray());
