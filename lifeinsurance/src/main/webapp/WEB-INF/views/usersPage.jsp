@@ -116,6 +116,9 @@
 		<td><label for="contact"><b><h3>Contact Number</h3></b></label></td>
 		<td><label for="email"><b><h3>Email Id</h3></b></label>
 		<td><label for="role"><b><h3>Role</h3></b></label></td>
+		<td></td>
+		<td><label><b><h3>Action</h3></b></label></td>
+		<td></td>
 	</tr>
 	<c:forEach var="user" items="${user}">
 		<tr>

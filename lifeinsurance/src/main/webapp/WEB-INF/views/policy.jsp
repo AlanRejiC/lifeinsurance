@@ -68,7 +68,8 @@
                    <td><label for="tot_deductable"><b><h3>Total deductible</h3></b></label></td>
                    <td><label for="totCoInsurance"><b><h3>Total Co Insurance</h3></b></label></td>
                	   <td><label for="interestRate"><b><h3>Interest Rate</h3></b></label>
-               	   
+               	   <td></td>
+               	   <td></td>
                </tr>
                
             	<c:forEach var="item" items="${policyList}">

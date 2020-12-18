@@ -51,12 +51,16 @@
         </ul> 
     </nav> 
 </header>
+<br>
+<br>
+<br>
+<br>
 <div class="container">
-	<table class="table table-bordered view">
+	<table class="table table-bordered view" text-align="center">
 	<div align="center" style="color: white">
 	<h5 class=" display-4 card-header success-color white-text text-center py-4"><strong>Claim notifications</strong></h5>
 <!-- Card Content -->
-	<div  class="card-body bg-dark text-white" >
+	<div  class="card-body bg-dark text-white d-flex  justify-content-center" >
 	<!-- Form -->
 	<form:form modelAttribute="claim" action="/getNotificationpage" method="POST">
 		
@@ -69,18 +73,18 @@
 							name="claimNumber" />
 					<form:errors path="claimNumber" cssClass="error" />
 					</div>
-					</div>
-					</div>
 						
+		
+		<button class="btn btn-warning  btn-rounded btn-small navbar-btn text-dark" type="submit" align="center">Submit</button>
 		</table>
-		<button class="btn btn-warning  btn-rounded btn-small navbar-btn text-dark" type="submit">Submit</button>
 		<div style="font-size:40px" class="md-form text-white">
 		<center>
-		<strong>${status}	</strong>
-		<strong>${nullStatus}</strong>
-		<strong>${invalidclaim}</strong>
+		<strong><h1 style="color:white; font-size: 80px; background-color:powderblue;"">${status}</h1></strong>
+		<strong><h1 style="color:white; font-size: 80px; background-color:red;"">${nullStatus}</h1></strong>
+		<strong><h1 style="color:white; font-size: 80px; background-color:red;"">${invalidclaim}</h1></strong>
 		</center>
-	
+		</div>
+		</div>
 		</div>
 	</form:form>
 <center>
