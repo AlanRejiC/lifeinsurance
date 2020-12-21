@@ -4,24 +4,14 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-	<style>
-		<%@ include file="/WEB-INF/styles/style.css"%>
-			body{
-			margin:0;
-			width:100vw;
-			height:100vh;
-		}
-		.bg-cover{
-			background-image: url('img/login.jpg');
-			background-size:cover;
-			height:100%;
-		}
-	</style>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+<style>
+	<%@ include file="/WEB-INF/styles/style.css"%>
+</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -31,9 +21,11 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<title>User Page</title>
+<title>View policy details</title>
 </head>
-<header class="bg-dark " style="height: 6rem;">
+
+<body style="background-image: url('img/login.jpg'); height:auto; max-width:100%; ">
+<header class="bg-dark" style="height: 6rem;">
 	<div class="bg-dark">
 		<center>
 			<h1 style="font-size: 50px;" class="text-white" id="home_heading">
@@ -57,107 +49,71 @@
 			<li class="nav-item" style="padding-right: 10px; padding-left: 10px;">
 				<a href="/verification" class="btn btn-warning btn-small navbar-btn text-dark"><h4>Change Password</h4></a>
 			</li>
-			<li class="nav-item"><a href="/getLogOut" class="btn btn-warning btn-small navbar-btn text-dark"><h4>Log Out</h4></a>
+			<li class="nav-item"><a href="/getLogOut" class="btn btn-warning btn-small navbar-btn text-dark">
+			<h4>Log Out</h4></a>
 			</li>
 		</ul>
 	</nav>
 </header>
-<body >
-<div class="jumbotron jumbotron bg-cover" >
+<center><h3 class=" py-5 text-body  display-4"><strong class="text-white">Set Questionnaire</strong></h3></center>
+<form:form action="/setQuestion" method="POST" 
+			modelAttribute="questionnaire">
+			<table class="table table-light font-weight-bold border border-dark" style="float: right">
+			<tr id="head" class="bg-dark text-white">
 
+				<tr>
+				<td><h3><b><center>Enter the first Question</center></b></h3></td>
+				</tr>
+				<tr>
+					
+					<td><center><h3><b><form:input align="center" path="question1" /></h3></b></center></td>
+					<td><center><h3><b><form:errors path="question1" /></b></h3></center></td>
+				</tr>
+				
+				<tr>
+				<td><h3><center><b>Enter the Second Question</b></center></h3></td>
+				</tr>
 
-<center><h3 class=" py-5 text-body  display-4"><strong class="text-white">Users</strong></h3></center>
-<div class="d-flex justify-content-left">
-	<form:form action="/getSearch" modelAttribute="search" method="POST">
-		<ul class=" navbar navbar-expand-sm navbar-nav">
-			<li style="padding-right: 10px; padding-left: 10px; "><form:input class="form-control input-lg" path="name"/></li>
-			<li class="navbar navbar-expand-sm navbar-nav ml-auto" style="padding-right: 10px;">
-			<input type="submit" class="btn btn-primary btn-lg active navbar-btn text-white font-weight-bold"
-			 value="Search"/></li>
-		</ul >	
-		
-		<div class="d-flex justify-content-center">
-		
-	</div>
-		
-	</form:form>
-	<div class="navbar navbar-expand-sm navbar-nav ml-auto">
-		<ul class=" navbar navbar-expand-sm navbar-nav text-white">
-			<li><h3><strong>Search based on Role :</strong></h3></li>
-			<li class="navbar navbar-expand-sm navbar-nav ml-auto" style="padding-left: 10px; padding-right: 10px;">
-				<h3><a class="btn btn-info btn-lg active navbar-btn text-white font-weight-bold" 
-					href="getUserPage?role=customer" >Customer</a></h3>
-			</li>
-			<li class="navbar navbar-expand-sm navbar-nav ml-auto" style="padding-right: 10px;">
-				<h3><a class="btn btn-info btn-lg active navbar-btn text-white font-weight-bold" 
-					href="getUserPage?role=agent">Agent</a></h3>
-			</li>
-			<li class="navbar navbar-expand-sm navbar-nav ml-auto" style="padding-right: 10px;">
-				<h3><a class="btn btn-info btn-lg active navbar-btn text-white font-weight-bold" 
-					href="getUserPage?role=admin">Admin</a></h3>
-			</li>
-			<ul>
-			<li class="navbar navbar-expand-sm navbar-nav ml-auto" style="padding-right: 10px;">
-					<h1><a class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold" 
-					href="/download/users.xlsx" >Import</a></h1>
-			</li>
-		</ul>
-		</ul>
-	</div>
-</div>	
-<div>
-	<table class="table table-light font-weight-bold border border-dark" >
-	<tr id="head" class="bg-dark text-white">
-		<td><label for="userId"><b><h3>User Id</h3></b></label></td>
-		<td><label for="firstName"><b><h3>First Name</h3></b></label></td>
-		<td><label for="lastName"><b><h3>Last Name</h3></b></label></td>
-		<td><label for="gender"><b><h3>Gender</h3></b></label></td>
-		<td><label for="dob"><b><h3>Date of Birth</h3></b></label></td>
-		<td><label for="contact"><b><h3>Contact Number</h3></b></label></td>
-		<td><label for="email"><b><h3>Email Id</h3></b></label>
-		<td><label for="role"><b><h3>Role</h3></b></label></td>
-		<td></td>
-		<td><label><b><h3>Action</h3></b></label></td>
-		<td></td>
-	</tr>
-	<c:forEach var="user" items="${user}">
-		<tr>
-			<td><h3>${user.userId}</h3></td>
-			<td><h3>${user.firstName}</h3></td>
-			<td><h3>${user.lastName}</h3></td>
-			<td><h3>${user.gender}</h3></td>
-			<td><h3>${user.dob}</h3></td>
-			<td><h3>${user.contact}</h3></td>
-			<td><h3>${user.email}</h3></td>
-			<td><h3>${user.role}</h3></td>
-			<td><h3><a class="btn btn-info btn-lg active navbar-btn text-white font-weight-bold" 
-					 href="/userEdit?userId=${user.userId}">Edit</a></h3></td>
-			<td><h3><a class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold" 
-					 href="/userUpdate?userId=${user.userId}">Update Claim Status</a></h3></td>	
-			<td><h3><a class="btn btn-danger btn-lg active navbar-btn text-white font-weight-bold" 
-					 href="/userDelete?userId=${user.userId}">Delete</a></h3></td>		 	 
-		</tr>
-	</c:forEach>
-</table>
-</div>
-	
-</div>
-	
-</body>
-	<footer class="page-footer bg-dark text-white" style="height: 11rem; ">
-<div class="bg-dark">
-	<!--/.First column-->
-	<div class="container text-center mt-1">
-		<h3><a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br> 
-		<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact Us</strong></a><br></h3>
-	</div>
-	<!--/.First column-->
-	<!--/.Copyright -->
-	<div class="footer-copyright text-center py-3">
-		<h3>&copy; 2020 Copyright: 
-		<a href="/getHomePage" class="text-white"><strong>LifeInsurance.com</strong></a></h3>
-	</div>
-	<!--/.Copyright -->
-</div>	
+				<tr>
+					
+					<td><h3><center><b><form:input path="question2" /></b></center></h3></td>
+					<td><h3><center><b><form:errors path="question2" /></h3></center></b></td>
+				</tr>
+				
+				<tr>
+				<td><h3><center><b>Enter the Third Question</b></center></h3></td>
+				</tr>
+				<tr>
+					
+					<td><h3><center><b><form:input path="question3"  /></b></center></h3></td>
+					<td><h3><center><b><form:errors path="question3" /></b></center></h3></td>
+				</tr>
+				
+			</table>
+			<br><br>
+			<center>
+			<div>
+
+				<button type="submit" class="btn btn-success btn-lg active navbar-btn text-white font-weight-bold">Submit</a></div>
+
+			<h2>${status}</h2>
+			</center>
+		</form:form>
+		<div>
+		<footer class="page-footer fixed-bottom font-small bg-dark text-white  teal pt-4">
+<!--/.First column-->  
+      <div class="container text-center mt-1 ">
+	           	<a href="/getFeedBackPage" class=" align-self-center ml-2 text-white"><strong>Customer FeedBack</strong></a><br>
+	        	<a href="/getContactPage" class="align-self-center ml-2 text-white"><strong>Contact Us</strong></a><br>
+        </div>
+<!--/.First column-->
+<!--/.Copyright -->  
+  	<div class="footer-copyright text-center py-3">
+    &copy; 2020 Copyright:
+	<a href="/getHomePage" class="text-white"><strong> LifeInsurance.com</strong></a>
+  </div>
+<!--/.Copyright -->
 </footer>
+		</div>
+</body>
 </html>
